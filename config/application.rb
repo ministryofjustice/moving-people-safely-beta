@@ -22,5 +22,18 @@ module MovingPeopleSafely
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    # Application Title (Populates <title>)
+    config.app_title = 'Moving people safely'
+    # Proposition Title (Populates proposition header)
+    config.proposition_title = 'Moving people safely'
+    # Current Phase (Sets the current phase and the colour of phase tags)
+    # Presumed values: alpha, beta, live
+    config.phase = 'beta'
+    # Product Type (Adds class to body based on service type)
+    # Presumed values: information, service
+    config.product_type = 'service'
+    # Feedback URL (URL for feedback link in phase banner)
+    config.feedback_url = ''
   end
 end
