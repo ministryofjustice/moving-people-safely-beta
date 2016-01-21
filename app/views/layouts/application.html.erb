@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>MovingPeopleSafely</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<%= content_for :stylesheets do %>
+    <%= stylesheet_link_tag('application.css') %>
+<% end %>
 
-<%= yield %>
-
-</body>
-</html>
+<%= render template: 'layouts/moj_template' %>
