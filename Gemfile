@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'moj_template', '0.23.2'
+gem 'govuk_frontend_toolkit'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
