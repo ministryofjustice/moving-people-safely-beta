@@ -32,6 +32,8 @@ group :development, :test do
   gem 'byebug'
   gem 'capybara'
   gem 'rspec-rails'
+  gem 'rubocop-rspec'
+  gem 'rubocop', require: false
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'better_errors'
