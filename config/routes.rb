@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  scope 'escort-record/:id' do
-    get 'identification', controller: :escort_records
+  scope 'escort/:id' do
+    get 'identification', controller: :escorts
   end
-  resource :escort_record, only: %i[ index create ]
-  root to: 'escort_records#index'
+  resource :escort, only: %i[ index create ]
+  root to: 'escorts#index'
 end

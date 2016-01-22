@@ -20,6 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  escort_records:
+  escorts:
     index:
-      create_escort_record: Create new escort record
+      create_escort: Create new escort record
