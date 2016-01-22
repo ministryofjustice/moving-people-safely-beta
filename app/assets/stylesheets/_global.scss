@@ -1,0 +1,20 @@
+@import 'design-patterns/alpha-beta';
+@import 'grid_layout';
+@import 'mps_mixins';
+
+.phase-banner {
+  @include phase-banner($state: beta);
+}
+
+#global-header-bar {
+  @include page-width;
+}
+
+#content {
+  @include page-width;
+  margin-top: 1em;
+}
+
+.container {
+  padding: 0 30px;
+}

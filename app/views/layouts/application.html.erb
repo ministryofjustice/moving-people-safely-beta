@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>MovingPeopleSafely</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<%= content_for :stylesheets do %>
+    <!--[if IE 8]><%= stylesheet_link_tag('internet-explorer/ie8.css') %><![endif]-->
+    <%= stylesheet_link_tag('application.css') %>
+<% end %>
 
-<%= yield %>
+<% content_for :before_content do %>
+    <div class="container">
+      <div class="phase-banner">
+        <p>
+          <strong class="phase-tag">BETA</strong>
+          <span>This is a new service – your feedback will help us to improve it.</span>
+        </p>
+      </div>
+    </div>
+<% end %>
 
-</body>
-</html>
+
+<%= render template: 'layouts/moj_template' %>
