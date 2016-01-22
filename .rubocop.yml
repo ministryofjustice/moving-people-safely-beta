@@ -1,0 +1,73 @@
+AllCops:
+  # Exclude anything that isn't really part of our code.
+  # rails_helper is excluded because it's full of solecisms, but it's mostly
+  # generated code and copy-and-pasted snipets from READMEs.
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - '**/*.gemspec'
+    - '**/Rakefile'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+    - 'config/initializers/*'
+    - 'config/environments/*'
+
+# Prefer sensible naming to comments everywhere.
+Documentation:
+  Description: Document classes and non-namespace modules.
+  Enabled: false
+
+# Just a preference to use %w[] over %w()
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': '[]'
+    '%w': '[]'
+    '%W': '[]'
+    '%': '{}'
+
+# private/protected/public
+Style/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+# Just indent parameters by two spaces. It's less volatile if methods change,
+# and there's less busy work lining things up.
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/AsciiComments:
+  Enabled: false
+
+# Use Weirich style
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+
+# Allow ===. It's useful.
+Style/CaseEquality:
+  Enabled: false
+
+# Chain methods with trailing dots.
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+# It's not really clearer to replace every if with a return if.
+Style/GuardClause:
+  Enabled: false
+
+# Would enforce do_y if x over if x / do y / end. As with GuardClause above,
+# this enforces code organisation that doesn't necesarily make things clearer.
+IfUnlessModifier:
+  Enabled: false
+
+# Don't worry about long methods in specs.
+Metrics/MethodLength:
+  Max: 10
+  Exclude:
+    - 'spec/**/*'
+
+# Don't worry about the complexity of spec methods
+Metrics/AbcSize:
+  Exclude:
+    - 'spec/**/*'
+
+require: rubocop-rspec
