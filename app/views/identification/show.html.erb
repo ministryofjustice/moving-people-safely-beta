@@ -24,9 +24,9 @@
   <br />
 
   <%= f.label :date_of_birth %>:
-  <%= text_field_tag 'person[date_of_birth(3i)]', (person.date_of_birth.day if person.date_of_birth?), maxlength: 2, size: 2 %>
-  <%= text_field_tag 'person[date_of_birth(2i)]', (person.date_of_birth.month if person.date_of_birth?), maxlength: 2, size: 2 %>
-  <%= text_field_tag 'person[date_of_birth(1i)]', (person.date_of_birth.year if person.date_of_birth?), maxlength: 4, size: 4 %>
+  <%= text_field_tag 'identification[date_of_birth][day]', f.object.date_of_birth&.day, maxlength: 2, size: 2 %>
+  <%= text_field_tag 'identification[date_of_birth][month]', f.object.date_of_birth&.month, maxlength: 2, size: 2 %>
+  <%= text_field_tag 'identification[date_of_birth][year]', f.object.date_of_birth&.year, maxlength: 4, size: 4 %>
 
   <br />
 
