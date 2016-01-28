@@ -22,4 +22,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop-rspec'
   gem 'rubocop', require: false
+  gem 'shoulda-matchers', '~> 3.1'
 end
