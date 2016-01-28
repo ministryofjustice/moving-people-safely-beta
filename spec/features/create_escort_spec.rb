@@ -28,8 +28,6 @@ RSpec.feature 'create a new digital person escort record', type: :feature do
           fill_in 'identification[date_of_birth][month]', with: '03'
           fill_in 'identification[date_of_birth][year]', with: '2016'
           fill_in 'Nationality', with: 'American'
-          fill_in 'PNC number', with: 'xyz123abc'
-          fill_in 'CRO number', with: 'def987jkl'
           fill_in 'Family name', with: 'John'
           click_button 'Save'
 

@@ -5,8 +5,6 @@ class Identification < Form
   attribute :date_of_birth, Date
   attribute :sex,           String
   attribute :nationality,   String
-  attribute :pnc_number,    String
-  attribute :cro_number,    String
 
   validates :prison_number, presence: true
   validates :sex, inclusion: %w[ male female ]
