@@ -27,6 +27,7 @@ gem 'turbolinks'
 gem 'unicorn'
 
 group :development, :test do
+  gem 'brakeman'
   gem 'byebug'
   gem 'capybara'
   gem 'rspec-rails'
