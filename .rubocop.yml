@@ -12,6 +12,7 @@ AllCops:
     - 'spec/spec_helper.rb'
     - 'config/initializers/*'
     - 'config/environments/*'
+    - 'lib/tasks/**/*'
 
 # Prefer sensible naming to comments everywhere.
 Documentation:
