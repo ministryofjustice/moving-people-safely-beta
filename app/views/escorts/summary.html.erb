@@ -1,0 +1,8 @@
+<h1><%= t('.heading') %></h1>
+
+<%=
+    render(
+      'escorts/summary/prisoner_information',
+      prisoner_information: @summary.prisoner_information
+    )
+%>
