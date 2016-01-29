@@ -17,6 +17,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'byebug'
   gem 'capybara'
+  gem 'factory_girl_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-its'
