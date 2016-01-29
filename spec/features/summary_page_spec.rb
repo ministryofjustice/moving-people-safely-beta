@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Summary page for an escort' do
   scenario 'viewing an incomplete escort' do
-    escort = Escort.create(prison_number: 'A1234BC')
-
+    escort = create(:escort, :empty, prison_number: 'A1234BC')
     visit summary_path(escort)
 
     expect(page).to have_text('Summary').
@@ -18,15 +17,7 @@ RSpec.feature 'Summary page for an escort' do
   end
 
   scenario 'viewing a completed escort' do
-    escort = Escort.create(
-      family_name: 'Bigglesworth',
-      forenames: 'Tarquin',
-      date_of_birth: Date.new(1972, 2, 13),
-      sex: 'male',
-      prison_number: 'A1234BC',
-      nationality: 'British'
-    )
-
+    escort = create(:escort)
     visit summary_path(escort)
 
     expect(page).to have_text('Summary').

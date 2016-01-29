@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe SummaryPresenter, type: :presenter do
-  let(:escort) { Escort.create }
+  let(:escort) { create(:escort) }
   subject { described_class.new(escort) }
 
   its(:prisoner_information) do
