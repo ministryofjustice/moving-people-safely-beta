@@ -19,6 +19,7 @@ group :development, :test do
   gem 'capybara'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'rspec-its'
   gem 'rspec-rails'
   gem 'rubocop-rspec'
   gem 'rubocop', require: false
