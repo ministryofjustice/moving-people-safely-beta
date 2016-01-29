@@ -23,3 +23,9 @@ en:
   escorts:
     index:
       create_escort: Create new escort record
+  flash:
+    escorts:
+      success:
+        update: 'Escort record updated successfully'
+      error:
+        update: 'There were problems saving the form'

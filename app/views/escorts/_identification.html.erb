@@ -1,0 +1,47 @@
+<%= form_for form, url: identification_path, method: :put do |f| %>
+
+  <%= flash.now[:success] || flash.now[:error] %>
+
+  <br />
+
+  <%- if form.errors.any? %>
+    <%= form.errors.full_messages %>
+  <% end %>
+
+  <%= f.label :prison_number %>:
+  <%= f.text_field :prison_number %>
+
+  <br />
+
+  <%= f.label :family_name %>:
+  <%= f.text_field :family_name %>
+
+  <br />
+
+  <%= f.label :forenames %>:
+  <%= f.text_field :forenames %>
+
+  <br />
+
+  <%= f.label :date_of_birth %>:
+  <%= text_field_tag 'identification[date_of_birth][day]', f.object.date_of_birth&.day, maxlength: 2, size: 2 %>
+  <%= text_field_tag 'identification[date_of_birth][month]', f.object.date_of_birth&.month, maxlength: 2, size: 2 %>
+  <%= text_field_tag 'identification[date_of_birth][year]', f.object.date_of_birth&.year, maxlength: 4, size: 4 %>
+
+  <br />
+
+  <%= f.label :sex %>:
+  <%= f.radio_button :sex, 'male' %>
+  <%= f.label :sex, 'Male', value: 'male' %>
+  <%= f.radio_button :sex, 'female' %>
+  <%= f.label :sex, 'Female', value: 'female' %>
+
+  <br />
+
+  <%= f.label :nationality %>:
+  <%= f.text_field :nationality %>
+
+  <br />
+
+  <%= f.submit 'Save' %>
+<% end %>

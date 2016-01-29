@@ -25,6 +25,10 @@ class Form
     end
   end
 
+  def template
+    self.class.name.downcase
+  end
+
 private
 
   def load_model_data

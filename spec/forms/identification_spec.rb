@@ -5,9 +5,9 @@ RSpec.describe Identification, type: :form do
 
   subject { described_class.new(escort) }
 
-  it { is_expected.to validate_presence_of(:prison_number) }
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:prison_number) }
 
-  describe 'validating' do
     describe 'sex' do
       context 'when present' do
         context 'and included in the list' do
@@ -50,6 +50,12 @@ RSpec.describe Identification, type: :form do
         subject.date_of_birth = { day: '', month: '', year: '' }
         expect(subject.date_of_birth).to eq nil
       end
+    end
+  end
+
+  describe '#template' do
+    it 'returns the name of the partial to render' do
+      expect(subject.template).to eq 'identification'
     end
   end
 end
