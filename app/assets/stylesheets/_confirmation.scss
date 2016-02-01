@@ -1,0 +1,6 @@
+.confirmation-summary {
+  @extend .error-summary;
+  border-color: $turquoise;
+  background-color: $turquoise;
+  color: $white;
+}

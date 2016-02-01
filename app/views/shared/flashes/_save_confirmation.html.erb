@@ -1,0 +1,7 @@
+<% if flash.now[:success].present? %>
+    <div class="confirmation-summary" role="group" aria-labelledby="confirmation-summary" tabindex="-1">
+      <h2 class="heading-medium confirmation-summary-heading" id="confirmation-summary">
+        <%= flash.now[:success] %>
+      </h2>
+    </div>
+<% end %>
