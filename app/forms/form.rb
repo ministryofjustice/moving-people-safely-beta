@@ -25,8 +25,14 @@ class Form
     end
   end
 
-  def template
+  def name
     self.class.name.downcase
+  end
+  alias_method :template, :name
+
+  def url
+    Rails.application.routes.url_helpers.
+      send("#{name}_path", model)
   end
 
 private

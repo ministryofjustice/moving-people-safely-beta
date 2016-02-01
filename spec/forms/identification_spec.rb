@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Identification, type: :form do
-  let(:escort) { Escort.new }
+  let(:escort) { Escort.create }
 
   subject { described_class.new(escort) }
 
@@ -56,6 +56,12 @@ RSpec.describe Identification, type: :form do
   describe '#template' do
     it 'returns the name of the partial to render' do
       expect(subject.template).to eq 'identification'
+    end
+  end
+
+  describe '#url' do
+    it 'returns the url where the form is submitted to' do
+      expect(subject.url).to eq "/escort/#{escort.id}/identification"
     end
   end
 end

@@ -1,1 +1,14 @@
-<%= render form.template %>
+<%= form_for form, url: form.url, method: :put do |f| %>
+
+  <%= flash.now[:success] || flash.now[:error] %>
+
+  <br />
+
+  <%- if form.errors.any? %>
+    <%= form.errors.full_messages %>
+  <% end %>
+
+  <%= render form.template, f: f %>
+
+  <%= f.submit 'Save' %>
+<% end %>
