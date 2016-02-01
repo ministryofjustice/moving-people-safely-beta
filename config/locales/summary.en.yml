@@ -1,0 +1,14 @@
+en:
+  escorts:
+    summary:
+      heading: Summary
+      empty_text: Not entered yet
+      prisoner_information:
+        heading: Prisoner Information
+        edit_section: Edit
+        family_name: Family name
+        forenames: Forename(s)
+        date_of_birth: Date of birth
+        sex: Sex
+        prison_number: Prison number
+        nationality: Nationality
