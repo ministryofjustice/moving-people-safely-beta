@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Identification, type: :form do
-  let(:escort) { Escort.create }
+  let(:escort) { create(:escort) }
 
   subject { described_class.new(escort) }
 
