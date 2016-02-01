@@ -1,14 +1,21 @@
-<%= form_for form, url: form.url, method: :put do |f| %>
+<div class="grid-row">
+  <div class="column-one-quarter">
+    &nbsp;
+  </div>
+  <div class="column-three-quarters">
+    <header>
+      <h1><%= t("escorts.#{form.name}.heading") %></h1>
+    </header>
 
-  <%= flash.now[:success] || flash.now[:error] %>
+    <%= form_for form, url: form.url, method: :put do |f| %>
+        <%= render('shared/flashes/save_errors', object: f.object) %>
+        <%= render('shared/flashes/save_confirmation') %>
+        <%= render form.template, f: f %>
+        <div class="form-group">
+          <%= f.submit t('.save'), class: 'button' %>
+        </div>
+    <% end %>
+  </div>
+</div>
 
-  <br />
 
-  <%- if form.errors.any? %>
-    <%= form.errors.full_messages %>
-  <% end %>
-
-  <%= render form.template, f: f %>
-
-  <%= f.submit 'Save' %>
-<% end %>

@@ -1,0 +1,14 @@
+<%- if object.errors.any? %>
+    <div class="error-summary" role="group" aria-labelledby="error-summary" tabindex="-1">
+      <h2 class="heading-medium error-summary-heading" id="error-summary">
+        <%= flash.now[:error] %>
+      </h2>
+      <ul class="error-summary-list">
+        <% object.errors.each do |attribute| %>
+            <li>
+              <%= link_to(object.errors.full_messages_for(attribute).first, "#identification_#{attribute}") %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

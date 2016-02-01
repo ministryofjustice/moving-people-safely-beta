@@ -1,34 +1,80 @@
-  <%= f.label :prison_number %>:
-  <%= f.text_field :prison_number %>
+<div class="form-group">
+  <%= f.label :prison_number, class: 'form-label-bold' %>
+  <%= f.text_field :prison_number, class: 'string form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :family_name, class: 'form-label-bold' %>
+  <%= f.text_field :family_name, class: 'string form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :forenames, class: 'form-label-bold' %>
+  <%= f.text_field :forenames, class: 'string form-control' %>
+</div>
 
-  <br />
+<div class="form-date">
+  <fieldset>
+    <legend class="form-label-bold">
+      <%= t('.dob.label') %>
+    </legend>
+    <p class="form-hint datefield-hint" id="dobHint">
+      <%= t('.dob.hint') %>
+    </p>
+    <div class="form-group form-group-day">
+      <label for="identification_date_of_birth_day">
+        <%= t('.dob.day_label') %>
+      </label>
+      <%= text_field_tag(
+              'identification[date_of_birth][day]',
+              f.object.date_of_birth&.day,
+              maxlength: 2,
+              size: 2,
+              class: 'form-control'
+          ) %>
+    </div>
+    <div class="form-group form-group-month">
+      <label for="identification_date_of_birth_month">
+        <%= t('.dob.month_label') %>
+      </label>
+      <%= text_field_tag(
+              'identification[date_of_birth][month]',
+              f.object.date_of_birth&.month,
+              maxlength: 2,
+              size: 2,
+              class: 'form-control'
+          ) %>
+    </div>
+    <div class="form-group form-group-year">
+      <label for="identification_date_of_birth_year">
+        <%= t('.dob.year_label') %>
+      </label>
+      <%= text_field_tag(
+              'identification[date_of_birth][year]',
+              f.object.date_of_birth&.year,
+              maxlength: 4,
+              size: 4,
+              class: 'form-control'
+          ) %>
+    </div>
+  </fieldset>
+</div>
 
-  <%= f.label :family_name %>:
-  <%= f.text_field :family_name %>
+<div class="form-group">
+  <fieldset class="inline">
+    <legend class="form-label-bold">
+      <%= t('.sex.label') %>
+    </legend>
+    <%= f.label :sex, value: 'male', class: 'block-label' do %>
+        <%= t('.sex.male_label') %>
+        <%= f.radio_button :sex, 'male' %>
+    <% end %>
+    <%= f.label :sex, value: 'female', class: 'block-label' do %>
+        <%= t('.sex.female_label') %>
+        <%= f.radio_button :sex, 'female' %>
+    <% end %>
+  </fieldset>
+</div>
 
-  <br />
-
-  <%= f.label :forenames %>:
-  <%= f.text_field :forenames %>
-
-  <br />
-
-  <%= f.label :date_of_birth %>:
-  <%= text_field_tag 'identification[date_of_birth][day]', f.object.date_of_birth&.day, maxlength: 2, size: 2 %>
-  <%= text_field_tag 'identification[date_of_birth][month]', f.object.date_of_birth&.month, maxlength: 2, size: 2 %>
-  <%= text_field_tag 'identification[date_of_birth][year]', f.object.date_of_birth&.year, maxlength: 4, size: 4 %>
-
-  <br />
-
-  <%= f.label :sex %>:
-  <%= f.radio_button :sex, 'male' %>
-  <%= f.label :sex, 'Male', value: 'male' %>
-  <%= f.radio_button :sex, 'female' %>
-  <%= f.label :sex, 'Female', value: 'female' %>
-
-  <br />
-
-  <%= f.label :nationality %>:
-  <%= f.text_field :nationality %>
-
-  <br />
+<div class="form-group">
+  <%= f.label :nationality, class: 'form-label-bold' %>
+  <%= f.text_field :nationality, class: 'string form-control' %>
+</div>

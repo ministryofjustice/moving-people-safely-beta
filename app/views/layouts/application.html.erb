@@ -3,16 +3,22 @@
     <%= stylesheet_link_tag('application.css') %>
 <% end %>
 
-<% content_for :before_content do %>
-    <div class="container">
-      <div class="phase-banner">
-        <p>
-          <strong class="phase-tag">BETA</strong>
-          <span>This is a new service – your feedback will help us to improve it.</span>
-        </p>
+<% content_for :content_override do %>
+    <main id="wrapper" role="main">
+      <div class="container">
+        <div class="phase-banner">
+          <p>
+            <strong class="phase-tag"><%= t(:current_phase) %></strong>
+            <span><%= t(:phase_message) %></span>
+          </p>
+        </div>
       </div>
-    </div>
+      <div class="container">
+        <section class="content inner cf" id="content">
+          <%= yield %>
+        </section>
+      </div>
+    </main>
 <% end %>
-
 
 <%= render template: 'layouts/moj_template' %>

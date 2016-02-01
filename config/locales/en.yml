@@ -1,31 +1,26 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  escorts:
-    index:
-      create_escort: Create new escort record
+  current_phase: BETA
+  phase_message: This is a new service – your feedback will help us to improve it.
   flash:
     escorts:
       success:
-        update: 'Escort record updated successfully'
+        update: Escort record updated successfully
       error:
-        update: 'There were problems saving the form'
+        update: There were problems saving the form
+  escorts:
+    index:
+      create_escort_button: Create new escort record
+    show:
+      save: Save
+    identification:
+      heading: Prisoner information
+      dob:
+        label: Date of birth
+        hint: eg, 01 01 1999
+        day_label: Day
+        month_label: Month
+        year_label: Year
+      sex:
+        label: Sex
+        male_label: Male
+        female_label: Female
