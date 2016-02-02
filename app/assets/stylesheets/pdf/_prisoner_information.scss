@@ -1,0 +1,88 @@
+.prisoner-information {
+  @extend .padded;
+  @extend .light-background;
+  margin-top: 1em;
+
+  > div {
+    @extend .row;
+  }
+
+  .information {
+    @extend .col;
+    width: 80%;
+  }
+
+  .names {
+    @extend .row;
+    > div {
+      @extend .col;
+    }
+    .family-name {
+      width: 55%;
+      @extend .input-margin;
+    }
+    .forenames {
+      width: 38%;
+    }
+  }
+
+  .image-placeholder {
+    @extend .col;
+    @extend .dark-border;
+    background-color: $white;
+    width: 8em;
+    padding: 5em 1em;
+    text-align: center;
+  }
+
+  .label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+
+  .input {
+    @extend .white-background;
+    @extend .dark-border;
+    padding: 0.5em;
+  }
+
+  .secondary {
+    @extend .row;
+  }
+
+  .dates {
+    @extend .col;
+    @extend .input-margin;
+    width: 27%;
+    .input {
+      @extend .col;
+      @extend .input-margin-px;
+    }
+  }
+
+  .age, .sex {
+    width: 12%;
+    @extend .input-margin;
+    @extend .col;
+    .input {
+      width: 1.5em;
+    }
+  }
+
+  .nationality {
+    width: 38%;
+    @extend .input-margin;
+    @extend .col;
+  }
+
+  .identification-numbers {
+    @extend .row;
+    .prison-number {
+      @extend .input-margin;
+      @extend .col;
+      width: 25%;
+    }
+  }
+}
+
+

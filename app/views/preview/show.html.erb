@@ -1,0 +1,56 @@
+<header>
+  <div class="row">
+    <span class="copy-type"><%= @escort_record[:print_type] %></span>
+    <span class="protective-marking">
+    <%= t('.protective_marking') %>
+    </span>
+  </div>
+  <div class="row">
+    <h1 class="visuallyhidden"><%= t('.document_name') %></h1>
+    <h2><%= t('.cover_sheet') %></h2>
+    <span class="date-of-travel"><%= t('.date_of_travel') %> <strong><%= @escort_record[:escort_date] %></strong></span>
+  </div>
+</header>
+<article class="prisoner-information">
+  <div>
+    <div class="information">
+      <div class="names">
+        <div class="family-name">
+          <strong class="label"><%= t('.family_name') %></strong>
+          <div class="input"><%= @escort_record[:family_name] %></div>
+        </div>
+        <div class="forenames">
+          <strong class="label"><%= t('.forenames') %></strong>
+          <div class="input"><%= @escort_record[:forenames] %></div>
+        </div>
+      </div>
+      <div class="secondary">
+        <div class="dates">
+          <strong class="label"><%= t('.dob') %></strong>
+          <div class="input"><%= @escort_record[:dob_day] %></div>
+          <div class="input"><%= @escort_record[:dob_month] %></div>
+          <div class="input"><%= @escort_record[:dob_year] %></div>
+        </div>
+        <div class="age">
+          <strong class="label"><%= t('.age') %></strong>
+          <div class="input"><%= @escort_record[:age] %></div>
+        </div>
+        <div class="sex">
+          <strong class="label"><%= t('.sex') %></strong>
+          <div class="input"><%= @escort_record[:sex] %></div>
+        </div>
+        <div class="nationality">
+          <strong class="label"><%= t('.nationality') %></strong>
+          <div class="input"><%= @escort_record[:nationality] %></div>
+        </div>
+      </div>
+      <div class="identification-numbers">
+        <div class="prison-number">
+          <strong class="label"><%= t('.prison_number') %></strong>
+          <div class="input"><%= @escort_record[:prison_number] %></div>
+        </div>
+      </div>
+    </div>
+    <div class="image-placeholder"><%= t('.photo_message') %></div>
+  </div>
+</article>

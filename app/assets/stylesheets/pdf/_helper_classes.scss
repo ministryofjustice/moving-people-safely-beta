@@ -1,0 +1,46 @@
+.visuallyhidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.padded {
+  padding: 1em;
+}
+
+.white-background {
+  background: $white;
+}
+
+.light-background {
+  background: #E0E3E3;
+}
+
+.dark-border {
+  border: 0.1em solid $dark_grey;
+}
+
+.input-margin {
+  margin-right: 2%;
+}
+
+.input-margin-px {
+  margin-right: 4px;
+}
+
+.col {
+  float: left;
+}
+
+.row {
+  margin-bottom: 1.5em;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
