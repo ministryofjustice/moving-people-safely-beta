@@ -19,6 +19,11 @@ Documentation:
   Description: Document classes and non-namespace modules.
   Enabled: false
 
+# No need to check for describe class param in spec files.
+RSpec/DescribeClass:
+  Exclude:
+    - spec/**/*
+
 # Just a preference to use %w[] over %w()
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
