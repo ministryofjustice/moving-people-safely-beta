@@ -20,9 +20,21 @@ class PrisonerInformationPresenter
     Rails.application.routes.url_helpers.identification_path(@model)
   end
 
+  def age
+    if original_date_of_birth.present?
+      AgeCalculator.age(original_date_of_birth)
+    else
+      HandleEmpty.empty_text
+    end
+  end
+
 private
 
   def section_attributes
     @model.attributes.slice(*attributes.keys.map(&:to_s))
+  end
+
+  def original_date_of_birth
+    @model.date_of_birth
   end
 end
