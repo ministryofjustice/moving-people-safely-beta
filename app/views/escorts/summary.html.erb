@@ -1,8 +1,15 @@
-<h1><%= t('.heading') %></h1>
-
-<%=
-    render(
-      'escorts/summary/prisoner_information',
-      prisoner_information: @summary.prisoner_information
-    )
-%>
+<div class="grid-row">
+  <div class="column-one-quarter">
+    &nbsp;
+  </div>
+  <div class="column-three-quarters">
+    <header>
+      <h1><%= t('.heading') %></h1>
+    </header>
+    <%=
+      render(
+          'escorts/summary/prisoner_information',
+          prisoner_information: @summary.prisoner_information
+      )
+    %>
+  </div>

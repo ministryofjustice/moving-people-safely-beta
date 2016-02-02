@@ -1,30 +1,40 @@
-<h2><%= t('.heading') %></h2>
-<%= link_to t('.edit_section'), prisoner_information.edit_section_path %>
-<div>
-  <p><%= t('.family_name') %></p>
-  <p><%= prisoner_information.family_name %></p>
+<div class="summary-heading">
+  <h2><%= t('.heading') %></h2>
+  <%= link_to t('.edit_section'), prisoner_information.edit_section_path %>
 </div>
-<div>
-  <p><%= t('.forenames') %></p>
-  <p><%= prisoner_information.forenames %></p>
-</div>
-<div>
-  <p><%= t('.date_of_birth') %></p>
-  <p><%= prisoner_information.date_of_birth %></p>
-</div>
-<div>
-  <p><%= t('.age') %></p>
-  <p><%= prisoner_information.age %></p>
-</div>
-<div>
-  <p><%= t('.sex') %></p>
-  <p><%= prisoner_information.sex %></p>
-</div>
-<div>
-  <p><%= t('.prison_number') %></p>
-  <p><%= prisoner_information.prison_number %></p>
-</div>
-<div>
-  <p><%= t('.nationality') %></p>
-  <p><%= prisoner_information.nationality %></p>
+<div class="summary-content">
+  <div>
+    <div class="family-name">
+      <strong class="label"><%= t('.family_name') %></strong>
+      <div class="output"><%= prisoner_information.family_name %></div>
+    </div>
+    <div class="forenames">
+      <strong class="label"><%= t('.forenames') %></strong>
+      <div class="output"><%= prisoner_information.forenames %></div>
+    </div>
+  </div>
+  <div>
+    <div class="dob">
+      <strong class="label"><%= t('.date_of_birth') %></strong>
+      <div class="output"><%= prisoner_information.date_of_birth %></div>
+    </div>
+    <div class="age">
+      <strong class="label"><%= t('.age') %></strong>
+      <div class="output"><%= prisoner_information.age %></div>
+    </div>
+    <div class="sex">
+      <strong class="label"><%= t('.sex') %></strong>
+      <div class="output"><%= prisoner_information.sex %></div>
+    </div>
+    <div class="nationality">
+      <strong class="label"><%= t('.nationality') %></strong>
+      <div class="output"><%= prisoner_information.nationality %></div>
+    </div>
+  </div>
+  <div>
+    <div class="prison-number">
+      <strong class="label"><%= t('.prison_number') %></strong>
+      <div class="output"><%= prisoner_information.prison_number %></div>
+    </div>
+  </div>
 </div>
