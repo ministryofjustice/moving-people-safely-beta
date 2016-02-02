@@ -8,6 +8,7 @@ en:
         family_name: Family name
         forenames: Forename(s)
         date_of_birth: Date of birth
+        age: Age
         sex: Sex
         prison_number: Prison number
         nationality: Nationality
