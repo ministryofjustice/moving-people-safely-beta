@@ -1,29 +1,32 @@
-class PrisonerInformationPresenter < SimpleDelegator
-  include Rails.application.routes.url_helpers
-
-  def edit_section_path
-    identification_path(__getobj__)
+class PrisonerInformationPresenter
+  def initialize(model)
+    @model = model
   end
 
-  def date_of_birth
-    __getobj__.date_of_birth&.strftime('%d/%m/%Y') || empty_text
+  delegate :family_name, :forenames, :prison_number,
+    :nationality, to: :@model
+
+  delegate :sex, :date_of_birth, to: :@model, prefix: :prisoner
+
+  def edit_section_path
+    Rails.application.routes.url_helpers.identification_path(@model)
   end
 
   def sex
-    __getobj__.sex&.chr&.capitalize || empty_text
+    if prisoner_sex.present?
+      prisoner_sex.chr.capitalize
+    end
   end
 
-private
-
-  def empty_text
-    I18n.t('escorts.summary.empty_text')
+  def date_of_birth
+    if prisoner_date_of_birth.present?
+      prisoner_date_of_birth.strftime('%d/%m/%Y')
+    end
   end
 
-  def edit_section_text
-    I18n.t('escorts.summary.edit_section')
-  end
-
-  def method_missing(method_name, *_args, &_blk)
-    __getobj__.send(method_name) || empty_text
+  def age
+    if prisoner_date_of_birth.present?
+      AgeCalculator.age(prisoner_date_of_birth)
+    end
   end
 end

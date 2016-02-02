@@ -2,7 +2,6 @@ en:
   escorts:
     summary:
       heading: Summary
-      empty_text: Not entered yet
       prisoner_information:
         heading: Prisoner Information
         edit_section: Edit
