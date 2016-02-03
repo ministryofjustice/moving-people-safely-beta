@@ -2,6 +2,7 @@ class Form
   include Virtus.model
   include ActiveModel::Conversion
   include ActiveModel::Validations
+  include DateParsing
 
   attr_accessor :model
 
