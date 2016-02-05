@@ -1,6 +1,10 @@
 en:
   current_phase: BETA
   phase_message: This is a new service – your feedback will help us to improve it.
+  navigation:
+    heading: Primary navigation
+    identification: Identification
+    summary: Summary
   flash:
     escorts:
       success:
