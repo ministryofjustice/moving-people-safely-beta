@@ -35,20 +35,72 @@ RSpec.describe Identification, type: :form do
         end
       end
     end
-  end
 
-  describe '#date_of_birth' do
-    context 'with a valid date' do
-      it 'returns a date' do
-        subject.date_of_birth = { day: '1', month: '2', year: '2016' }
-        expect(subject.date_of_birth).to eq Date.parse('1/2/2016')
+    describe 'date_of_birth features' do
+      let(:invalid_dob_i18n_path) do
+        'activemodel.errors.models.identification.' \
+          'attributes.date_of_birth.invalid'
       end
-    end
 
-    context 'with an empty date' do
-      it 'returns nil' do
-        subject.date_of_birth = { day: '', month: '', year: '' }
-        expect(subject.date_of_birth).to eq nil
+      let(:invalid_dob_text) { I18n.t(invalid_dob_i18n_path) }
+
+      before(:each) do
+        subject.date_of_birth = date_of_birth
+        subject.valid?
+      end
+
+      context 'genuine date values provided' do
+        let(:date_of_birth) { { day: '29', month: '7', year: '1987' } }
+        its(:date_of_birth) { is_expected.to eq Date.civil(1987, 7, 29) }
+        its(:date_of_birth_presenter) { is_expected.to be_a Date }
+        it 'is valid' do
+          expect(subject.errors[:date_of_birth]).to be_empty
+        end
+      end
+
+      context 'a nil date' do
+        let(:date_of_birth) { nil }
+        its(:date_of_birth) { is_expected.to be_nil }
+        its(:date_of_birth_presenter) { is_expected.to be_a UncoercedDate }
+        it 'is valid' do
+          expect(subject.errors[:date_of_birth]).to be_empty
+        end
+      end
+
+      context 'an "empty" date' do
+        let(:date_of_birth) { { day: '', month: '', year: '' } }
+        its(:date_of_birth) { is_expected.to be_nil }
+        its(:date_of_birth_presenter) { is_expected.to be_a UncoercedDate }
+        it 'is valid' do
+          expect(subject.errors[:date_of_birth]).to be_empty
+        end
+      end
+
+      context 'missing a value in the date hash' do
+        let(:date_of_birth) { { day: '', month: '7', year: '1987' } }
+        its(:date_of_birth) { is_expected.to eq date_of_birth }
+        its(:date_of_birth_presenter) { is_expected.to be_a UncoercedDate }
+        it 'is invalid' do
+          expect(subject.errors[:date_of_birth]).to include invalid_dob_text
+        end
+      end
+
+      context 'out of range date input' do
+        let(:date_of_birth) { { day: '45', month: '7', year: '1987' } }
+        its(:date_of_birth) { is_expected.to eq date_of_birth }
+        its(:date_of_birth_presenter) { is_expected.to be_a UncoercedDate }
+        it 'is invalid' do
+          expect(subject.errors[:date_of_birth]).to include invalid_dob_text
+        end
+      end
+
+      context 'less than 4 digit year input' do
+        let(:date_of_birth) { { day: '29', month: '7', year: '19' } }
+        its(:date_of_birth) { is_expected.to eq Date.civil(19, 7, 29) }
+        its(:date_of_birth_presenter) { is_expected.to be_a Date }
+        it 'is invalid' do
+          expect(subject.errors[:date_of_birth]).to include invalid_dob_text
+        end
       end
     end
   end
