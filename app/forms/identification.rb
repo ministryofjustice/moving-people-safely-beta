@@ -4,8 +4,8 @@ class Identification < Form
   attribute :prison_number, String
   attribute :sex,           String
   attribute :nationality,   String
-
-  date :date_of_birth
+  attribute :date_of_birth, ParsedDate,
+    coercer: ->(o) { DateHashParser.new(o).build }
 
   validates :date_of_birth, date: true
   validates :prison_number, presence: true

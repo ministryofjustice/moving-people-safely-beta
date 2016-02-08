@@ -1,8 +1,10 @@
+require 'date_handling/date_hash_parser'
+require 'date_handling/parsed_date'
+
 class Form
   include Virtus.model
   include ActiveModel::Conversion
   include ActiveModel::Validations
-  include DateParsing
 
   extend ActiveModel::Translation
 
