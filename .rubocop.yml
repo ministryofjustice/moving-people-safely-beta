@@ -47,6 +47,8 @@ Style/AsciiComments:
 # Use Weirich style
 Style/BlockDelimiters:
   EnforcedStyle: semantic
+  Exclude:
+    - 'spec/**/*'
 
 # Allow ===. It's useful.
 Style/CaseEquality:
