@@ -8,7 +8,8 @@ module DateParsing
       end
 
       define_method("#{attribute_name}=") do |date|
-        instance_variable_set("@#{attribute_name}", CompatibleDate.for(date))
+        instance_variable_set("@#{attribute_name}",
+          DateHashParser.new(date).perform)
       end
     end
   end

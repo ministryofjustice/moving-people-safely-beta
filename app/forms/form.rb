@@ -4,6 +4,8 @@ class Form
   include ActiveModel::Validations
   include DateParsing
 
+  extend ActiveModel::Translation
+
   attr_accessor :model
 
   def initialize(model)

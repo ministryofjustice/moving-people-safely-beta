@@ -28,7 +28,7 @@ en:
   activemodel:
     errors:
       models:
-        escort:
+        identification:
           attributes:
             date_of_birth:
               invalid: Enter the date of birth in the correct format (DD/MM/YYYY)

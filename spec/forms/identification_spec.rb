@@ -5,7 +5,7 @@ RSpec.describe Identification, type: :form do
 
   subject { described_class.new(escort) }
 
-  describe 'validate' do
+  describe 'validations' do
     it { is_expected.to validate_presence_of(:prison_number) }
 
     describe 'sex' do
@@ -51,7 +51,7 @@ RSpec.describe Identification, type: :form do
           subject.valid?
         end
 
-        specify 'there are no date errors on date_of_birth' do
+        specify 'there are no errors on date_of_birth' do
           expect(subject.errors[:date_of_birth]).to be_empty
         end
       end
@@ -62,14 +62,16 @@ RSpec.describe Identification, type: :form do
           subject.valid?
         end
 
-        specify 'there are no date errors on date_of_birth' do
+        specify 'there are no errors on date_of_birth' do
           expect(subject.errors[:date_of_birth]).to be_empty
         end
       end
 
       context 'handling invalid dates' do
-        let(:model_translation) do
-          'activemodel.errors.models.escort.attributes.date_of_birth.invalid'
+        let(:invalid_dob_text) do
+          key = 'activemodel.errors.models.identification' \
+                '.attributes.date_of_birth.invalid'
+          I18n.t(key)
         end
 
         context 'with a non-numeric date_of_birth' do
@@ -79,9 +81,7 @@ RSpec.describe Identification, type: :form do
           end
 
           it 'adds a validation error to date_of_birth' do
-            # expect(subject.errors[:date_of_birth]).
-            #   to include I18n.t(model_translation)
-            expect(subject.errors[:date_of_birth]).to_not be_empty
+            expect(subject.errors[:date_of_birth]).to include invalid_dob_text
           end
         end
 
@@ -92,9 +92,7 @@ RSpec.describe Identification, type: :form do
           end
 
           it 'adds a validation error to date_of_birth' do
-            # expect(subject.errors[:date_of_birth]).
-            #   to include I18n.t(model_translation)
-            expect(subject.errors[:date_of_birth]).to_not be_empty
+            expect(subject.errors[:date_of_birth]).to include invalid_dob_text
           end
         end
 
@@ -105,9 +103,7 @@ RSpec.describe Identification, type: :form do
           end
 
           it 'adds a validation error to date_of_birth' do
-            # expect(subject.errors[:date_of_birth]).
-            #   to include I18n.t(model_translation)
-            expect(subject.errors[:date_of_birth]).to_not be_empty
+            expect(subject.errors[:date_of_birth]).to include invalid_dob_text
           end
         end
       end
