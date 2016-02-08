@@ -1,0 +1,45 @@
+.summary-heading {
+  position: relative;
+  h2 {
+    max-width: 80%;
+  }
+  a {
+    position: absolute;
+    right: 0.5em;
+    top: 0.4em;
+  }
+}
+
+.label {
+  display: block;
+}
+
+.summary-content {
+  background: #F8F8F8;
+  padding: 0.5em;
+  > div {
+    @extend %grid-row;
+    margin-bottom: 0.5em;
+    .family-name {
+      @include grid-column(1/4)
+    }
+    .forenames {
+      @include grid-column(3/4)
+    }
+    .dob {
+      @include grid-column(1/4)
+    }
+    .age {
+      @include grid-column(1/8)
+    }
+    .sex {
+      @include grid-column(1/8)
+    }
+    .nationality {
+      @include grid-column(1/4)
+    }
+    .prison-number {
+      @include grid-column(1/1)
+    }
+  }
+}
