@@ -12,7 +12,6 @@ RSpec.describe PrisonerInformationPresenter, type: :presenter do
   end
 
   context 'attribute does not exist' do
-    let(:empty_text) { I18n.t('escorts.summary.empty_text') }
     let(:escort_without_prisoner_info) { build(:escort, :empty) }
     subject { described_class.new(escort_without_prisoner_info) }
 
@@ -24,7 +23,7 @@ RSpec.describe PrisonerInformationPresenter, type: :presenter do
       prison_number
       nationality
     ].each do |attribute|
-      its(attribute) do is_expected.to eq empty_text end
+      its(attribute) do is_expected.to be_nil end
     end
   end
 
