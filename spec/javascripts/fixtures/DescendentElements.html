@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="main-content">
+    <form method="post">
+        <fieldset class="js_has_optional_section">
+            <label for="risk_cleared">
+                <input type="radio" name="risk"
+                       id="risk_cleared" value="cleared">Clear</label>
+            <label class="block-label inline" for="risk_yes">
+                <input type="radio" name="risk" id="risk_yes"
+                       value="yes">Yes
+            </label>
+            <label class="block-label inline" for="risk_no">
+                <input type="radio" name="risk" id="risk_no"
+                       value="no" checked="checked">No</label>
+            <div class="optional-section"><label for="risk_details">Please
+                give details</label>
+                <textarea id="risk_details"></textarea></div>
+        </fieldset>
+</div>
+<div class="form-action">
+    <input type="submit" name="commit" value="Continue" class="button">
+</div>
+</form>
+</div>
+</body>
+</html>
