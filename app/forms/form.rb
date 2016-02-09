@@ -2,6 +2,9 @@ class Form
   include Virtus.model
   include ActiveModel::Conversion
   include ActiveModel::Validations
+  include DateHandling
+
+  extend ActiveModel::Translation
 
   attr_accessor :model
 

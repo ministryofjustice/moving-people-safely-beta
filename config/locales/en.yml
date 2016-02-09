@@ -24,3 +24,11 @@ en:
         label: Sex
         male_label: Male
         female_label: Female
+
+  activemodel:
+    errors:
+      models:
+        identification:
+          attributes:
+            date_of_birth:
+              invalid: is invalid
