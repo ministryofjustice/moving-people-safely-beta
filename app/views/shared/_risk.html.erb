@@ -1,0 +1,21 @@
+<%= content_tag(:fieldset, class: 'js_has_optional_section') do %>
+    <%= content_tag(:div, class: 'form-group') do %>
+        <%= content_tag(:legend, class: 'form-label-bold') do %>
+            <%= content_tag(:span, t(".types.#{risk}")) %>
+            <%= radio_button_tag(risk, 'unknown', true, class: 'visuallyhidden') %>
+            <%= label_tag("#{risk}_unknown", 'Clear', class: 'unknown_value') %>
+        <% end %>
+        <%= content_tag(:div, class: 'form-group') do %>
+            <%= label_tag("#{risk}_yes", class: 'block-label inline') do %>
+                <%= radio_button_tag(risk, 'yes', false) %> Yes
+            <% end %>
+            <%= label_tag("#{risk}_no", class: 'block-label inline') do %>
+                <%= radio_button_tag(risk, 'no', false) %> No
+            <% end %>
+            <%= content_tag(:div, class: 'form-group optional-section') do %>
+                <%= label_tag("#{risk}_details", t('.labels.details')) %>
+                <%= content_tag(:textarea, autocomplete: 'off', class: 'form-control', id: "#{risk}_details") {} %>
+            <% end %>
+        <% end %>
+    <% end %>
+<% end %>

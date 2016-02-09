@@ -15,3 +15,43 @@
   }
 }
 
+.js_has_optional_section {
+  .unknown_value {
+    transition-property: color;
+    -webkit-transition-duration: 300ms;
+    -moz-transition-duration: 300ms;
+    -ms-transition-duration: 300ms;
+    -o-transition-duration: 300ms;
+    transition-duration: 300ms;
+    display: inline-block;
+    margin-left: 0.5em;
+    font-size: 0.8em;
+  }
+
+  :checked + .unknown_value {
+    color: #FFF;
+  }
+
+  :focus + .unknown_value {
+    background-color: #ffbf47;
+    outline: 3px solid #ffbf47;
+    color: #000;
+  }
+
+  .block-label.inline {
+    clear: none;
+    margin-right: 0.5em;
+  }
+
+  textarea {
+    width: 100%;
+    resize: none;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+}
+
+

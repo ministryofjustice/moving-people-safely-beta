@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       controller: :escorts
     get 'summary', controller: :escorts
     resource :pdf, only: :show
+    get 'risks'
   end
   resource :escort, only: %i[ index create ]
   root to: 'escorts#index'

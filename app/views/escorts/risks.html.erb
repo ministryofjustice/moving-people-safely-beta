@@ -1,0 +1,19 @@
+<div class="grid-row">
+  <div class="column-one-quarter">
+    &nbsp;
+  </div>
+  <div class="column-three-quarters">
+    <header>
+      <h1><%= t('.heading') %></h1>
+    </header>
+    <% risks = %i[ to_self to_others violence from_others escape intolerant_behaviour prohibited_items ] %>
+    <% risks.each do |risk| %>
+        <%= render('shared/risk', risk: risk) %>
+    <% end %>
+    <h2><%= t('.transit_heading') %></h2>
+    <% transit_risks = %i[ disabilities allergies non_association ] %>
+    <% transit_risks.each do |risk| %>
+        <%= render('shared/risk', risk: risk) %>
+    <% end %>
+  </div>
+</div>

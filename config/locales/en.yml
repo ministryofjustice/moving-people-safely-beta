@@ -5,6 +5,21 @@ en:
     heading: Primary navigation
     identification: Identification
     summary: Summary
+  shared:
+    risk:
+      types:
+        to_self: Risks to self
+        to_others: Risks to others
+        violence: Violence
+        from_others: Risk from others
+        escape: Escort escape risk
+        intolerant_behaviour: Intolerant behavior
+        prohibited_items: Prohibited items
+        disabilities: Disabilities
+        allergies: Allergies
+        non_association: Non-association
+      labels:
+        details: Details
   flash:
     escorts:
       success:
@@ -28,9 +43,13 @@ en:
         label: Sex
         male_label: Male
         female_label: Female
+    risks:
+      heading: Risks
+      transit_heading: Transit risks
   quick_actions:
     heading: Quick actions
     preview: Preview PER
+
   activemodel:
     errors:
       models:

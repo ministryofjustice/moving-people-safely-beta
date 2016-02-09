@@ -21,4 +21,8 @@
     </main>
 <% end %>
 
+<% content_for :javascripts do %>
+    <%= javascript_include_tag 'application.js' %>
+<% end %>
+
 <%= render template: 'layouts/moj_template' %>
