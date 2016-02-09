@@ -29,8 +29,4 @@ private
   def form_params
     params[form.template]
   end
-
-  def escort
-    @escort ||= Escort.find(params[:id])
-  end
 end
