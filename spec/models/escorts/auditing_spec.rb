@@ -16,4 +16,9 @@ RSpec.describe 'Auditing an escort record' do
     expect(escort.versions.count).to eq 3
     expect(escort.versions.third.event).to eq 'destroy'
   end
+
+  it 'assigns the correct item_id to a versioned escort', versioning: true do
+    escort = create(:escort)
+    expect(escort.id).to eq escort.versions.first.item_id
+  end
 end
