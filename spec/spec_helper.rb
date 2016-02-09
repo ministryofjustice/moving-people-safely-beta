@@ -17,6 +17,9 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 require 'shared/test_helper'
 
 RSpec.configure do |config|

@@ -17,10 +17,14 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'byebug'
-  gem 'capybara'
   gem 'factory_girl_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'codeclimate-test-reporter', require: nil
   gem 'rspec-its'
   gem 'rspec-rails'
   gem 'rubocop-rspec'
