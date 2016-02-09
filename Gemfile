@@ -30,4 +30,6 @@ group :test do
   gem 'rubocop-rspec'
   gem 'rubocop', require: false
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'jasmine'
+  gem 'jasmine-jquery-rails'
 end
