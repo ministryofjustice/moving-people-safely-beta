@@ -1,15 +1,16 @@
 <div class="grid-row">
   <div class="column-one-quarter">
-    &nbsp;
+    <%= render('shared/navigation') %>
   </div>
   <div class="column-three-quarters">
     <header>
-      <h1><%= t('.heading') %></h1>
+      <h1><%= t("escorts.#{form.name}.heading") %></h1>
     </header>
     <%=
       render(
-          'escorts/summary/prisoner_information',
-          prisoner_information: @summary.prisoner_information
+        'escorts/summary/prisoner_information',
+        prisoner_information: @summary.prisoner_information
       )
     %>
   </div>
+</div>
