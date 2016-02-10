@@ -1,0 +1,58 @@
+<header>
+  <div class="row">
+    <span class="copy-type"><%= 'Master' %></span>
+    <span class="protective-marking">
+    <%= t('.protective_marking') %>
+    </span>
+  </div>
+  <div class="row">
+    <h2><%= t('.cover_sheet') %></h2>
+    <span class="date-of-travel">
+      <%= t('.date_of_travel') %>
+      <strong><%= '22/5/2016' %></strong>
+    </span>
+  </div>
+</header>
+<article class="prisoner-information">
+  <div>
+    <div class="information">
+      <div class="names">
+        <div class="family-name">
+          <strong class="label"><%= t('.family_name') %></strong>
+          <div class="input"><%= prisoner_information.family_name %></div>
+        </div>
+        <div class="forenames">
+          <strong class="label"><%= t('.forenames') %></strong>
+          <div class="input"><%= prisoner_information.forenames %></div>
+        </div>
+      </div>
+      <div class="secondary">
+        <div class="dates">
+          <strong class="label"><%= t('.dob') %></strong>
+          <div class="input"><%= prisoner_information.prisoner_date_of_birth.day %></div>
+          <div class="input"><%= prisoner_information.prisoner_date_of_birth.month %></div>
+          <div class="input"><%= prisoner_information.prisoner_date_of_birth.year %></div>
+        </div>
+        <div class="age">
+          <strong class="label"><%= t('.age') %></strong>
+          <div class="input"><%= prisoner_information.age %></div>
+        </div>
+        <div class="sex">
+          <strong class="label"><%= t('.sex') %></strong>
+          <div class="input"><%= prisoner_information.sex %></div>
+        </div>
+        <div class="nationality">
+          <strong class="label"><%= t('.nationality') %></strong>
+          <div class="input"><%= prisoner_information.nationality %></div>
+        </div>
+      </div>
+      <div class="identification-numbers">
+        <div class="prison-number">
+          <strong class="label"><%= t('.prison_number') %></strong>
+          <div class="input"><%= prisoner_information.prison_number %></div>
+        </div>
+      </div>
+    </div>
+    <div class="image-placeholder"><%= t('.photo_message') %></div>
+  </div>
+</article>
