@@ -105,6 +105,12 @@ RSpec.describe Identification, type: :form do
     end
   end
 
+  describe '#target' do
+    it 'returns the escort model' do
+      expect(subject.target).to eq escort
+    end
+  end
+
   describe '#template' do
     it 'returns the name of the partial to render' do
       expect(subject.template).to eq 'identification'

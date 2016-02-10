@@ -104,4 +104,10 @@ RSpec.describe Form, type: :form do
       end
     end
   end
+
+  describe '#target' do
+    it 'returns the model' do
+      expect(subject.target).to eq model
+    end
+  end
 end

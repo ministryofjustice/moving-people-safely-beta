@@ -21,7 +21,7 @@ class Form
 
   def save
     if valid?
-      model.update_attributes(attributes)
+      target.update_attributes(attributes)
       true
     else
       false
@@ -38,11 +38,15 @@ class Form
       send("#{name}_path", model)
   end
 
+  def target
+    model
+  end
+
 private
 
   def load_model_data
     attributes.each_key do |key|
-      public_send("#{key}=", model.send(key))
+      public_send("#{key}=", target.send(key))
     end
   end
 end
