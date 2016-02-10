@@ -18,7 +18,8 @@ class EscortsController < ApplicationController
 private
 
   def form
-    @form ||= Identification.new(escort)
+    @form ||= current_page.capitalize.constantize.new(escort)
+  end
 
   def persist_form_data
     if form.save
@@ -27,9 +28,12 @@ private
       flash.now[:error] = t('flash.escorts.error.update')
     end
   end
+
+  def current_page
+    params[:page].to_s
   end
 
   def form_params
-    params[form.template]
+    params[form.name]
   end
 end
