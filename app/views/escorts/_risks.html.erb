@@ -1,18 +1,10 @@
-<div class="grid-row">
-  <div class="column-one-quarter">
-    &nbsp;
-  </div>
-  <div class="column-three-quarters">
-    <fieldset class="inline">
-    <% risks = %i[ to_self to_others violence from_others escape intolerant_behaviour prohibited_items ] %>
-    <% risks.each do |risk| %>
-        <%= render('shared/risk', f: f, risk: risk) %>
-    <% end %>
-    <h2><%= t('.transit_heading') %></h2>
-    <% transit_risks = %i[ disabilities allergies non_association ] %>
-    <% transit_risks.each do |risk| %>
-        <%= render('shared/risk', f: f, risk: risk) %>
-    <% end %>
-    </fieldset>
-  </div>
-</div>
+<% risks = %i[ to_self to_others violence from_others escape intolerant_behaviour prohibited_items ] %>
+<% risks.each do |risk| %>
+    <%= render('shared/risk', f: f, risk: risk) %>
+<% end %>
+<h2><%= t('.transit_heading') %></h2>
+<% transit_risks = %i[ disabilities allergies non_association ] %>
+<% transit_risks.each do |risk| %>
+    <%= render('shared/risk', f: f, risk: risk) %>
+<% end %>
+

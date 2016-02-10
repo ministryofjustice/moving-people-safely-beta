@@ -5,7 +5,7 @@
         <%= t(".types.#{risk}") %>
       </span>
       <%= f.radio_button risk, 'unknown', class: "visuallyhidden" %>
-      <%= f.label risk, class: 'unknown_value' %> Clear
+      <%= f.label "#{risk}_unknown", 'Clear', class: 'unknown_value' %>
     </legend>
     <div class="form-group">
       <%= f.label risk, value: true, class: 'block-label inline' do %>

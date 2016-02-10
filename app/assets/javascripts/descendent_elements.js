@@ -5,7 +5,7 @@
     var showOptionalSection, showSection, initialize;
 
     showOptionalSection = function (value) {
-        return (value == 'yes');
+        return (value == 'true');
     };
 
     showSection = function (id, $element) {
