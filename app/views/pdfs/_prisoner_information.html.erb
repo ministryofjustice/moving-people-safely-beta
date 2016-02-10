@@ -1,6 +1,6 @@
 <header>
   <div class="row">
-    <span class="copy-type"><%= 'Master' %></span>
+    <span class="copy-type"><%= t('.copy_type') %></span>
     <span class="protective-marking">
     <%= t('.protective_marking') %>
     </span>
@@ -29,9 +29,9 @@
       <div class="secondary">
         <div class="dates">
           <strong class="label"><%= t('.dob') %></strong>
-          <div class="input"><%= prisoner_information.prisoner_date_of_birth.day %></div>
-          <div class="input"><%= prisoner_information.prisoner_date_of_birth.month %></div>
-          <div class="input"><%= prisoner_information.prisoner_date_of_birth.year %></div>
+          <div class="input"><%= prisoner_information.date_of_birth_day %></div>
+          <div class="input"><%= prisoner_information.date_of_birth_month %></div>
+          <div class="input"><%= prisoner_information.date_of_birth_year %></div>
         </div>
         <div class="age">
           <strong class="label"><%= t('.age') %></strong>

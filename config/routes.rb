@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       only: %i[ show update ],
       controller: :escorts
     get 'summary', controller: :escorts
-    get 'preview', controller: :preview, action: :show
+    resource :pdf, only: :show
   end
   resource :escort, only: %i[ index create ]
   root to: 'escorts#index'

@@ -1,5 +1,4 @@
 en:
-  application_name: Moving People Safely
   current_phase: BETA
   phase_message: This is a new service – your feedback will help us to improve it.
   navigation:
@@ -29,20 +28,6 @@ en:
         label: Sex
         male_label: Male
         female_label: Female
-  preview:
-    show:
-      document_name: Person escort record
-      cover_sheet: Cover sheet
-      date_of_travel: Date of travel
-      protective_marking: Official - Sensitive
-      photo_message: Attach photo if available
-      family_name: Family name
-      forenames: Forenames
-      dob: Date of birth
-      age: Age
-      sex: Sex
-      nationality: Nationality
-      prison_number: Prison number
   quick_actions:
     heading: Quick actions
     preview: Preview PER

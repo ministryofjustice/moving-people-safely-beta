@@ -7,7 +7,7 @@ RSpec.describe PdfGenerator, type: :service do
 
   describe '.for' do
     it 'uses PDFKit library' do
-      pdfkit = double('PDFKit', to_pdf: 'PDF code')
+      pdfkit = instance_double('PDFKit', to_pdf: 'PDF code')
       expect(PDFKit).to receive(:new).and_return(pdfkit)
       described_class.for(escort)
     end
