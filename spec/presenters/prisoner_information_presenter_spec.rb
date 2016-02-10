@@ -31,11 +31,15 @@ RSpec.describe PrisonerInformationPresenter, type: :presenter do
     let(:escort_with_prisoner_info) { build(:escort) }
     subject { described_class.new(escort_with_prisoner_info) }
 
-    its(:family_name)   do is_expected.to eq 'Bigglesworth' end
-    its(:forenames)     do is_expected.to eq 'Tarquin' end
-    its(:date_of_birth) do is_expected.to eq '13/02/1972' end
-    its(:sex)           do is_expected.to eq 'M' end
-    its(:prison_number) do is_expected.to eq 'A1234BC' end
-    its(:nationality)   do is_expected.to eq 'British' end
+    its(:family_name)   { is_expected.to eq 'Bigglesworth' }
+    its(:forenames)     { is_expected.to eq 'Tarquin' }
+    its(:date_of_birth) { is_expected.to eq '13/02/1972' }
+    its(:sex)           { is_expected.to eq 'M' }
+    its(:prison_number) { is_expected.to eq 'A1234BC' }
+    its(:nationality)   { is_expected.to eq 'British' }
+
+    it 'shows the correct age' do
+      travel_to(Date.new(2015, 2, 15)) { expect(subject.age).to eq 43 }
+    end
   end
 end
