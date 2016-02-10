@@ -28,7 +28,3 @@ module FeatureHelpers
     click_button 'Save'
   end
 end
-
-RSpec.configure do |c|
-  c.include FeatureHelpers, type: :feature
-end

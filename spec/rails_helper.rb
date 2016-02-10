@@ -55,7 +55,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include(FeatureHelpers, type: :feature)
   config.include(Shoulda::Matchers::ActiveModel, type: :form)
+  config.include(FactoryGirl::Syntax::Methods)
+  config.include(ActiveSupport::Testing::TimeHelpers)
 end
 
 Shoulda::Matchers.configure do |config|
