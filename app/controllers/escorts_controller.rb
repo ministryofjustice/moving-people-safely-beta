@@ -5,12 +5,7 @@ class EscortsController < ApplicationController
 
   def update
     form.assign_attributes(form_params)
-
-    if form.save
-      flash.now[:success] = t('flash.escorts.success.update')
-    else
-      flash.now[:error] = t('flash.escorts.error.update')
-    end
+    persist_form_data
     render :show
   end
 
@@ -24,6 +19,14 @@ private
 
   def form
     @form ||= Identification.new(escort)
+
+  def persist_form_data
+    if form.save
+      flash.now[:success] = t('flash.escorts.success.update')
+    else
+      flash.now[:error] = t('flash.escorts.error.update')
+    end
+  end
   end
 
   def form_params
