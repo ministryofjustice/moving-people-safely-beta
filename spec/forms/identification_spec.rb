@@ -11,6 +11,11 @@ RSpec.describe Identification, type: :form do
                                                   prison_number: 'F7267DF',
                                                   nationality: 'American'
 
+  it_behaves_like 'a form that retrives or builds its target', :prisoner
+  it_behaves_like 'a form that knows what template to render', 'identification'
+  it_behaves_like 'a form that belongs to an endpoint', 'identification'
+  it_behaves_like 'a model that manages dates', %i[ date_of_birth ]
+
   describe 'validations' do
     it { is_expected.to validate_presence_of(:prison_number) }
 
@@ -108,12 +113,6 @@ RSpec.describe Identification, type: :form do
           expect(subject.errors[:date_of_birth]).to include invalid_dob_text
         end
       end
-    end
-  end
-
-  describe '#target' do
-    it 'returns the escort model' do
-      expect(subject.target).to eq escort.prisoner
     end
   end
 

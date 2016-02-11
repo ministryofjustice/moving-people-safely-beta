@@ -73,6 +73,12 @@ Metrics/MethodLength:
   Exclude:
     - 'spec/**/*'
 
+# Don't worry about long lines in specs.
+Metrics/LineLength:
+  Details: >-
+  Exclude:
+    - 'spec/support/shared/**/*'
+
 # Don't worry about the complexity of spec methods
 Metrics/AbcSize:
   Exclude:
