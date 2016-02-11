@@ -5,6 +5,7 @@ en:
     heading: Primary navigation
     identification: Identification
     summary: Summary
+    risks: Risks
   shared:
     risk:
       types:
