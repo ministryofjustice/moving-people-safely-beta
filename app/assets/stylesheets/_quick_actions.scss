@@ -1,0 +1,14 @@
+.quick-actions {
+  margin-top: 1em;
+  border: 1px solid $grey-2;
+  background: $grey-4;
+  padding: 1em;
+  h2 {
+    @extend .heading-small;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    @extend .font-xsmall;
+  }
+}

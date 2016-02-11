@@ -28,7 +28,9 @@ en:
         label: Sex
         male_label: Male
         female_label: Female
-
+  quick_actions:
+    heading: Quick actions
+    preview: Preview PER
   activemodel:
     errors:
       models:

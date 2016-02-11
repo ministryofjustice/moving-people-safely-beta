@@ -6,7 +6,8 @@ class PrisonerInformationPresenter
   delegate :family_name, :forenames, :prison_number,
     :nationality, to: :@model
 
-  delegate :sex, :date_of_birth, to: :@model, prefix: :prisoner
+  delegate :sex, :date_of_birth,
+    to: :@model, prefix: :prisoner, allow_nil: true
 
   def edit_section_path
     Rails.application.routes.url_helpers.identification_path(@model)

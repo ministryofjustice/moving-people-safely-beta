@@ -3,12 +3,12 @@
 @import "typography";
 @import "measurements";
 @import "colours";
-@import "typography";
 @import "conditionals";
 @import "design-patterns/buttons";
 @import "design-patterns/alpha-beta";
 
 // GOV.UK Elements
+@import "elements/elements-typography";
 @import "elements/forms";
 @import "elements/forms/form-block-labels";
 @import "elements/forms/form-validation";
@@ -22,3 +22,4 @@
 @import "confirmation";
 @import "summary";
 @import "navigation";
+@import "quick_actions";

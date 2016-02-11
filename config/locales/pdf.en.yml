@@ -1,0 +1,15 @@
+en:
+  pdfs:
+    prisoner_information:
+      copy_type: Master
+      cover_sheet: Cover sheet
+      date_of_travel: Date of travel
+      protective_marking: Official - Sensitive
+      photo_message: Attach photo if available
+      family_name: Family name
+      forenames: Forenames
+      dob: Date of birth
+      age: Age
+      sex: Sex
+      nationality: Nationality
+      prison_number: Prison number

@@ -1,6 +1,12 @@
 <div class="grid-row">
   <div class="column-one-quarter">
     <%= render('shared/navigation') %>
+    <div class="quick-actions">
+      <h2 class="heading-small"><%= t('quick_actions.heading') %></h2>
+      <ul>
+        <li><%= link_to(t('quick_actions.preview'), pdf_path(escort)) %></li>
+      </ul>
+    </div>
   </div>
   <div class="column-three-quarters">
     <header>
@@ -17,5 +23,3 @@
     <% end %>
   </div>
 </div>
-
-

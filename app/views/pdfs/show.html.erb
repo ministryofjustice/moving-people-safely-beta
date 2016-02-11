@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <style>
+    <%= Rails.application.assets['pdf.css'].to_s.html_safe %>
+  </style>
+</head>
+<body>
+  <%=
+    render(
+        'pdfs/prisoner_information',
+        prisoner_information: escort.prisoner_information
+    )
+  %>
+</body>
+</html>

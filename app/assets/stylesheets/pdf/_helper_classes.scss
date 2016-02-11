@@ -1,0 +1,51 @@
+.visuallyhidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.padded {
+  padding: $padding;
+  padding-bottom: 0;
+}
+
+.white-background {
+  background: $white;
+}
+
+.light-background {
+  background: $background_grey;
+}
+
+.dark-border {
+  border: $border;
+}
+
+.input {
+  @extend .white-background;
+  @extend .dark-border;
+  min-height: $input-height;
+  min-width: $input-min-width;
+  padding: $input-padding;
+}
+
+.input-margin {
+  margin-right: $input-margin;
+}
+
+.col {
+  float: left;
+}
+
+.row {
+  margin-bottom: $row-margin;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
