@@ -18,7 +18,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'filling in the prisoner identification page' do
     start_escort_form
-    click_button 'Save'
+    click_save
 
     expect(page).to have_content 'There were problems saving the form'
     expect(page).to have_content "Prison number can't be blank"
@@ -29,9 +29,21 @@ RSpec.feature 'completing digital person escort record', type: :feature do
       to have_content 'Escort record updated successfully'
   end
 
+  scenario 'filling in the risks page' do
+    start_escort_form
+    fill_in_identification
+    click_link 'Risks'
+    fill_in_risks
+
+    expect(page).
+      to have_content 'Escort record updated successfully'
+  end
+
   scenario 'vieiwing the summary of an escort' do
     start_escort_form
     fill_in_identification
+    click_link 'Risks'
+    fill_in_risks
     click_link 'Summary'
 
     expect(page).to have_text('Summary').
