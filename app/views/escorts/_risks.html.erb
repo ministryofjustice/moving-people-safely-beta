@@ -1,10 +1,7 @@
-<% risks = %i[ to_self to_others violence from_others escape intolerant_behaviour prohibited_items ] %>
-<% risks.each do |risk| %>
-    <%= render('shared/risk', f: f, risk: risk) %>
+<% Risks::GENERAL.each do |risk| %>
+  <%= render('shared/risk', f: f, risk: risk) %>
 <% end %>
 <h2><%= t('.transit_heading') %></h2>
-<% transit_risks = %i[ disabilities allergies non_association ] %>
-<% transit_risks.each do |risk| %>
-    <%= render('shared/risk', f: f, risk: risk) %>
+<% Risks::TRANSIT.each do |risk| %>
+  <%= render('shared/risk', f: f, risk: risk) %>
 <% end %>
-
