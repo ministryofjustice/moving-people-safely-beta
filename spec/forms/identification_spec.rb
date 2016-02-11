@@ -107,7 +107,7 @@ RSpec.describe Identification, type: :form do
 
   describe '#target' do
     it 'returns the escort model' do
-      expect(subject.target).to eq escort
+      expect(subject.target).to eq escort.prisoner
     end
   end
 
