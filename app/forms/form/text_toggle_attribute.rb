@@ -12,6 +12,17 @@ class Form
       def self.text_toggle_attribute(attribute_name)
         attribute attribute_name,              MaybeBoolean
         attribute "#{attribute_name}_details", String
+        allow_details_to_be_cleared_for attribute_name
+      end
+
+      def self.allow_details_to_be_cleared_for(attribute_name)
+        define_method("#{attribute_name}_details=") do |text|
+          if public_send(attribute_name)
+            super(text)
+          else
+            super(nil)
+          end
+        end
       end
     end
   end
