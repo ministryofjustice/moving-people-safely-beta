@@ -8,7 +8,8 @@
 }
 
 .padded {
-  padding: 1em;
+  padding: $padding;
+  padding-bottom: 0;
 }
 
 .white-background {
@@ -16,19 +17,23 @@
 }
 
 .light-background {
-  background: #E0E3E3;
+  background: $background_grey;
 }
 
 .dark-border {
-  border: 0.1em solid $dark_grey;
+  border: $border;
+}
+
+.input {
+  @extend .white-background;
+  @extend .dark-border;
+  min-height: $input-height;
+  min-width: $input-min-width;
+  padding: $input-padding;
 }
 
 .input-margin {
-  margin-right: 2%;
-}
-
-.input-margin-px {
-  margin-right: 4px;
+  margin-right: $input-margin;
 }
 
 .col {
@@ -36,7 +41,7 @@
 }
 
 .row {
-  margin-bottom: 1.5em;
+  margin-bottom: $row-margin;
 }
 
 .row:after {

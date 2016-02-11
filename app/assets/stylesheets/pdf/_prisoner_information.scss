@@ -1,7 +1,7 @@
 .prisoner-information {
   @extend .padded;
   @extend .light-background;
-  margin-top: 1em;
+  margin-top: $margin-top;
 
   > div {
     @extend .row;
@@ -9,7 +9,7 @@
 
   .information {
     @extend .col;
-    width: 80%;
+    width: 78.6%;
   }
 
   .names {
@@ -18,11 +18,11 @@
       @extend .col;
     }
     .family-name {
-      width: 55%;
+      width: 52%;
       @extend .input-margin;
     }
     .forenames {
-      width: 38%;
+      width: 42%;
     }
   }
 
@@ -40,12 +40,6 @@
     margin-bottom: 0.5em;
   }
 
-  .input {
-    @extend .white-background;
-    @extend .dark-border;
-    padding: 0.5em;
-  }
-
   .secondary {
     @extend .row;
   }
@@ -53,24 +47,28 @@
   .dates {
     @extend .col;
     @extend .input-margin;
-    width: 27%;
+    width: 31%;
     .input {
       @extend .col;
-      @extend .input-margin-px;
+      @extend .input-margin;
+      &:last-child {
+        width: 3em;
+        margin-right: 0;
+      }
     }
   }
 
   .age, .sex {
-    width: 12%;
+    width: 10%;
     @extend .input-margin;
     @extend .col;
     .input {
-      width: 1.5em;
+      width: $input-min-width;
     }
   }
 
   .nationality {
-    width: 38%;
+    width: 37.6%;
     @extend .input-margin;
     @extend .col;
   }
