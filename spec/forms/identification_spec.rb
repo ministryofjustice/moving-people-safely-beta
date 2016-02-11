@@ -5,6 +5,12 @@ RSpec.describe Identification, type: :form do
 
   subject { described_class.new(escort) }
 
+  it_behaves_like 'a form that syncs to a model', family_name: 'Patti',
+                                                  forenames: 'Smith',
+                                                  sex: 'female',
+                                                  prison_number: 'F7267DF',
+                                                  nationality: 'American'
+
   describe 'validations' do
     it { is_expected.to validate_presence_of(:prison_number) }
 
