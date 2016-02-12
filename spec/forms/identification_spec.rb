@@ -115,10 +115,4 @@ RSpec.describe Identification, type: :form do
       end
     end
   end
-
-  describe '#url' do
-    it 'returns the url where the form is submitted to' do
-      expect(subject.url).to eq "/escort/#{escort.id}/identification"
-    end
-  end
 end
