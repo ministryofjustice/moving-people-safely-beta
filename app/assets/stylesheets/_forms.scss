@@ -17,25 +17,12 @@
 
 .js_has_optional_section {
   .unknown_value {
-    transition-property: color;
-    -webkit-transition-duration: 300ms;
-    -moz-transition-duration: 300ms;
-    -ms-transition-duration: 300ms;
-    -o-transition-duration: 300ms;
-    transition-duration: 300ms;
+    padding: 21px 30px 15px 5px;
     display: inline-block;
     margin-left: 0.5em;
     font-size: 0.8em;
-  }
-
-  :checked + .unknown_value {
-    color: #FFF;
-  }
-
-  :focus + .unknown_value {
-    background-color: #ffbf47;
-    outline: 3px solid #ffbf47;
-    color: #000;
+    color: $govuk-blue;
+    text-decoration: underline;
   }
 
   .block-label.inline {
@@ -52,6 +39,14 @@
     margin-bottom: 15px;
   }
 
+  .form-hint {
+    margin-top: 5px;
+  }
+
+  .js-enabled & {
+    .optional-section {
+      border-left: $grey-2 solid 4px;
+      padding: 14px 0 14px 14px;
+    }
+  }
 }
-
-
