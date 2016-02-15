@@ -1,7 +1,5 @@
 class Form
-  include Virtus.model
-  include ActiveModel::Conversion
-  include ActiveModel::Validations
+  include Core
   include DateHandling
 
   extend ActiveModel::Translation
@@ -14,9 +12,7 @@ class Form
   end
 
   def assign_attributes(params)
-    params.each do |key, value|
-      public_send("#{key}=", value)
-    end
+    params.each { |key, value| public_send("#{key}=", value) }
   end
 
   def save
@@ -28,14 +24,8 @@ class Form
     end
   end
 
-  def name
-    self.class.name.downcase
-  end
-  alias_method :template, :name
-
   def url
-    Rails.application.routes.url_helpers.
-      send("#{name}_path", model)
+    Rails.application.routes.url_helpers.send("#{name}_path", model)
   end
 
   def target
@@ -45,8 +35,6 @@ class Form
 private
 
   def load_model_data
-    attributes.each_key do |key|
-      public_send("#{key}=", target.send(key))
-    end
+    attributes.each_key { |key| public_send("#{key}=", target.send(key)) }
   end
 end
