@@ -43,5 +43,51 @@ RSpec.shared_examples 'a form with a text toggle attribute' do |attributes|
         end
       end
     end
+
+    describe 'validations' do
+      context "when #{attribute}_details aren't present" do
+        context "when #{attribute} is true" do
+          before do
+            subject.public_send("#{attribute}=", 'true')
+            subject.public_send("#{attribute}_details=", nil)
+          end
+
+          it 'is expected to be invalid' do
+            subject.validate
+            expect(subject.errors["#{attribute}_details"]).not_to be_empty
+          end
+        end
+
+        %w[ false unknown ].each do |radio_button_value|
+          context "when #{attribute} is #{radio_button_value}" do
+            before do
+              subject.public_send("#{attribute}=", radio_button_value)
+              subject.public_send("#{attribute}_details=", nil)
+            end
+
+            it 'is expected to be valid' do
+              subject.validate
+              expect(subject.errors["#{attribute}_details"]).to be_empty
+            end
+          end
+        end
+      end
+
+      %w[ true false unknown ].each do |radio_button_value|
+        context "when #{attribute}_details are present" do
+          context "when #{attribute} is #{radio_button_value}" do
+            before do
+              subject.public_send("#{attribute}=", radio_button_value)
+              subject.public_send("#{attribute}_details=", user_text)
+            end
+
+            it 'is expected to be valid' do
+              subject.validate
+              expect(subject.errors["#{attribute}_details"]).to be_empty
+            end
+          end
+        end
+      end
+    end
   end
 end
