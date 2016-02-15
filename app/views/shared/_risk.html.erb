@@ -8,10 +8,10 @@
     <p class="form-hint"><%= t(".types.#{risk}.help_text") %></p>
     <div class="form-group">
       <%= f.label risk, value: true, class: 'block-label inline' do %>
-          <%= f.radio_button risk, true %> Yes
+          <%= f.radio_button risk, true %> <%= t(:yes) %>
       <% end %>
       <%= f.label risk, value: false, class: 'block-label inline' do %>
-          <%= f.radio_button risk, false %> No
+          <%= f.radio_button risk, false %> <%= t(:no) %>
       <% end %>
 
       <%= f.radio_button risk, 'unknown', class: "visuallyhidden" %>
