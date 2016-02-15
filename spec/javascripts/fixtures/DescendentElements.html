@@ -7,20 +7,73 @@
 <body>
 <div class="main-content">
     <form method="post">
+        <!--Risk one has nothing checked -->
         <fieldset class="js_has_optional_section">
-            <label for="risk_cleared">
-                <input type="radio" name="risk"
-                       id="risk_cleared" value="cleared">Clear</label>
-            <label class="block-label inline" for="risk_yes">
-                <input type="radio" name="risk" id="risk_yes"
-                       value="yes">Yes
+            <label class="block-label inline" for="risk_one_true">
+                <input type="radio" name="risk_one" id="risk_one_true"
+                       value="true">Yes
             </label>
-            <label class="block-label inline" for="risk_no">
-                <input type="radio" name="risk" id="risk_no"
-                       value="no" checked="checked">No</label>
-            <div class="optional-section"><label for="risk_details">Please
+            <label class="block-label inline" for="risk_one_false">
+                <input type="radio" name="risk_one" id="risk_one_false"
+                       value="false">No</label>
+            <label for="risk_one_unknown">
+                <input type="radio" name="risk_one"
+                       id="risk_one_unknown" value="unknown">Clear
+                selection</label>
+            <div class="optional-section"><label for="risk_one_details">Please
                 give details</label>
-                <textarea id="risk_details"></textarea></div>
+                <textarea id="risk_one_details"></textarea></div>
+        </fieldset>
+        <!--Risk two has 'true' checked-->
+        <fieldset class="js_has_optional_section">
+            <label class="block-label inline" for="risk_two_true">
+                <input type="radio" name="risk_two" id="risk_two_true"
+                       value="true" checked="checked">Yes
+            </label>
+            <label class="block-label inline" for="risk_two_false">
+                <input type="radio" name="risk_two" id="risk_two_false"
+                       value="false">No</label>
+            <label for="risk_two_unknown">
+                <input type="radio" name="risk_two"
+                       id="risk_two_unknown" value="unknown">Clear
+                selection</label>
+            <div class="optional-section"><label for="risk_two_details">Please
+                give details</label>
+                <textarea id="risk_two_details"></textarea></div>
+        </fieldset>
+        <!--Risk three has 'false' checked-->
+        <fieldset class="js_has_optional_section">
+            <label class="block-label inline" for="risk_three_true">
+                <input type="radio" name="risk_three" id="risk_three_true"
+                       value="true">Yes
+            </label>
+            <label class="block-label inline" for="risk_three_false">
+                <input type="radio" name="risk_three" id="risk_three_false"
+                       value="false" checked="checked">No</label>
+            <label for="risk_three_unknown">
+                <input type="radio" name="risk_three"
+                       id="risk_three_unknown" value="unknown">Clear
+                selection</label>
+            <div class="optional-section"><label for="risk_three_details">Please
+                give details</label>
+                <textarea id="risk_three_details"></textarea></div>
+        </fieldset>
+        <!--Risk four has 'unknown' checked -->
+        <fieldset class="js_has_optional_section">
+            <label class="block-label inline" for="risk_four_true">
+                <input type="radio" name="risk_four" id="risk_four_true"
+                       value="true">Yes
+            </label>
+            <label class="block-label inline" for="risk_four_false">
+                <input type="radio" name="risk_four" id="risk_four_false"
+                       value="false">No</label>
+            <label for="risk_four_unknown">
+                <input type="radio" name="risk_four"
+                       id="risk_four_unknown" value="unknown" checked="checked">Clear
+                selection</label>
+            <div class="optional-section"><label for="risk_four_details">Please
+                give details</label>
+                <textarea id="risk_four_details"></textarea></div>
         </fieldset>
 </div>
 <div class="form-action">

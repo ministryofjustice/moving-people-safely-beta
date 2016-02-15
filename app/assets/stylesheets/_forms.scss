@@ -15,3 +15,38 @@
   }
 }
 
+.js_has_optional_section {
+  .unknown_value {
+    padding: 21px 30px 15px 5px;
+    display: inline-block;
+    margin-left: 0.5em;
+    font-size: 0.8em;
+    color: $govuk-blue;
+    text-decoration: underline;
+  }
+
+  .block-label.inline {
+    clear: none;
+    margin-right: 0.5em;
+  }
+
+  textarea {
+    width: 100%;
+    resize: none;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-hint {
+    margin-top: 5px;
+  }
+
+  .js-enabled & {
+    .optional-section {
+      border-left: $grey-2 solid 4px;
+      padding: 14px 0 14px 14px;
+    }
+  }
+}

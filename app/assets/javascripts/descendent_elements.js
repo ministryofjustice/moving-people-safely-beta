@@ -2,33 +2,39 @@
 
 (function ($) {
 
-    var showOptionalSection, showSection, initialize;
+    var trueChecked, falseChecked, manageState, displayUnknownLabel, displayOptSection;
 
-    showOptionalSection = function (value) {
-        return (value == 'yes');
+    trueChecked = function ($block) {
+        return $block.find('[id$=_true]:checked').length == 1;
     };
 
-    showSection = function (id, $element) {
-        (showOptionalSection(id)) ? $element.show() : $element.hide();
+    falseChecked = function ($block) {
+        return $block.find('[id$=_false]:checked').length == 1;
     };
 
-    initialize = function ($element, $optionalSection) {
-        var value = $element.find(':checked').prop('value');
-        showSection(value, $optionalSection);
+    displayUnknownLabel = function($block) {
+        var $unknownLabel = $block.find('label[for$=_unknown]');
+        (trueChecked($block) || falseChecked($block)) ? $unknownLabel.show() : $unknownLabel.hide();
+    };
+
+    displayOptSection = function ($block) {
+        var $optSection = $block.find('.optional-section');
+        (trueChecked($block)) ? $optSection.show() : $optSection.hide();
+    };
+
+    manageState = function ($block) {
+        displayOptSection($block);
+        displayUnknownLabel($block);
     };
 
     $.fn.descendentElements = function () {
-
         return this.each(function () {
-            var $this = $(this),
-                $optionalSection = $('.optional-section', $this);
+            var $this = $(this);
 
-            initialize($this, $optionalSection);
+            manageState($this);
 
-            $('input', $this).on('change', function () {
-                var $input = $(this),
-                    value = $input.prop('value');
-                showSection(value, $optionalSection);
+            $this.on('change', function (e) {
+                manageState($this);
             })
         })
     };

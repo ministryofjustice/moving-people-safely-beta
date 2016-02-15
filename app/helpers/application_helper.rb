@@ -15,7 +15,7 @@ module ApplicationHelper
     path == request.env['PATH_INFO']
   end
 
-  SECTIONS = %w[ summary identification ]
+  SECTIONS = %w[ summary identification risks ]
 
   def navigation_list
     SECTIONS.each_with_object(ActiveSupport::SafeBuffer.new) do |name, buf|
