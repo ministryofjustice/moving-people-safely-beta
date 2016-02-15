@@ -1,6 +1,6 @@
-RSpec.shared_examples 'a form that syncs to a model' do |attributes|
-  let(:escort) { create(:escort, prisoner: build(:prisoner)) }
-  subject { described_class.new(escort) }
+RSpec.shared_examples 'a form that syncs to a model' do |input_attributes, coerced_attribute = {}|
+  subject { described_class.new create(:escort) }
+  coerced_attributes = input_attributes.merge(coerced_attribute)
 
   describe '#initialize' do
     it 'loads a models attributes' do
@@ -12,9 +12,9 @@ RSpec.shared_examples 'a form that syncs to a model' do |attributes|
 
   describe '#assign_attributes' do
     it 'updates the attributes on the form' do
-      subject.assign_attributes(attributes)
+      subject.assign_attributes(input_attributes)
 
-      expect(subject.attributes).to include(attributes)
+      expect(subject.attributes).to include(coerced_attributes)
     end
   end
 
