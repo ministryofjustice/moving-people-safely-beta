@@ -8,6 +8,6 @@ class Risks < Form
   [GENERAL, TRANSIT].flatten.each(&method(:text_toggle_attribute))
 
   def target
-    model.risk_information || model.build_risk_information
+    super.risk_information || super.build_risk_information
   end
 end
