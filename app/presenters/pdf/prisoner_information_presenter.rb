@@ -19,7 +19,7 @@ module Pdf
   private
 
     def date_of_birth
-      @model.date_of_birth
+      @model.prisoner.date_of_birth
     end
   end
 end

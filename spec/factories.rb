@@ -1,5 +1,7 @@
 FactoryGirl.define do
-  factory :escort do
+  factory :escort
+
+  factory :prisoner do
     family_name     'Bigglesworth'
     forenames       'Tarquin'
     prison_number   'A1234BC'

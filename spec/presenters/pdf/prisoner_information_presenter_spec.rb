@@ -5,8 +5,8 @@ RSpec.describe Pdf::PrisonerInformationPresenter, type: :presenter do
   subject { described_class.new(escort) }
 
   context 'attribute does not exist' do
-    let(:escort_without_prisoner_info) { build(:escort, :empty) }
-    subject { described_class.new(escort_without_prisoner_info) }
+    let(:escort) { create(:escort, prisoner: build(:prisoner, :empty)) }
+    subject { described_class.new(escort) }
 
     %i[
       family_name
@@ -24,8 +24,8 @@ RSpec.describe Pdf::PrisonerInformationPresenter, type: :presenter do
   end
 
   context 'attribute does exist' do
-    let(:escort_with_prisoner_info) { build(:escort) }
-    subject { described_class.new(escort_with_prisoner_info) }
+    let(:escort) { create(:escort, prisoner: build(:prisoner)) }
+    subject { described_class.new(escort) }
 
     its(:family_name)         { is_expected.to eq 'Bigglesworth' }
     its(:forenames)           { is_expected.to eq 'Tarquin' }

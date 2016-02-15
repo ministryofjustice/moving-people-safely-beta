@@ -9,4 +9,8 @@ class Identification < Form
 
   validates :prison_number, presence: true
   validates :sex, inclusion: %w[ male female ], allow_nil: true
+
+  def target
+    model.prisoner || model.build_prisoner
+  end
 end

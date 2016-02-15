@@ -3,11 +3,10 @@ class PrisonerInformationPresenter
     @model = model
   end
 
-  delegate :family_name, :forenames, :prison_number,
-    :nationality, to: :@model
+  delegate :family_name, :forenames, :prison_number, :nationality,
+    to: :prisoner
 
-  delegate :sex, :date_of_birth,
-    to: :@model, prefix: :prisoner, allow_nil: true
+  delegate :sex, :date_of_birth, to: :prisoner, prefix: true
 
   def edit_section_path
     Rails.application.routes.url_helpers.identification_path(@model)
@@ -29,5 +28,11 @@ class PrisonerInformationPresenter
     if prisoner_date_of_birth.present?
       AgeCalculator.age(prisoner_date_of_birth)
     end
+  end
+
+private
+
+  def prisoner
+    @model.prisoner || @model.build_prisoner
   end
 end
