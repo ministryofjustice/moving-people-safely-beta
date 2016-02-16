@@ -8,4 +8,8 @@ class Escort < ActiveRecord::Base
       where(prisoners: { prison_number: prison_number }).
       first
   end
+
+  def formatted_updated_at
+    updated_at.strftime('%H:%M %d/%m/%Y')
+  end
 end

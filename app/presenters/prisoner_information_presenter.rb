@@ -6,7 +6,8 @@ class PrisonerInformationPresenter
   delegate :family_name, :forenames, :prison_number, :nationality,
     to: :prisoner
 
-  delegate :sex, :date_of_birth, to: :prisoner, prefix: true
+  delegate :sex, :date_of_birth, :formatted_date_of_birth,
+    to: :prisoner, prefix: true
 
   def edit_section_path
     Rails.application.routes.url_helpers.identification_path(@model)
@@ -19,9 +20,7 @@ class PrisonerInformationPresenter
   end
 
   def date_of_birth
-    if prisoner_date_of_birth.present?
-      prisoner_date_of_birth.strftime('%d/%m/%Y')
-    end
+    prisoner_formatted_date_of_birth
   end
 
   def age
