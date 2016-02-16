@@ -1,5 +1,5 @@
 RSpec.shared_examples 'an auditable record' do
-  subject { described_class.create }
+  subject { create_from_constant(described_class) }
 
   it { is_expected.to be_versioned }
 

@@ -1,5 +1,5 @@
 RSpec.shared_examples 'a record with a uuid as a primary key' do
-  subject { described_class.create }
+  subject { create_from_constant(described_class) }
 
   context 'on create' do
     it 'generates a V4 UUID as a primary key' do

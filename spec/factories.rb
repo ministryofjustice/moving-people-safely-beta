@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :escort
 
   factory :prisoner do
+    escort
     family_name     'Bigglesworth'
     forenames       'Tarquin'
     prison_number   'A1234BC'
@@ -17,5 +18,9 @@ FactoryGirl.define do
       sex             nil
       nationality     nil
     end
+  end
+
+  factory :risk_information do
+    escort
   end
 end
