@@ -8,10 +8,57 @@ RSpec.describe SearchPrisoner, type: :form do
       context 'with valid format' do
         it { is_expected.to be_valid }
       end
+
       context 'with invalid format' do
         subject { described_class.new(prison_number: 'invalid') }
         it { is_expected.to_not be_valid }
       end
     end
   end
+
+  describe '#results?' do
+    context 'when results exist' do
+      before { create(:escort, prisoner: build(:prisoner)) }
+      its(:results?) { is_expected.to be true }
+    end
+
+    context 'when results dont exist' do
+      its(:results?) { is_expected.to be false }
+    end
+
+    context 'without prison_number' do
+      subject { described_class.new }
+      its(:results?) { is_expected.to be false }
+    end
+  end
+
+  describe '#no_results?' do
+    context 'when results exist' do
+      before { create(:escort, prisoner: build(:prisoner)) }
+      its(:no_results?) { is_expected.to be false }
+    end
+
+    context 'when results dont exist' do
+      its(:no_results?) { is_expected.to be true }
+    end
+
+    context 'without prison_number' do
+      subject { described_class.new }
+      its(:no_results?) { is_expected.to be false }
+    end
+  end
+
+  describe '#escort' do
+    context 'when present' do
+      it 'returns the escort' do
+        escort = create(:escort, prisoner: build(:prisoner))
+        expect(subject.escort).to eq escort
+      end
+    end
+
+    context 'when not present' do
+      its(:escort) { is_expected.to be_nil }
+    end
+  end
+>>>>>>> 418d8da... Add find_by_prisoner method to Escort model
 end
