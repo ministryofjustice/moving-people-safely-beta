@@ -1,4 +1,6 @@
 class Identification < Form
+  include Form::DateHandling
+
   attribute :family_name,   String
   attribute :forenames,     String
   attribute :prison_number, String

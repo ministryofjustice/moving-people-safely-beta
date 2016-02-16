@@ -1,6 +1,5 @@
 class Form
   include Core
-  include DateHandling
 
   extend ActiveModel::Translation
 
