@@ -60,5 +60,4 @@ RSpec.describe SearchPrisoner, type: :form do
       its(:escort) { is_expected.to be_nil }
     end
   end
->>>>>>> 418d8da... Add find_by_prisoner method to Escort model
 end

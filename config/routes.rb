@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get 'summary', controller: :escorts
     resource :pdf, only: :show
   end
-  resource :escort, only: %i[ index create ]
-  root to: 'escorts#index'
+  resource :escort, only: :create
+  post 'search', controller: :home_pages
+  root to: 'home_pages#show'
 end

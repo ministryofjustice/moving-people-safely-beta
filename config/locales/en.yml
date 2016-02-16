@@ -9,21 +9,6 @@ en:
     summary: Summary
     risks: Risks
   shared:
-    search:
-      label: Enter a prison number
-      hint: Eg A1234BC
-      error: Enter a valid prison number
-      button: Search
-      no_result:
-        heading: Search results
-        no_results: There are no previously created PERs for prisoner number A1234BC
-        initiate_new_per: Initiate new PER
-      result:
-        heading: Search results
-        prison_number: Prisoner number
-        prisoner_name: Prisoner name
-        date_of_birth: Date of birth
-        last_edited: PER last edited
     risk:
       types:
         to_self:
@@ -75,10 +60,6 @@ en:
       error:
         update: There were problems saving the form
   escorts:
-    index:
-      heading: Find a prisoner
-      description: [ Jane to provide content - Enter prison number ... ]
-      create_escort_button: Create new escort record
     show:
       save: Save
     identification:

@@ -1,7 +1,9 @@
 module FeatureHelpers
   def start_escort_form
     visit '/'
-    click_button 'Create new escort record'
+    fill_in_prison_number 'A1234BC'
+    click_button 'Search'
+    click_button 'Initiate new PER'
   end
 
   def fill_in_identification(options = {})
@@ -26,6 +28,10 @@ module FeatureHelpers
       with: options.fetch(:date_of_birth)&.year
     fill_in 'Nationality', with: options.fetch(:nationality)
     click_save
+  end
+
+  def fill_in_prison_number(prison_number)
+    fill_in 'search_prisoner[prison_number]', with: prison_number
   end
 
   def fill_in_risks(options = {})

@@ -8,9 +8,9 @@
     <th scope="col"><%= t('.last_edited') %></th>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td><%= link_to escort.prisoner.prison_number, summary_path(escort) %></td>
+    <td><%= escort.prisoner.full_name %></td>
+    <td><%= escort.prisoner.formatted_date_of_birth %></td>
+    <td><%= escort.formatted_updated_at %></td>
   </tr>
 </table>
