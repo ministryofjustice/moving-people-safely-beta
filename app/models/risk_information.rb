@@ -1,4 +1,4 @@
 class RiskInformation < ActiveRecord::Base
   has_paper_trail
-  belongs_to :escort
+  belongs_to :escort, touch: true
 end
