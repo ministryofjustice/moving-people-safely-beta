@@ -9,6 +9,9 @@ class Escort < ActiveRecord::Base
       first
   end
 
+  delegate :prison_number, :full_name, :formatted_date_of_birth,
+    prefix: true, to: :prisoner
+
   def formatted_updated_at
     updated_at.strftime('%H:%M %d/%m/%Y')
   end

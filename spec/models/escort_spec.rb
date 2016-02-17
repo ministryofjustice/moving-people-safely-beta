@@ -31,4 +31,21 @@ RSpec.describe Escort, type: :model do
       end
     end
   end
+
+  context 'delegation' do
+    subject { create(:escort, :with_prisoner) }
+
+    it do
+      is_expected.to delegate_method(:prison_number).to(:prisoner).with_prefix
+    end
+
+    it do
+      is_expected.to delegate_method(:full_name).to(:prisoner).with_prefix
+    end
+
+    it do
+      is_expected.to delegate_method(:formatted_date_of_birth).
+        to(:prisoner).with_prefix
+    end
+  end
 end
