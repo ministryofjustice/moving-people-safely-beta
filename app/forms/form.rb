@@ -16,7 +16,7 @@ class Form
 
   def save
     if valid?
-      target.update_attributes(attributes)
+      persist
       true
     else
       false
@@ -32,6 +32,10 @@ class Form
   end
 
 private
+
+  def persist
+    target.update_attributes(attributes)
+  end
 
   def load_model_data
     attributes.each_key { |key| public_send("#{key}=", target.send(key)) }
