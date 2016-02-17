@@ -11,8 +11,7 @@ RSpec.describe Escort, type: :model do
 
     context 'when there is an associated matching prisoner' do
       it 'returns the escort' do
-        escort = create(:escort,
-          prisoner: build(:prisoner, prison_number: 'A1234BC'))
+        escort = create(:escort, :with_prisoner, prison_number: 'A1234BC')
         expect(subject).to eq escort
       end
     end

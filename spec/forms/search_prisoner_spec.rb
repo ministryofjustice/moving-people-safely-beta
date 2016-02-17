@@ -20,7 +20,7 @@ RSpec.describe SearchPrisoner, type: :form do
 
   describe '#results?' do
     context 'when results exist' do
-      before { create(:escort, prisoner: build(:prisoner)) }
+      before { create(:escort, :with_prisoner) }
       its(:results?) { is_expected.to be true }
     end
 
@@ -36,7 +36,7 @@ RSpec.describe SearchPrisoner, type: :form do
 
   describe '#no_results?' do
     context 'when results exist' do
-      before { create(:escort, prisoner: build(:prisoner)) }
+      before { create(:escort, :with_prisoner) }
       its(:no_results?) { is_expected.to be false }
     end
 
@@ -53,7 +53,7 @@ RSpec.describe SearchPrisoner, type: :form do
   describe '#escort' do
     context 'when present' do
       it 'returns the escort' do
-        escort = create(:escort, prisoner: build(:prisoner))
+        escort = create(:escort, :with_prisoner, prison_number: 'A1234BC')
         expect(subject.escort).to eq escort
       end
     end

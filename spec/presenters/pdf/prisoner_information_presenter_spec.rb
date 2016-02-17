@@ -24,7 +24,7 @@ RSpec.describe Pdf::PrisonerInformationPresenter, type: :presenter do
   end
 
   context 'attribute does exist' do
-    let(:escort) { create(:escort, prisoner: build(:prisoner)) }
+    let(:escort) { create(:escort, :with_prisoner) }
     subject { described_class.new(escort) }
 
     its(:family_name)         { is_expected.to eq 'Bigglesworth' }

@@ -13,7 +13,7 @@ RSpec.describe CreateEscort, type: :form do
 
       context 'with existing all upcase prison_number' do
         before do
-          create(:escort, prisoner: build(:prisoner, prison_number: 'A1234BC'))
+          create(:escort, :with_prisoner, prison_number: 'A1234BC')
         end
 
         it { is_expected.to_not be_valid }

@@ -1,5 +1,15 @@
 FactoryGirl.define do
-  factory :escort
+  factory :escort do
+    trait :with_prisoner do
+      transient do
+        prison_number 'A1234BC'
+      end
+
+      after :create do |escort, evaluator|
+        create :prisoner, escort: escort, prison_number: evaluator.prison_number
+      end
+    end
+  end
 
   factory :prisoner do
     escort
