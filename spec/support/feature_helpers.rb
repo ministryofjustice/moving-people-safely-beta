@@ -8,7 +8,6 @@ module FeatureHelpers
 
   def fill_in_identification(options = {})
     options = {
-      prison_number: 'A1234BC',
       family_name: 'Bigglesworth',
       forenames: 'Tarquin',
       sex: 'Male',
@@ -16,7 +15,6 @@ module FeatureHelpers
       nationality: 'British'
     }.merge(options)
 
-    fill_in 'Prison number', with: options.fetch(:prison_number)
     fill_in 'Family name', with: options.fetch(:family_name)
     fill_in 'Forenames', with: options.fetch(:forenames)
     choose options.fetch(:sex)

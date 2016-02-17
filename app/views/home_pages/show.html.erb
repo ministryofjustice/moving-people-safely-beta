@@ -2,7 +2,6 @@
   <div class="column-three-quarters">
     <header>
       <h1><%= t('.heading') %></h1>
-      <%= button_to t('.create_escort_button'), { controller: :escorts, action: :create }, class: 'button' %>
       <p><%= t('.description') %></p>
     </header>
     <%= form_for form, url: search_path do |f| %>

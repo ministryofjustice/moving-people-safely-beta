@@ -7,12 +7,15 @@ RSpec.feature 'searching for a prisoner', type: :feature do
 
   context 'with a valid prison number' do
     context 'when prison number is not present' do
-      scenario 'shows no results' do
+      scenario 'allows to initiate a new PER' do
         visit '/'
         fill_in_prison_number 'Z9876XY'
         click_button 'Search'
         expect(page).to have_content 'There are no previously created PERs ' \
           'for prisoner number Z9876XY'
+        click_button 'Initiate new PER'
+        expect(page).to have_content 'Z9876XY'
+        expect(current_path).to eq identification_path(Escort.last)
       end
     end
 
