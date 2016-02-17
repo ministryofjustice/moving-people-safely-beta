@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CreateEscort, type: :form do
-  subject { described_class.new(prison_number: 'A1234BC') }
+  subject { described_class.new(prison_number: 'a1234Bc') }
 
   it_behaves_like 'a form with prison_number'
 
@@ -11,7 +11,7 @@ RSpec.describe CreateEscort, type: :form do
         it { is_expected.to be_valid }
       end
 
-      context 'with existing prison_number' do
+      context 'with existing all upcase prison_number' do
         before do
           create(:escort, prisoner: build(:prisoner, prison_number: 'A1234BC'))
         end
@@ -22,10 +22,17 @@ RSpec.describe CreateEscort, type: :form do
   end
 
   describe '#save' do
-    it 'creates an escort with prisoner' do
-      subject.save
+    before { subject.save }
+
+    it 'creates an escort' do
       expect(subject.escort).to be_persisted
+    end
+
+    it 'creates a prisoner for the escort' do
       expect(subject.escort.prisoner).to be_persisted
+    end
+
+    it 'sets the prison number to be upper cased' do
       expect(subject.escort.prisoner.prison_number).to eq 'A1234BC'
     end
   end
