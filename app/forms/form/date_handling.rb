@@ -22,6 +22,11 @@ class Form
         end
 
         def build_date_presenter_for(attribute_name)
+          # The purpose of this method is to provide an object
+          # that behaves like a date for use in the view layer.
+          # In this case an object is required to respond to
+          # day, month or year messages. When a date cannot be
+          # coerced or is nil an UncoercedDate instance is returned.
           define_method("#{attribute_name}_presenter") do
             value = public_send(attribute_name)
             value.is_a?(Date) ? value : UncoercedDate.new(value)
