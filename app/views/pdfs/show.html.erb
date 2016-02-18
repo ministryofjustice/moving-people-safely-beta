@@ -6,11 +6,14 @@
   </style>
 </head>
 <body>
-  <%=
-    render(
-        'pdfs/prisoner_information',
-        prisoner_information: escort.prisoner_information
-    )
-  %>
+<%=
+  render('pdfs/header')
+%>
+<%=
+  render(
+      'pdfs/prisoner_information',
+      prisoner_information: escort.prisoner_information
+  )
+%>
 </body>
 </html>

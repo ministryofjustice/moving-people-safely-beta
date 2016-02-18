@@ -1,5 +1,7 @@
 en:
   pdfs:
+    header:
+      title: Person Escort Record - cover sheet
     prisoner_information:
       copy_type: Master
       cover_sheet: Cover sheet
@@ -15,4 +17,3 @@ en:
       nationality: :'shared.nationality'
       cro_number: :'shared.cro_number'
       pnc_number: :'shared.pnc_number'
-
