@@ -34,7 +34,7 @@ en:
       cover_sheet: Cover sheet
       date_of_travel: Date of travel
       protective_marking: Official - Sensitive
-      photo_message: Attach photo if available
+      photo_message: Attach photo
       family_name: :'shared.family_name'
       forenames: :'shared.forenames'
       dob: :'shared.date_of_birth'

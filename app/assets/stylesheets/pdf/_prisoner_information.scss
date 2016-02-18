@@ -39,6 +39,19 @@
     @extend .row;
   }
 
+  .dates {
+    @extend .col;
+    width: 33%;
+    .input {
+      @extend .col;
+      @extend .input-margin;
+      margin-right: 0;
+      &:last-child {
+        width: 4em;
+      }
+    }
+  }
+
   .age {
     margin-right: 0.3em;
     width: 10%;
@@ -67,11 +80,10 @@
 
   .identification-numbers {
     @extend .row;
-
-    > div {
-      @extend .input-margin;
-      @extend .col;
-    }
+  < < < < < < < HEAD == == == = > > > > > > > 02 d57d4 . . . Update personal details to reflect latest design > div {
+    @extend .input-margin;
+    @extend .col;
+  }
     .prison-number {
       width: 30%;
     }
@@ -84,3 +96,22 @@
 
   }
 }
+
+<
+<
+<
+<
+<
+<
+<
+HEAD
+
+==
+==
+==
+=
+
+> > > > > > >
+
+02
+d57d4... Update personal details to reflect latest design
