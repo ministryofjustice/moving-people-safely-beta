@@ -9,7 +9,7 @@
 
   .information {
     @extend .col;
-    width: 78.6%;
+    width: 70.1%;
   }
 
   .names {
@@ -30,8 +30,8 @@
     @extend .col;
     @extend .dark-border;
     background-color: $white;
-    width: 8em;
-    padding: 5em 1em;
+    width: 12em;
+    padding: 6.7em 1em;
     text-align: center;
   }
 
@@ -46,19 +46,29 @@
 
   .dates {
     @extend .col;
-    @extend .input-margin;
-    width: 31%;
+    width: 33%;
     .input {
       @extend .col;
       @extend .input-margin;
+      margin-right: 0;
       &:last-child {
-        width: 3em;
-        margin-right: 0;
+        width: 4em;
       }
     }
   }
 
-  .age, .sex {
+  .age {
+    margin-right: 0.3em;
+    width: 10%;
+    @extend .input-margin;
+    @extend .col;
+    .input {
+      width: $input-min-width;
+    }
+  }
+
+  .sex {
+    margin-right: 0.5em;
     width: 10%;
     @extend .input-margin;
     @extend .col;
@@ -68,17 +78,27 @@
   }
 
   .nationality {
-    width: 37.6%;
+    width: 41.6%;
     @extend .input-margin;
     @extend .col;
   }
 
   .identification-numbers {
     @extend .row;
-    .prison-number, .cro-number, .pnc-number {
+
+    > div {
       @extend .input-margin;
       @extend .col;
-      width: 25%;
     }
+    .prison-number {
+      width: 30%;
+    }
+    .pnc-number {
+      width: 30%
+    }
+    .cro-number {
+      width: 30%
+    }
+
   }
 }

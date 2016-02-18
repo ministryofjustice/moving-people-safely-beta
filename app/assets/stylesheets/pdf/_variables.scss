@@ -8,7 +8,7 @@ $background_grey: #E0E3E3;
 // Sizes
 $base-print-font-size: 13px;
 $smaller-print-font: ($base-print-font-size * 0.9);
-$input-height: 1.9em;
+$input-height: 1.6em;
 $input-min-width: 2em;
 $input-margin: 1em;
 $input-padding: 0.6em 0 0 0.5em;
@@ -18,7 +18,7 @@ $border-width: 0.1em;
 $margin-unit: 0.5em;
 $margin-bottom: ceil(($margin-unit * 2));
 $margin-top: ceil(($margin-unit * 2));
-$row-margin: ceil(($margin-unit * 2));
+$row-margin: ceil(($margin-unit * 1.5));
 $padding-unit: 0.5em;
 $row-margin: $margin-unit * 3;
 $bordered-unit-padding: ($padding / 3);
