@@ -9,7 +9,6 @@ RSpec.describe Identification, type: :form do
     family_name: 'Patti',
     forenames: 'Smith',
     sex: 'female',
-    prison_number: 'F7267DF',
     nationality: 'American',
     date_of_birth: { day: '10', month: '2', year: '1977' }
   }
@@ -23,6 +22,11 @@ RSpec.describe Identification, type: :form do
   it_behaves_like 'a form that belongs to an endpoint', 'identification'
   it_behaves_like 'a form with dates', %i[ date_of_birth ]
 
-  it { is_expected.to validate_presence_of(:prison_number) }
   it { is_expected.to validate_inclusion_of(:sex).in_array(%w[ male female ]) }
+
+  describe '#prison_number' do
+    it 'delegates prison number to the model' do
+      expect(subject.prison_number).to eq escort.prisoner.prison_number
+    end
+  end
 end

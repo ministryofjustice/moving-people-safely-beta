@@ -1,0 +1,16 @@
+<h2>Search results</h2>
+<table class="result">
+  <caption class="visuallyhidden"><%= t('.heading') %></caption>
+  <tr>
+    <th scope="col"><%= t('.prison_number') %></th>
+    <th scope="col"><%= t('.prisoner_name') %></th>
+    <th scope="col"><%= t('.date_of_birth') %></th>
+    <th scope="col"><%= t('.last_edited') %></th>
+  </tr>
+  <tr>
+    <td><%= link_to escort.prisoner_prison_number, summary_path(escort) %></td>
+    <td><%= escort.prisoner_full_name %></td>
+    <td><%= escort.prisoner_formatted_date_of_birth %></td>
+    <td><%= escort.formatted_updated_at %></td>
+  </tr>
+</table>

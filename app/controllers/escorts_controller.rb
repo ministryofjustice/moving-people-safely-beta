@@ -1,6 +1,11 @@
 class EscortsController < ApplicationController
   def create
-    redirect_to identification_path(Escort.create)
+    create_escort_form = CreateEscort.new(prison_number_params)
+    if create_escort_form.save
+      redirect_to identification_path(create_escort_form.escort)
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -35,5 +40,9 @@ private
 
   def form_params
     params[form.name]
+  end
+
+  def prison_number_params
+    params.slice(:prison_number)
   end
 end

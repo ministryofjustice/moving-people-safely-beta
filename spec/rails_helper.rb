@@ -59,6 +59,7 @@ RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveModel, type: :form)
   config.include(FactoryGirl::Syntax::Methods)
   config.include(ActiveSupport::Testing::TimeHelpers)
+  config.include(TestHelper)
 end
 
 Shoulda::Matchers.configure do |config|

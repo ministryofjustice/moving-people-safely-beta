@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe PdfGenerator, type: :service do
   include Capybara::RSpecMatchers
 
-  let(:escort) { create(:escort, prisoner: build(:prisoner)) }
+  let(:escort) { create(:escort, :with_prisoner) }
 
   describe '.for' do
     it 'uses PDFKit library' do

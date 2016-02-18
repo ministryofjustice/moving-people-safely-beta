@@ -60,8 +60,6 @@ en:
       error:
         update: There were problems saving the form
   escorts:
-    index:
-      create_escort_button: Create new escort record
     show:
       save: Save
     identification:
@@ -82,7 +80,6 @@ en:
   quick_actions:
     heading: Quick actions
     preview: Preview PER
-
   activemodel:
     errors:
       models:
