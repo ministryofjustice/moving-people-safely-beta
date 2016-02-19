@@ -39,19 +39,6 @@
     @extend .row;
   }
 
-  .dates {
-    @extend .col;
-    width: 33%;
-    .input {
-      @extend .col;
-      @extend .input-margin;
-      margin-right: 0;
-      &:last-child {
-        width: 4em;
-      }
-    }
-  }
-
   .age {
     margin-right: 0.3em;
     width: 10%;
