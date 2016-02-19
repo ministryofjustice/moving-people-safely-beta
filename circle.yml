@@ -5,4 +5,4 @@ machine:
 
 test:
   override:
-    - bundle exec rake
+    - bundle exec rake SPEC_OPTS="--format documentation"
