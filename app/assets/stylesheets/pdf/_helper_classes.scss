@@ -1,6 +1,6 @@
 .visuallyhidden {
   position: absolute;
-  left: -10000px;
+  left: -1000em;
   top: auto;
   width: 1px;
   height: 1px;
@@ -32,8 +32,33 @@
   padding: $input-padding;
 }
 
+.input-inline {
+  @extend .input;
+  display: inline-block;
+  margin-bottom: $margin-bottom;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.label-inline {
+  display: inline-block;
+  padding: $padding-unit;
+  margin-bottom: $margin-bottom;
+}
 .input-margin {
   margin-right: $input-margin;
+}
+
+.check-box {
+  @extend .input-inline;
+  @extend .dark-border;
+  min-height: $check-box-height;
+  min-width: $check-box-width;
+  margin-top: 0.3em;
+  float: left;
 }
 
 .col {

@@ -1,0 +1,21 @@
+.not-for-release {
+  @extend .light-background;
+  margin-top: $margin-top;
+  > div {
+    @extend .row;
+  }
+  .marker {
+    @extend .padded;
+    @extend .col;
+  }
+  .reason {
+    @extend .padded;
+    @extend .col;
+    strong {
+      float: left;
+    }
+    .input {
+      width: 30.461em;
+    }
+  }
+}
