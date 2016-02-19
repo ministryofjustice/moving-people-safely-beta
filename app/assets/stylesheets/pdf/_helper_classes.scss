@@ -74,3 +74,16 @@
   display: table;
   clear: both;
 }
+
+.dates {
+  @extend .col;
+  width: 33%;
+  .input {
+    @extend .col;
+    @extend .input-margin;
+    margin-right: 0;
+    &:last-child {
+      width: 4em;
+    }
+  }
+}

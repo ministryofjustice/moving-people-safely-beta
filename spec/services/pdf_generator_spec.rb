@@ -27,7 +27,11 @@ RSpec.describe PdfGenerator, type: :service do
           and have_content('Nationality British').
           and have_content('Attach photo').
           and have_content('Not for release').
-          and have_content('Reason')
+          and have_content('Reason').
+          and have_content('From').
+          and have_content('To').
+          and have_content('Date of travel').
+          and have_content('Destination update')
       end
     end
   end

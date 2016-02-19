@@ -5,6 +5,11 @@ en:
     nfr:
       marker_label: Not for release
       reason: Reason
+    move_information:
+      from: From
+      to: To
+      date: Date of travel
+      destination_update: Destination update
     prisoner_information:
       copy_type: Master
       cover_sheet: Cover sheet
