@@ -37,13 +37,7 @@ RSpec.describe PdfGenerator, type: :service do
           and have_content('Sex M').
           and have_content('Prison number A1234BC').
           and have_content('Nationality British').
-          and have_content('Attach photo').
-          and have_content('Not for release').
-          and have_content('Reason').
-          and have_content('From').
-          and have_content('To').
-          and have_content('Date of travel').
-          and have_content('Destination update')
+          and have_content('Attach photo')
       end
     end
     it 'generates the correct HTML for the updates section' do
