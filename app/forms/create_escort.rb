@@ -13,7 +13,8 @@ private
 
   def persist
     @escort = Escort.create(
-      prisoner: Prisoner.new(prison_number: prison_number)
+      prisoner: Prisoner.new(prison_number: prison_number),
+      risk_information: RiskInformation.new
     )
   end
 

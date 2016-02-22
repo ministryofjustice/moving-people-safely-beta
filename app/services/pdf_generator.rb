@@ -12,9 +12,6 @@ module_function
     # TODO: To be refactored when Rails 5 will come out
     # see article: http://goo.gl/ONThkT
     ActionController::Base.new.
-      render_to_string(
-        PDF_TEMPLATE_PATH,
-        locals: { escort: Pdf::EscortPresenter.new(model) }
-      )
+      render_to_string(PDF_TEMPLATE_PATH, locals: { escort: model })
   end
 end
