@@ -10,6 +10,25 @@ en:
       to: To
       date: Date of travel
       destination_update: Destination update
+    front_page_markers:
+      risks:
+        title: Risks overview
+        notes: Section A1 Risk summary
+        violence: Violence
+        escape: Escort escape risk
+        allergies: Allergies
+        disabilities: Disabilities
+        non_association: Non-association
+        no_label: 'No'
+        yes_label: 'Yes'
+      offence_information:
+        title: Offence information
+        notes: Section A2 Offence information
+        cat_a: CAT A
+      healthcare_information:
+        title: Healthcare information
+        acct: ACCT open
+        notes: Section A4 Healthcare information
     prisoner_information:
       copy_type: Master
       cover_sheet: Cover sheet
