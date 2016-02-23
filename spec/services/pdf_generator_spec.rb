@@ -40,5 +40,9 @@ RSpec.describe PdfGenerator, type: :service do
           and have_content('Attach photo')
       end
     end
+    it 'generates the correct HTML for the updates section' do
+      expect(html).to have_content('Indicate significant events during move').
+        and have_content('- these must also be marked on part B')
+    end
   end
 end

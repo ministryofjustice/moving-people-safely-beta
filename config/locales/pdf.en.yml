@@ -44,3 +44,7 @@ en:
       nationality: :'shared.nationality'
       cro_number: :'shared.cro_number'
       pnc_number: :'shared.pnc_number'
+    updates: 
+      title: Updates
+      instructions: Indicate significant events during move - these must also be marked on part B 
+      sash_instructions: Tick if a SASH has been opened

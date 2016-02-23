@@ -7,6 +7,10 @@
   overflow: hidden;
 }
 
+.no-break {
+  page-break-inside: avoid;
+}
+
 .padded {
   padding: $padding;
   padding-bottom: 0;

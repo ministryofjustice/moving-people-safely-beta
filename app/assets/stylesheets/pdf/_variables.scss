@@ -20,11 +20,10 @@ $input-min-width: 2em;
 $year-input-min-width: ceil(($input-min-width * 2));
 $margin-unit: 0.5em;
 $input-margin: ceil(($margin-unit * 2));
-$margin-bottom: ceil(($margin-unit * 2));
+$margin-bottom: ceil(($margin-unit * 1));
 $margin-right: ceil(($margin-unit * 2));
 $margin-top: ceil(($margin-unit * 2));
-$row-margin: ceil(($margin-unit * 1.5));
-$row-margin: $margin-unit * 3;
+$row-margin: $margin-unit * 1.6;
 $bordered-unit-padding: ($padding / 3);
 $font-weight-standard: 400;
 
