@@ -6,11 +6,21 @@
   </style>
 </head>
 <body>
-  <%=
-    render(
-        'pdfs/prisoner_information',
-        prisoner_information: escort.prisoner_information
-    )
-  %>
+  <header>
+    <div class="row">
+      <span class="copy-type"><%= t('.copy_type') %></span>
+      <span class="protective-marking">
+      <%= t('.protective_marking') %>
+      </span>
+    </div>
+    <div class="row">
+      <h2><%= t('.cover_sheet') %></h2>
+      <span class="date-of-travel">
+        <%= t('.date_of_travel') %>
+        <strong><%= '22/5/2016' %></strong>
+      </span>
+    </div>
+  </header>
+  <%= cell('pdf/prisoner_information', escort.prisoner) %>
 </body>
 </html>

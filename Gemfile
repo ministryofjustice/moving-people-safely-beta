@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'cells'
+gem 'cells-erb'
 gem 'govuk_frontend_toolkit'
 gem 'jquery-rails'
 gem 'moj_template', '0.23.2'
