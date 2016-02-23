@@ -46,5 +46,19 @@ en:
       pnc_number: :'shared.pnc_number'
     updates: 
       title: Updates
-      instructions: Indicate significant events during move - these must also be marked on part B 
+      instructions: Indicate significant events during move - these must also be marked on part B
       sash_instructions: Tick if a SASH has been opened
+    risk_summary:
+      heading: A2. Risk summary
+      identifiers_label: PNC / Prison number
+      risks_to_self: Risks to self
+      risks_to_others_public: Risks to others / risks to public
+      date_of_incident: Date of incident
+      violence: Violence
+      risk_from_others: Risk from others
+      escort_escape_risk: Escort escape risk
+      intolerant_behaviour: Intolerant behaviour
+      prohibited_items: Prohibited items
+      non_association: Non-association
+      completed_by: Name of person filling in this section
+      signature: Signature

@@ -91,3 +91,30 @@
     }
   }
 }
+
+.section-heading {
+  @extend .row;
+  padding-bottom: $padding-unit;
+  border-bottom: 1px solid $dark_grey;
+  > div {
+    @extend .col;
+    padding-bottom: 0;
+    width: 50%;
+  }
+  h2 {
+    display: inline;
+  }
+  .identifiers {
+    text-align: right;
+    .label {
+      @extend .label-inline;
+      margin-bottom: 0;
+    }
+    .input {
+      @extend .input-inline;
+      width: 8em;
+      float: right;
+      margin-bottom: 0;
+    }
+  }
+}
