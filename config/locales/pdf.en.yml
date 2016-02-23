@@ -77,3 +77,14 @@ en:
       phone_number: Contact phone number
       updates: Updates
       update_instructions: This section should be completed by a medical professional
+    offences:
+      heading: A4. Offences
+      instructions: See A1. Cover sheet for details of current offence
+      other_offences: Other offences
+      other_offence_instructions: Use an offence status from the following list
+      outstanding_charge: Outstanding charge
+      serving_sentence: Serving sentence
+      on_remand: On remand
+      license_recall: License recall
+      offence: Offence
+      offence_status: Offence status

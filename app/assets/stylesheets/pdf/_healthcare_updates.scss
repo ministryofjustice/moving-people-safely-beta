@@ -2,6 +2,7 @@
   @extend .light-background;
   @extend .padded;
   padding-bottom: $padding-unit;
+  margin-bottom: $margin-bottom;
   .updates {
     margin-top: $margin-top;
     margin-bottom: $margin-bottom;
