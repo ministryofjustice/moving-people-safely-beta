@@ -72,3 +72,8 @@ en:
       instructions: Medication handover details in section B1 Record of handover
       description: Medication description
       administration_information: Medication administration information
+    healthcare_updates:
+      completed_by: Name of medical professional filling in this section
+      phone_number: Contact phone number
+      updates: Updates
+      update_instructions: This section should be completed by a medical professional

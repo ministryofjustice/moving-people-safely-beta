@@ -124,12 +124,12 @@
 .bordered-table {
   width: 100%;
   text-align: left;
-  margin-top: $margin-unit;
   border-collapse: collapse;
+  background-color: $white;
   th, td {
-    border: 1px solid $light_grey;
+    border: 1px solid $dark_grey;
     padding: $padding-unit;
     font-weight: normal;
-    height: 2em;
+    height: 1.7em;
   }
 }
