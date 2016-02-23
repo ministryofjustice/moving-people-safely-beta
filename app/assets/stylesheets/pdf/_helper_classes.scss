@@ -52,6 +52,7 @@
   padding: $padding-unit;
   margin-bottom: $margin-bottom;
 }
+
 .input-margin {
   margin-right: $input-margin;
 }
@@ -116,5 +117,19 @@
       float: right;
       margin-bottom: 0;
     }
+  }
+
+}
+
+.bordered-table {
+  width: 100%;
+  text-align: left;
+  margin-top: $margin-unit;
+  border-collapse: collapse;
+  th, td {
+    border: 1px solid $light_grey;
+    padding: $padding-unit;
+    font-weight: normal;
+    height: 2em;
   }
 }

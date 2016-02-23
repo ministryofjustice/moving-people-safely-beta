@@ -67,3 +67,8 @@ en:
       mpv_required: Tick if MPV required
     shared:
       identifiers_label: PNC / Prison number
+    medication:
+      title: Medication
+      instructions: Medication handover details in section B1 Record of handover
+      description: Medication description
+      administration_information: Medication administration information
