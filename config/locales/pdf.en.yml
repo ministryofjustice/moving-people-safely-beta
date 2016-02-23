@@ -46,6 +46,7 @@ en:
       sash_instructions: Tick if a SASH has been opened
     risk_summary:
       heading: A2. Risk summary
+      identifiers_label: PNC / Prison number
       risks_to_self: Risks to self
       risks_to_others_public: Risks to others / risks to public
       date_of_incident: Date of incident
