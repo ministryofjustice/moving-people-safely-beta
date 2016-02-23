@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   scope 'escort/:id' do
     resource :identification,
       only: %i[ show update ],
