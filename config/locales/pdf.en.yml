@@ -50,7 +50,6 @@ en:
       sash_instructions: Tick if a SASH has been opened
     risk_summary:
       heading: A2. Risk summary
-      identifiers_label: PNC / Prison number
       risks_to_self: Risks to self
       risks_to_others_public: Risks to others / risks to public
       date_of_incident: Date of incident
@@ -62,3 +61,13 @@ en:
       non_association: Non-association
       completed_by: Name of person filling in this section
       signature: Signature
+    healthcare_needs:
+      heading: A3. Healthcare information
+      physical_health_risks: Physical health risks
+      mental_health_risks: Mental health risks
+      social_care_and_other_needs: Social care needs and other health needs
+      allergies: Allergies
+      disabilities: Disabilities
+      mpv_required: Tick if MPV required
+    shared:
+      identifiers_label: PNC / Prison number
