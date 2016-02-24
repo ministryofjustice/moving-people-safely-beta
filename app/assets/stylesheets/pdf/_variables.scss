@@ -24,6 +24,7 @@ $input-margin: ceil(($margin-unit * 2));
 $margin-bottom: ceil(($margin-unit * 1));
 $margin-right: ceil(($margin-unit * 2));
 $margin-top: ceil(($margin-unit * 2));
+$margin-large: ceil(($margin-unit * 3));
 $margin-small: ($margin-unit / 2);
 $row-margin: $margin-unit * 1.6;
 $bordered-unit-padding: ($padding / 3);
