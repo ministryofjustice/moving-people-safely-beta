@@ -1,0 +1,28 @@
+en:
+  helpers:
+    label:
+      identification:
+        prison_number: Prison number
+        forenames: Forenames
+        family_name: Family name
+        nationality: Nationality
+  escorts:
+    identification:
+      heading: Prisoner information
+      dob:
+        label: Date of birth
+        hint: eg, 01 01 1999
+        day_label: Day
+        month_label: Month
+        year_label: Year
+      sex:
+        label: Sex
+        male_label: Male
+        female_label: Female
+  activemodel:
+    errors:
+      models:
+        identification:
+          attributes:
+            date_of_birth:
+              invalid: is invalid

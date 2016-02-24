@@ -3,56 +3,6 @@ en:
   phase_message: This is a new service – your feedback will help us to improve it.
   "yes": "Yes"
   "no": "No"
-  navigation:
-    heading: Primary navigation
-    identification: Identification
-    summary: Summary
-    risks: Risks
-  shared:
-    risk:
-      types:
-        to_self:
-          title: Risks to self
-          help_text: Help copy lorem ipsum dolor
-          details_help_text: Give the details of risk, including incidents, behaviour and triggers
-        to_others:
-          title: Risks to others
-          help_text: Help copy lorem ipsum dolor
-          details_help_text: Give the details of risk, including incidents, behaviour and triggers
-        violence:
-          title: Violence
-          help_text: Help copy lorem ipsum dolor
-          details_help_text: Give the details of risk, including incidents, behaviour and triggers
-        from_others:
-          title: Risk from others
-          help_text: Help copy lorem ipsum dolor
-          details_help_text: Give the details of risk, including incidents, behaviour and triggers
-        escape:
-          title: Escort escape risk
-          help_text: Help copy lorem ipsum dolor
-          details_help_text: Give the details of risk, including incidents, behaviour and triggers
-        intolerant_behaviour:
-          title: Intolerant behavior
-          help_text: Help copy lorem ipsum dolor
-          details_help_text: Give the details of risk, including incidents, behaviour and triggers
-        prohibited_items:
-          title: Prohibited items
-          help_text: Help copy lorem ipsum dolor
-          details_help_text: Give the details of risk, including incidents, behaviour and triggers
-        disabilities:
-          title: Disabilities
-          help_text: Help copy lorem ipsum dolor
-          details_help_text: Give the details of risk, including incidents, behaviour and triggers
-        allergies:
-          title: Allergies
-          help_text: Help copy lorem ipsum dolor
-          details_help_text: Give the details of risk, including incidents, behaviour and triggers
-        non_association:
-          title: Non-association
-          help_text: Help copy lorem ipsum dolor
-          details_help_text: Give the details of risk, including incidents, behaviour and triggers
-      labels:
-        clear: Clear selection
   flash:
     escorts:
       success:
@@ -62,28 +12,3 @@ en:
   escorts:
     show:
       save: Save
-    identification:
-      heading: Prisoner information
-      dob:
-        label: Date of birth
-        hint: eg, 01 01 1999
-        day_label: Day
-        month_label: Month
-        year_label: Year
-      sex:
-        label: Sex
-        male_label: Male
-        female_label: Female
-    risks:
-      heading: Risks
-      transit_heading: Transit risks
-  quick_actions:
-    heading: Quick actions
-    preview: Preview PER
-  activemodel:
-    errors:
-      models:
-        identification:
-          attributes:
-            date_of_birth:
-              invalid: is invalid

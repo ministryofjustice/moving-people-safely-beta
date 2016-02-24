@@ -1,0 +1,50 @@
+en:
+  escorts:
+    risks:
+      heading: Risks
+      transit_heading: Transit risks
+  shared:
+    risk:
+      types:
+        to_self:
+          title: Risks to self
+          help_text: Help copy lorem ipsum dolor
+          details_help_text: Give the details of risk, including incidents, behaviour and triggers
+        to_others:
+          title: Risks to others
+          help_text: Help copy lorem ipsum dolor
+          details_help_text: Give the details of risk, including incidents, behaviour and triggers
+        violence:
+          title: Violence
+          help_text: Help copy lorem ipsum dolor
+          details_help_text: Give the details of risk, including incidents, behaviour and triggers
+        from_others:
+          title: Risk from others
+          help_text: Help copy lorem ipsum dolor
+          details_help_text: Give the details of risk, including incidents, behaviour and triggers
+        escape:
+          title: Escort escape risk
+          help_text: Help copy lorem ipsum dolor
+          details_help_text: Give the details of risk, including incidents, behaviour and triggers
+        intolerant_behaviour:
+          title: Intolerant behavior
+          help_text: Help copy lorem ipsum dolor
+          details_help_text: Give the details of risk, including incidents, behaviour and triggers
+        prohibited_items:
+          title: Prohibited items
+          help_text: Help copy lorem ipsum dolor
+          details_help_text: Give the details of risk, including incidents, behaviour and triggers
+        disabilities:
+          title: Disabilities
+          help_text: Help copy lorem ipsum dolor
+          details_help_text: Give the details of risk, including incidents, behaviour and triggers
+        allergies:
+          title: Allergies
+          help_text: Help copy lorem ipsum dolor
+          details_help_text: Give the details of risk, including incidents, behaviour and triggers
+        non_association:
+          title: Non-association
+          help_text: Help copy lorem ipsum dolor
+          details_help_text: Give the details of risk, including incidents, behaviour and triggers
+      labels:
+        clear: Clear selection
