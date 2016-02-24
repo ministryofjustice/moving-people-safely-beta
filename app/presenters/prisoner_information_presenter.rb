@@ -4,7 +4,7 @@ class PrisonerInformationPresenter
   end
 
   delegate :family_name, :forenames, :prison_number, :nationality,
-    to: :prisoner
+    :cro_number, :pnc_number, to: :prisoner
 
   delegate :sex, :date_of_birth, :formatted_date_of_birth,
     to: :prisoner, prefix: true

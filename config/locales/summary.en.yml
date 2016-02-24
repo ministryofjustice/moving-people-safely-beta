@@ -12,3 +12,5 @@ en:
         sex: Sex
         prison_number: Prison number
         nationality: Nationality
+        cro_number: CRO number
+        pnc_number: PNC number

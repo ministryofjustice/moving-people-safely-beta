@@ -50,6 +50,8 @@ RSpec.feature 'completing digital person escort record', type: :feature do
       and have_content('Age 42').
       and have_content('Sex M').
       and have_content('Nationality British').
-      and have_content('Prison number A1234BC')
+      and have_content('Prison number A1234BC').
+      and have_content('CRO number SOMECRO').
+      and have_content('PNC number SOMEPNC')
   end
 end
