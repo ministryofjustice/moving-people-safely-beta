@@ -16,7 +16,7 @@ RSpec.describe PdfGenerator, type: :service do
   describe '.render' do
     let(:html) { described_class.render(escort) }
     it 'generates the correct HTML for the header' do
-      expect(html).to have_content('Person Escort Record - cover sheet')
+      expect(html).to have_content('Person Escort Record')
     end
     it 'generates the correct HTML for NFR section' do
       expect(html).to have_content('Not for release').
@@ -41,8 +41,8 @@ RSpec.describe PdfGenerator, type: :service do
       end
     end
     it 'generates the correct HTML for the updates section' do
-      expect(html).to have_content('Indicate significant events during move').
-        and have_content('- these must also be marked on part B')
+      expect(html).to have_content('Include relevant updates').
+        and have_content('and heightened risks from section B3')
     end
   end
 end

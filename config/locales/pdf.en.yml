@@ -5,6 +5,9 @@ en:
       heading: A1. Cover sheet
       vehicle_registration: Vehicle registration
       vehicle_cell_number: Vehicle cell no.
+    footer:
+      page_number: '[page] of [topage]'
+      protective_marking: Official - Sensitive
     nfr:
       marker_label: Not for release
       reason: Reason
