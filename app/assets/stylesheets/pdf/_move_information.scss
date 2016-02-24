@@ -11,9 +11,15 @@
     width: 20%;
   }
 
-  .from, .to, .destination-update {
+  .from, .to {
     .input {
-      width: 11.74em;
+      width: 11.2em;
+    }
+  }
+
+  .destination-update {
+    .input {
+      width: 13em;
     }
   }
 }

@@ -9,7 +9,7 @@
 
   .information {
     @extend .col;
-    width: 70.1%;
+    width: 73%;
   }
 
   .names {
@@ -22,16 +22,16 @@
       @extend .input-margin;
     }
     .forenames {
-      width: 42%;
+      width: 43%;
     }
   }
 
   .image-placeholder {
     @extend .col;
-    @extend .dark-border;
+    border: $border-black;
     background-color: $white;
-    width: 12em;
-    padding: 6em 1em;
+    width: 11.5em;
+    padding: 5.97em 1em;
     text-align: center;
   }
 
@@ -60,24 +60,26 @@
   }
 
   .nationality {
-    width: 41.6%;
+    width: 42.6%;
     @extend .input-margin;
     @extend .col;
   }
 
   .identification-numbers {
     @extend .row;
-    @extend .input-margin;
-    @extend .col;
-  }
-  .prison-number {
-    width: 30%;
-  }
-  .pnc-number {
-    width: 30%
-  }
-  .cro-number {
-    width: 30%
+    > div {
+      @extend .input-margin;
+      @extend .col;
+    }
+    .prison-number {
+      width: 30%;
+    }
+    .pnc-number {
+      width: 30%
+    }
+    .cro-number {
+      width: 32%;
+    }
   }
 
 }
