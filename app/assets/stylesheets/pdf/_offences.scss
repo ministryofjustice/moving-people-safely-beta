@@ -1,0 +1,23 @@
+.offences {
+  ul {
+    list-style: none;
+    padding-left: 1em;
+    border-left: 3px solid $light_grey;
+    margin-bottom: $margin-bottom;
+    li {
+      padding: 0.5em 0;
+      &:first-child {
+        padding-top: 0;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+  .bordered-table {
+    margin-top: $margin-top;
+    td:first-child {
+      width: 85%;
+    }
+  }
+}

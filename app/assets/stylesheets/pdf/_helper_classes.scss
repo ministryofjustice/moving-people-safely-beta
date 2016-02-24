@@ -1,10 +1,14 @@
 .visuallyhidden {
   position: absolute;
-  left: -10000px;
+  left: -1000em;
   top: auto;
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+.no-break {
+  page-break-inside: avoid;
 }
 
 .padded {
@@ -32,8 +36,34 @@
   padding: $input-padding;
 }
 
+.input-inline {
+  @extend .input;
+  display: inline-block;
+  margin-bottom: $margin-bottom;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.label-inline {
+  display: inline-block;
+  padding: $padding-unit;
+  margin-bottom: $margin-bottom;
+}
+
 .input-margin {
   margin-right: $input-margin;
+}
+
+.check-box {
+  @extend .input-inline;
+  @extend .dark-border;
+  min-height: $check-box-height;
+  min-width: $check-box-width;
+  margin-top: 0.3em;
+  float: left;
 }
 
 .col {
@@ -48,4 +78,59 @@
   content: "";
   display: table;
   clear: both;
+}
+
+.dates {
+  @extend .col;
+  width: 33%;
+  .input {
+    @extend .col;
+    @extend .input-margin;
+    margin-right: 0;
+    &:last-child {
+      width: 4em;
+    }
+  }
+}
+
+.section-heading {
+  @extend .row;
+  padding-bottom: $padding-unit;
+  border-bottom: 1px solid $dark_grey;
+  page-break-before: always;
+  > div {
+    @extend .col;
+    padding-bottom: 0;
+    width: 50%;
+  }
+  h2 {
+    display: inline;
+  }
+  .persistent_info {
+    text-align: right;
+    .label {
+      @extend .label-inline;
+      margin-bottom: 0;
+    }
+    .input {
+      @extend .input-inline;
+      width: 8em;
+      float: right;
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.bordered-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  background-color: $white;
+  th, td {
+    border: 1px solid $dark_grey;
+    padding: $padding-unit;
+    font-weight: normal;
+    height: 1.7em;
+  }
 }

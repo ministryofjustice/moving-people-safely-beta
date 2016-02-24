@@ -9,7 +9,7 @@
 
   .information {
     @extend .col;
-    width: 78.6%;
+    width: 73%;
   }
 
   .names {
@@ -22,43 +22,35 @@
       @extend .input-margin;
     }
     .forenames {
-      width: 42%;
+      width: 43%;
     }
   }
 
   .image-placeholder {
     @extend .col;
-    @extend .dark-border;
+    border: $border-black;
     background-color: $white;
-    width: 8em;
-    padding: 5em 1em;
+    width: 11.5em;
+    padding: 5.97em 1em;
     text-align: center;
-  }
-
-  .label {
-    display: block;
-    margin-bottom: 0.5em;
   }
 
   .secondary {
     @extend .row;
   }
 
-  .dates {
-    @extend .col;
+  .age {
+    margin-right: 0.3em;
+    width: 10%;
     @extend .input-margin;
-    width: 31%;
+    @extend .col;
     .input {
-      @extend .col;
-      @extend .input-margin;
-      &:last-child {
-        width: 3em;
-        margin-right: 0;
-      }
+      width: $input-min-width;
     }
   }
 
-  .age, .sex {
+  .sex {
+    margin-right: 0.5em;
     width: 10%;
     @extend .input-margin;
     @extend .col;
@@ -68,17 +60,26 @@
   }
 
   .nationality {
-    width: 37.6%;
+    width: 42.6%;
     @extend .input-margin;
     @extend .col;
   }
 
   .identification-numbers {
     @extend .row;
-    .prison-number, .cro-number, .pnc-number {
+    > div {
       @extend .input-margin;
       @extend .col;
-      width: 25%;
+    }
+    .prison-number {
+      width: 30%;
+    }
+    .pnc-number {
+      width: 30%
+    }
+    .cro-number {
+      width: 32%;
     }
   }
+
 }

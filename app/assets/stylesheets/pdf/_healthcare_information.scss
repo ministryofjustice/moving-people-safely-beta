@@ -1,0 +1,31 @@
+.health-section {
+  strong {
+    min-height: 1.5em;
+    display: inline-block;
+    padding-right: $padding-unit;
+  }
+  .content {
+    @extend .input;
+    min-height: 3.5em;
+    margin-bottom: $margin-bottom;
+  }
+}
+
+.disabilities {
+  .mpv-required {
+    display: inline-block;
+    margin-bottom: -$margin-unit;
+    margin-left: $margin-unit;
+    > div {
+      &:first-child {
+        @extend .check-box;
+        margin-bottom: 0;
+      }
+      &:last-child {
+        @extend .label-inline;
+        float: right;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -7,21 +7,28 @@ $background_grey: #E0E3E3;
 
 // Sizes
 $base-print-font-size: 13px;
+$heading-font-size: $base-print-font-size * 1.5;
 $smaller-print-font: ($base-print-font-size * 0.9);
-$input-height: 1.9em;
-$input-min-width: 2em;
-$input-margin: 1em;
+$check-box-width: 1em;
+$check-box-height: 1em;
 $input-padding: 0.6em 0 0 0.5em;
-$year-input-min-width: ceil(($input-min-width * 2));
+$padding-unit: 0.5em;
+$padding-small: ($padding-unit / 2);
 $padding: 1em;
 $border-width: 0.1em;
+$input-height: 1.6em;
+$input-min-width: 2em;
+$year-input-min-width: ceil(($input-min-width * 2));
 $margin-unit: 0.5em;
-$margin-bottom: ceil(($margin-unit * 2));
+$input-margin: ceil(($margin-unit * 2));
+$margin-bottom: ceil(($margin-unit * 1));
+$margin-right: ceil(($margin-unit * 2));
 $margin-top: ceil(($margin-unit * 2));
-$row-margin: ceil(($margin-unit * 2));
-$padding-unit: 0.5em;
-$row-margin: $margin-unit * 3;
+$margin-large: ceil(($margin-unit * 3));
+$margin-small: ($margin-unit / 2);
+$row-margin: $margin-unit * 1.6;
 $bordered-unit-padding: ($padding / 3);
+$font-weight-standard: 400;
 
 // Composites
 $font-family: "Helvetica Neue", Arial, "Lucida Grande", sans-serif;

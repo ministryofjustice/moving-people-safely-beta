@@ -1,40 +1,21 @@
 header {
-  .copy-type {
-    padding: $bordered-unit-padding;
-    border: $border-black;
-    text-transform: uppercase;
-  }
-  .row {
-    clear: both;
-    padding-top: $padding-unit;
-    &:first-child {
-      margin-bottom: $margin-bottom;
-    }
-    &:nth-child(2) {
-      border-bottom: $border;
-      padding-bottom: $padding;
-    }
-  }
-  .protective-marking {
-    text-transform: uppercase;
-    font-size: $smaller-print-font;
-    margin-left: 32%;
-  }
   h1 {
-    @extend .visuallyhidden;
+    font-weight: $font-weight-standard;
+    font-size: $heading-font-size;
+    margin-bottom: $margin-unit;
   }
-  h2 {
-    display: inline-block;
-    font-weight: normal;
-    margin: 0;
+  .heading {
+    width: 30%;
   }
-  .date-of-travel {
-    padding-top: 0.5em;
-    float: right;
-    strong {
-      padding: $bordered-unit-padding;
-      border: $border;
-      margin-left: $margin-unit;
+  .vehicle_reg {
+    @extend .persistent_info;
+    width: 45%;
+  }
+  .cell_no {
+    @extend .persistent_info;
+    width: 25%;
+    .input {
+      width: 3em;
     }
   }
 }

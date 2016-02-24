@@ -1,0 +1,51 @@
+.risk-summary {
+  .section-heading {
+    margin-bottom: $margin-large;
+  }
+}
+
+.risk {
+  @extend .row;
+  > div {
+    @extend .col;
+  }
+  .description {
+    width: 82.7%;
+  }
+  .date {
+    width: 17.3%;
+    text-align: center;
+    .content {
+      border-left: none;
+    }
+  }
+  .title {
+    min-height: 1.5em;
+  }
+  .content {
+    @extend .dark-border;
+    min-height: 4.5em;
+  }
+}
+
+.completed-by {
+  @extend .light-background;
+  @extend .padded;
+  margin-top: $margin-large;
+  > div {
+    @extend .row;
+    div {
+      @extend .col;
+      &:first-child {
+        @extend .label-inline;
+        min-width: 40%;
+        text-align: right;
+      }
+      &:last-child {
+        @extend .input-inline;
+        float: right;
+        min-width: 55%;
+      }
+    }
+  }
+}

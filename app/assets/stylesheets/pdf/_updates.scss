@@ -1,0 +1,17 @@
+.updates {
+  @extend .row;
+  .updates-field {
+    @extend .no-break;
+    @extend .input;
+    min-height: 6.5em;
+    margin-top: $margin-unit;
+  }
+  .sash-container {
+    float: right;
+    .sash-field {
+      @extend .check-box;
+      margin-right: $margin-unit;
+      margin-top: -$margin-small;
+    }
+  }
+}

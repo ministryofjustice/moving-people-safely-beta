@@ -1,11 +1,42 @@
 en:
   pdfs:
-    prisoner_information:
-      copy_type: Master
-      cover_sheet: Cover sheet
-      date_of_travel: Date of travel
+    header:
+      title: Person Escort Record
+      heading: A1. Cover sheet
+      vehicle_registration: Vehicle registration
+      vehicle_cell_number: Vehicle cell no.
+    footer:
+      page_number: '[page] of [topage]'
       protective_marking: Official - Sensitive
-      photo_message: Attach photo if available
+    nfr:
+      marker_label: Not for release
+      reason: Reason
+    move_information:
+      from: From
+      to: To
+      date: Date of travel
+      destination_update: Destination update
+    front_page_markers:
+      risks:
+        title: Risks overview
+        notes: Section A2 Risk summary
+        violence: Violence
+        escape: Escort escape risk
+        allergies: Allergies
+        disabilities: Disabilities
+        non_association: Non-association
+        no_label: 'No'
+        yes_label: 'Yes'
+      offence_information:
+        title: Offence information
+        notes: Section A4 Offences
+        cat_a: CAT A
+      healthcare_information:
+        title: Healthcare information
+        acct: ACCT open
+        notes: Section A3 Healthcare information
+    prisoner_information:
+      photo_message: Attach photo
       family_name: :'shared.family_name'
       forenames: :'shared.forenames'
       dob: :'shared.date_of_birth'
@@ -15,3 +46,51 @@ en:
       nationality: :'shared.nationality'
       cro_number: :'shared.cro_number'
       pnc_number: :'shared.pnc_number'
+    updates: 
+      title: Risk updates
+      instructions: Include relevant updates and heightened risks from section B3
+      sash_instructions: Tick if SASH has been opened
+    risk_summary:
+      heading: A2. Risk summary
+      risks_to_self: Risks to self
+      risks_to_others_public: Risks to others / risks to public
+      date_of_incident: Date of incident
+      violence: Violence
+      risk_from_others: Risk from others
+      escort_escape_risk: Escort escape risk
+      intolerant_behaviour: Intolerant behaviour
+      prohibited_items: Prohibited items
+      non_association: Non-association
+      completed_by: Name of person filling in this section
+      signature: Signature
+    healthcare_needs:
+      heading: A3. Healthcare information
+      physical_health_risks: Physical health risks
+      mental_health_risks: Mental health risks
+      social_care_and_other_needs: Social care needs and other healthcare needs
+      allergies: Allergies
+      disabilities: Disabilities
+      mpv_required: Tick if MPV required
+    shared:
+      identifiers_label: PNC / Prison number
+    medication:
+      title: Medication
+      instructions: 'Medication handover details in section B1: Record of handover'
+      description: Medication description
+      administration_information: Medication administration information
+    healthcare_updates:
+      completed_by: Name of medical professional filling in this section
+      phone_number: Contact phone number
+      updates: Updates
+      update_instructions: This section should be completed by a medical professional
+    offences:
+      heading: A4. Offences
+      instructions: See A1. Cover sheet for details of current offence
+      other_offences: Other offences
+      other_offence_instructions: Use an offence status from the following list
+      outstanding_charge: Outstanding charge
+      serving_sentence: Serving sentence
+      on_remand: On remand
+      license_recall: License recall
+      offence: Offence
+      offence_status: Offence status

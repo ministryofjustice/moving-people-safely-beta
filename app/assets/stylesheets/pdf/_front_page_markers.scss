@@ -1,0 +1,53 @@
+.front-page-markers {
+  @extend .row;
+  @extend .padded;
+  > div {
+    @extend .col;
+  }
+  .title {
+    width: 23%;
+  }
+  .markers {
+    width: 48%;
+    margin-right: $margin-right;
+    border-right: 1px solid $light_grey;
+    padding-right: $padding;
+    .indicator {
+      @extend .row;
+      @extend .light-background;
+      margin-bottom: $margin-bottom;
+      padding: $padding-small;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      > div {
+        @extend .col;
+        &:first-child {
+          width: 60%;
+        }
+      }
+      .label-inline {
+        margin: 0;
+      }
+      .check-box {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .notes {
+    width: 24%;
+    span {
+      display: inline-block;
+      &.health {
+        margin-top: 3.8em;
+      }
+      &.risk {
+        margin-top: 4.1em;
+      }
+      &.offence {
+        margin-top: 0.7em;
+      }
+    }
+  }
+}
+

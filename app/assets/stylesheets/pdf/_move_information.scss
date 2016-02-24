@@ -1,0 +1,25 @@
+.move-information {
+  @extend .row;
+  > div {
+    @extend .col;
+    padding-left: $padding;
+    display: inline-block;
+  }
+
+  .date-of-travel {
+    @extend .dates;
+    width: 20%;
+  }
+
+  .from, .to {
+    .input {
+      width: 11.2em;
+    }
+  }
+
+  .destination-update {
+    .input {
+      width: 13em;
+    }
+  }
+}
