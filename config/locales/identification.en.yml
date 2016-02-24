@@ -6,6 +6,8 @@ en:
         forenames: Forenames
         family_name: Family name
         nationality: Nationality
+        cro_number: CRO number
+        pnc_number: PNC number
   escorts:
     identification:
       heading: Prisoner information
