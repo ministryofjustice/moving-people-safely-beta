@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, skip: %i[ registrations ]
+
   scope 'escort/:id' do
     resource :identification,
       only: %i[ show update ],
