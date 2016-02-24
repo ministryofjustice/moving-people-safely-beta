@@ -5,6 +5,14 @@ RSpec.feature 'completing digital person escort record', type: :feature do
     travel_to(Date.new(2015, 2, 3)) { example.run }
   end
 
+  scenario 'logging into the application' do
+    visit root_path
+    expect(current_path).to eq new_user_session_path
+
+    login
+    expect(current_path).to eq root_path
+  end
+
   scenario 'start a person escort record' do
     start_escort_form
     expected_path = %r{

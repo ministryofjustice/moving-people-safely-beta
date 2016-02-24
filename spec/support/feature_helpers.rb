@@ -1,6 +1,29 @@
 module FeatureHelpers
+  def login
+    email = 'person@prison.com'
+    password = 'secret123'
+    create_user(email, password)
+    login_user(email, password)
+  end
+
+  def create_user(email, password)
+    create(
+      :user,
+      email: email,
+      password: password,
+      password_confirmation: password
+    )
+  end
+
+  def login_user(email, password)
+    visit root_path
+    fill_in 'user[email]', with: email
+    fill_in 'user[password]', with: password
+    click_button 'Log in'
+  end
+
   def start_escort_form
-    visit '/'
+    login
     fill_in_prison_number 'A1234BC'
     click_button 'Search'
     click_button 'Initiate new PER'

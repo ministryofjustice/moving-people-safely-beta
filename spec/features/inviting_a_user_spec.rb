@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature 'inviting a user', type: :feature do
+  let(:step) { InvitationStep.new }
+
   scenario 'user accepts an invitation' do
-    step = InvitationStep.new
     step.invite_user
     step.user_clicks_invitation_link
 
@@ -15,5 +16,10 @@ RSpec.feature 'inviting a user', type: :feature do
     step.set_password valid_password
 
     expect(current_path).to eq root_path
+  end
+
+  scenario 'invitation token does not exist' do
+    step.user_clicks_invitation_link token: 'gibberish'
+    expect(current_path).to eq new_user_session_path
   end
 end

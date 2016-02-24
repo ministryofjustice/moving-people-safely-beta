@@ -8,7 +8,7 @@ RSpec.feature 'starting an escort', type: :feature do
   context 'with a valid prison number' do
     context 'when the prison number does not already exist' do
       it 'allows the user to initiate a new escort' do
-        visit '/'
+        login
         fill_in_prison_number 'Z9876XY'
         click_button 'Search'
         expect(page).to have_content 'There are no previously created PERs ' \
@@ -23,7 +23,7 @@ RSpec.feature 'starting an escort', type: :feature do
       it 'allows the user to edit an existing escort by clicking a link' do
         start_escort_form
         fill_in_identification
-        visit '/'
+        visit root_path
         fill_in_prison_number 'A1234BC'
         click_button 'Search'
         expect(page).to have_link('A1234BC', href: summary_path(Escort.last)).
@@ -32,7 +32,7 @@ RSpec.feature 'starting an escort', type: :feature do
 
       context 'the prison number has been persisted in another session' do
         it 'redirects to the home page' do
-          visit '/'
+          login
           fill_in_prison_number 'Z9876XY'
           click_button 'Search'
           # simulate creation of an escort with the same prison number
@@ -47,7 +47,7 @@ RSpec.feature 'starting an escort', type: :feature do
 
   context 'with an invalid prison number' do
     it 'shows an error message' do
-      visit '/'
+      login
       fill_in_prison_number 'invalid_prison_number'
       click_button 'Search'
       expect(page).to have_content 'Enter a valid prison number'
