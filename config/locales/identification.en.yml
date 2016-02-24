@@ -2,17 +2,17 @@ en:
   helpers:
     label:
       identification:
-        prison_number: Prison number
-        forenames: Forenames
-        family_name: Family name
-        nationality: Nationality
-        cro_number: CRO number
-        pnc_number: PNC number
+        family_name: :'shared.family_name'
+        forenames: :'shared.forenames'
+        prison_number: :'shared.prison_number'
+        nationality: :'shared.nationality'
+        cro_number: :'shared.cro_number'
+        pnc_number: :'shared.pnc_number'
   escorts:
     identification:
-      heading: Prisoner information
+      heading: 'shared.prisoner_information_heading'
       dob:
-        label: Date of birth
+        label: :'shared.date_of_birth'
         hint: eg, 01 01 1999
         day_label: Day
         month_label: Month

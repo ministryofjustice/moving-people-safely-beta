@@ -1,0 +1,12 @@
+en:
+  shared:
+    age: Age
+    cro_number: CRO number
+    date_of_birth: Date of birth
+    family_name: Family name
+    forenames: Forenames
+    nationality: Nationality
+    pnc_number: PNC number
+    prison_number: Prison number
+    prisoner_information_heading: Prisoner Information
+    sex: Sex

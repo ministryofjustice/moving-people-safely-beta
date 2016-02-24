@@ -6,12 +6,12 @@ en:
       date_of_travel: Date of travel
       protective_marking: Official - Sensitive
       photo_message: Attach photo if available
-      family_name: Family name
-      forenames: Forenames
-      dob: Date of birth
-      age: Age
-      sex: Sex
-      nationality: Nationality
-      prison_number: Prison number
-      cro_number: CRO Number
-      pnc_number: PNC Number
+      family_name: :'shared.family_name'
+      forenames: :'shared.forenames'
+      dob: :'shared.date_of_birth'
+      age: :'shared.age'
+      sex: :'shared.sex'
+      prison_number: :'shared.prison_number'
+      nationality: :'shared.nationality'
+      cro_number: :'shared.cro_number'
+      pnc_number: :'shared.pnc_number'
