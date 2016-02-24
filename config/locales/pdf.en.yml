@@ -47,9 +47,9 @@ en:
       cro_number: :'shared.cro_number'
       pnc_number: :'shared.pnc_number'
     updates: 
-      title: Updates
+      title: Risk updates
       instructions: Include relevant updates and heightened risks from section B3
-      sash_instructions: Tick if a SASH has been opened
+      sash_instructions: Tick if SASH has been opened
     risk_summary:
       heading: A2. Risk summary
       risks_to_self: Risks to self
@@ -67,7 +67,7 @@ en:
       heading: A3. Healthcare information
       physical_health_risks: Physical health risks
       mental_health_risks: Mental health risks
-      social_care_and_other_needs: Social care needs and other health needs
+      social_care_and_other_needs: Social care needs and other healthcare needs
       allergies: Allergies
       disabilities: Disabilities
       mpv_required: Tick if MPV required
@@ -75,7 +75,7 @@ en:
       identifiers_label: PNC / Prison number
     medication:
       title: Medication
-      instructions: Medication handover details in section B1 Record of handover
+      instructions: 'Medication handover details in section B1: Record of handover'
       description: Medication description
       administration_information: Medication administration information
     healthcare_updates:
