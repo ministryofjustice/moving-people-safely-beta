@@ -1,7 +1,21 @@
 header {
-  border-bottom: $border;
-  h2 {
+  h1 {
     font-weight: $font-weight-standard;
+    font-size: $heading-font-size;
     margin-bottom: $margin-unit;
+  }
+  .heading {
+    width: 30%;
+  }
+  .vehicle_reg {
+    @extend .persistent_info;
+    width: 45%;
+  }
+  .cell_no {
+    @extend .persistent_info;
+    width: 25%;
+    .input {
+      width: 3em;
+    }
   }
 }
