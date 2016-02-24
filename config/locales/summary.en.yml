@@ -6,7 +6,7 @@ en:
         heading: Prisoner Information
         edit_section: Edit
         family_name: Family name
-        forenames: Forename(s)
+        forenames: Forenames
         date_of_birth: Date of birth
         age: Age
         sex: Sex

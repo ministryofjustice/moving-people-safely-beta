@@ -45,7 +45,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
       and have_text('Prisoner Information').
       and have_link('Edit', href: identification_path(Escort.last)).
       and have_content('Family name Bigglesworth').
-      and have_content('Forename(s) Tarquin').
+      and have_content('Forenames Tarquin').
       and have_content('Date of birth 13/02/1972').
       and have_content('Age 42').
       and have_content('Sex M').
