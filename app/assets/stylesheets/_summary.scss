@@ -43,7 +43,13 @@
       @include grid-column(1/4)
     }
     .prison-number {
-      @include grid-column(1/1)
+      @include grid-column(1/4)
+    }
+    .cro-number {
+      @include grid-column(1/4)
+    }
+    .pnc-number {
+      @include grid-column(1/4)
     }
   }
 }

@@ -3,13 +3,14 @@ en:
     summary:
       heading: Summary
       prisoner_information:
-        heading: Prisoner Information
+        heading: :'shared.prisoner_information_heading'
         edit_section: Edit
-        family_name: Family name
-        forenames: Forename(s)
-        date_of_birth: Date of birth
-        age: Age
-        sex: Sex
-        prison_number: Prison number
-        nationality: Nationality
-        age: Age
+        family_name: :'shared.family_name'
+        forenames: :'shared.forenames'
+        date_of_birth: :'shared.date_of_birth'
+        age: :'shared.age'
+        sex: :'shared.sex'
+        prison_number: :'shared.prison_number'
+        nationality: :'shared.nationality'
+        cro_number: :'shared.cro_number'
+        pnc_number: :'shared.pnc_number'

@@ -10,7 +10,9 @@ RSpec.describe Identification, type: :form do
     forenames: 'Smith',
     sex: 'female',
     nationality: 'American',
-    date_of_birth: { day: '10', month: '2', year: '1977' }
+    date_of_birth: { day: '10', month: '2', year: '1977' },
+    cro_number: 'SOMECRO',
+    pnc_number: 'SOMEPNC'
   }
 
   coercion_overrides = { date_of_birth: Date.civil(1977, 2, 10) }

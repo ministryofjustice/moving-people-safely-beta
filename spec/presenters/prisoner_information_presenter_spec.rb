@@ -22,6 +22,8 @@ RSpec.describe PrisonerInformationPresenter, type: :presenter do
       sex
       prison_number
       nationality
+      cro_number
+      pnc_number
     ].each do |attribute|
       its(attribute) do is_expected.to be_nil end
     end
@@ -37,6 +39,8 @@ RSpec.describe PrisonerInformationPresenter, type: :presenter do
     its(:sex)           { is_expected.to eq 'M' }
     its(:prison_number) { is_expected.to eq 'A1234BC' }
     its(:nationality)   { is_expected.to eq 'British' }
+    its(:cro_number)    { is_expected.to eq 'SOMECRO' }
+    its(:pnc_number)    { is_expected.to eq 'SOMEPNC' }
 
     it 'shows the correct age' do
       travel_to(Date.new(2015, 2, 15)) { expect(subject.age).to eq 43 }

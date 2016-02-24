@@ -19,6 +19,8 @@ FactoryGirl.define do
     date_of_birth   Date.new(1972, 2, 13)
     sex             'male'
     nationality     'British'
+    cro_number      'SOMECRO'
+    pnc_number      'SOMEPNC'
 
     trait :empty do
       family_name     nil
@@ -27,6 +29,8 @@ FactoryGirl.define do
       date_of_birth   nil
       sex             nil
       nationality     nil
+      cro_number      nil
+      pnc_number      nil
     end
   end
 

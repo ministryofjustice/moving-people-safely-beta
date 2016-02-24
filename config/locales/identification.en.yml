@@ -1,0 +1,30 @@
+en:
+  helpers:
+    label:
+      identification:
+        family_name: :'shared.family_name'
+        forenames: :'shared.forenames'
+        prison_number: :'shared.prison_number'
+        nationality: :'shared.nationality'
+        cro_number: :'shared.cro_number'
+        pnc_number: :'shared.pnc_number'
+  escorts:
+    identification:
+      heading: 'shared.prisoner_information_heading'
+      dob:
+        label: :'shared.date_of_birth'
+        hint: eg, 01 01 1999
+        day_label: Day
+        month_label: Month
+        year_label: Year
+      sex:
+        label: Sex
+        male_label: Male
+        female_label: Female
+  activemodel:
+    errors:
+      models:
+        identification:
+          attributes:
+            date_of_birth:
+              invalid: is invalid
