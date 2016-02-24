@@ -96,4 +96,20 @@ module FeatureHelpers
       o[r] = (i.odd? ? ['Yes', 'Some user input'] : ['No', nil])
     end
   end
+
+  def escort
+    Escort.last
+  end
+
+  def user
+    User.last
+  end
+
+  def last_escort_version
+    escort.versions.last
+  end
+
+  def last_user_audited
+    User.find(last_escort_version.whodunnit)
+  end
 end

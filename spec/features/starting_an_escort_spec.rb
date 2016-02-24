@@ -15,7 +15,7 @@ RSpec.feature 'starting an escort', type: :feature do
           'for prisoner number Z9876XY'
         click_button 'Initiate new PER'
         expect(page).to have_content 'Z9876XY'
-        expect(current_path).to eq identification_path(Escort.last)
+        expect(current_path).to eq identification_path(escort)
       end
     end
 
@@ -26,7 +26,7 @@ RSpec.feature 'starting an escort', type: :feature do
         visit root_path
         fill_in_prison_number 'A1234BC'
         click_button 'Search'
-        expect(page).to have_link('A1234BC', href: summary_path(Escort.last)).
+        expect(page).to have_link('A1234BC', href: summary_path(escort)).
           and have_content('Bigglesworth, Tarquin 13/02/1972 00:00 03/02/2015')
       end
 
