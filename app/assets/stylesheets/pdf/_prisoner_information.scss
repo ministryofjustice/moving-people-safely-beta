@@ -75,12 +75,10 @@
 
   .identification-numbers {
     @extend .row;
-    .prison-number {
+    .prison-number, .cro-number, .pnc-number {
       @extend .input-margin;
       @extend .col;
       width: 25%;
     }
   }
 }
-
-
