@@ -45,7 +45,7 @@ en:
       pnc_number: :'shared.pnc_number'
     updates: 
       title: Updates
-      instructions: Indicate significant events during move - these must also be marked on part B
+      instructions: Include relevant updates and heightened risks from section B3
       sash_instructions: Tick if a SASH has been opened
     risk_summary:
       heading: A2. Risk summary
