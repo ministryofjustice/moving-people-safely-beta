@@ -10,7 +10,7 @@ en:
         pnc_number: :'shared.pnc_number'
   escorts:
     identification:
-      heading: 'shared.prisoner_information_heading'
+      heading: :'shared.prisoner_information_heading'
       dob:
         label: :'shared.date_of_birth'
         hint: eg, 01 01 1999

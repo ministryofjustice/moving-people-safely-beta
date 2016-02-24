@@ -18,6 +18,9 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'filling in the prisoner identification page' do
     start_escort_form
+
+    expect(page).to have_heading 'Prisoner Information'
+
     fill_in_identification
 
     expect(page).
@@ -28,6 +31,9 @@ RSpec.feature 'completing digital person escort record', type: :feature do
     start_escort_form
     fill_in_identification
     click_link 'Risks'
+
+    expect(page).to have_heading 'Risks'
+
     fill_in_risks
 
     expect(page).
@@ -41,8 +47,9 @@ RSpec.feature 'completing digital person escort record', type: :feature do
     fill_in_risks
     click_link 'Summary'
 
-    expect(page).to have_text('Summary').
-      and have_text('Prisoner Information').
+    expect(page).to have_heading 'Summary'
+
+    expect(page).to have_text('Prisoner Information').
       and have_link('Edit', href: identification_path(Escort.last)).
       and have_content('Family name Bigglesworth').
       and have_content('Forenames Tarquin').
