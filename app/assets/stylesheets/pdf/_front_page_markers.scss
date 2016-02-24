@@ -24,7 +24,7 @@
         @extend .col;
         &:first-child {
           width: 60%;
-      }
+        }
       }
       .label-inline {
         margin: 0;
@@ -36,5 +36,18 @@
   }
   .notes {
     width: 24%;
+    span {
+      display: inline-block;
+      &.health {
+        margin-top: 3.8em;
+      }
+      &.risk {
+        margin-top: 4.1em;
+      }
+      &.offence {
+        margin-top: 0.7em;
+      }
+    }
   }
 }
+

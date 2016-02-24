@@ -16,7 +16,7 @@ en:
     front_page_markers:
       risks:
         title: Risks overview
-        notes: Section A1 Risk summary
+        notes: Section A2 Risk summary
         violence: Violence
         escape: Escort escape risk
         allergies: Allergies
@@ -26,12 +26,12 @@ en:
         yes_label: 'Yes'
       offence_information:
         title: Offence information
-        notes: Section A2 Offence information
+        notes: Section A4 Offences
         cat_a: CAT A
       healthcare_information:
         title: Healthcare information
         acct: ACCT open
-        notes: Section A4 Healthcare information
+        notes: Section A3 Healthcare information
     prisoner_information:
       photo_message: Attach photo
       family_name: :'shared.family_name'
