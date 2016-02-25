@@ -135,5 +135,17 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Deportation Order').
         and have_content('Warrant')
     end
+    it 'generates the expected content for the record of handover section' do
+      expect(html).to have_content('B2. Record of handover').
+        and have_content('Property details').
+        and have_content('Use a property code from the following list').
+        and have_content('V - Valuables').
+        and have_content('IP - In possession').
+        and have_content('D - Documentation').
+        and have_content('SP - Stored property').
+        and have_content('C - Cash').
+        and have_content('Type').
+        and have_content('Seal number')
+    end
   end
 end

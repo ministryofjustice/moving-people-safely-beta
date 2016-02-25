@@ -43,6 +43,19 @@
   float: left;
 }
 
+.input-inline-group {
+  > div {
+    @extend .input-inline;
+    padding-right: $padding;
+    &:nth-child(2n) {
+      min-width: 5.8em;
+    }
+    &:nth-child(n+2) {
+      border-left: none;
+    }
+  }
+}
+
 .label {
   display: block;
   margin-bottom: 0.5em;
@@ -136,6 +149,11 @@
     font-weight: normal;
     height: 1.7em;
   }
+}
+
+.bordered-left {
+  padding-left: 1em;
+  border-left: 3px solid $light_grey;
 }
 
 .marker-with-reason {

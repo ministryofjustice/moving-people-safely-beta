@@ -1,0 +1,19 @@
+.record-of-handover {
+  ul {
+    @extend .bordered-left;
+  }
+  li {
+    display: inline-block;
+    margin-right: $margin-large;
+  }
+
+  .items {
+    @extend .row;
+    > div {
+      @extend .col;
+      &:first-child {
+        margin-right: $margin-right;
+      }
+    }
+  }
+}

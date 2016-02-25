@@ -126,3 +126,19 @@ en:
       is91: Immigration Detention Authority (IS91)
       deportation_order: Deportation Order
       warrant: Warrant
+    record_of_handover:
+      heading: B2. Record of handover
+      property_details: Property details
+      instructions: Use a property code from the following list
+      valuables: Valuables
+      in_possession: In possession
+      documentation: Documentation
+      stored_property: Stored property
+      cash: Cash
+      valuables_code: V
+      in_possession_code: IP
+      documentation_code: D
+      stored_property_code: SP
+      cash_code: C
+      type: Type
+      seal_number: Seal number
