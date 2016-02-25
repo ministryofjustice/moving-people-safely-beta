@@ -4,6 +4,9 @@ en:
   "yes": "Yes"
   "no": "No"
   sign_out: Sign out
+  log_in: Log in
+  forgot_password: Forgot your password?
+  reset_password: Reset password
   flash:
     escorts:
       success:
