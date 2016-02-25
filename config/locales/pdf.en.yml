@@ -10,7 +10,7 @@ en:
       protective_marking: Official - Sensitive
     nfr:
       marker_label: Not for release
-      reason: Reason
+      reason: :'shared.reason'
     move_information:
       from: From
       to: To
@@ -99,3 +99,6 @@ en:
       name_of_healthcare_professional: Name of healthcare professional (print)
       signature: Signature
       role: Role
+      must_return: Must return
+      must_not_return: Must not return
+      reason: :'shared.reason'

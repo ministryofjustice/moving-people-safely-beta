@@ -137,3 +137,30 @@
     height: 1.7em;
   }
 }
+
+.marker-with-reason {
+  @extend .light-background;
+
+  > div {
+    @extend .row;
+  }
+
+  .marker {
+    @extend .padded;
+    @extend .col;
+  }
+
+  .reason {
+    @extend .padded;
+    @extend .col;
+
+    strong {
+      float: left;
+    }
+
+    .input {
+      width: 33.8em;
+      margin-bottom: 0;
+    }
+  }
+}

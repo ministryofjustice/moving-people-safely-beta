@@ -101,7 +101,10 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Fit to travel').
         and have_content('Name of healthcare professional (print)').
         and have_content('Signature').
-        and have_content('Role')
+        and have_content('Role').
+        and have_content('Must return').
+        and have_content('Reason').
+        and have_content('Must not return')
     end
   end
 end
