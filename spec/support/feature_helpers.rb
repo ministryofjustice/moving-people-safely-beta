@@ -112,4 +112,8 @@ module FeatureHelpers
   def last_user_audited
     User.find(last_escort_version.whodunnit)
   end
+
+  def sign_out
+    click_button 'Sign out'
+  end
 end
