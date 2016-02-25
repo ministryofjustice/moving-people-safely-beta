@@ -57,4 +57,21 @@
       width: 33.25em;
     }
   }
+
+  .medication-handover {
+    > div {
+      @extend .row;
+    }
+    margin-top: $margin-top;
+    .markers > div {
+      @extend .col;
+      @extend .light-background;
+      padding: $padding-small;
+      padding-left: $padding-unit;
+      margin-right: $margin-right;
+    }
+    .label-inline, .check-box {
+      margin-bottom: 0;
+    }
+  }
 }

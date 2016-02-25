@@ -73,7 +73,7 @@ en:
     shared:
       identifiers_label: PNC / Prison number
     medication:
-      title: Medication
+      title: :'shared.medication'
       instructions: 'Medication handover details in section B1: Record of handover'
       description: Medication description
       administration_information: Medication administration information
@@ -102,3 +102,8 @@ en:
       must_return: Must return
       must_not_return: Must not return
       reason: :'shared.reason'
+      medication_heading: :'shared.medication'
+      medication_instructions: See A3. Healthcare information for medication details
+      no_medication: No medication
+      medicaton_with_escort: Medication with escort
+      medication_with_prisoner: Medication with prisoner
