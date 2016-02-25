@@ -107,3 +107,22 @@ en:
       no_medication: No medication
       medicaton_with_escort: Medication with escort
       medication_with_prisoner: Medication with prisoner
+      enclosed_forms: Enclosed forms
+      form: Form
+      attached: Attached
+      quantity: Quantity
+      acct: ACCT
+      sash: Suicide/Self-Harm Warning
+      csra: Cell Sharing risk assessment
+      core_record: F2050 Core Record
+      property_card: Property Card
+      categorisation_documentation: Categorisation Documentation
+      restraints_form: Restraints application form
+      other: Other (please specify)
+      remand_time: Remand Time Calculation
+      pnc_printout: PNC Printout
+      medical_assessment: Medical Assessment/Care Plan
+      confidential_medical_documents: Confidential Medical Documents
+      is91: Immigration Detention Authority (IS91)
+      deportation_order: Deportation Order
+      warrant: Warrant

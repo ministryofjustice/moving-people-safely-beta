@@ -114,5 +114,26 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Medication with escort').
         and have_content('Medication with prisoner')
     end
+    it 'generates the expected content for the enclosed forms section' do
+      expect(html).to have_content('Enclosed forms').
+        and have_content('Form').
+        and have_content('Attached').
+        and have_content('Quantity').
+        and have_content('ACCT').
+        and have_content('Suicide/Self-Harm Warning').
+        and have_content('Cell Sharing risk assessment').
+        and have_content('F2050 Core Record').
+        and have_content('Property Card').
+        and have_content('Categorisation Documentation').
+        and have_content('Restraints application form').
+        and have_content('Other (please specify)').
+        and have_content('Remand Time Calculation').
+        and have_content('PNC Printout').
+        and have_content('Medical Assessment/Care Plan').
+        and have_content('Confidential Medical Documents').
+        and have_content('Immigration Detention Authority (IS91)').
+        and have_content('Deportation Order').
+        and have_content('Warrant')
+    end
   end
 end
