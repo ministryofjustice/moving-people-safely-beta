@@ -93,3 +93,9 @@ en:
       license_recall: License recall
       offence: Offence
       offence_status: Offence status
+    handover_details:
+      heading: B1. Handover details
+      fit_to_travel: Fit to travel
+      name_of_healthcare_professional: Name of healthcare professional (print)
+      signature: Signature
+      role: Role

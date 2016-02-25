@@ -1,0 +1,54 @@
+.handover-details {
+  .fit-to-travel {
+    @extend .light-background;
+    @extend .padded;
+    .fitting {
+      @extend .row;
+      margin-bottom: 0;
+    }
+
+  }
+}
+
+.professional-name {
+  @extend .row;
+  margin-bottom: 0;
+  > div {
+    @extend .col;
+    margin-left: 4em;
+  }
+  .input {
+    @extend .input-inline;
+    width: 27.65em;
+  }
+  .label {
+    @extend .label-inline;
+  }
+}
+
+.signature {
+  @extend .col;
+  margin-left: 4em;
+  .input {
+    @extend .input-inline;
+    width: 16em;
+  }
+  .label {
+    @extend .label-inline;
+  }
+}
+
+.role {
+  @extend .col;
+  .input {
+    @extend .input-inline;
+    width: 21.2em;
+  }
+  .label {
+    @extend .label-inline;
+  }
+}
+
+* {
+  outline: 1px solid rgba(1, 1, 1, 0.1);
+}

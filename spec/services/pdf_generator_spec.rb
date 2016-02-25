@@ -96,5 +96,12 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Offence').
         and have_content('Offence status')
     end
+    it 'generates the expected content for the handover details section' do
+      expect(html).to have_content('B1. Handover details').
+        and have_content('Fit to travel').
+        and have_content('Name of healthcare professional (print)').
+        and have_content('Signature').
+        and have_content('Role')
+    end
   end
 end

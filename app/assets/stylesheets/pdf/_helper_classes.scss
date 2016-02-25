@@ -40,6 +40,7 @@
   @extend .input;
   display: inline-block;
   margin-bottom: $margin-bottom;
+  float: left;
 }
 
 .label {
@@ -51,6 +52,7 @@
   display: inline-block;
   padding: $padding-unit;
   margin-bottom: $margin-bottom;
+  float: left;
 }
 
 .input-margin {
@@ -111,6 +113,7 @@
     .label {
       @extend .label-inline;
       margin-bottom: 0;
+      float: none;
     }
     .input {
       @extend .input-inline;
