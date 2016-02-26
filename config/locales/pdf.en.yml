@@ -142,3 +142,13 @@ en:
       cash_code: C
       type: Type
       seal_number: Seal number
+      handover: Handover
+      prisoner: Prisoner
+      medication: Medication
+      property: Property
+      starting_location: Starting location
+      name_label: Name (print)
+      signature_label: Signature
+      contact_number: Contact number
+      escort_label: Escort
+      destination_label: Destination

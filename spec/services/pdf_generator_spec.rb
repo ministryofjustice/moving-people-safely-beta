@@ -145,7 +145,17 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('SP - Stored property').
         and have_content('C - Cash').
         and have_content('Type').
-        and have_content('Seal number')
+        and have_content('Seal number').
+        and have_content('Handover').
+        and have_content('Prisoner').
+        and have_content('Medication').
+        and have_content('Property').
+        and have_content('Starting location').
+        and have_content('Name (print)').
+        and have_content('Signature').
+        and have_content('Contact number').
+        and have_content('Escort').
+        and have_content('Destination')
     end
   end
 end

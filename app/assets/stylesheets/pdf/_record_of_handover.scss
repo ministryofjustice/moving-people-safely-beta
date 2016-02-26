@@ -16,4 +16,51 @@
       }
     }
   }
+
+  .handover-details {
+    display: table;
+    width: 100%;
+    > div {
+      display: table-row;
+      &:first-child {
+        > div {
+          border-left-color: transparent;
+          border-bottom: 1px solid $dark_grey;
+        }
+      }
+      &:nth-child(2n+3) {
+        background-color: $light_grey;
+      }
+    }
+    > div > div {
+      display: table-cell;
+      padding: $padding-unit;
+      width: 20%;
+      &:nth-child(1) {
+        vertical-align: middle;
+        width: 12%;
+      }
+      &:nth-child(3) {
+        vertical-align: middle;
+        width: 12%;
+      }
+      &:nth-child(1n+ 2) {
+        border-left: 1px solid $dark_grey;
+      }
+    }
+  }
+
+  .time-input {
+    margin-top: $margin-top;
+    > div {
+      &:first-child {
+        @extend .label-inline;
+        padding-left: 0;
+      }
+      &:last-child {
+        @extend .input-inline;
+        min-width: 3em;
+      }
+    }
+  }
 }

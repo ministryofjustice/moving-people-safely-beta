@@ -22,61 +22,38 @@
         - <%= t('.stored_property') %></li>
       <li><strong><%= t('.cash_code') %></strong> - <%= t('.cash') %></li>
     </ul>
-    <div class="items">
-      <div class="input-inline-group">
-        <div><%= t('.type') %></div>
+    <% 4.times do %>
+        <div class="items">
+          <div class="input-inline-group">
+            <div><%= t('.type') %></div>
+            <div></div>
+            <div><%= t('.seal_number') %></div>
+            <div></div>
+          </div>
+          <div class="input-inline-group">
+            <div><%= t('.type') %></div>
+            <div></div>
+            <div><%= t('.seal_number') %></div>
+            <div></div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <div class="handover">
+    <strong class="label"><%= t('.handover') %></strong>
+    <div class="handover-details">
+      <div>
         <div></div>
-        <div><%= t('.seal_number') %></div>
+        <div><%= t('.prisoner') %></div>
         <div></div>
+        <div><%= t('.medication') %></div>
+        <div><%= t('.property') %></div>
       </div>
-      <div class="input-inline-group">
-        <div><%= t('.type') %></div>
-        <div></div>
-        <div><%= t('.seal_number') %></div>
-        <div></div>
-      </div>
-    </div>
-    <div class="items">
-      <div class="input-inline-group">
-        <div><%= t('.type') %></div>
-        <div></div>
-        <div><%= t('.seal_number') %></div>
-        <div></div>
-      </div>
-      <div class="input-inline-group">
-        <div><%= t('.type') %></div>
-        <div></div>
-        <div><%= t('.seal_number') %></div>
-        <div></div>
-      </div>
-    </div>
-    <div class="items">
-      <div class="input-inline-group">
-        <div><%= t('.type') %></div>
-        <div></div>
-        <div><%= t('.seal_number') %></div>
-        <div></div>
-      </div>
-      <div class="input-inline-group">
-        <div><%= t('.type') %></div>
-        <div></div>
-        <div><%= t('.seal_number') %></div>
-        <div></div>
-      </div>
-    </div>
-    <div class="items">
-      <div class="input-inline-group">
-        <div><%= t('.type') %></div>
-        <div></div>
-        <div><%= t('.seal_number') %></div>
-        <div></div>
-      </div>
-      <div class="input-inline-group">
-        <div><%= t('.type') %></div>
-        <div></div>
-        <div><%= t('.seal_number') %></div>
-        <div></div>
-      </div>
+      <%= render 'pdfs/handover_row', label: t('.starting_location'), contact_number: t('.contact_number') %>
+      <%= render 'pdfs/handover_row', label: t('.escort_label') %>
+      <%= render 'pdfs/handover_row', label: t('.destination_label') %>
+      <%= render 'pdfs/handover_row', label: t('.escort_label') %>
+      <%= render 'pdfs/handover_row', label: t('.destination_label') %>
     </div>
   </div>
 </div>

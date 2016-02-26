@@ -1,0 +1,28 @@
+<div>
+  <div>
+    <%= label %>
+    <div class="time-input">
+      <div>Time</div>
+      <div></div>
+    </div>
+  </div>
+  <div>
+    <%= render 'pdfs/name_and_signature' %>
+    <% if local_assigns[:contact_number].present? %>
+        <span class="label"><%= contact_number %></span>
+        <div class="input"></div>
+    <% end %>
+  </div>
+  <div>
+    <div class="time-input">
+      <div>Time</div>
+      <div></div>
+    </div>
+  </div>
+  <div>
+    <%= render 'pdfs/name_and_signature' %>
+  </div>
+  <div>
+    <%= render 'pdfs/name_and_signature' %>
+  </div>
+</div>
