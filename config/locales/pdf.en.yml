@@ -7,7 +7,7 @@ en:
       vehicle_cell_number: Vehicle cell no.
     footer:
       page_number: '[page] of [topage]'
-      protective_marking: Official - Sensitive
+      protective_marking: OFFICIAL - SENSITIVE
     nfr:
       marker_label: Not for release
       reason: :'shared.reason'
