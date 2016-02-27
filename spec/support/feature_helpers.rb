@@ -116,4 +116,8 @@ module FeatureHelpers
   def sign_out
     click_button 'Sign out'
   end
+
+  def reset_password_token
+    user.send(:set_reset_password_token)
+  end
 end
