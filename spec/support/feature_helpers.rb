@@ -117,7 +117,14 @@ module FeatureHelpers
     click_button 'Sign out'
   end
 
-  def reset_password_token
-    user.send(:set_reset_password_token)
+  def invite_user(email)
+    User.invite!(email: email)
+  end
+
+  # rubocop:disable AccessorMethodName
+  def set_password(password)
+    fill_in 'user[password]', with: password
+    fill_in 'user[password_confirmation]', with: password
+    click_button 'Set my password'
   end
 end

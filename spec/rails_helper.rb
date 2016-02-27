@@ -56,6 +56,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include(FeatureHelpers, type: :feature)
+  config.include(MailHelpers)
   config.include(Shoulda::Matchers::ActiveModel, type: :form)
   config.include(FactoryGirl::Syntax::Methods)
   config.include(ActiveSupport::Testing::TimeHelpers)
