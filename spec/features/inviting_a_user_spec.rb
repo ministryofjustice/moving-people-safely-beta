@@ -22,4 +22,12 @@ RSpec.feature 'inviting a user', type: :feature do
     step.user_clicks_invitation_link token: 'gibberish'
     expect(current_path).to eq new_user_session_path
   end
+
+  scenario 'invitation token expires after 3 days' do
+    invite_user('person@prison.com')
+    travel_to(4.days.from_now) do
+      step.user_clicks_invitation_link
+      expect(current_path).to eq new_user_session_path
+    end
+  end
 end
