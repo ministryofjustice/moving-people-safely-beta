@@ -12,3 +12,5 @@ en:
     sex: Sex
     reason: Reason
     medication: Medication
+    name: Name (print)
+    signature: Signature

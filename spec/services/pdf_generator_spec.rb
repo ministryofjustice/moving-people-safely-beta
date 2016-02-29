@@ -157,5 +157,27 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Escort').
         and have_content('Destination')
     end
+    it 'generates the expected content for the record of checks and events' do
+      expect(html).to have_content('B3. Record of check').
+        and have_content('and significant events').
+        and have_content('Checks and significant events').
+        and have_content('Time').
+        and have_content('Details').
+        and have_content('Name (print)').
+        and have_content('Initials').
+        and have_content('Prisoner identified').
+        and have_content('Searched (state level)').
+        and have_content('Escort fully briefed (including risks)').
+        and have_content('Searched by Contractor (state level)').
+        and have_content('Tick and sign if this is the').
+        and have_content('last page of the record').
+        and have_content('Tick if the record continues on a separate sheet').
+        and have_content('Signature').
+        and have_content('This is sheet').
+        and have_content('Tick this column if the event highlights a current').
+        and have_content('risk, and update cover sheet with the information').
+        and have_content('When noting any significant events give details').
+        and have_content('of behaviour, context and any triggers')
+    end
   end
 end

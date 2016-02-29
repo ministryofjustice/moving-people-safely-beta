@@ -8,11 +8,11 @@ header {
     width: 30%;
   }
   .vehicle_reg {
-    @extend .persistent_info;
+    @extend .persistent-info;
     width: 45%;
   }
   .cell_no {
-    @extend .persistent_info;
+    @extend .persistent-info;
     width: 25%;
     .input {
       width: 3em;
