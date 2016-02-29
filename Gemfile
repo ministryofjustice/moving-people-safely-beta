@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+gem 'devise_invitable'
 gem 'govuk_frontend_toolkit'
 gem 'jquery-rails'
 gem 'moj_template', '0.23.2'
@@ -10,9 +12,6 @@ gem 'rails', '4.2.5.1'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'virtus'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'better_errors'
@@ -26,6 +25,7 @@ end
 group :test do
   gem 'capybara'
   gem 'codeclimate-test-reporter', require: nil
+  gem 'launchy'
   gem 'rspec-its'
   gem 'rspec-rails'
   gem 'rubocop-rspec'

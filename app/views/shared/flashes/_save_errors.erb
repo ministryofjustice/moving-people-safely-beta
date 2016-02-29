@@ -6,7 +6,11 @@
       <ul class="error-summary-list">
         <% object.errors.each do |attribute| %>
             <li>
-              <%= link_to(object.errors.full_messages_for(attribute).first, "#identification_#{attribute}") %>
+              <%= link_to(
+                    object.errors.full_messages_for(attribute).first,
+                    "##{object.class.name.downcase}_#{attribute}"
+                  )
+              %>
             </li>
         <% end %>
       </ul>

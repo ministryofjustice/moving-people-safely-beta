@@ -19,7 +19,11 @@
 
       <div class="form-group optional-section">
         <%= f.label "#{risk}_details", t(".types.#{risk}.details_help_text") %>
-        <%= f.text_area "#{risk}_details", autocomplete: 'off', class: 'form-control', id: "#{risk}_details" %>
+        <%= f.text_area "#{risk}_details",
+            autocomplete: 'off',
+            class: 'form-control',
+            id: "#{f.object.name}_#{risk}_details"
+        %>
       </div>
     </div>
   </div>

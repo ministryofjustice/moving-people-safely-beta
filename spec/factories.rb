@@ -37,4 +37,13 @@ FactoryGirl.define do
   factory :risk_information do
     escort
   end
+
+  factory :user do
+    first_name 'Mark'
+    last_name 'White'
+    job_role 'Reception'
+    email 'mark.white@some.prison.com'
+    password 'secret123'
+    password_confirmation 'secret123'
+  end
 end

@@ -50,7 +50,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
     expect(page).to have_heading 'Summary'
 
     expect(page).to have_text('Prisoner Information').
-      and have_link('Edit', href: identification_path(Escort.last)).
+      and have_link('Edit', href: identification_path(escort)).
       and have_content('Family name Bigglesworth').
       and have_content('Forenames Tarquin').
       and have_content('Date of birth 13/02/1972').
