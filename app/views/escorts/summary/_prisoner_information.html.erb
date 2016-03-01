@@ -16,7 +16,7 @@
   <div>
     <div class="dob">
       <strong class="label"><%= t('.date_of_birth') %></strong>
-      <div class="output"><%= prisoner_information.date_of_birth %></div>
+      <div class="output"><%= prisoner_information.formatted_date_of_birth %></div>
     </div>
     <div class="age">
       <strong class="label"><%= t('.age') %></strong>
@@ -24,7 +24,7 @@
     </div>
     <div class="sex">
       <strong class="label"><%= t('.sex') %></strong>
-      <div class="output"><%= prisoner_information.sex %></div>
+      <div class="output"><%= prisoner_information.capitalized_sex %></div>
     </div>
     <div class="nationality">
       <strong class="label"><%= t('.nationality') %></strong>

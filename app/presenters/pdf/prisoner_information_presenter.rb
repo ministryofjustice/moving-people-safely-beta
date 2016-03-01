@@ -1,25 +1,20 @@
 module Pdf
-  class PrisonerInformationPresenter < SimpleDelegator
+  class PrisonerInformationPresenter
     def initialize(model)
       @model = model
-
-      # TODO: We will not rely on the summary presenter for
-      # PDFs. Rather than have a single model with adapters
-      # for each section in the digital & corresponding PDF
-      # form we will push some of the specifics to the model
-      # layer.
-
-      prisoner_info = ::PrisonerInformationPresenter.new(model)
-      super(prisoner_info)
     end
+
+    delegate :family_name, :forenames, :prison_number, :nationality,
+      :capitalized_sex, :date_of_birth, :age, :cro_number, :pnc_number,
+      to: :prisoner
 
     delegate :day, :month, :year,
       to: :date_of_birth, prefix: true, allow_nil: true
 
   private
 
-    def date_of_birth
-      @model.prisoner.date_of_birth
+    def prisoner
+      @model.prisoner || @model.build_prisoner
     end
   end
 end
