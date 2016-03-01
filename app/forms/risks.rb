@@ -7,6 +7,6 @@ class Risks < Form
   GENERAL.each(&method(:text_toggle_attribute))
 
   def target
-    super.risk_information || super.build_risk_information
+    super.risk_information
   end
 end

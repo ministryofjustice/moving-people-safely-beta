@@ -1,9 +1,9 @@
 class SummaryPresenter
-  def initialize(escort_model)
-    @escort_model = escort_model
+  def initialize(escort)
+    @escort = escort
   end
 
   def prisoner_information
-    @prisoner_information ||= PrisonerInformationPresenter.new(@escort_model)
+    @prisoner_information ||= PrisonerInformationPresenter.new(@escort.prisoner)
   end
 end

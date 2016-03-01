@@ -6,15 +6,9 @@ module Pdf
 
     delegate :family_name, :forenames, :prison_number, :nationality,
       :capitalized_sex, :date_of_birth, :age, :cro_number, :pnc_number,
-      to: :prisoner
+      to: :@model
 
     delegate :day, :month, :year,
       to: :date_of_birth, prefix: true, allow_nil: true
-
-  private
-
-    def prisoner
-      @model.prisoner || @model.build_prisoner
-    end
   end
 end

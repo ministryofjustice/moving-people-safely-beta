@@ -14,6 +14,6 @@ class Identification < Form
   delegate :prison_number, to: :target
 
   def target
-    super.prisoner || super.build_prisoner
+    super.prisoner
   end
 end
