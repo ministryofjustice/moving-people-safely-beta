@@ -191,4 +191,20 @@ en:
       this_is_sheet: :'pdfs.checks_and_events.this_is_sheet'
       of: :'pdfs.checks_and_events.of'
       signature: :'shared.signature'
-
+    release_at_court_and_property:
+      heading: B4. Release at court and receipt of property
+      release_at_court: Release at court
+      certify_checks_made: I certify that all relevant checks have been made with clearance given as shown
+      agency: Agency
+      establishment: Establishment
+      name: :'shared.name'
+      authority_to_release: Authority to release
+      remarks: Remarks
+      release_authorised: Release authorised by SCO / IC
+      name: :'shared.name'
+      signature: Signature
+      release_countersigned_by: Release countersigned by
+      receipt_of_property: Statement of receipt of property
+      content_certification: I certify I have received all the contents of the property bag numbers shown below, and am completely satisfied
+      seal_no: Seal no.
+      Name_print: Name (print)

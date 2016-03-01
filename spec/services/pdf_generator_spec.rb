@@ -179,5 +179,28 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('When noting any significant events give details').
         and have_content('of behaviour, context and any triggers')
     end
+    it 'generates expected content for release at court and property' do
+      expect(html).to have_content('B4. Release at court').
+        and have_content('and receipt of property').
+        and have_content('Release at court').
+        and have_content('I certify that all relevant checks have been made').
+        and have_content('with clearance given as shown').
+        and have_content('Agency').
+        and have_content('Establishment').
+        and have_content('Name').
+        and have_content('Authority to release').
+        and have_content('Remarks').
+        and have_content('Release authorised by SCO / IC').
+        and have_content('Name').
+        and have_content('Signature').
+        and have_content('Release countersigned by').
+        and have_content('Statement of receipt of property').
+        and have_content('I certify I have received all the contents of the').
+        and have_content('property bag numbers shown below,').
+        and have_content('and am completely satisfied').
+        and have_content('Seal no.').
+        and have_content('Name (print)').
+        and have_content('Signature')
+    end
   end
 end

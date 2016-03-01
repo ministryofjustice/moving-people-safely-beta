@@ -1,0 +1,57 @@
+.release-at-court {
+  .section-heading {
+    > div {
+      &:first-child {
+        width: 62%;
+      }
+      &:last-child {
+        width: 37%;
+        margin-left: 0;
+      }
+      .input {
+        width: 7em;
+      }
+    }
+  }
+  table {
+    @extend .bordered-table;
+  }
+}
+
+.release-authorisation {
+  @extend .light-background;
+  @extend .padded;
+  padding-bottom: $padding-unit;
+  margin-top: 2em;
+}
+
+.signatory {
+  > div {
+    @extend .row;
+  }
+  margin-top: $margin-top;
+  .input-inline {
+    width: 57%;
+    margin-bottom: 0;
+    .padded & {
+      width: 57%;
+    }
+  }
+  .label-inline {
+    width: 7em;
+    margin-bottom: 0;
+  }
+}
+
+.property-receipt {
+  @extend .row;
+  margin-top: $margin-large;
+  .seal-numbers {
+    padding: 0;
+    li {
+      @extend .input-inline;
+      margin-right: $margin-right;
+      width: 22%;
+    }
+  }
+}
