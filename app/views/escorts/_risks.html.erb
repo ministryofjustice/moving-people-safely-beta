@@ -1,7 +1,3 @@
 <% Risks::GENERAL.each do |risk| %>
   <%= render('shared/risk', f: f, risk: risk) %>
 <% end %>
-<h2><%= t('.transit_heading') %></h2>
-<% Risks::TRANSIT.each do |risk| %>
-  <%= render('shared/risk', f: f, risk: risk) %>
-<% end %>

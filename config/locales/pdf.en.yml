@@ -20,7 +20,7 @@ en:
       risks:
         title: Risks overview
         notes: Section A2 Risk summary
-        violence: Violence
+        violence: Violence and risk to others
         escape: Escort escape risk
         allergies: Allergies
         disabilities: Disabilities
@@ -46,19 +46,18 @@ en:
       nationality: :'shared.nationality'
       cro_number: :'shared.cro_number'
       pnc_number: :'shared.pnc_number'
-    updates: 
+    updates:
       title: Risk updates
       instructions: Include relevant updates and heightened risks from section B3
       sash_instructions: Tick if SASH has been opened
     risk_summary:
       heading: A2. Risk summary
       risks_to_self: Risks to self
-      risks_to_others_public: Risks to others / risks to public
       date_of_incident: Date of incident
-      violence: Violence
+      violence: Violence and risk to others
       risk_from_others: Risk from others
       escort_escape_risk: Escort escape risk
-      intolerant_behaviour: Intolerant behaviour
+      intolerant_behaviour: Intolerant behaviour towards others
       prohibited_items: Prohibited items
       non_association: Non-association
       completed_by: Name of person filling in this section

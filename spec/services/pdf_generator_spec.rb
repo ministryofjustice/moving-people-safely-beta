@@ -54,11 +54,10 @@ RSpec.describe PdfGenerator, type: :service do
       expect(html).to have_content('A2. Risk summary').
         and have_content('PNC / Prison number').
         and have_content('Risks to self').
-        and have_content('Risks to others / risks to public').
-        and have_content('Violence').
+        and have_content('Violence and risk to others').
         and have_content('Risk from others').
         and have_content('Escort escape risk').
-        and have_content('Intolerant behaviour').
+        and have_content('Intolerant behaviour towards others').
         and have_content('Prohibited items').
         and have_content('Non-association').
         and have_content('Date of incident').
