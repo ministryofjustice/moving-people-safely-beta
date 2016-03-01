@@ -20,9 +20,9 @@ module FeatureHelpers
     end
 
     def build_risk_properties
-      ['Risks to self', 'Risks to others', 'Violence', 'Risk from others',
-       'Escort escape risk', 'Intolerant behavior', 'Prohibited items',
-       'Disabilities', 'Allergies', 'Non-association'
+      ['Risks to self', 'Violence and risk to others', 'Risk from others',
+       'Escort escape risk', 'Intolerant behavior towards others',
+       'Prohibited items', 'Non-association'
       ].each_with_index.
         each_with_object({}) do |(r, i), o|
         o[r] = (i.odd? ? ['Yes', 'Some user input'] : ['No', nil])

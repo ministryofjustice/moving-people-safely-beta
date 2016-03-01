@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224131149) do
+ActiveRecord::Schema.define(version: 20160301144518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,8 +40,6 @@ ActiveRecord::Schema.define(version: 20160224131149) do
     t.uuid     "escort_id"
     t.boolean  "to_self"
     t.text     "to_self_details"
-    t.boolean  "to_others"
-    t.text     "to_others_details"
     t.boolean  "violence"
     t.text     "violence_details"
     t.boolean  "from_others"
@@ -52,10 +50,6 @@ ActiveRecord::Schema.define(version: 20160224131149) do
     t.text     "intolerant_behaviour_details"
     t.boolean  "prohibited_items"
     t.text     "prohibited_items_details"
-    t.boolean  "disabilities"
-    t.text     "disabilities_details"
-    t.boolean  "allergies"
-    t.text     "allergies_details"
     t.boolean  "non_association"
     t.text     "non_association_details"
     t.datetime "created_at",                   null: false
