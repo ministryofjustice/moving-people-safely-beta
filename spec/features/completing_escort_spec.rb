@@ -40,6 +40,19 @@ RSpec.feature 'completing digital person escort record', type: :feature do
       to have_content 'Escort record updated successfully'
   end
 
+  scenario 'filling in the move information page' do
+    start_escort_form
+    fill_in_identification
+    click_link 'Move Information'
+
+    expect(page).to have_heading 'Move Information'
+
+    fill_in_move_information
+
+    expect(page).
+      to have_content 'Escort record updated successfully'
+  end
+
   scenario 'vieiwing the summary of an escort' do
     start_escort_form
     fill_in_identification

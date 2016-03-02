@@ -59,6 +59,7 @@ RSpec.configure do |config|
   config.include(FeatureHelpers::Sessions, type: :feature)
   config.include(FeatureHelpers::IdentificationForm, type: :feature)
   config.include(FeatureHelpers::RisksForm, type: :feature)
+  config.include(FeatureHelpers::MoveInformationForm, type: :feature)
   config.include(MailHelpers)
   config.include(Shoulda::Matchers::ActiveModel, type: :form)
   config.include(FactoryGirl::Syntax::Methods)
