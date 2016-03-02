@@ -15,4 +15,12 @@ class Escort < ActiveRecord::Base
   def formatted_updated_at
     updated_at.strftime('%H:%M %d/%m/%Y')
   end
+
+  def prisoner
+    super || build_prisoner
+  end
+
+  def risk_information
+    super || build_risk_information
+  end
 end

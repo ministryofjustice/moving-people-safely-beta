@@ -1,12 +1,11 @@
 module Pdf
   class EscortPresenter
-    def initialize(escort_model)
-      @escort_model = escort_model
+    def initialize(escort)
+      @escort = escort
     end
 
-    def prisoner_information
-      @prisoner_information ||=
-        Pdf::PrisonerInformationPresenter.new(@escort_model)
+    def prisoner
+      @prisoner ||= Pdf::PrisonerPresenter.new(@escort.prisoner)
     end
   end
 end

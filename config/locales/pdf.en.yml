@@ -35,7 +35,7 @@ en:
         title: Healthcare information
         acct: ACCT open
         notes: Section A3 Healthcare information
-    prisoner_information:
+    prisoner:
       photo_message: Attach photo
       family_name: :'shared.family_name'
       forenames: :'shared.forenames'
