@@ -4,12 +4,13 @@ RSpec.describe PdfGenerator, type: :service do
   include Capybara::RSpecMatchers
 
   describe '.for' do
-    let(:escort) { build_stubbed(:escort, :with_prisoner) }
+    let(:escort) { instance_double(Escort) }
+    let(:html) { '<html>Test document</html>' }
 
-    it 'uses PDFKit library' do
-      pdfkit = instance_double('PDFKit', to_pdf: 'PDF code')
-      expect(PDFKit).to receive(:new).and_return(pdfkit)
-      described_class.for(escort)
+    it 'returns a pdf document' do
+      allow(described_class).to receive(:render).and_return(html)
+      file = described_class.for(escort)
+      expect(file).to be_a_pdf
     end
   end
 
