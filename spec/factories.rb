@@ -52,4 +52,11 @@ FactoryGirl.define do
     password 'secret123'
     password_confirmation 'secret123'
   end
+
+  factory :move do
+    origin 'HMP Clive House'
+    destination 'Petty France'
+    date_of_travel { Date.tomorrow }
+    reason 'Expected to attend show the thing'
+  end
 end
