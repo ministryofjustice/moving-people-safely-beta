@@ -8,7 +8,7 @@ class Form
       include ActiveModel::Validations
 
       def name
-        self.class.name.downcase
+        self.class.name.underscore.downcase
       end
       alias_method :template, :name
     end
