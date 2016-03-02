@@ -7,6 +7,9 @@ RUN cp wkhtmltox/bin/wkhtmltopdf /usr/local/bin
 RUN chmod 755 /usr/local/bin/wkhtmltopdf
 RUN rm -rf wkhtmltox
 
+RUN cp -r ./fonts/liberation_sans /usr/share/fonts/truetype/
+RUN fc-cache -f -v
+
 ENV UNICORN_PORT 3000
 EXPOSE $UNICORN_PORT
 
