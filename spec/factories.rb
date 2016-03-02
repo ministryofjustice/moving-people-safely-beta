@@ -56,7 +56,7 @@ FactoryGirl.define do
   factory :move do
     origin 'HMP Clive House'
     destination 'Petty France'
-    date_of_travel { Date.tomorrow }
+    date_of_travel { Date.today }
     reason 'Expected to attend show the thing'
   end
 end

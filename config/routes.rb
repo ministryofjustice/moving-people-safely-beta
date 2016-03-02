@@ -6,11 +6,20 @@ Rails.application.routes.draw do
       only: %i[ show update ],
       controller: :escorts,
       page: :identification
+
     resource :risks,
       only: %i[ show update ],
       controller: :escorts,
       page: :risks
+
+    resource :move_information,
+      only: %i[ show update ],
+      controller: :escorts,
+      path: 'move-information',
+      page: :move_information
+
     get 'summary', controller: :escorts
+
     resource :pdf, only: :show
   end
   resource :escort, only: :create

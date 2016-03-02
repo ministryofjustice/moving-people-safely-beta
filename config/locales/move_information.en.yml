@@ -1,0 +1,24 @@
+en:
+  helpers:
+    label:
+      move_information:
+        origin: From
+        destination: To
+        reason: Reason for move(current offence)
+  escorts:
+    move_information:
+      heading: Move Information
+      default_origin: HMP Bedford
+      date_of_travel:
+        label: Date of travel
+        hint: eg, %{today}
+        day_label: :'shared.day_label'
+        month_label: :'shared.month_label'
+        year_label: :'shared.year_label'
+  activemodel:
+    errors:
+      models:
+        move_information:
+          attributes:
+            date_of_travel:
+              invalid: invalid date of tarvel
