@@ -2,7 +2,7 @@ en:
   escorts:
     summary:
       heading: Summary
-      prisoner_information:
+      prisoner:
         heading: :'shared.prisoner_information_heading'
         edit_section: Edit
         family_name: :'shared.family_name'

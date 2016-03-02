@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PrisonerInformationPresenter, type: :presenter do
+RSpec.describe PrisonerPresenter, type: :presenter do
   let(:escort) { create(:escort) }
   subject { described_class.new(escort.prisoner) }
 

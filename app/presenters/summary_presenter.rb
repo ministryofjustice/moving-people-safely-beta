@@ -3,7 +3,7 @@ class SummaryPresenter
     @escort = escort
   end
 
-  def prisoner_information
-    @prisoner_information ||= PrisonerInformationPresenter.new(@escort.prisoner)
+  def prisoner
+    @prisoner ||= PrisonerPresenter.new(@escort.prisoner)
   end
 end

@@ -1,48 +1,48 @@
 <div class="summary-heading">
   <h2><%= t('.heading') %></h2>
-  <%= link_to t('.edit_section'), prisoner_information.edit_section_path %>
+  <%= link_to t('.edit_section'), prisoner.edit_section_path %>
 </div>
 <div class="summary-content">
   <div>
     <div class="family-name">
       <strong class="label"><%= t('.family_name') %></strong>
-      <div class="output"><%= prisoner_information.family_name %></div>
+      <div class="output"><%= prisoner.family_name %></div>
     </div>
     <div class="forenames">
       <strong class="label"><%= t('.forenames') %></strong>
-      <div class="output"><%= prisoner_information.forenames %></div>
+      <div class="output"><%= prisoner.forenames %></div>
     </div>
   </div>
   <div>
     <div class="dob">
       <strong class="label"><%= t('.date_of_birth') %></strong>
-      <div class="output"><%= prisoner_information.formatted_date_of_birth %></div>
+      <div class="output"><%= prisoner.formatted_date_of_birth %></div>
     </div>
     <div class="age">
       <strong class="label"><%= t('.age') %></strong>
-      <div class="output"><%= prisoner_information.age %></div>
+      <div class="output"><%= prisoner.age %></div>
     </div>
     <div class="sex">
       <strong class="label"><%= t('.sex') %></strong>
-      <div class="output"><%= prisoner_information.capitalized_sex %></div>
+      <div class="output"><%= prisoner.capitalized_sex %></div>
     </div>
     <div class="nationality">
       <strong class="label"><%= t('.nationality') %></strong>
-      <div class="output"><%= prisoner_information.nationality %></div>
+      <div class="output"><%= prisoner.nationality %></div>
     </div>
   </div>
   <div>
     <div class="prison-number">
       <strong class="label"><%= t('.prison_number') %></strong>
-      <div class="output"><%= prisoner_information.prison_number %></div>
+      <div class="output"><%= prisoner.prison_number %></div>
     </div>
     <div class="cro-number">
       <strong class="label"><%= t('.cro_number') %></strong>
-      <div class="output"><%= prisoner_information.cro_number %></div>
+      <div class="output"><%= prisoner.cro_number %></div>
     </div>
     <div class="pnc-number">
       <strong class="label"><%= t('.pnc_number') %></strong>
-      <div class="output"><%= prisoner_information.pnc_number %></div>
+      <div class="output"><%= prisoner.pnc_number %></div>
     </div>
   </div>
 </div>

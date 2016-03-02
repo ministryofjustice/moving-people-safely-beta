@@ -1,4 +1,4 @@
-class PrisonerInformationPresenter
+class PrisonerPresenter
   def initialize(model)
     @model = model
   end

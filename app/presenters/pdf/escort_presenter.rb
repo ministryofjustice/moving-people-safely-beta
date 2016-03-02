@@ -4,9 +4,8 @@ module Pdf
       @escort = escort
     end
 
-    def prisoner_information
-      @prisoner_information ||=
-        Pdf::PrisonerInformationPresenter.new(@escort.prisoner)
+    def prisoner
+      @prisoner ||= Pdf::PrisonerPresenter.new(@escort.prisoner)
     end
   end
 end
