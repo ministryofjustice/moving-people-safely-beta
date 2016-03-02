@@ -1,0 +1,59 @@
+<div class="record-of-handover">
+  <div class="section-heading">
+    <div class="heading">
+      <h2><%= t('.heading') %></h2>
+    </div>
+    <div class="persistent-info">
+      <span class="label"><%= t('pdfs.shared.identifiers_label') %></span>
+      <div class="input"></div>
+    </div>
+  </div>
+  <div class="property-details">
+    <strong class="label"><%= t('.property_details') %></strong>
+    <div class="instructions"><%= t('.instructions') %></div>
+    <ul>
+      <li><strong><%= t('.valuables_code') %></strong> - <%= t('.valuables') %>
+      </li>
+      <li><strong><%= t('.in_possession_code') %></strong>
+        - <%= t('.in_possession') %></li>
+      <li><strong><%= t('.documentation_code') %></strong>
+        - <%= t('.documentation') %></li>
+      <li><strong><%= t('.stored_property_code') %></strong>
+        - <%= t('.stored_property') %></li>
+      <li><strong><%= t('.cash_code') %></strong> - <%= t('.cash') %></li>
+    </ul>
+    <% 4.times do %>
+        <div class="items">
+          <div class="input-inline-group">
+            <div><%= t('.type') %></div>
+            <div></div>
+            <div><%= t('.seal_number') %></div>
+            <div></div>
+          </div>
+          <div class="input-inline-group">
+            <div><%= t('.type') %></div>
+            <div></div>
+            <div><%= t('.seal_number') %></div>
+            <div></div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <div class="handover">
+    <strong class="label"><%= t('.handover') %></strong>
+    <div class="handover-details">
+      <div>
+        <div></div>
+        <div><%= t('.prisoner') %></div>
+        <div></div>
+        <div><%= t('.medication') %></div>
+        <div><%= t('.property') %></div>
+      </div>
+      <%= render 'pdfs/handover_row', label: t('.starting_location'), contact_number: t('.contact_number') %>
+      <%= render 'pdfs/handover_row', label: t('.escort_label') %>
+      <%= render 'pdfs/handover_row', label: t('.destination_label') %>
+      <%= render 'pdfs/handover_row', label: t('.escort_label') %>
+      <%= render 'pdfs/handover_row', label: t('.destination_label') %>
+    </div>
+  </div>
+</div>

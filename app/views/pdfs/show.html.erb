@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta name="pdfkit-footer_right" content="<%= t('pdfs.footer.page_number') %>" />
-  <meta name="pdfkit-footer_left" content="<%= t('pdfs.footer.protective_marking').to_s.upcase %>" />
+  <meta name="pdfkit-footer_left" content="<%= t('pdfs.footer.protective_marking') %>" />
   <meta name="pdfkit-footer_font_size" content="10" />
   <style>
     <%= PdfStylesheetBuilder.html_safe_pdf_stylesheet %>
@@ -20,5 +20,11 @@
 <%= render('pdfs/medication') %>
 <%= render('pdfs/healthcare_updates') %>
 <%= render('pdfs/offences') %>
+<%= render('pdfs/handover_details') %>
+<%= render('pdfs/record_of_handover') %>
+<%= render('pdfs/checks_and_events_initial') %>
+<%= render('pdfs/checks_and_events_continuation') %>
+<%= render('pdfs/checks_and_events_continuation') %>
+<%= render('pdfs/release_at_court_and_property') %>
 </body>
 </html>

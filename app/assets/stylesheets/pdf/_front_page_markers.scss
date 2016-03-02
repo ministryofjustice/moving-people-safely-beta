@@ -26,12 +26,9 @@
           width: 60%;
         }
       }
-      .label-inline {
-        margin: 0;
-      }
-      .check-box {
-        margin-bottom: 0;
-      }
+    }
+    .label-inline, .check-box {
+      margin-bottom: 0;
     }
   }
   .notes {

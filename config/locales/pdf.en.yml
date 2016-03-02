@@ -7,10 +7,10 @@ en:
       vehicle_cell_number: Vehicle cell no.
     footer:
       page_number: '[page] of [topage]'
-      protective_marking: Official - Sensitive
+      protective_marking: OFFICIAL - SENSITIVE
     nfr:
       marker_label: Not for release
-      reason: Reason
+      reason: :'shared.reason'
     move_information:
       from: From
       to: To
@@ -61,7 +61,7 @@ en:
       prohibited_items: Prohibited items
       non_association: Non-association
       completed_by: Name of person filling in this section
-      signature: Signature
+      signature: :'shared.signature'
     healthcare_needs:
       heading: A3. Healthcare information
       physical_health_risks: Physical health risks
@@ -73,7 +73,7 @@ en:
     shared:
       identifiers_label: PNC / Prison number
     medication:
-      title: Medication
+      title: :'shared.medication'
       instructions: 'Medication handover details in section B1: Record of handover'
       description: Medication description
       administration_information: Medication administration information
@@ -93,3 +93,118 @@ en:
       license_recall: License recall
       offence: Offence
       offence_status: Offence status
+    handover_details:
+      heading: B1. Handover details
+      fit_to_travel: Fit to travel
+      name_of_healthcare_professional: Name of healthcare professional (print)
+      signature: Signature
+      role: Role
+      must_return: Must return
+      must_not_return: Must not return
+      reason: :'shared.reason'
+      medication_heading: :'shared.medication'
+      medication_instructions: See A3. Healthcare information for medication details
+      no_medication: No medication
+      medicaton_with_escort: Medication with escort
+      medication_with_prisoner: Medication with prisoner
+      enclosed_forms: Enclosed forms
+      form: Form
+      attached: Attached
+      quantity: Quantity
+      acct: ACCT
+      sash: Suicide/Self-Harm Warning
+      csra: Cell Sharing risk assessment
+      core_record: F2050 Core Record
+      property_card: Property Card
+      categorisation_documentation: Categorisation Documentation
+      restraints_form: Restraints application form
+      other: Other (please specify)
+      remand_time: Remand Time Calculation
+      pnc_printout: PNC Printout
+      medical_assessment: Medical Assessment/Care Plan
+      confidential_medical_documents: Confidential Medical Documents
+      is91: Immigration Detention Authority (IS91)
+      deportation_order: Deportation Order
+      warrant: Warrant
+    record_of_handover:
+      heading: B2. Record of handover
+      property_details: Property details
+      instructions: Use a property code from the following list
+      valuables: Valuables
+      in_possession: In possession
+      documentation: Documentation
+      stored_property: Stored property
+      cash: Cash
+      valuables_code: V
+      in_possession_code: IP
+      documentation_code: D
+      stored_property_code: SP
+      cash_code: C
+      type: Type
+      seal_number: Seal number
+      handover: Handover
+      prisoner: Prisoner
+      medication: Medication
+      property: Property
+      starting_location: Starting location
+      name_label: :'shared.name'
+      signature_label: Signature
+      contact_number: Contact number
+      escort_label: Escort
+      destination_label: Destination
+    checks_and_events:
+      heading: B3. Record of checks and significant events
+      time: Time
+      details: Details
+      initials: Initials
+      tick_and_last: Tick and sign if this is the last page of the record
+      tick_and_complete: Tick if the record continues on a separate sheet
+      this_is_sheet: This is sheet
+      of: of
+    checks_and_events_initial:
+      heading: :'pdfs.checks_and_events.heading'
+      checks_and_significant_events: Checks and significant events
+      time: :'pdfs.checks_and_events.time'
+      name: :'shared.name'
+      details: :'pdfs.checks_and_events.details'
+      initials: :'pdfs.checks_and_events.initials'
+      prisoner_identified:  Prisoner identified
+      searched:  Searched (state level)
+      escort_briefed:  Escort fully briefed (including risks)
+      searched_by_contractor:  Searched by Contractor (state level)
+      tick_and_last: :'pdfs.checks_and_events.tick_and_last'
+      tick_and_complete: :'pdfs.checks_and_events.tick_and_complete'
+      this_is_sheet: :'pdfs.checks_and_events.this_is_sheet'
+      of: :'pdfs.checks_and_events.of'
+      signature: :'shared.signature'
+    checks_and_events_continuation:
+      heading: :'pdfs.checks_and_events.heading'
+      escort_checks_and_significant_events: Escort checks and significant events
+      highlight_current_risk: Tick this column if the event highlights a current risk, and update cover sheet with the information
+      noting_details: When noting any significant events give details of behaviour, context and any triggers
+      time: :'pdfs.checks_and_events.time'
+      name: :'shared.name'
+      details: :'pdfs.checks_and_events.details'
+      initials: :'pdfs.checks_and_events.initials'
+      tick_and_last: :'pdfs.checks_and_events.tick_and_last'
+      tick_and_complete: :'pdfs.checks_and_events.tick_and_complete'
+      this_is_sheet: :'pdfs.checks_and_events.this_is_sheet'
+      of: :'pdfs.checks_and_events.of'
+      signature: :'shared.signature'
+    release_at_court_and_property:
+      heading: B4. Release at court and receipt of property
+      release_at_court: Release at court
+      certify_checks_made: I certify that all relevant checks have been made with clearance given as shown
+      agency: Agency
+      establishment: Establishment
+      name: :'shared.name'
+      authority_to_release: Authority to release
+      remarks: Remarks
+      release_authorised: Release authorised by SCO / IC
+      name: :'shared.name'
+      signature: Signature
+      release_countersigned_by: Release countersigned by
+      receipt_of_property: Statement of receipt of property
+      content_certification: I certify I have received all the contents of the property bag numbers shown below, and am completely satisfied
+      seal_no: Seal no.
+      Name_print: Name (print)

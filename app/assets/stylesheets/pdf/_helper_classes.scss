@@ -40,6 +40,20 @@
   @extend .input;
   display: inline-block;
   margin-bottom: $margin-bottom;
+  float: left;
+}
+
+.input-inline-group {
+  > div {
+    @extend .input-inline;
+    padding-right: $padding;
+    &:nth-child(2n) {
+      min-width: 5.8em;
+    }
+    &:nth-child(n+2) {
+      border-left: none;
+    }
+  }
 }
 
 .label {
@@ -51,6 +65,7 @@
   display: inline-block;
   padding: $padding-unit;
   margin-bottom: $margin-bottom;
+  float: left;
 }
 
 .input-margin {
@@ -106,11 +121,12 @@
   h2 {
     display: inline;
   }
-  .persistent_info {
+  .persistent-info {
     text-align: right;
     .label {
       @extend .label-inline;
       margin-bottom: 0;
+      float: none;
     }
     .input {
       @extend .input-inline;
@@ -132,5 +148,37 @@
     padding: $padding-unit;
     font-weight: normal;
     height: 1.7em;
+  }
+}
+
+.bordered-left {
+  padding-left: 1em;
+  border-left: 3px solid $light_grey;
+}
+
+.marker-with-reason {
+  @extend .light-background;
+
+  > div {
+    @extend .row;
+  }
+
+  .marker {
+    @extend .padded;
+    @extend .col;
+  }
+
+  .reason {
+    @extend .padded;
+    @extend .col;
+
+    strong {
+      float: left;
+    }
+
+    .input {
+      width: 33.8em;
+      margin-bottom: 0;
+    }
   }
 }

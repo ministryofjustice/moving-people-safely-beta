@@ -3,55 +3,72 @@ require 'rails_helper'
 RSpec.describe PdfGenerator, type: :service do
   include Capybara::RSpecMatchers
 
-  let(:escort) { create(:escort, :with_prisoner) }
-
   describe '.for' do
-    it 'uses PDFKit library' do
-      pdfkit = instance_double('PDFKit', to_pdf: 'PDF code')
-      expect(PDFKit).to receive(:new).and_return(pdfkit)
-      described_class.for(escort)
+    let(:escort) { instance_double(Escort) }
+    let(:html) { '<html>Test document</html>' }
+
+    it 'returns a pdf document' do
+      allow(described_class).to receive(:render).and_return(html)
+      file = described_class.for(escort)
+      expect(file).to be_a_pdf
     end
   end
 
   describe '.render' do
-    let(:html) { described_class.render(escort) }
-    it 'generates the expected content for the header' do
-      expect(html).to have_content('Person Escort Record')
+    # FIXME: these render specs need to be made more maintainable
+
+    before(:all) do
+      travel_to(Date.new(2015, 2, 3)) do
+        prisoner = build_stubbed(:prisoner)
+        escort = build_stubbed(:escort, prisoner: prisoner)
+        html = described_class.render(escort)
+        @content = ActionController::Base.helpers.strip_tags(html)
+      end
     end
+
+    attr_reader :content
+
+    it 'generates the expected content for the header' do
+      expect(content).to have_content('Person Escort Record')
+    end
+
     it 'generates the expected content for NFR section' do
-      expect(html).to have_content('Not for release').
+      expect(content).to have_content('Not for release').
         and have_content('Reason')
     end
+
     it 'generates the expected content for move information section' do
-      expect(html).to have_content('From').
+      expect(content).to have_content('From').
         and have_content('To').
         and have_content('Date of travel').
         and have_content('Destination update')
     end
+
     it 'generates the expected content for personal information section' do
-      travel_to(Date.new(2015, 2, 3)) do
-        expect(html).to have_content('Family name Bigglesworth').
-          and have_content('Forenames Tarquin').
-          and have_content('Date of birth 13 2 1972').
-          and have_content('Age 42').
-          and have_content('Sex M').
-          and have_content('Prison number A1234BC').
-          and have_content('Nationality British').
-          and have_content('Attach photo')
-      end
+      expect(content).to have_content('Family name Bigglesworth').
+        and have_content('Forenames Tarquin').
+        and have_content('Date of birth 13 2 1972').
+        and have_content('Age 42').
+        and have_content('Sex M').
+        and have_content('Prison number A1234BC').
+        and have_content('Nationality British').
+        and have_content('Attach photo')
     end
+
     it 'generates the expected content for the updates section' do
-      expect(html).to have_content('Include relevant updates').
+      expect(content).to have_content('Include relevant updates').
         and have_content('and heightened risks from section B3')
     end
+
     it 'generates the expected content for the risk updates section' do
-      expect(html).to have_content('Risk updates').
+      expect(content).to have_content('Risk updates').
         and have_content('Include relevant updates').
         and have_content('and heightened risks from section B3').
         and have_content('Tick if SASH has been opened')
     end
+
     it 'generates the expected content for the risk summary section' do
-      expect(html).to have_content('A2. Risk summary').
+      expect(content).to have_content('A2. Risk summary').
         and have_content('PNC / Prison number').
         and have_content('Risks to self').
         and have_content('Violence and risk to others').
@@ -64,8 +81,9 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Name of person filling in this section').
         and have_content('Signature')
     end
+
     it 'generates the expected content for the healthcare section' do
-      expect(html).to have_content('A3. Healthcare information').
+      expect(content).to have_content('A3. Healthcare information').
         and have_content('Physical health risks').
         and have_content('Mental health risks').
         and have_content('Social care needs and other healthcare needs').
@@ -84,8 +102,9 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('This section should be').
         and have_content('completed by a medical professional')
     end
+
     it 'generates the expected content for the offences section' do
-      expect(html).to have_content('A4. Offences').
+      expect(content).to have_content('A4. Offences').
         and have_content('See A1. Cover sheet for details of current offence').
         and have_content('Other offences').
         and have_content('Use an offence status from the following list').
@@ -95,6 +114,118 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('License recall').
         and have_content('Offence').
         and have_content('Offence status')
+    end
+
+    it 'generates the expected content for the handover details section' do
+      expect(content).to have_content('B1. Handover details').
+        and have_content('Fit to travel').
+        and have_content('Name of healthcare professional (print)').
+        and have_content('Signature').
+        and have_content('Role').
+        and have_content('Must return').
+        and have_content('Reason').
+        and have_content('Must not return')
+    end
+
+    it 'generates the expected content for the handover medication section' do
+      expect(content).to have_content('Medication').
+        and have_content('See A3. Healthcare information').
+        and have_content('for medication details').
+        and have_content('No medication').
+        and have_content('Medication with escort').
+        and have_content('Medication with prisoner')
+    end
+
+    it 'generates the expected content for the enclosed forms section' do
+      expect(content).to have_content('Enclosed forms').
+        and have_content('Form').
+        and have_content('Attached').
+        and have_content('Quantity').
+        and have_content('ACCT').
+        and have_content('Suicide/Self-Harm Warning').
+        and have_content('Cell Sharing risk assessment').
+        and have_content('F2050 Core Record').
+        and have_content('Property Card').
+        and have_content('Categorisation Documentation').
+        and have_content('Restraints application form').
+        and have_content('Other (please specify)').
+        and have_content('Remand Time Calculation').
+        and have_content('PNC Printout').
+        and have_content('Medical Assessment/Care Plan').
+        and have_content('Confidential Medical Documents').
+        and have_content('Immigration Detention Authority (IS91)').
+        and have_content('Deportation Order').
+        and have_content('Warrant')
+    end
+
+    it 'generates the expected content for the record of handover section' do
+      expect(content).to have_content('B2. Record of handover').
+        and have_content('Property details').
+        and have_content('Use a property code from the following list').
+        and have_content('V - Valuables').
+        and have_content('IP - In possession').
+        and have_content('D - Documentation').
+        and have_content('SP - Stored property').
+        and have_content('C - Cash').
+        and have_content('Type').
+        and have_content('Seal number').
+        and have_content('Handover').
+        and have_content('Prisoner').
+        and have_content('Medication').
+        and have_content('Property').
+        and have_content('Starting location').
+        and have_content('Name (print)').
+        and have_content('Signature').
+        and have_content('Contact number').
+        and have_content('Escort').
+        and have_content('Destination')
+    end
+
+    it 'generates the expected content for the record of checks and events' do
+      expect(content).to have_content('B3. Record of check').
+        and have_content('and significant events').
+        and have_content('Checks and significant events').
+        and have_content('Time').
+        and have_content('Details').
+        and have_content('Name (print)').
+        and have_content('Initials').
+        and have_content('Prisoner identified').
+        and have_content('Searched (state level)').
+        and have_content('Escort fully briefed (including risks)').
+        and have_content('Searched by Contractor (state level)').
+        and have_content('Tick and sign if this is the').
+        and have_content('last page of the record').
+        and have_content('Tick if the record continues on a separate sheet').
+        and have_content('Signature').
+        and have_content('This is sheet').
+        and have_content('Tick this column if the event highlights a current').
+        and have_content('risk, and update cover sheet with the information').
+        and have_content('When noting any significant events give details').
+        and have_content('of behaviour, context and any triggers')
+    end
+
+    it 'generates expected content for release at court and property' do
+      expect(content).to have_content('B4. Release at court').
+        and have_content('and receipt of property').
+        and have_content('Release at court').
+        and have_content('I certify that all relevant checks have been made').
+        and have_content('with clearance given as shown').
+        and have_content('Agency').
+        and have_content('Establishment').
+        and have_content('Name').
+        and have_content('Authority to release').
+        and have_content('Remarks').
+        and have_content('Release authorised by SCO / IC').
+        and have_content('Name').
+        and have_content('Signature').
+        and have_content('Release countersigned by').
+        and have_content('Statement of receipt of property').
+        and have_content('I certify I have received all the contents of the').
+        and have_content('property bag numbers shown below,').
+        and have_content('and am completely satisfied').
+        and have_content('Seal no.').
+        and have_content('Name (print)').
+        and have_content('Signature')
     end
   end
 end
