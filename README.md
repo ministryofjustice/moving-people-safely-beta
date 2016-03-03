@@ -21,7 +21,8 @@ machine. You can find the relevant fonts in the `fonts/` directory. You should
 be able to add them to OS X by double clicking the font.
 
 The `Dockerfile` is responsible for setting up the fonts from the repo on the
-container.
+container. It also includes a font configuration file required to fix font
+hinting and anti-aliasing in the container when generating PDF's.
 
 ### `Environment Variables`
 
