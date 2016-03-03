@@ -3,7 +3,7 @@ class Prisoner < ActiveRecord::Base
   belongs_to :escort, touch: true
 
   def full_name
-    [family_name, forenames].join(', ')
+    [family_name, forenames].reject(&:blank?).join(', ')
   end
 
   def formatted_date_of_birth

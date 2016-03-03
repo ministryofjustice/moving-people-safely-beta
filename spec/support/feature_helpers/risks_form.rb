@@ -21,7 +21,7 @@ module FeatureHelpers
 
     def build_risk_properties
       ['Risks to self', 'Violence and risk to others', 'Risk from others',
-       'Escort escape risk', 'Intolerant behavior towards others',
+       'Escort escape risk', 'Intolerant behaviour towards others',
        'Prohibited items', 'Non-association'
       ].each_with_index.
         each_with_object({}) do |(r, i), o|
