@@ -16,6 +16,7 @@ en:
       to: To
       date: Date of travel
       destination_update: Destination update
+      reason_for_move: Reason for move (current offence)
     front_page_markers:
       risks:
         title: Risks overview
