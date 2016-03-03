@@ -48,4 +48,32 @@ RSpec.describe Escort, type: :model do
         to(:prisoner).with_prefix
     end
   end
+
+  describe '#prisoner' do
+    context 'with prisoner' do
+      subject { create(:escort, :with_prisoner) }
+      its(:prisoner) { is_expected.to be_persisted }
+      its(:prisoner) { is_expected.to be_kind_of(Prisoner) }
+    end
+
+    context 'without prisoner' do
+      subject { create(:escort) }
+      its(:prisoner) { is_expected.to_not be_persisted }
+      its(:prisoner) { is_expected.to be_kind_of(Prisoner) }
+    end
+  end
+
+  describe '#risk_information' do
+    context 'with risk_information' do
+      subject { create(:escort, :with_risk_information) }
+      its(:risk_information) { is_expected.to be_persisted }
+      its(:risk_information) { is_expected.to be_kind_of(RiskInformation) }
+    end
+
+    context 'without risk_information' do
+      subject { create(:escort) }
+      its(:risk_information) { is_expected.to_not be_persisted }
+      its(:risk_information) { is_expected.to be_kind_of(RiskInformation) }
+    end
+  end
 end

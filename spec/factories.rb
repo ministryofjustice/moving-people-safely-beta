@@ -9,6 +9,12 @@ FactoryGirl.define do
         create :prisoner, escort: escort, prison_number: evaluator.prison_number
       end
     end
+
+    trait :with_risk_information do
+      after :create do |escort|
+        create :risk_information, escort: escort
+      end
+    end
   end
 
   factory :prisoner do
