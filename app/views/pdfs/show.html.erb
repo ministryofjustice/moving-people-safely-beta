@@ -12,7 +12,7 @@
 <%= render('pdfs/header') %>
 <%= render('pdfs/not_for_release') %>
 <%= render('pdfs/move_information') %>
-<%= render('pdfs/prisoner', prisoner: escort.prisoner) %>
+<%= cell('pdf/prisoner', escort.prisoner) %>
 <%= render('pdfs/front_page_markers') %>
 <%= render('pdfs/updates') %>
 <%= render('pdfs/risk_summary') %>
