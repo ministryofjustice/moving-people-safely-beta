@@ -7,7 +7,21 @@ RSpec.describe Prisoner, type: :model do
 
   subject { create(:prisoner) }
 
-  its(:full_name) { is_expected.to eq 'Bigglesworth, Tarquin' }
+  describe '#full_name' do
+    context 'with family_name and forenames present' do
+      its(:full_name) { is_expected.to eq 'Bigglesworth, Tarquin' }
+    end
+
+    context 'with forenames blank' do
+      subject { create(:prisoner, forenames: nil) }
+      its(:full_name) { is_expected.to eq 'Bigglesworth' }
+    end
+
+    context 'with family_name blank' do
+      subject { create(:prisoner, family_name: nil) }
+      its(:full_name) { is_expected.to eq 'Tarquin' }
+    end
+  end
 
   context 'when date_of_birth is present' do
     its(:formatted_date_of_birth) { is_expected.to eq '13/02/1972' }
