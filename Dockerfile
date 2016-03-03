@@ -9,6 +9,7 @@ RUN rm -rf wkhtmltox
 
 RUN cp -r ./fonts/liberation_sans /usr/share/fonts/truetype/
 RUN fc-cache -f -v
+RUN cp ./fonts/10-wkhtmltopdf.conf /etc/fonts/conf.d/
 
 ENV UNICORN_PORT 3000
 EXPOSE $UNICORN_PORT
