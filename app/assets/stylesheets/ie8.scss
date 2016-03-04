@@ -1,0 +1,85 @@
+
+.sign-out {
+  right: 10px;
+}
+
+header h1 {
+  font-size: 48px;
+}
+
+.column-one-quarter {
+  float: left;
+  width: 25%;
+}
+
+.column-three-quarters {
+  float: left;
+  width: 75%;
+}
+
+.form-control {
+  max-width: 50%;
+}
+
+input[type="password"] {
+  font-family: sans-serif;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-date .form-group-year {
+  width: 90px;
+}
+
+.block-label {
+  padding-left: 40px;
+  display: inline-block;
+  float: left;
+
+  input {
+    left: 5px;
+    top: 10px;
+  }
+}
+
+.summary-content > div > div {
+  float: left;
+}
+
+.forenames {
+  width: 75%;
+}
+
+.family-name, .dob, .nationality, .prison-number, .cro-number, .pnc-number {
+  width: 25%;
+}
+
+.phase-banner {
+  width: 960px !important;
+  margin: 0 30px;
+}
+
+.age, .sex {
+  width: 12.5%;
+}
+
+.optional-section textarea {
+  min-width: 80%;
+}
+
+.phase-banner {
+  width: 960px;
+  margin: auto;
+}
+
+.container {
+  .content {
+    width: 1020px;
+  }
+}
+
+.search-wrapper .button {
+  padding: 0.35em 0.6em 0.3em 0.6em;
+}

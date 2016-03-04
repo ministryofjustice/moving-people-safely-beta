@@ -1,6 +1,7 @@
 <%= content_for :stylesheets do %>
-    <!--[if IE 8]><%= stylesheet_link_tag('internet-explorer/ie8.css') %><![endif]-->
     <%= stylesheet_link_tag('application.css') %>
+    <!--[if IE 8]><%= stylesheet_link_tag('ie8') %><![endif]-->
+    <!--[if IE 9]><%= stylesheet_link_tag('ie9') %><![endif]-->
 <% end %>
 
 <% content_for :content_override do %>
@@ -28,6 +29,8 @@
     </div>
   <% end %>
 <% end %>
+
+<% content_for :js_gt_ie do %> 8 <% end %>
 
 <% content_for :javascripts do %>
     <%= javascript_include_tag 'application.js' %>
