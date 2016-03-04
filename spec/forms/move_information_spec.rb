@@ -32,4 +32,33 @@ RSpec.describe MoveInformation, type: :form do
       end
     end
   end
+
+  describe 'validations' do
+    describe 'date_of_travel' do
+      it 'allows blank dates' do
+        subject.date_of_travel = nil
+        subject.validate
+        is_expected.not_to have_error_for(:date_of_travel)
+      end
+
+      it 'allows todays date' do
+        subject.date_of_travel = Date.today
+        subject.validate
+        is_expected.not_to have_error_for(:date_of_travel)
+      end
+
+      it 'allows dates in the future' do
+        subject.date_of_travel = Date.tomorrow
+        subject.validate
+        is_expected.not_to have_error_for(:date_of_travel)
+      end
+
+      it 'does not allow dates in the past' do
+        subject.date_of_travel = Date.yesterday
+        subject.validate
+        is_expected.to have_error_for(:date_of_travel).
+          with_message(/in the past/)
+      end
+    end
+  end
 end

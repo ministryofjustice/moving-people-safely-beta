@@ -21,4 +21,5 @@ en:
         move_information:
           attributes:
             date_of_travel:
-              invalid: invalid date of tarvel
+              invalid: invalid date of travel
+              inclusion: cannot be in the past
