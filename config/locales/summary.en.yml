@@ -4,7 +4,7 @@ en:
       heading: Summary
       prisoner:
         heading: :'shared.prisoner_information_heading'
-        edit_section: Edit
+        edit_section: :'shared.edit_section_link_text'
         family_name: :'shared.family_name'
         forenames: :'shared.forenames'
         date_of_birth: :'shared.date_of_birth'
@@ -14,3 +14,10 @@ en:
         nationality: :'shared.nationality'
         cro_number: :'shared.cro_number'
         pnc_number: :'shared.pnc_number'
+      move:
+        heading: :'shared.move_information_heading'
+        edit_section: :'shared.edit_section_link_text'
+        origin: :'shared.origin'
+        destination: :'shared.destination'
+        date_of_travel: :'shared.date_of_travel'
+        reason: Reason for move

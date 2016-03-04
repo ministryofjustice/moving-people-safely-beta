@@ -3,13 +3,18 @@ en:
     age: Age
     cro_number: CRO number
     date_of_birth: Date of birth
+    date_of_travel: Date of travel
     day_label: Day
+    destination: To
+    edit_section_link_text: Edit
     family_name: Family name
     forenames: Forenames
     medication: Medication
     month_label: Month
+    move_information_heading: Move Information
     name: Name (print)
     nationality: Nationality
+    origin: From
     pnc_number: PNC number
     prison_number: Prison number
     prisoner_information_heading: Prisoner Information

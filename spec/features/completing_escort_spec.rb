@@ -58,6 +58,8 @@ RSpec.feature 'completing digital person escort record', type: :feature do
     fill_in_identification
     click_link 'Risks'
     fill_in_risks
+    click_link 'Move Information'
+    fill_in_move_information
     click_link 'Summary'
 
     expect(page).to have_heading 'Summary'
@@ -73,5 +75,12 @@ RSpec.feature 'completing digital person escort record', type: :feature do
       and have_content('Prison number A1234BC').
       and have_content('CRO number SOMECRO').
       and have_content('PNC number SOMEPNC')
+
+    expect(page).to have_text('Summary').
+      and have_link('Edit', href: move_information_path(escort)).
+      and have_content('From HMP Clive House').
+      and have_content('To Petty France').
+      and have_content('Date of travel 03/02/2015').
+      and have_content('Reason for move Expected to attend show the thing')
   end
 end

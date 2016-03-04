@@ -1,0 +1,26 @@
+<div class="summary-heading">
+  <h2><%= t('.heading') %></h2>
+  <%= link_to t('.edit_section'), move.edit_section_path %>
+</div>
+<div class="summary-content">
+  <div>
+    <div class="origin">
+      <strong class="label"><%= t('.origin') %></strong>
+      <div class="output"><%= move.origin %></div>
+    </div>
+    <div class="destination">
+      <strong class="label"><%= t('.destination') %></strong>
+      <div class="output"><%= move.destination %></div>
+    </div>
+    <div class="date_of_travel">
+      <strong class="label"><%= t('.date_of_travel') %></strong>
+      <div class="output"><%= move.formatted_date_of_travel %></div>
+    </div>
+  </div>
+  <div>
+    <div class="reason">
+      <strong class="label"><%= t('.reason') %></strong>
+      <div class="output"><%= move.reason %></div>
+    </div>
+  </div>
+</div>
