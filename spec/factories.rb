@@ -15,6 +15,12 @@ FactoryGirl.define do
         create :risk_information, escort: escort
       end
     end
+
+    trait :with_move do
+      after :create do |escort|
+        create :move, escort: escort
+      end
+    end
   end
 
   factory :prisoner do

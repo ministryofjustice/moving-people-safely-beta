@@ -26,6 +26,6 @@ class Escort < ActiveRecord::Base
   end
 
   def move
-    super || build_move
+    super || build_move(Move.default_origin_option)
   end
 end

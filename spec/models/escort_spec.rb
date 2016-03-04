@@ -50,13 +50,13 @@ RSpec.describe Escort, type: :model do
   end
 
   describe '#prisoner' do
-    context 'with prisoner' do
+    context 'when a prisoner exists' do
       subject { create(:escort, :with_prisoner) }
       its(:prisoner) { is_expected.to be_persisted }
       its(:prisoner) { is_expected.to be_kind_of(Prisoner) }
     end
 
-    context 'without prisoner' do
+    context 'when a prisoner does not exist' do
       subject { create(:escort) }
       its(:prisoner) { is_expected.to_not be_persisted }
       its(:prisoner) { is_expected.to be_kind_of(Prisoner) }
@@ -64,16 +64,34 @@ RSpec.describe Escort, type: :model do
   end
 
   describe '#risk_information' do
-    context 'with risk_information' do
+    context 'when risk_information exists' do
       subject { create(:escort, :with_risk_information) }
       its(:risk_information) { is_expected.to be_persisted }
       its(:risk_information) { is_expected.to be_kind_of(RiskInformation) }
     end
 
-    context 'without risk_information' do
+    context 'when risk_information does not exist' do
       subject { create(:escort) }
       its(:risk_information) { is_expected.to_not be_persisted }
       its(:risk_information) { is_expected.to be_kind_of(RiskInformation) }
+    end
+  end
+
+  describe '#move' do
+    context 'when a move exists' do
+      subject { create(:escort, :with_move) }
+      its(:move) { is_expected.to be_persisted }
+      its(:move) { is_expected.to be_kind_of(Move) }
+    end
+
+    context 'when a move does not exist' do
+      subject { create(:escort) }
+      its(:move) { is_expected.not_to be_persisted }
+      its(:move) { is_expected.to be_kind_of(Move) }
+
+      it 'has a default origin set' do
+        expect(subject.move.origin).to eq 'HMP Bedford'
+      end
     end
   end
 end
