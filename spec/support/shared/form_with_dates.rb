@@ -21,7 +21,7 @@ RSpec.shared_examples 'a form with dates' do |date_fields|
         its(date_field) { is_expected.to eq Date.civil(1987, 7, 29) }
         its("#{date_field}_presenter") { is_expected.to be_a Date }
         it 'is valid' do
-          expect(subject.errors[date_field]).to be_empty
+          is_expected.not_to have_error_for(date_field).with_message(invalid_date_text)
         end
       end
 
@@ -30,7 +30,7 @@ RSpec.shared_examples 'a form with dates' do |date_fields|
         its(date_field) { is_expected.to be_nil }
         its("#{date_field}_presenter") { is_expected.to be_a UncoercedDate }
         it 'is valid' do
-          expect(subject.errors[date_field]).to be_empty
+          is_expected.not_to have_error_for(date_field).with_message(invalid_date_text)
         end
       end
 
@@ -39,7 +39,7 @@ RSpec.shared_examples 'a form with dates' do |date_fields|
         its(date_field) { is_expected.to be_nil }
         its("#{date_field}_presenter") { is_expected.to be_a UncoercedDate }
         it 'is valid' do
-          expect(subject.errors[date_field]).to be_empty
+          is_expected.not_to have_error_for(date_field).with_message(invalid_date_text)
         end
       end
 
@@ -48,7 +48,7 @@ RSpec.shared_examples 'a form with dates' do |date_fields|
         its(date_field) { is_expected.to eq date_value }
         its("#{date_field}_presenter") { is_expected.to be_a UncoercedDate }
         it 'is invalid' do
-          expect(subject.errors[date_field]).to include invalid_date_text
+          is_expected.to have_error_for(date_field).with_message(invalid_date_text)
         end
       end
 
@@ -57,7 +57,7 @@ RSpec.shared_examples 'a form with dates' do |date_fields|
         its(date_field) { is_expected.to eq date_value }
         its("#{date_field}_presenter") { is_expected.to be_a UncoercedDate }
         it 'is invalid' do
-          expect(subject.errors[date_field]).to include invalid_date_text
+          is_expected.to have_error_for(date_field).with_message(invalid_date_text)
         end
       end
 
@@ -66,7 +66,7 @@ RSpec.shared_examples 'a form with dates' do |date_fields|
         its(date_field) { is_expected.to eq Date.civil(19, 7, 29) }
         its("#{date_field}_presenter") { is_expected.to be_a Date }
         it 'is invalid' do
-          expect(subject.errors[date_field]).to include invalid_date_text
+          is_expected.to have_error_for(date_field).with_message(invalid_date_text)
         end
       end
     end
