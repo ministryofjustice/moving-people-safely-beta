@@ -14,6 +14,31 @@
 
 ### `Local Setup`
 
+#### `Testing in old IE`
+
+User research indicates that the overwhelming majority of users will access
+this service in Internet Explorer 8 running on Windows XP. Testing the
+user experience therefore requires the installation and running of a suitable
+virtual machine.
+
+While both products have details instructions the high-level process to
+get up and running is downloading:
+
+* The latest version of [Virtual Box](https://www.virtualbox.org).
+* Virtual Machines from [Microsoft](https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/)
+
+Having done this you will be able to add the downloaded VMs to
+VirtualBox by:
+
+* Selecting 'New'
+* Naming the VM and clicking 'Continue'
+* Accepting all defaults until prompted about the Hard Disk, at which
+  point you should 'Use an existing..' and point it to the downloaded
+.vmdk file
+
+From within a Virtual Machine you will be able to access external URLs by
+addressing them normally and localhost on the host machine from http://10.0.2.2
+
 #### `FONTS`
 
 The PDF output relies on the `Liberation Sans` font being present on the host
