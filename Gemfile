@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'cells'
+gem 'cells-erb'
 gem 'devise'
 gem 'devise_invitable'
 gem 'govuk_frontend_toolkit'

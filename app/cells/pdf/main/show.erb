@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="pdfkit-footer_right" content="<%= t('pdfs.footer.page_number') %>" />
+  <meta name="pdfkit-footer_left" content="<%= t('pdfs.footer.protective_marking') %>" />
+  <meta name="pdfkit-footer_font_size" content="10" />
+  <style>
+    <%= PdfStylesheetBuilder.html_safe_pdf_stylesheet %>
+  </style>
+</head>
+<body>
+<%= render('header') %>
+<%= render('not_for_release') %>
+<%= render('move_information') %>
+<%= cell('pdf/prisoner', prisoner) %>
+<%= render('front_page_markers') %>
+<%= render('updates') %>
+<%= render('risk_summary') %>
+<%= render('healthcare_needs') %>
+<%= render('medication') %>
+<%= render('healthcare_updates') %>
+<%= render('offences') %>
+</body>
+</html>
