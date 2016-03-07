@@ -11,7 +11,7 @@ module FeatureHelpers
       fill_in 'move_information[date_of_travel][month]', with: date.month
       fill_in 'move_information[date_of_travel][year]', with: date.year
 
-      fill_in 'Reason for move(current offence)', with: attributes[:reason]
+      fill_in 'Reason for move (current offence)', with: attributes[:reason]
 
       click_save
     end
