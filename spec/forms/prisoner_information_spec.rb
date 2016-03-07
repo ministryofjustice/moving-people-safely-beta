@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Identification, type: :form do
+RSpec.describe PrisonerInformation, type: :form do
   let(:escort) { create(:escort) }
 
   subject { described_class.new(escort) }
@@ -20,8 +20,9 @@ RSpec.describe Identification, type: :form do
   it_behaves_like 'a form that syncs to a model',
     input_attributes, coercion_overrides
   it_behaves_like 'a form that retrives or builds its target', :prisoner
-  it_behaves_like 'a form that knows what template to render', 'identification'
-  it_behaves_like 'a form that belongs to an endpoint', 'identification'
+  it_behaves_like 'a form that knows what template to render',
+    'prisoner_information'
+  it_behaves_like 'a form that belongs to an endpoint', 'prisoner-information'
   it_behaves_like 'a form with dates', %i[ date_of_birth ]
 
   it { is_expected.to validate_inclusion_of(:sex).in_array(%w[ male female ]) }

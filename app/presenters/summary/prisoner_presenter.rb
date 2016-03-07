@@ -9,7 +9,8 @@ module Summary
       :pnc_number, to: :@model
 
     def edit_section_path
-      Rails.application.routes.url_helpers.identification_path(@model.escort)
+      Rails.application.routes.url_helpers.
+        prisoner_information_path(@model.escort)
     end
   end
 end
