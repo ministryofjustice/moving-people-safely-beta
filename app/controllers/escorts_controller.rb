@@ -15,7 +15,7 @@ class EscortsController < ApplicationController
   end
 
   def summary
-    @summary = SummaryPresenter.new(escort)
+    @escort = Summary::EscortPresenter.new(escort)
   end
 
   helper_method :form
