@@ -7,7 +7,7 @@ RSpec.describe Summary::MovePresenter, type: :presenter do
   subject { described_class.new(move) }
 
   describe '#edit_section_link' do
-    it 'returns a path to the identification form page' do
+    it 'returns a path to the move information form page' do
       expected_link_path = "/escort/#{escort.id}/move-information"
       expect(subject.edit_section_path).to eq expected_link_path
     end

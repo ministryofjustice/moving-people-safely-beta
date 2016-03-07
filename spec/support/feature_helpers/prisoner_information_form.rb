@@ -1,6 +1,6 @@
 module FeatureHelpers
-  module IdentificationForm
-    def fill_in_identification(options = {})
+  module PrisonerInformationForm
+    def fill_in_prisoner_information(options = {})
       options = {
         family_name: 'Bigglesworth',
         forenames: 'Tarquin',
@@ -14,11 +14,11 @@ module FeatureHelpers
       fill_in 'Family name', with: options.fetch(:family_name)
       fill_in 'Forenames', with: options.fetch(:forenames)
       choose options.fetch(:sex)
-      fill_in 'identification[date_of_birth][day]',
+      fill_in 'prisoner_information[date_of_birth][day]',
         with: options.fetch(:date_of_birth)&.day
-      fill_in 'identification[date_of_birth][month]',
+      fill_in 'prisoner_information[date_of_birth][month]',
         with: options.fetch(:date_of_birth)&.month
-      fill_in 'identification[date_of_birth][year]',
+      fill_in 'prisoner_information[date_of_birth][year]',
         with: options.fetch(:date_of_birth)&.year
       fill_in 'Nationality', with: options.fetch(:nationality)
       fill_in 'CRO number', with: options.fetch(:cro_number)

@@ -10,18 +10,18 @@ RSpec.feature 'completing digital person escort record', type: :feature do
     expected_path = %r{
       /escort/
       #{TestHelper::UUID_REGEX}
-      /identification
+      /prisoner-information
     }x
 
     expect(current_path).to match expected_path
   end
 
-  scenario 'filling in the prisoner identification page' do
+  scenario 'filling in the prisoner prisoner_information page' do
     start_escort_form
 
     expect(page).to have_heading 'Prisoner Information'
 
-    fill_in_identification
+    fill_in_prisoner_information
 
     expect(page).
       to have_content 'Escort record updated successfully'
@@ -29,7 +29,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'filling in the risks page' do
     start_escort_form
-    fill_in_identification
+    fill_in_prisoner_information
     click_link 'Risks'
 
     expect(page).to have_heading 'Risks'
@@ -42,7 +42,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'filling in the move information page' do
     start_escort_form
-    fill_in_identification
+    fill_in_prisoner_information
     click_link 'Move Information'
 
     expect(page).to have_heading 'Move Information'
@@ -55,7 +55,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'vieiwing the summary of an escort' do
     start_escort_form
-    fill_in_identification
+    fill_in_prisoner_information
     click_link 'Risks'
     fill_in_risks
     click_link 'Move Information'
@@ -65,7 +65,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
     expect(page).to have_heading 'Summary'
 
     expect(page).to have_text('Prisoner Information').
-      and have_link('Edit', href: identification_path(escort)).
+      and have_link('Edit', href: prisoner_information_path(escort)).
       and have_content('Family name Bigglesworth').
       and have_content('Forenames Tarquin').
       and have_content('Date of birth 13/02/1972').

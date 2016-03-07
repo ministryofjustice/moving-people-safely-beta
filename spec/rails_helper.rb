@@ -57,7 +57,7 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include(FeatureHelpers::Forms, type: :feature)
   config.include(FeatureHelpers::Sessions, type: :feature)
-  config.include(FeatureHelpers::IdentificationForm, type: :feature)
+  config.include(FeatureHelpers::PrisonerInformationForm, type: :feature)
   config.include(FeatureHelpers::RisksForm, type: :feature)
   config.include(FeatureHelpers::MoveInformationForm, type: :feature)
   config.include(MailHelpers)

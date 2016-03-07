@@ -20,11 +20,11 @@
       <%= t('.dob.hint') %>
     </p>
     <div class="form-group form-group-day">
-      <label for="identification_date_of_birth_day">
+      <label for="prisoner_information_date_of_birth_day">
         <%= t('.dob.day_label') %>
       </label>
       <%= text_field_tag(
-              'identification[date_of_birth][day]',
+              'prisoner_information[date_of_birth][day]',
               f.object.date_of_birth_presenter.day,
               maxlength: 2,
               size: 2,
@@ -32,11 +32,11 @@
           ) %>
     </div>
     <div class="form-group form-group-month">
-      <label for="identification_date_of_birth_month">
+      <label for="prisoner_information_date_of_birth_month">
         <%= t('.dob.month_label') %>
       </label>
       <%= text_field_tag(
-              'identification[date_of_birth][month]',
+              'prisoner_information[date_of_birth][month]',
               f.object.date_of_birth_presenter.month,
               maxlength: 2,
               size: 2,
@@ -44,11 +44,11 @@
           ) %>
     </div>
     <div class="form-group form-group-year">
-      <label for="identification_date_of_birth_year">
+      <label for="prisoner_information_date_of_birth_year">
         <%= t('.dob.year_label') %>
       </label>
       <%= text_field_tag(
-              'identification[date_of_birth][year]',
+              'prisoner_information[date_of_birth][year]',
               f.object.date_of_birth_presenter.year,
               maxlength: 4,
               size: 4,
