@@ -21,6 +21,8 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
     expect(page).to have_heading 'Prisoner Information'
 
+    expect(page).to have_preview_per_link
+
     fill_in_prisoner_information
 
     expect(page).
@@ -33,6 +35,8 @@ RSpec.feature 'completing digital person escort record', type: :feature do
     click_link 'Risks'
 
     expect(page).to have_heading 'Risks'
+
+    expect(page).to have_preview_per_link
 
     fill_in_risks
 
@@ -47,13 +51,15 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
     expect(page).to have_heading 'Move Information'
 
+    expect(page).to have_preview_per_link
+
     fill_in_move_information
 
     expect(page).
       to have_content 'Escort record updated successfully'
   end
 
-  scenario 'vieiwing the summary of an escort' do
+  scenario 'viewing the summary of an escort' do
     start_escort_form
     fill_in_prisoner_information
     click_link 'Risks'
@@ -63,6 +69,8 @@ RSpec.feature 'completing digital person escort record', type: :feature do
     click_link 'Summary'
 
     expect(page).to have_heading 'Summary'
+
+    expect(page).to have_preview_per_link
 
     expect(page).to have_text('Prisoner Information').
       and have_link('Edit', href: prisoner_information_path(escort)).
