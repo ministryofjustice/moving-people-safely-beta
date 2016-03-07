@@ -31,4 +31,32 @@ RSpec.describe Identification, type: :form do
       expect(subject.prison_number).to eq escort.prisoner.prison_number
     end
   end
+
+  describe 'age validation' do
+    it 'does not allow ages less than 16' do
+      subject.date_of_birth = 15.years.ago.to_date
+      subject.validate
+
+      is_expected.to have_error_for(:date_of_birth).
+        with_message(/out of range/)
+    end
+
+    it 'does not allow ages greater than 100' do
+      subject.date_of_birth = 101.years.ago.to_date
+      subject.validate
+
+      is_expected.to have_error_for(:date_of_birth).
+        with_message(/out of range/)
+    end
+
+    it 'allows ages between 16 & 100' do
+      years = (16..100).map { |y| y.years.ago.to_date }
+      years.each do |year|
+        subject.date_of_birth = year
+        subject.validate
+
+        is_expected.not_to have_error_for(:date_of_birth)
+      end
+    end
+  end
 end

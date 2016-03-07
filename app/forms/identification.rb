@@ -9,6 +9,8 @@ class Identification < Form
   attribute :pnc_number,    String
   date :date_of_birth
 
+  validates :date_of_birth, prisoner_age: true
+
   validates :sex, inclusion: %w[ male female ], allow_nil: true
 
   delegate :prison_number, to: :target
