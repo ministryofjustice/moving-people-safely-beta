@@ -81,6 +81,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
       and have_content('From HMP Clive House').
       and have_content('To Petty France').
       and have_content('Date of travel 03/02/2015').
-      and have_content('Reason for move Expected to attend show the thing')
+      and have_content('Reason for move (current offence) ' \
+        'Expected to attend show the thing')
   end
 end

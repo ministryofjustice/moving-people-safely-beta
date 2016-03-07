@@ -20,4 +20,4 @@ en:
         origin: :'shared.origin'
         destination: :'shared.destination'
         date_of_travel: :'shared.date_of_travel'
-        reason: Reason for move
+        reason: :'shared.reason_for_move'

@@ -21,47 +21,54 @@
 .summary-content {
   background: #F8F8F8;
   padding: 0.5em;
+  margin-bottom: 2em;
   > div {
     @extend %grid-row;
     margin-bottom: 0.5em;
-    .family-name {
-      @include grid-column(1/4)
-    }
-    .forenames {
-      @include grid-column(3/4)
-    }
-    .dob {
-      @include grid-column(1/4)
-    }
-    .age {
-      @include grid-column(1/8)
-    }
-    .sex {
-      @include grid-column(1/8)
-    }
-    .nationality {
-      @include grid-column(1/4)
-    }
-    .prison-number {
-      @include grid-column(1/4)
-    }
-    .cro-number {
-      @include grid-column(1/4)
-    }
-    .pnc-number {
-      @include grid-column(1/4)
-    }
-    .origin {
-      @include grid-column(1/4)
-    }
-    .destination {
-      @include grid-column(1/4)
-    }
-    .date_of_travel {
-      @include grid-column(1/4)
-    }
-    .reason {
-      @include grid-column(3/4)
-    }
+  }
+}
+
+#prisoner-information {
+  .family-name {
+    @include grid-column(1/4)
+  }
+  .forenames {
+    @include grid-column(3/4)
+  }
+  .dob {
+    @include grid-column(1/4)
+  }
+  .age {
+    @include grid-column(1/8)
+  }
+  .sex {
+    @include grid-column(1/8)
+  }
+  .nationality {
+    @include grid-column(1/4)
+  }
+  .prison-number {
+    @include grid-column(1/4)
+  }
+  .cro-number {
+    @include grid-column(1/4)
+  }
+  .pnc-number {
+    @include grid-column(1/4)
+  }
+}
+
+#move-information {
+  .origin {
+    @include grid-column(1/4)
+  }
+  .destination {
+    @include grid-column(1/4)
+  }
+  .date_of_travel {
+    @include grid-column(1/4)
+  }
+  .reason {
+    @include grid-column(3/4)
   }
 }
