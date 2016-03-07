@@ -15,6 +15,12 @@ FactoryGirl.define do
         create :risk_information, escort: escort
       end
     end
+
+    trait :with_move do
+      after :create do |escort|
+        create :move, escort: escort
+      end
+    end
   end
 
   factory :prisoner do
@@ -51,5 +57,12 @@ FactoryGirl.define do
     email 'mark.white@some.prison.com'
     password 'secret123'
     password_confirmation 'secret123'
+  end
+
+  factory :move do
+    origin 'HMP Clive House'
+    destination 'Petty France'
+    date_of_travel { Date.today }
+    reason 'Expected to attend show the thing'
   end
 end

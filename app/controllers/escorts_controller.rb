@@ -23,7 +23,7 @@ class EscortsController < ApplicationController
 private
 
   def form
-    @form ||= current_page.capitalize.constantize.new(escort)
+    @form ||= current_page.camelcase.constantize.new(escort)
   end
 
   def persist_form_data

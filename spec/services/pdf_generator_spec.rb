@@ -20,7 +20,8 @@ RSpec.describe PdfGenerator, type: :service do
     before(:all) do
       travel_to(Date.new(2015, 2, 3)) do
         prisoner = build_stubbed(:prisoner)
-        escort = build_stubbed(:escort, prisoner: prisoner)
+        move = build_stubbed(:move)
+        escort = build_stubbed(:escort, prisoner: prisoner, move: move)
         html = described_class.render(escort)
         @content = ActionController::Base.helpers.strip_tags(html)
       end
@@ -38,10 +39,12 @@ RSpec.describe PdfGenerator, type: :service do
     end
 
     it 'generates the expected content for move information section' do
-      expect(content).to have_content('From').
-        and have_content('To').
-        and have_content('Date of travel').
-        and have_content('Destination update')
+      expect(content).to have_content('From HMP Clive House').
+        and have_content('To Petty France').
+        and have_content('Date of travel 3 2 2015').
+        and have_content('Destination update').
+        and have_content('Reason for move (current offence) ' \
+          'Expected to attend show the thing')
     end
 
     it 'generates the expected content for personal information section' do

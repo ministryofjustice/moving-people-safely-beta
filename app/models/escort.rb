@@ -2,6 +2,7 @@ class Escort < ActiveRecord::Base
   has_paper_trail
   has_one :prisoner
   has_one :risk_information
+  has_one :move
 
   def self.find_by_prison_number(prison_number)
     joins(:prisoner).
@@ -22,5 +23,9 @@ class Escort < ActiveRecord::Base
 
   def risk_information
     super || build_risk_information
+  end
+
+  def move
+    super || build_move(Move.default_origin_option)
   end
 end

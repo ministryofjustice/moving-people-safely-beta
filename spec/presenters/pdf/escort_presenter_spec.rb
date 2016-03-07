@@ -5,4 +5,6 @@ RSpec.describe Pdf::EscortPresenter, type: :presenter do
   subject { described_class.new(escort) }
 
   its(:prisoner) { is_expected.to be_kind_of Pdf::PrisonerPresenter }
+
+  its(:move) { is_expected.to be_kind_of Pdf::MovePresenter }
 end

@@ -4,6 +4,7 @@ en:
     identification: Identification
     summary: Summary
     risks: Risks
+    move_information: Move Information
   quick_actions:
     heading: Quick actions
     preview: Preview PER

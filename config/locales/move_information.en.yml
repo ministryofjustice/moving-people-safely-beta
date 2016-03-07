@@ -1,0 +1,25 @@
+en:
+  helpers:
+    label:
+      move_information:
+        origin: :'shared.origin'
+        destination: :'shared.destination'
+        reason: Reason for move(current offence)
+  escorts:
+    move_information:
+      heading: :'shared.move_information_heading'
+      default_origin: HMP Bedford
+      date_of_travel:
+        label: :'shared.date_of_travel'
+        hint: eg, %{today}
+        day_label: :'shared.day_label'
+        month_label: :'shared.month_label'
+        year_label: :'shared.year_label'
+  activemodel:
+    errors:
+      models:
+        move_information:
+          attributes:
+            date_of_travel:
+              invalid: invalid date of travel
+              inclusion: cannot be in the past
