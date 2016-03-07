@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe MovePresenter, type: :presenter do
+RSpec.describe Summary::MovePresenter, type: :presenter do
   let(:escort) { create(:escort) }
   let(:move) { escort.move }
 
