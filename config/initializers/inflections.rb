@@ -16,6 +16,5 @@
 # end
 
 ActiveSupport::Inflector.inflections do |inflect|
-  inflect.irregular 'risk_information', 'risk_information'
-  inflect.irregular 'health_information', 'health_information'
+  inflect.uncountable %w[ health_information risk_information ]
 end
