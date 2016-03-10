@@ -94,4 +94,18 @@ RSpec.describe Escort, type: :model do
       end
     end
   end
+
+  describe '#health_information' do
+    context 'when health_information exists' do
+      subject { create(:escort, :with_health_information) }
+      its(:health_information) { is_expected.to be_persisted }
+      its(:health_information) { is_expected.to be_kind_of(HealthInformation) }
+    end
+
+    context 'when health_information does not exist' do
+      subject { create(:escort) }
+      its(:health_information) { is_expected.to_not be_persisted }
+      its(:health_information) { is_expected.to be_kind_of(HealthInformation) }
+    end
+  end
 end

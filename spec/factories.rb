@@ -21,6 +21,12 @@ FactoryGirl.define do
         create :move, escort: escort
       end
     end
+
+    trait :with_health_information do
+      after :create do |escort|
+        create :health_information, escort: escort
+      end
+    end
   end
 
   factory :prisoner do
@@ -77,5 +83,9 @@ FactoryGirl.define do
     destination 'Petty France'
     date_of_travel { Date.today }
     reason 'Expected to attend show the thing'
+  end
+
+  factory :health_information do
+    escort
   end
 end
