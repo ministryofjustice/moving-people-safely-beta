@@ -6,6 +6,7 @@
 
 .risk {
   @extend .row;
+  @extend .no-break;
   > div {
     @extend .col;
   }
@@ -24,6 +25,7 @@
   }
   .content {
     @extend .dark-border;
+    padding: $padding-unit;
     min-height: 4.5em;
   }
 }
