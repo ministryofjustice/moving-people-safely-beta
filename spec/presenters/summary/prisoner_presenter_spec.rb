@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Summary::PrisonerPresenter, type: :presenter do
   let(:escort) { create(:escort) }
-  subject { described_class.new(escort.prisoner) }
+  let(:model) { escort.prisoner }
+
+  subject { described_class.new(model) }
 
   describe '#edit_section_link' do
     it 'returns a path to the prisoner information form page' do
@@ -11,11 +13,7 @@ RSpec.describe Summary::PrisonerPresenter, type: :presenter do
     end
   end
 
-  %i[ family_name forenames prison_number nationality capitalized_sex
-      formatted_date_of_birth age cro_number pnc_number ].each do |method|
-    it "delegates #{method} to the prisoner model" do
-      expect(escort.prisoner).to receive(method)
-      subject.public_send(method)
-    end
-  end
+  it_behaves_like 'a presenter that delegates methods to the model',
+    %i[ family_name forenames prison_number nationality capitalized_sex
+        formatted_date_of_birth age cro_number pnc_number ]
 end
