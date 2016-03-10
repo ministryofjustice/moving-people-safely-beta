@@ -11,5 +11,9 @@ module Pdf
     def move
       @move ||= Pdf::MovePresenter.new(@escort.move)
     end
+
+    def risks
+      @risks ||= Pdf::RisksPresenter.new(@escort.risk_information)
+    end
   end
 end

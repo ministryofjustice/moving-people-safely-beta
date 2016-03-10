@@ -15,7 +15,7 @@
 <%= render('pdfs/prisoner', prisoner: escort.prisoner) %>
 <%= render('pdfs/front_page_markers') %>
 <%= render('pdfs/updates') %>
-<%= render('pdfs/risk_summary') %>
+<%= render('pdfs/risk_summary', risks: escort.risks) %>
 <%= render('pdfs/healthcare_needs') %>
 <%= render('pdfs/medication') %>
 <%= render('pdfs/healthcare_updates') %>
