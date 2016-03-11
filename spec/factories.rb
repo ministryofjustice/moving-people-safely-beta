@@ -47,7 +47,20 @@ FactoryGirl.define do
   end
 
   factory :risk_information do
-    escort
+    to_self true
+    to_self_details 'Always ends up with scars'
+    violence true
+    violence_details 'Violent person'
+    from_others true
+    from_others_details 'Several risks from others'
+    escape true
+    escape_details 'Tried to escape several times'
+    intolerant_behaviour true
+    intolerant_behaviour_details 'Shouts often'
+    prohibited_items true
+    prohibited_items_details 'Carried knives several times'
+    non_association true
+    non_association_details 'Prisoner with Prison number Z6543XY'
   end
 
   factory :user do

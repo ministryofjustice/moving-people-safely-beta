@@ -2,16 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Pdf::MovePresenter, type: :presenter do
   let(:escort) { create(:escort) }
-  let(:move) { escort.move }
+  let(:model) { escort.move }
 
-  subject { described_class.new(move) }
+  subject { described_class.new(model) }
 
-  %i[ origin destination reason ].each do |method|
-    it "delegates #{method} to the move model" do
-      expect(move).to receive(method)
-      subject.public_send(method)
-    end
-  end
+  it_behaves_like 'a presenter that delegates methods to the model',
+    %i[ origin destination reason ]
 
   %i[ day month year ].each do |method|
     it do
