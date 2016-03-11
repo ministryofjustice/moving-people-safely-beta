@@ -9,12 +9,6 @@ en:
     move_information:
       heading: :'shared.move_information_heading'
       default_origin: HMP Bedford
-      date_of_travel:
-        label: :'shared.date_of_travel'
-        hint: eg, %{today}
-        day_label: :'shared.day_label'
-        month_label: :'shared.month_label'
-        year_label: :'shared.year_label'
   activemodel:
     errors:
       models:

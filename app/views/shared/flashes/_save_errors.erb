@@ -8,7 +8,7 @@
             <li>
               <%= link_to(
                     object.errors.full_messages_for(attribute).first,
-                    "##{object.class.name.downcase}_#{attribute}"
+                    "##{object.class.name.underscore}_#{attribute}"
                   )
               %>
             </li>
