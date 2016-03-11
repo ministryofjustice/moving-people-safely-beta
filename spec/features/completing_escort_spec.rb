@@ -59,6 +59,21 @@ RSpec.feature 'completing digital person escort record', type: :feature do
       to have_content 'Escort record updated successfully'
   end
 
+  scenario 'filling in the healthcare page' do
+    start_escort_form
+    fill_in_prisoner_information
+    click_link 'Healthcare'
+
+    expect(page).to have_heading 'Healthcare'
+
+    expect(page).to have_preview_per_link
+
+    fill_in_healthcare
+
+    expect(page).
+      to have_content 'Escort record updated successfully'
+  end
+
   scenario 'viewing the summary of an escort' do
     start_escort_form
     fill_in_prisoner_information
