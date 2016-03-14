@@ -34,9 +34,6 @@ describe("Before descendentElements is applied:", function () {
         expect($('.js_has_optional_section:not(:has(:checked))').length).toEqual(1)
     });
 
-    it("no 'visible' class should be on a [id$=_unknown] input", function () {
-        expect($('[id$="_unknown"]').hasClass('visible')).toEqual(false);
-    })
 });
 
 describe("After descendentElements is applied:", function () {
@@ -54,6 +51,7 @@ describe("After descendentElements is applied:", function () {
         $elsWithFalseSelected.each(function () {
             var $optEl = $(this).find('.optional-section');
             expect($optEl.css('display')).toEqual('none');
+            expect($optEl.attr('aria-hidden')).toEqual('true');
         })
     });
 
@@ -66,6 +64,7 @@ describe("After descendentElements is applied:", function () {
         $elsWithUnknownSelected.each(function () {
             var $optEl = $(this).find('.optional-section');
             expect($optEl.css('display')).toEqual('none');
+            expect($optEl.attr('aria-hidden')).toEqual('true');
         })
     });
 
@@ -79,6 +78,7 @@ describe("After descendentElements is applied:", function () {
         $elsWithTrueSelected.each(function () {
             var $optEl = $(this).find('.optional-section');
             expect($optEl.css('display')).toEqual('block');
+            expect($optEl.attr('aria-hidden')).toEqual('false');
         })
     });
 
@@ -90,7 +90,9 @@ describe("After descendentElements is applied:", function () {
             $unknownLabel = $elWithNothingChecked.find('label[for$=_unknown]');
 
         expect($unknownLabel.css('display')).toEqual('none');
+        expect($unknownLabel.attr('aria-hidden')).toEqual('true');
     });
+
     it("any groups where no option is selected should have 'unknown' label hidden", function () {
 
         $('.js_has_optional_section').descendentElements();
@@ -99,6 +101,7 @@ describe("After descendentElements is applied:", function () {
             $unknownLabel = $elWithNothingChecked.find('label[for$=_unknown]');
 
         expect($unknownLabel.css('display')).toEqual('none');
+        expect($unknownLabel.attr('aria-hidden')).toEqual('true');
     });
 
     it("any groups where 'unknown' is selected should have 'unknown' label hidden", function () {
@@ -110,6 +113,7 @@ describe("After descendentElements is applied:", function () {
         $elsWithUnknownSelected.each(function () {
             var $unknownLabel = $elsWithUnknownSelected.find('label[for$=_unknown]');
             expect($unknownLabel.css('display')).toEqual('none');
+            expect($unknownLabel.attr('aria-hidden')).toEqual('true');
         })
     });
 
@@ -122,6 +126,7 @@ describe("After descendentElements is applied:", function () {
         $elsWithTrueSelected.each(function () {
             var $unknownLabel = $elsWithTrueSelected.find('label[for$=_unknown]');
             expect($unknownLabel.css('display')).toEqual('inline');
+            expect($unknownLabel.attr('aria-hidden')).toEqual('false');
         })
     });
 
@@ -134,6 +139,7 @@ describe("After descendentElements is applied:", function () {
         $elsWithUnknownSelected.each(function () {
             var $unknownLabel = $elsWithUnknownSelected.find('label[for$=_unknown]');
             expect($unknownLabel.css('display')).toEqual('inline');
+            expect($unknownLabel.attr('aria-hidden')).toEqual('false');
         })
     });
 });
@@ -156,9 +162,11 @@ describe("Interactions should cause a corresponding state change", function () {
 
         $optEl = $block.find('.optional-section');
         expect($optEl.css('display')).toEqual('block');
+        expect($optEl.attr('aria-hidden')).toEqual('false');
 
         $unknownLabel = $block.find('label[for$=_unknown]');
         expect($unknownLabel.css('display')).toEqual('inline');
+        expect($unknownLabel.attr('aria-hidden')).toEqual('false');
     });
 
     it("changing a 'false' option to 'unknown' should update the element state accordingly", function () {
@@ -173,9 +181,11 @@ describe("Interactions should cause a corresponding state change", function () {
 
         $optEl = $block.find('.optional-section');
         expect($optEl.css('display')).toEqual('none');
+        expect($optEl.attr('aria-hidden')).toEqual('true');
 
         $unknownLabel = $block.find('label[for$=_unknown]');
         expect($unknownLabel.css('display')).toEqual('none');
+        expect($unknownLabel.attr('aria-hidden')).toEqual('true');
     });
 
     it("changing a 'true' option to 'false' should update the element state accordingly", function () {
@@ -190,9 +200,11 @@ describe("Interactions should cause a corresponding state change", function () {
 
         $optEl = $block.find('.optional-section');
         expect($optEl.css('display')).toEqual('none');
+        expect($optEl.attr('aria-hidden')).toEqual('true');
 
         $unknownLabel = $block.find('label[for$=_unknown]');
         expect($unknownLabel.css('display')).toEqual('inline');
+        expect($unknownLabel.attr('aria-hidden')).toEqual('false');
     });
 
 });
