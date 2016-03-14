@@ -28,3 +28,32 @@
     }
   }
 }
+
+.medication {
+  @extend .row;
+  .instructions {
+    margin-bottom: $margin-small;
+  }
+  .input {
+    min-height: 9em;
+  }
+}
+
+.healthcare-updates {
+  @extend .light-background;
+  @extend .padded;
+  padding-bottom: $padding-unit;
+  margin-bottom: $margin-bottom;
+  .updates {
+    margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
+    strong {
+      display: inline-block;
+      min-height: 1.7em;
+    }
+    .input {
+      margin-top: $margin-unit;
+      min-height: 3.5em;
+    }
+  }
+}
