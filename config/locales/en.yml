@@ -16,3 +16,16 @@ en:
   escorts:
     show:
       save: Save
+  shared:
+    date_of_travel_inputs:
+      hint: eg, %{today}
+      label: :'shared.date_of_travel'
+      day_label: :'shared.day_label'
+      month_label: :'shared.month_label'
+      year_label: :'shared.year_label'
+    date_of_birth_inputs:
+      hint: eg 01 01 1999
+      label: :'shared.date_of_birth'
+      day_label: :'shared.day_label'
+      month_label: :'shared.month_label'
+      year_label: :'shared.year_label'
