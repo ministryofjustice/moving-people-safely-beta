@@ -77,13 +77,20 @@ RSpec.describe PdfGenerator, type: :service do
     it 'generates the expected content for the risk summary section' do
       expect(content).to have_content('A2. Risk summary').
         and have_content('PNC / Prison number').
-        and have_content('Risks to self Always ends up with scars').
-        and have_content('Violence and risk to others Violent person').
-        and have_content('Risk from others Several risks from others').
-        and have_content('Escort escape risk Tried to escape several times').
-        and have_content('Intolerant behaviour towards others Shouts often').
-        and have_content('Prohibited items Carried knives several times').
-        and have_content('Non-association Prisoner with Prison number Z6543XY').
+        and have_content('Risks to self').
+        and have_content('Always ends up with scars').
+        and have_content('Violence and risk to others').
+        and have_content('Violent person').
+        and have_content('Risk from others').
+        and have_content('Several risks from others').
+        and have_content('Escort escape risk').
+        and have_content('Tried to escape several times').
+        and have_content('Intolerant behaviour towards others').
+        and have_content('Shouts often').
+        and have_content('Prohibited items').
+        and have_content('Carried knives several times').
+        and have_content('Non-association').
+        and have_content('Prisoner with Prison number Z6543XY').
         and have_content('Date of incident').
         and have_content('Name of person filling in this section').
         and have_content('Signature')
