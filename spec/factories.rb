@@ -86,6 +86,20 @@ FactoryGirl.define do
   end
 
   factory :health_information do
-    escort
+    physical_risk true
+    physical_risk_details 'Problems moving a leg'
+    mental_risk true
+    mental_risk_details 'Schizophrenic'
+    social_care_and_other true
+    social_care_and_other_details 'Needs social care'
+    allergies true
+    allergies_details 'Peanuts'
+    disabilities true
+    mpv_required true
+    disabilities_details 'Strong illness'
+    medication true
+    medication_details 'One pill a day'
+    medical_professional_name 'Doctor Robert'
+    contact_telephone '07987654'
   end
 end

@@ -15,5 +15,9 @@ module Pdf
     def risks
       @risks ||= Pdf::RisksPresenter.new(@escort.risk_information)
     end
+
+    def healthcare
+      @healthcare ||= Pdf::HealthcarePresenter.new(@escort.health_information)
+    end
   end
 end

@@ -22,8 +22,10 @@ RSpec.describe PdfGenerator, type: :service do
         prisoner = build_stubbed(:prisoner)
         move = build_stubbed(:move)
         risks = build_stubbed(:risk_information)
+        healthcare = build_stubbed(:health_information)
         escort = build_stubbed(:escort,
-          prisoner: prisoner, move: move, risk_information: risks)
+          prisoner: prisoner, move: move, risk_information: risks,
+          health_information: healthcare)
         html = described_class.render(escort)
         @content = ActionController::Base.helpers.strip_tags(html)
       end
@@ -90,17 +92,25 @@ RSpec.describe PdfGenerator, type: :service do
     it 'generates the expected content for the healthcare section' do
       expect(content).to have_content('A3. Healthcare information').
         and have_content('Physical health risks').
+        and have_content('Problems moving a leg').
         and have_content('Mental health risks').
+        and have_content('Schizophrenic').
         and have_content('Social care needs and other healthcare needs').
+        and have_content('Needs social care').
         and have_content('Allergies').
+        and have_content('Peanuts').
         and have_content('Disabilities').
+        and have_content('Strong illness').
         and have_content('Tick if MPV required').
         and have_content('Medication').
+        and have_content('One pill a day').
         and have_content('Medication handover details in').
         and have_content('section B1: Record of handover').
         and have_content('Name of medical professional').
         and have_content('filling in this section').
+        and have_content('Doctor Robert').
         and have_content('Contact phone number').
+        and have_content('07987654').
         and have_content('Updates').
         and have_content('This section should be').
         and have_content('completed by a medical professional')

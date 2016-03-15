@@ -10,34 +10,34 @@
   </div>
   <div class="health-section">
     <strong><%= t('.physical_health_risks') %></strong>
-    <div class="content"></div>
+    <div class="content"><%= healthcare.physical_risk_details %></div>
   </div>
   <div class="health-section">
     <strong><%= t('.mental_health_risks') %></strong>
-    <div class="content"></div>
+    <div class="content"><%= healthcare.mental_risk_details %></div>
   </div>
   <div class="health-section">
     <strong><%= t('.social_care_and_other_needs') %></strong>
-    <div class="content"></div>
+    <div class="content"><%= healthcare.social_care_and_other_details %></div>
   </div>
   <div class="health-section">
     <strong><%= t('.allergies') %></strong>
-    <div class="content"></div>
+    <div class="content"><%= healthcare.allergies_details %></div>
   </div>
   <div class="health-section disabilities">
     <strong><%= t('.disabilities') %></strong>
     <div class="mpv-required">
-      <div></div>
+      <div class='<%= healthcare.mpv_required_class %>'></div>
       <div><%= t('.mpv_required') %></div>
     </div>
-    <div class="content"></div>
+    <div class="content"><%= healthcare.disabilities_details %></div>
   </div>
 </div>
 
 <div class="medication">
   <strong class="label"><%= t('.medication_title') %></strong>
   <div class="instructions"><%= t('.medication_instructions') %></div>
-  <div class="input"></div>
+  <div class="input"><%= healthcare.medication_details %></div>
 </div>
 
 <div class="healthcare-updates">
@@ -47,8 +47,8 @@
       <th><%= t('.phone_number') %></th>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
+      <td><%= healthcare.medical_professional_name %></td>
+      <td><%= healthcare.contact_telephone %></td>
     </tr>
   </table>
   <div class="updates">
