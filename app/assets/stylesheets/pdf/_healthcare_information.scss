@@ -18,7 +18,6 @@
     margin-left: $margin-unit;
     > div {
       &:first-child {
-        @extend .check-box;
         margin-bottom: 0;
       }
       &:last-child {
