@@ -6,6 +6,9 @@
   }
   .content {
     @extend .input;
+    @extend .padded;
+    padding-bottom: $padding-unit;
+    padding-right: $padding-unit;
     min-height: 3.5em;
     margin-bottom: $margin-bottom;
   }
@@ -35,6 +38,8 @@
   }
   .input {
     min-height: 9em;
+    padding-bottom: $padding-unit;
+    padding-right: $padding-unit;
   }
 }
 
