@@ -13,7 +13,11 @@
 
 <div class="form-group">
   <%= date_fields(f, :date_of_birth) do %>
-    <%= render('/shared/date_of_birth_inputs', f: f) %>
+    <%= render 'shared/date_field_inputs',
+          f: f,
+          model: 'prisoner_information',
+          date_field: 'date_of_birth',
+          hint: nil %>
   <% end %>
 </div>
 

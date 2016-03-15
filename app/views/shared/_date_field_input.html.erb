@@ -1,0 +1,12 @@
+<div class="form-group form-group-<%= field %>">
+  <label for="<%= model %>_<%= date_field %>_<%= field %>">
+    <%= t("shared.#{field}_label") %>
+  </label>
+  <%= text_field_tag(
+        "#{model}[#{date_field}][#{field}]",
+        f.object.public_send("#{date_field}_presenter").public_send(field),
+        maxlength: size,
+        size: size,
+        class: 'form-control'
+      ) %>
+</div>
