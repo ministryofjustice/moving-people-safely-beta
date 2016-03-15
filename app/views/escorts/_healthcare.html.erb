@@ -1,0 +1,63 @@
+<% %i[ physical_risk mental_risk
+       social_care_and_other allergies ].each do |attribute| %>
+  <%= render(
+        'shared/toggle_with_details_field',
+        f: f,
+        attribute: attribute,
+        i18n_scope: 'healthcare'
+      )
+  %>
+<% end %>
+
+<fieldset class="js_has_optional_section">
+  <div class="form-group">
+    <legend class="form-label-bold">
+      <span><%= t('healthcare.disabilities.title') %></span>
+    </legend>
+    <p class="form-hint"><%= t('healthcare.disabilities.help_text') %></p>
+    <div class="form-group">
+      <% { true => :yes, false => :no }.each do |value, translation_key| %>
+        <%= f.label :disabilities, value: value, class: 'block-label inline' do %>
+          <%= f.radio_button :disabilities, value %> <%= t(translation_key) %>
+        <% end %>
+      <% end %>
+
+      <%= f.radio_button :disabilities, 'unknown', class: "visuallyhidden" %>
+      <%= f.label "disabilities_unknown", t('healthcare.labels.clear'), class: 'unknown_value' %>
+
+      <div class="form-group optional-section">
+        <div class="form-group">
+        <%= f.label :mpv_required, class: 'block-label inline' do %>
+          <%= f.check_box :mpv_required %>
+          <%= t('healthcare.mpv_required') %>
+        <% end %>
+        </div>
+        <%= f.label "disabilities_details", t('healthcare.disabilities.details_help_text') %>
+        <%= f.text_area "disabilities_details",
+            autocomplete: 'off',
+            class: 'form-control',
+            id: "#{f.object.name}_disabilities_details"
+        %>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<%= render(
+      'shared/toggle_with_details_field',
+      f: f,
+      attribute: :medication,
+      i18n_scope: 'healthcare'
+    )
+%>
+
+<div class="form-group">
+  <%= f.label :medical_professional_name, class: 'form-label-bold' %>
+  <%= f.text_field :medical_professional_name, class: 'string form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :contact_telephone, class: 'form-label-bold' %>
+  <%= f.text_field :contact_telephone, class: 'string form-control' %>
+</div>
+

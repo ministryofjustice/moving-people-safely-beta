@@ -21,6 +21,12 @@ FactoryGirl.define do
         create :move, escort: escort
       end
     end
+
+    trait :with_health_information do
+      after :create do |escort|
+        create :health_information, escort: escort
+      end
+    end
   end
 
   factory :prisoner do
@@ -77,5 +83,23 @@ FactoryGirl.define do
     destination 'Petty France'
     date_of_travel { Date.today }
     reason 'Expected to attend show the thing'
+  end
+
+  factory :health_information do
+    physical_risk true
+    physical_risk_details 'Problems moving a leg'
+    mental_risk true
+    mental_risk_details 'Schizophrenic'
+    social_care_and_other true
+    social_care_and_other_details 'Needs social care'
+    allergies true
+    allergies_details 'Peanuts'
+    disabilities true
+    mpv_required true
+    disabilities_details 'Strong illness'
+    medication true
+    medication_details 'One pill a day'
+    medical_professional_name 'Doctor Robert'
+    contact_telephone '07987654'
   end
 end

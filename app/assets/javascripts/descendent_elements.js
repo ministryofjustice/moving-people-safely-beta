@@ -2,7 +2,7 @@
 
 (function ($) {
 
-    var trueChecked, falseChecked, manageState, displayUnknownLabel, displayOptSection;
+    var trueChecked, falseChecked, manageState, setVisibility;
 
     trueChecked = function ($block) {
         return $block.find('[id$=_true]:checked').length == 1;
@@ -12,27 +12,26 @@
         return $block.find('[id$=_false]:checked').length == 1;
     };
 
-    displayUnknownLabel = function($block) {
-        var $unknownLabel = $block.find('label[for$=_unknown]');
-        (trueChecked($block) || falseChecked($block)) ? $unknownLabel.show() : $unknownLabel.hide();
-    };
-
-    displayOptSection = function ($block) {
-        var $optSection = $block.find('.optional-section');
-        (trueChecked($block)) ? $optSection.show() : $optSection.hide();
+    setVisibility = function (boolean, element) {
+        (boolean) ? element.show().attr('aria-hidden', false) : element.hide().attr('aria-hidden', true);
     };
 
     manageState = function ($block) {
-        displayOptSection($block);
-        displayUnknownLabel($block);
+        var $optSection, showOptSection, $unknownLabel, showUnknownLabel;
+
+        $optSection = $block.find('.optional-section');
+        showOptSection = trueChecked($block);
+        setVisibility(showOptSection, $optSection);
+
+        $unknownLabel = $block.find('label[for$=_unknown]');
+        showUnknownLabel = trueChecked($block) || falseChecked($block);
+        setVisibility(showUnknownLabel, $unknownLabel);
     };
 
     $.fn.descendentElements = function () {
         return this.each(function () {
             var $this = $(this);
-
             manageState($this);
-
             $this.on('change', function (e) {
                 manageState($this);
             })

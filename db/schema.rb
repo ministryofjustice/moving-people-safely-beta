@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302163946) do
+ActiveRecord::Schema.define(version: 20160310152714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,27 @@ ActiveRecord::Schema.define(version: 20160302163946) do
   create_table "escorts", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "health_information", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "escort_id"
+    t.boolean  "physical_risk"
+    t.text     "physical_risk_details"
+    t.boolean  "mental_risk"
+    t.text     "mental_risk_details"
+    t.boolean  "social_care_and_other"
+    t.text     "social_care_and_other_details"
+    t.boolean  "allergies"
+    t.text     "allergies_details"
+    t.boolean  "disabilities"
+    t.boolean  "mpv_required"
+    t.text     "disabilities_details"
+    t.boolean  "medication"
+    t.text     "medication_details"
+    t.string   "medical_professional_name"
+    t.string   "contact_telephone"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "moves", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|

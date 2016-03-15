@@ -1,3 +1,8 @@
 <% Risks::GENERAL.each do |risk| %>
-  <%= render('shared/risk', f: f, risk: risk) %>
+  <%= render(
+        'shared/toggle_with_details_field',
+        f: f,
+        attribute: risk,
+        i18n_scope: 'risk'
+      ) %>
 <% end %>

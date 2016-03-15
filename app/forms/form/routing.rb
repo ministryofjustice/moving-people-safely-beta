@@ -1,6 +1,6 @@
 class Form
   module Routing
-    FORM_NAMES = %i[ prisoner_information move_information risks ]
+    FORM_NAMES = %i[ prisoner_information move_information risks healthcare ]
 
     FormData = Struct.new(:name) do
       def path

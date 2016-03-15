@@ -2,37 +2,34 @@ en:
   escorts:
     risks:
       heading: Risks
-      transit_heading: Transit risks
-  shared:
-    risk:
-      types:
-        to_self:
-          title: Risks to self
-          help_text: Is there a risk of suicide or self-harm?
-          details_help_text: Give details of open or recently closed ACCTs, indicative behaviours or threats, offence type or recall status. Include known dates and triggers.
-        violence:
-          title: Violence and risk to others
-          help_text: Is there a history of violence towards others?
-          details_help_text: Give details of actual or threatened violence - include victim age, gender, ethnic group, or prisoner or staff group. Include known dates and triggers.
-        from_others:
-          title: Risk from others
-          help_text: Is there a risk from others?
-          details_help_text: Give details of type of harm, whether verbal or physical and offence detail that may put them at risk of harm. Include known dates and triggers.
-        escape:
-          title: Escort escape risk
-          help_text: Is there an escape risk?
-          details_help_text: Give details of whether the prisoner is on the prison E list, or any intelligence that suggests an escape risk. Include known dates and triggers.
-        intolerant_behaviour:
-          title: Intolerant behaviour towards others
-          help_text: Is there a history of intolerant behaviour towards others, such as sexism, homophobia or racism?
-          details_help_text: Give details of any incidents or threats, or offence related indicators. Include known dates and triggers.
-        prohibited_items:
-          title: Prohibited items
-          help_text: Is there a history of carrying concealed weapons or prohibited items?
-          details_help_text: Give details of any intelligence or a history of smuggling weapons, drugs or other prohibited items. Include known dates and triggers.
-        non_association:
-          title: Non-association
-          help_text: Are there any non-association markers?
-          details_help_text: Give details of other prisoners (names & prison numbers), and details of the reasons for non-association, i.e. gang affiliations. Include known dates and triggers.
-      labels:
-        clear: Clear selection
+  risk:
+    to_self:
+      title: Risks to self
+      help_text: Is there a risk of suicide or self-harm?
+      details_help_text: Give details of open or recently closed ACCTs, indicative behaviours or threats, offence type or recall status. Include known dates and triggers.
+    violence:
+      title: Violence and risk to others
+      help_text: Is there a history of violence towards others?
+      details_help_text: Give details of actual or threatened violence - include victim age, gender, ethnic group, or prisoner or staff group. Include known dates and triggers.
+    from_others:
+      title: Risk from others
+      help_text: Is there a risk from others?
+      details_help_text: Give details of type of harm, whether verbal or physical and offence detail that may put them at risk of harm. Include known dates and triggers.
+    escape:
+      title: Escort escape risk
+      help_text: Is there an escape risk?
+      details_help_text: Give details of whether the prisoner is on the prison E list, or any intelligence that suggests an escape risk. Include known dates and triggers.
+    intolerant_behaviour:
+      title: Intolerant behaviour towards others
+      help_text: Is there a history of intolerant behaviour towards others, such as sexism, homophobia or racism?
+      details_help_text: Give details of any incidents or threats, or offence related indicators. Include known dates and triggers.
+    prohibited_items:
+      title: Prohibited items
+      help_text: Is there a history of carrying concealed weapons or prohibited items?
+      details_help_text: Give details of any intelligence or a history of smuggling weapons, drugs or other prohibited items. Include known dates and triggers.
+    non_association:
+      title: Non-association
+      help_text: Are there any non-association markers?
+      details_help_text: Give details of other prisoners (names & prison numbers), and details of the reasons for non-association, i.e. gang affiliations. Include known dates and triggers.
+    labels:
+      clear: Clear selection

@@ -59,6 +59,7 @@ RSpec.configure do |config|
   config.include(FeatureHelpers::Sessions, type: :feature)
   config.include(FeatureHelpers::PrisonerInformationForm, type: :feature)
   config.include(FeatureHelpers::RisksForm, type: :feature)
+  config.include(FeatureHelpers::HealthcareForm, type: :feature)
   config.include(FeatureHelpers::MoveInformationForm, type: :feature)
   config.include(MailHelpers)
   config.include(Shoulda::Matchers::ActiveModel, type: :form)
