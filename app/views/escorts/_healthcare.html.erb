@@ -29,12 +29,6 @@
     )
 %>
 
-<%= form_group_container do %>
-  <%= f.label :medical_professional_name, class: 'form-label-bold' %>
-  <%= f.text_field :medical_professional_name, class: 'string form-control' %>
-<% end %>
+<%= single_field(f, :medical_professional_name) %>
 
-<%= form_group_container do %>
-  <%= f.label :contact_telephone, class: 'form-label-bold' %>
-  <%= f.text_field :contact_telephone, class: 'string form-control' %>
-<% end %>
+<%= single_field(f, :contact_telephone) %>
