@@ -27,6 +27,12 @@ FactoryGirl.define do
         create :health_information, escort: escort
       end
     end
+
+    trait :with_offence_information do
+      after :create do |escort|
+        create :offence_information, escort: escort
+      end
+    end
   end
 
   factory :prisoner do
@@ -101,5 +107,9 @@ FactoryGirl.define do
     medication_details 'One pill a day'
     medical_professional_name 'Doctor Robert'
     contact_telephone '07987654'
+  end
+
+  factory :offence_information do
+    escort
   end
 end

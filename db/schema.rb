@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310152714) do
+ActiveRecord::Schema.define(version: 20160317161206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,20 @@ ActiveRecord::Schema.define(version: 20160310152714) do
     t.string   "reason"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "offence_information", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "escort_id"
+    t.boolean  "not_for_release"
+    t.text     "not_for_release_details"
+    t.boolean  "must_return"
+    t.text     "must_return_details"
+    t.boolean  "must_not_return"
+    t.text     "must_not_return_details"
+    t.boolean  "other_offences"
+    t.text     "other_offences_details"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "prisoners", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|

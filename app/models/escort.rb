@@ -4,6 +4,7 @@ class Escort < ActiveRecord::Base
   has_one :risk_information
   has_one :move
   has_one :health_information
+  has_one :offence_information
 
   def self.find_by_prison_number(prison_number)
     joins(:prisoner).
@@ -32,5 +33,9 @@ class Escort < ActiveRecord::Base
 
   def health_information
     super || build_health_information
+  end
+
+  def offence_information
+    super || build_offence_information
   end
 end
