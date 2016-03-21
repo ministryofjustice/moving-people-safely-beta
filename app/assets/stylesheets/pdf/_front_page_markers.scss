@@ -6,12 +6,15 @@
   }
   .title {
     width: 23%;
+    padding-top: $padding-unit * 1.5;
   }
   .markers {
     width: 48%;
     margin-right: $margin-right;
-    border-right: 1px solid $light_grey;
     padding-right: $padding;
+    &.has-reference {
+      border-right: 1px solid $light_grey;
+    }
     .indicator {
       @extend .row;
       @extend .light-background;
@@ -36,7 +39,7 @@
     span {
       display: inline-block;
       &.health {
-        margin-top: 3.8em;
+        margin-top: 1.8em;
       }
       &.risk {
         margin-top: 4.1em;
@@ -47,4 +50,3 @@
     }
   }
 }
-
