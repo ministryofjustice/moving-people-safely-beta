@@ -3,7 +3,7 @@
   .updates-field {
     @extend .no-break;
     @extend .input;
-    min-height: 6.5em;
+    min-height: $input-tall-height;
     margin-top: $margin-unit;
   }
   .sash-container {

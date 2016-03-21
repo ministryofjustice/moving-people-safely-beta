@@ -131,9 +131,7 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Outstanding charge').
         and have_content('Serving sentence').
         and have_content('On remand').
-        and have_content('License recall').
-        and have_content('Offence').
-        and have_content('Offence status')
+        and have_content('License recall')
     end
 
     it 'generates the expected content for the handover details section' do
