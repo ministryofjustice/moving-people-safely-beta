@@ -10,29 +10,32 @@ en:
   healthcare:
     labels:
       clear: Clear selection
+      details_help_text: Give details and how the issues might be a risk during the move
     physical_risk:
-      title: Physical health risks
-      help_text: Does the prisoner have any physical health issues?
-      details_help_text: Enter details of the prisoner's physical health issues
+      title: Physical health
+      help_text: Does the prisoner have any physical health needs?
+      details_help_text: :'healthcare.labels.details_help_text'
     mental_risk:
-      title: Mental health risks
-      help_text: Does the prisoner have any mental health issues?
-      details_help_text: Enter details of the prisoner's mental health issues
+      title: Mental health
+      help_text: Does the prisoner have any mental health needs?
+      details_help_text: :'healthcare.labels.details_help_text'
     social_care_and_other:
-      title: Social care needs and other healthcare needs
-      help_text: Does the prisoner have any social care or other healthcare needs?
-      details_help_text: Enter details of the prisoner's social care and other healthcare needs
+      title: Social care
+      help_text: Does the prisoner have social care or any other medical needs?
+      details_help_text: :'healthcare.labels.details_help_text'
     allergies:
       title: Allergies
       help_text: Does the prisoner have any allergies?
-      details_help_text: Enter details of the prisoner's allergies
+      details_help_text: :'healthcare.labels.details_help_text'
+      details_guidance_text: Give details of food allergies, eg nuts or medical allergies, eg ibuprofen or any other allergies. Also give details of food intolerances, eg wheat, gluten dairy. Include whether the allergy is severe or mild and list any particular triggers.
     disabilities:
       title: Disabilities
       help_text: Does the prisoner have any disabilities?
-      details_help_text: Enter details of the prisoner's disabilities
-    mpv_required: Does the prisoner require an MPV?
+      details_help_text: Give details of their disabilities, their disability needs, as well as potential risks during the move
+      details_guidance_text: Give details of any equipment necessary for moving, eg special vehicles, walking frames. Also any communication support that might be needed.
+    mpv_required: Do they need an MPV?
     medication:
       title: Medication
-      help_text: Does the prisoner require any medication?
-      details_help_text: Enter details of the medication and administration information
+      help_text: Does the prisoner need medication?
+      details_help_text: Give details of the medication needed and how it is administered
 
