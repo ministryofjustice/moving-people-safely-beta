@@ -1,0 +1,10 @@
+<% %i[ not_for_release must_return must_not_return
+       other_offences ].each do |attribute| %>
+  <%= render(
+        'shared/toggle_with_details_field',
+        f: f,
+        attribute: attribute,
+        i18n_scope: 'offences'
+      )
+  %>
+<% end %>

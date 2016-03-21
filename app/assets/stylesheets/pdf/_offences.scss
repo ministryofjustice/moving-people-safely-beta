@@ -13,10 +13,8 @@
       }
     }
   }
-  .bordered-table {
-    margin-top: $margin-top;
-    td:first-child {
-      width: 85%;
-    }
+  .offences-output {
+    @extend .input;
+    min-height: $input-tall-height;
   }
 }

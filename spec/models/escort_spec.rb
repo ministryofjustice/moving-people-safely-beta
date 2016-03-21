@@ -108,4 +108,22 @@ RSpec.describe Escort, type: :model do
       its(:health_information) { is_expected.to be_kind_of(HealthInformation) }
     end
   end
+
+  describe '#offence_information' do
+    context 'when offence_information exists' do
+      subject { create(:escort, :with_offence_information) }
+      its(:offence_information) { is_expected.to be_persisted }
+      its(:offence_information) do
+        is_expected.to be_kind_of(OffenceInformation)
+      end
+    end
+
+    context 'when offence_information does not exist' do
+      subject { create(:escort) }
+      its(:offence_information) { is_expected.to_not be_persisted }
+      its(:offence_information) do
+        is_expected.to be_kind_of(OffenceInformation)
+      end
+    end
+  end
 end
