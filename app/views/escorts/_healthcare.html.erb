@@ -1,5 +1,5 @@
 <% %i[ physical_risk mental_risk
-       social_care_and_other allergies ].each do |attribute| %>
+       social_care_and_other ].each do |attribute| %>
   <%= render(
         'shared/toggle_with_details_field',
         f: f,
@@ -8,6 +8,35 @@
       )
   %>
 <% end %>
+
+<fieldset class="js_has_optional_section">
+  <div class="form-group">
+    <legend class="form-label-bold">
+      <span><%= t('healthcare.allergies.title') %></span>
+    </legend>
+    <p class="form-hint"><%= t('healthcare.allergies.help_text') %></p>
+    <div class="form-group">
+      <% { true => :yes, false => :no }.each do |value, translation_key| %>
+        <%= f.label :allergies, value: value, class: 'block-label inline' do %>
+          <%= f.radio_button :allergies, value %> <%= t(translation_key) %>
+        <% end %>
+      <% end %>
+
+      <%= f.radio_button :allergies, 'unknown', class: "visuallyhidden" %>
+      <%= f.label "allergies_unknown", t('healthcare.labels.clear'), class: 'unknown_value' %>
+
+      <div class="form-group optional-section">
+        <%= f.label "allergies_details", t('healthcare.labels.details_help_text') %>
+        <p class="form-hint"><%= t('healthcare.allergies.details_guidance_text') %></p>
+        <%= f.text_area "allergies_details",
+            autocomplete: 'off',
+            class: 'form-control',
+            id: "#{f.object.name}_allergies_details"
+        %>
+      </div>
+    </div>
+  </div>
+</fieldset>
 
 <fieldset class="js_has_optional_section">
   <div class="form-group">
@@ -33,6 +62,7 @@
         <% end %>
         </div>
         <%= f.label "disabilities_details", t('healthcare.disabilities.details_help_text') %>
+        <p class="form-hint"><%= t('healthcare.disabilities.details_guidance_text') %></p>
         <%= f.text_area "disabilities_details",
             autocomplete: 'off',
             class: 'form-control',
