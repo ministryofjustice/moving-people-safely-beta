@@ -8,7 +8,7 @@ gem 'moj_template', '0.23.2'
 gem 'paper_trail'
 gem 'pdfkit'
 gem 'pg', '~> 0.15'
-gem 'rails', '4.2.5.2'
+gem 'rails', '4.2.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'virtus'
@@ -27,7 +27,7 @@ group :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'launchy'
   gem 'rspec-its'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.4'
   gem 'rubocop-rspec'
   gem 'rubocop', require: false
   gem 'shoulda-matchers', '~> 3.1'

@@ -5,10 +5,10 @@
 | Dependency         | Version |
 |--------------------|---------|
 | Ruby               | 2.3.0   |
-| Rails              | 4.2.5.2 |
+| Rails              | 4.2.6   |
 | Postgres           | 9.4.5   |
 | Webkit HTML to PDF | 0.12.3  |
-| Font: Liberation Sans | 12 Jan 2009 version|
+| Font: Liberation Sans | 12 Jan 2009 |
 
 ## Configuration
 
