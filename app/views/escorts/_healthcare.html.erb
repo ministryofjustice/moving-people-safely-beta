@@ -9,69 +9,23 @@
   %>
 <% end %>
 
-<fieldset class="js_has_optional_section">
-  <div class="form-group">
-    <legend class="form-label-bold">
-      <span><%= t('healthcare.allergies.title') %></span>
-    </legend>
-    <p class="form-hint"><%= t('healthcare.allergies.help_text') %></p>
-    <div class="form-group">
-      <% { true => :yes, false => :no }.each do |value, translation_key| %>
-        <%= f.label :allergies, value: value, class: 'block-label inline' do %>
-          <%= f.radio_button :allergies, value %> <%= t(translation_key) %>
-        <% end %>
-      <% end %>
+<%= text_toggle_container(f, :allergies, 'healthcare') do %>
+  <%= details_help_text(f, :allergies, 'healthcare') %>
+  <%= details_guidance_text(:allergies, 'healthcare') %>
+  <%= details_text_area(f, :allergies) %>
+<% end %>
 
-      <%= f.radio_button :allergies, 'unknown', class: "visuallyhidden" %>
-      <%= f.label "allergies_unknown", t('healthcare.labels.clear'), class: 'unknown_value' %>
-
-      <div class="form-group optional-section">
-        <%= f.label "allergies_details", t('healthcare.labels.details_help_text') %>
-        <p class="form-hint"><%= t('healthcare.allergies.details_guidance_text') %></p>
-        <%= f.text_area "allergies_details",
-            autocomplete: 'off',
-            class: 'form-control',
-            id: "#{f.object.name}_allergies_details"
-        %>
-      </div>
-    </div>
-  </div>
-</fieldset>
-
-<fieldset class="js_has_optional_section">
-  <div class="form-group">
-    <legend class="form-label-bold">
-      <span><%= t('healthcare.disabilities.title') %></span>
-    </legend>
-    <p class="form-hint"><%= t('healthcare.disabilities.help_text') %></p>
-    <div class="form-group">
-      <% { true => :yes, false => :no }.each do |value, translation_key| %>
-        <%= f.label :disabilities, value: value, class: 'block-label inline' do %>
-          <%= f.radio_button :disabilities, value %> <%= t(translation_key) %>
-        <% end %>
-      <% end %>
-
-      <%= f.radio_button :disabilities, 'unknown', class: "visuallyhidden" %>
-      <%= f.label "disabilities_unknown", t('healthcare.labels.clear'), class: 'unknown_value' %>
-
-      <div class="form-group optional-section">
-        <div class="form-group">
-        <%= f.label :mpv_required, class: 'block-label inline' do %>
-          <%= f.check_box :mpv_required %>
-          <%= t('healthcare.mpv_required') %>
-        <% end %>
-        </div>
-        <%= f.label "disabilities_details", t('healthcare.disabilities.details_help_text') %>
-        <p class="form-hint"><%= t('healthcare.disabilities.details_guidance_text') %></p>
-        <%= f.text_area "disabilities_details",
-            autocomplete: 'off',
-            class: 'form-control',
-            id: "#{f.object.name}_disabilities_details"
-        %>
-      </div>
-    </div>
-  </div>
-</fieldset>
+<%= text_toggle_container(f, :disabilities, 'healthcare') do %>
+  <%= form_group_container do %>
+    <%= f.label :mpv_required, class: 'block-label inline' do %>
+      <%= f.check_box :mpv_required %>
+      <%= t('healthcare.mpv_required') %>
+    <% end %>
+  <% end %>
+  <%= details_help_text(f, :disabilities, 'healthcare') %>
+  <%= details_guidance_text(:disabilities, 'healthcare') %>
+  <%= details_text_area(f, :disabilities) %>
+<% end %>
 
 <%= render(
       'shared/toggle_with_details_field',
@@ -81,13 +35,13 @@
     )
 %>
 
-<div class="form-group">
+<%= form_group_container do %>
   <%= f.label :medical_professional_name, class: 'form-label-bold' %>
   <%= f.text_field :medical_professional_name, class: 'string form-control' %>
-</div>
+<% end %>
 
-<div class="form-group">
+<%= form_group_container do %>
   <%= f.label :contact_telephone, class: 'form-label-bold' %>
   <%= f.text_field :contact_telephone, class: 'string form-control' %>
-</div>
+<% end %>
 
