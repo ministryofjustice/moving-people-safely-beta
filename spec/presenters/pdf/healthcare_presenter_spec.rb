@@ -18,7 +18,7 @@ RSpec.describe Pdf::HealthcarePresenter, type: :presenter do
     end
 
     context 'when mpv_required is false' do
-      its(:mpv_required_class) { is_expected.to be_nil }
+      its(:mpv_required_class) { is_expected.to be_blank }
     end
   end
 end

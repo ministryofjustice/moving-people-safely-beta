@@ -1,7 +1,14 @@
 module Pdf
+  CHECKED = 'checked'
+
   class EscortPresenter
     def initialize(escort)
       @escort = escort
+    end
+
+    def not_for_release
+      @not_for_release ||=
+        Pdf::NotForReleasePresenter.new(@escort.offence_information)
     end
 
     def prisoner
@@ -18,6 +25,14 @@ module Pdf
 
     def healthcare
       @healthcare ||= Pdf::HealthcarePresenter.new(@escort.health_information)
+    end
+
+    def offences
+      @offences ||= Pdf::OffencesPresenter.new(@escort.offence_information)
+    end
+
+    def handover
+      @handover ||= Pdf::HandoverPresenter.new(@escort.offence_information)
     end
   end
 end
