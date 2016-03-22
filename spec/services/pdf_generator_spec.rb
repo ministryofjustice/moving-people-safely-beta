@@ -17,21 +17,25 @@ RSpec.describe PdfGenerator, type: :service do
   describe '.render' do
     # FIXME: these render specs need to be made more maintainable
 
+    attr_reader :content, :html
+
     before(:all) do
       travel_to(Date.new(2015, 2, 3)) do
         prisoner = build_stubbed(:prisoner)
         move = build_stubbed(:move)
         risks = build_stubbed(:risk_information)
         healthcare = build_stubbed(:health_information)
+        offences = build_stubbed(:offence_information)
         escort = build_stubbed(:escort,
-          prisoner: prisoner, move: move, risk_information: risks,
-          health_information: healthcare)
-        html = described_class.render(escort)
+          prisoner: prisoner,
+          move: move,
+          risk_information: risks,
+          health_information: healthcare,
+          offence_information: offences)
+        @html = described_class.render(escort)
         @content = ActionController::Base.helpers.strip_tags(html)
       end
     end
-
-    attr_reader :content
 
     it 'generates the expected content for the header' do
       expect(content).to have_content('Person Escort Record')
@@ -39,7 +43,9 @@ RSpec.describe PdfGenerator, type: :service do
 
     it 'generates the expected content for NFR section' do
       expect(content).to have_content('Not for release').
-        and have_content('Reason')
+        and have_content('Reason').
+        and have_content('Cannot be released at the moment')
+      expect(html).to have_css('.not-for-release//.checked')
     end
 
     it 'generates the expected content for move information section' do
@@ -121,6 +127,7 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Updates').
         and have_content('This section should be').
         and have_content('completed by a medical professional')
+      expect(html).to have_css('.mpv-required//.checked')
     end
 
     it 'generates the expected content for the offences section' do
@@ -131,7 +138,8 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Outstanding charge').
         and have_content('Serving sentence').
         and have_content('On remand').
-        and have_content('License recall')
+        and have_content('License recall').
+        and have_content('Verbal abuse')
     end
 
     it 'generates the expected content for the handover details section' do
@@ -142,7 +150,12 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Role').
         and have_content('Must return').
         and have_content('Reason').
-        and have_content('Must not return')
+        and have_content('The prisoner must return').
+        and have_content('Must not return').
+        and have_content('Reason').
+        and have_content('The prisoner must not return')
+      expect(html).to have_css('.must-return//.checked').
+        and have_css('.must-not-return//.checked')
     end
 
     it 'generates the expected content for the handover medication section' do

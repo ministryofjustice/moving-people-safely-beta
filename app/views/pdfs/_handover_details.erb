@@ -31,25 +31,25 @@
       </div>
     </div>
   </div>
-  <div class="return-information">
+  <div class="return-information must-return">
     <div>
       <div class="marker">
-        <div class="check-box"></div>
+        <div class="check-box <%= handover.must_return_class %>"></div>
         <strong class="label-inline"><%= t('.must_return') %></strong></div>
       <div class="reason">
         <strong class="label-inline"><%= t('.reason') %></strong>
-        <div class="input-inline"></div>
+        <div class="input-inline"> <%= handover.must_return_details %></div>
       </div>
     </div>
   </div>
-  <div class="return-information">
+  <div class="return-information must-not-return">
     <div>
       <div class="marker">
-        <div class="check-box"></div>
+        <div class="check-box <%= handover.must_not_return_class %>"></div>
         <strong class="label-inline"><%= t('.must_not_return') %></strong></div>
       <div class="reason">
         <strong class="label-inline"><%= t('.reason') %></strong>
-        <div class="input-inline not-to-return"></div>
+        <div class="input-inline not-to-return"> <%= handover.must_not_return_details %></div>
       </div>
     </div>
   </div>

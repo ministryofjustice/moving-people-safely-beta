@@ -36,7 +36,6 @@ FactoryGirl.define do
   end
 
   factory :prisoner do
-    escort
     family_name     'Bigglesworth'
     forenames       'Tarquin'
     prison_number   'A1234BC'
@@ -110,6 +109,13 @@ FactoryGirl.define do
   end
 
   factory :offence_information do
-    escort
+    not_for_release true
+    not_for_release_details 'Cannot be released at the moment'
+    must_return true
+    must_return_details 'The prisoner must return'
+    must_not_return true
+    must_not_return_details 'The prisoner must not return'
+    other_offences true
+    other_offences_details 'Verbal abuse'
   end
 end
