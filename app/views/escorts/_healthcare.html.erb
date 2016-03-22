@@ -1,5 +1,7 @@
-<% %i[ physical_risk mental_risk
-       social_care_and_other ].each do |attribute| %>
+<% %i[ physical_risk
+       mental_risk
+       social_care_and_other
+       allergies ].each do |attribute| %>
   <%= render(
         'shared/toggle_with_details_field',
         f: f,
@@ -9,12 +11,6 @@
   %>
 <% end %>
 
-<%= text_toggle_container(f, :allergies, 'healthcare') do %>
-  <%= details_help_text(f, :allergies, 'healthcare') %>
-  <%= details_guidance_text(:allergies, 'healthcare') %>
-  <%= details_text_area(f, :allergies) %>
-<% end %>
-
 <%= text_toggle_container(f, :disabilities, 'healthcare') do %>
   <%= form_group_container do %>
     <%= f.label :mpv_required, class: 'block-label inline' do %>
@@ -22,9 +18,7 @@
       <%= t('healthcare.mpv_required') %>
     <% end %>
   <% end %>
-  <%= details_help_text(f, :disabilities, 'healthcare') %>
-  <%= details_guidance_text(:disabilities, 'healthcare') %>
-  <%= details_text_area(f, :disabilities) %>
+  <%= details_text_area_with_help_text(f, :disabilities, 'healthcare') %>
 <% end %>
 
 <%= render(
@@ -44,4 +38,3 @@
   <%= f.label :contact_telephone, class: 'form-label-bold' %>
   <%= f.text_field :contact_telephone, class: 'string form-control' %>
 <% end %>
-

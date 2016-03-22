@@ -14,29 +14,10 @@ module TextToggleFormElementsHelper
     end
   end # rubocop:enable MethodLength
 
-  def details_text_area(form, name)
-    form.text_area(
-      "#{name}_details",
-      autocomplete: 'off',
-      class: 'form-control',
-      id: "#{form.object.name}_#{name}_details"
-    )
-  end
-
-  def details_help_text(form, name, i18n_scope)
-    form.label(
-      "#{name}_details",
-      t("#{i18n_scope}.#{name}.details_help_text")
-    )
-  end
-
-  def details_guidance_text(name, i18n_scope)
-    hint_text { t("#{i18n_scope}.#{name}.details_guidance_text") }
-  end
-
   def details_text_area_with_help_text(form, name, i18n_scope)
     join(
       details_help_text(form, name, i18n_scope),
+      details_guidance_text(name, i18n_scope),
       details_text_area(form, name)
     )
   end
@@ -77,5 +58,28 @@ module TextToggleFormElementsHelper
         class: 'unknown_value'
       )
     )
+  end
+
+  def details_text_area(form, name)
+    form.text_area(
+      "#{name}_details",
+      autocomplete: 'off',
+      class: 'form-control',
+      id: "#{form.object.name}_#{name}_details"
+    )
+  end
+
+  def details_help_text(form, name, i18n_scope)
+    form.label(
+      "#{name}_details",
+      t("#{i18n_scope}.#{name}.details_help_text")
+    )
+  end
+
+  def details_guidance_text(name, i18n_scope)
+    # Guidance text does not necessarily apply to every textarea &
+    # can be blank theefore we check its existence
+    i18n_path = "#{i18n_scope}.#{name}.details_guidance_text"
+    hint_text { t(i18n_path) } if I18n.exists?(i18n_path, I18n.locale)
   end
 end
