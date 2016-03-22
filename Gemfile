@@ -27,7 +27,7 @@ group :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'launchy'
   gem 'rspec-its'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.4'
   gem 'rubocop-rspec'
   gem 'rubocop', require: false
   gem 'shoulda-matchers', '~> 3.1'
