@@ -5,7 +5,7 @@ module FeatureHelpers
       options.each do |key, (radio_value, textarea_value)|
         fill_in_healthcare_field(key, radio_value, textarea_value)
       end
-      check 'Does the prisoner require an MPV?'
+      check 'Do they need an MPV?'
       click_save
     end
 
@@ -21,8 +21,8 @@ module FeatureHelpers
     end
 
     def build_healthcare_properties
-      ['Physical health risks', 'Mental health risks',
-       'Social care needs and other healthcare needs', 'Allergies',
+      ['Physical health', 'Mental health',
+       'Social care', 'Allergies',
        'Disabilities', 'Medication'].each_with_index.
         each_with_object({}) do |(r, i), o|
         o[r] = (i.odd? ? ['Yes', 'Some user input'] : ['No', nil])

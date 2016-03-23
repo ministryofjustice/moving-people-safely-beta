@@ -17,4 +17,17 @@ module FormElementsHelper
       &blk
     )
   end
+
+  def form_group_container(classes:'', &_blk)
+    styles = ['form-group', classes].join(' ')
+    content_tag(:div, class: styles) { yield }
+  end
+
+  def hint_text(&_blk)
+    content_tag(:p, class: 'form-hint') { yield }
+  end
+
+  def join(*strings)
+    strings.flatten.inject(ActiveSupport::SafeBuffer.new, &:<<)
+  end
 end

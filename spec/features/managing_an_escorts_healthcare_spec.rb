@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'managing an escorts healthcare', type: :feature do
   let(:link_name)                 { 'Healthcare' }
-  let(:healthcare_field_category) { 'Physical health risks' }
+  let(:healthcare_field_category) { 'Physical health' }
   let(:healthcare_field_text)     { 'Broken leg' }
 
   scenario 'adding a healthcare field without details' do

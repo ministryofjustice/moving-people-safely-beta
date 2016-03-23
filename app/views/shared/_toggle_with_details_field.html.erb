@@ -1,27 +1,3 @@
-<fieldset class="js_has_optional_section">
-  <div class="form-group">
-    <legend class="form-label-bold">
-      <span><%= t("#{i18n_scope}.#{attribute}.title") %></span>
-    </legend>
-    <p class="form-hint"><%= t("#{i18n_scope}.#{attribute}.help_text") %></p>
-    <div class="form-group">
-      <% { true => :yes, false => :no }.each do |value, translation_key| %>
-        <%= f.label attribute, value: value, class: 'block-label inline' do %>
-          <%= f.radio_button attribute, value %> <%= t(translation_key) %>
-        <% end %>
-      <% end %>
-
-      <%= f.radio_button attribute, 'unknown', class: "visuallyhidden" %>
-      <%= f.label "#{attribute}_unknown", t("#{i18n_scope}.labels.clear"), class: 'unknown_value' %>
-
-      <div class="form-group optional-section">
-        <%= f.label "#{attribute}_details", t("#{i18n_scope}.#{attribute}.details_help_text") %>
-        <%= f.text_area "#{attribute}_details",
-            autocomplete: 'off',
-            class: 'form-control',
-            id: "#{f.object.name}_#{attribute}_details"
-        %>
-      </div>
-    </div>
-  </div>
-</fieldset>
+<%= text_toggle_container(f, attribute, i18n_scope) do %>
+  <%= details_text_area_with_help_text(f, attribute, i18n_scope) %>
+<% end %>
