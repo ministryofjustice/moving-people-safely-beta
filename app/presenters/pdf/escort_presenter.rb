@@ -9,6 +9,10 @@ module Pdf
         Pdf::NotForReleasePresenter.new(@escort.offence_information)
     end
 
+    def front_page_markers
+      @front_page_markers ||= Pdf::FrontPageMarkersPresenter.new(@escort)
+    end
+
     def prisoner
       @prisoner ||= Pdf::PrisonerPresenter.new(@escort.prisoner)
     end

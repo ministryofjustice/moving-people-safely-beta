@@ -68,6 +68,24 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Attach photo')
     end
 
+    it 'generates the expected content for summary checkboxes' do
+      expect(content).to have_content('Healthcare information').
+        and have_content('Risks overview').
+        and have_content('ACCT open').
+        and have_content('CAT A').
+        and have_content('Allergies').
+        and have_content('Disabilities').
+        and have_content('Violence').
+        and have_content('Escort escape risk').
+        and have_content('Non-association')
+      expect(html).to have_css('#allergies-checkbox-group//.checked').
+        and have_css('#allergies-checkbox-group//.checked').
+        and have_css('#disabilities-checkbox-group//.checked').
+        and have_css('#violence-checkbox-group//.checked').
+        and have_css('#violence-checkbox-group//.checked').
+        and have_css('#non_association-checkbox-group//.checked')
+    end
+
     it 'generates the expected content for the updates section' do
       expect(content).to have_content('Include relevant updates').
         and have_content('and heightened risks from section B3')
