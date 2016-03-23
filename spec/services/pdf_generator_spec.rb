@@ -21,17 +21,12 @@ RSpec.describe PdfGenerator, type: :service do
 
     before(:all) do
       travel_to(Date.new(2015, 2, 3)) do
-        prisoner = build_stubbed(:prisoner)
-        move = build_stubbed(:move)
-        risks = build_stubbed(:risk_information)
-        healthcare = build_stubbed(:health_information)
-        offences = build_stubbed(:offence_information)
         escort = build_stubbed(:escort,
-          prisoner: prisoner,
-          move: move,
-          risk_information: risks,
-          health_information: healthcare,
-          offence_information: offences)
+          prisoner: build_stubbed(:prisoner),
+          move: build_stubbed(:move),
+          risk_information: build_stubbed(:risk_information),
+          health_information: build_stubbed(:health_information),
+          offence_information: build_stubbed(:offence_information))
         @html = described_class.render(escort)
         @content = ActionController::Base.helpers.strip_tags(html)
       end
