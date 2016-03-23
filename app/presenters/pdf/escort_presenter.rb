@@ -1,6 +1,4 @@
 module Pdf
-  CHECKED = 'checked'
-
   class EscortPresenter
     def initialize(escort)
       @escort = escort

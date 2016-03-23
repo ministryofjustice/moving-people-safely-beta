@@ -8,7 +8,7 @@ module Pdf
 
     def not_for_release_class
       if @model.not_for_release
-        CHECKED
+        Pdf::HtmlClasses.checked
       end
     end
   end

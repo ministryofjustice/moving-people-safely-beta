@@ -11,7 +11,7 @@ module Pdf
 
     def mpv_required_class
       if @model.mpv_required
-        CHECKED
+        Pdf::HtmlClasses.checked
       end
     end
   end

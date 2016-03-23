@@ -8,13 +8,13 @@ module Pdf
 
     def must_return_class
       if @model.must_return
-        CHECKED
+        Pdf::HtmlClasses.checked
       end
     end
 
     def must_not_return_class
       if @model.must_not_return
-        CHECKED
+        Pdf::HtmlClasses.checked
       end
     end
   end
