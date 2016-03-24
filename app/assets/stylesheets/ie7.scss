@@ -1,0 +1,75 @@
+@import "shared_ie/global";
+@import "shared_ie/grid";
+@import "shared_ie/forms";
+
+.search-wrapper {
+  .button {
+    padding: 2px 1px 2px 0;
+    .error & {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+  }
+}
+
+.new_search_prisoner {
+  .field_with_errors {
+    display: inline!important;
+  }
+}
+
+
+th, td {
+  padding-right: 1em!important;
+}
+
+.button_to {
+  .button {
+    width: 9em;
+  }
+}
+
+.grid-row {
+  .column-one-quarter {
+    ul {
+      margin: 0;
+    }
+  }
+  .column-three-quarters {
+    width: 69%;
+  }
+}
+
+.error-summary {
+  padding-bottom: 1.5em;
+  ul {
+    margin: 0;
+  }
+}
+
+legend {
+  margin-left: -10px;
+}
+
+.new-risks {
+  .form-group {
+    padding-bottom: 1em;
+  }
+}
+
+.primary-nav {
+  margin-top: 19px;
+}
+
+.summary-content {
+  min-height: 200px;
+  > div {
+    min-height: 4em;
+  }
+}
+
+#prisoner-information {
+  .forenames {
+    width: 60%;
+  }
+}

@@ -1,0 +1,51 @@
+.form-control {
+  max-width: 50%;
+}
+
+input[type="password"] {
+  font-family: sans-serif;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-date .form-group-year {
+  width: 90px;
+}
+
+.block-label {
+  padding-left: 40px;
+  display: inline-block;
+  float: left;
+
+  input {
+    left: 5px;
+    top: 10px;
+  }
+}
+
+.summary-content > div > div {
+  float: left;
+}
+
+.forenames {
+  width: 75%;
+}
+
+.family-name, .dob, .nationality, .prison-number, .cro-number, .pnc-number {
+  width: 25%;
+}
+
+
+.age, .sex {
+  width: 12.5%;
+}
+
+.optional-section textarea {
+  min-width: 80%;
+}
+
+.search-wrapper .button {
+  padding: 0.35em 0.6em 0.3em 0.6em;
+}
