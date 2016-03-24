@@ -9,7 +9,7 @@ class MoveInformation < Form
   validates :date_of_travel, present_or_future_date: true
 
   def formatted_date_today
-    Date.today.strftime('%d %m %Y')
+    Date.today.to_s(:day_month_year)
   end
 
   def target

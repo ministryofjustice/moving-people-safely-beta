@@ -8,7 +8,7 @@ class Prisoner < ActiveRecord::Base
 
   def formatted_date_of_birth
     if date_of_birth.present?
-      date_of_birth.strftime('%d/%m/%Y')
+      date_of_birth.to_s(:slashed_day_month_year)
     end
   end
 
