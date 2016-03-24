@@ -1,10 +1,13 @@
 class Risks < Form
   include Form::TextToggleAttribute
 
-  GENERAL = %i[ to_self violence from_others escape intolerant_behaviour
-                prohibited_items non_association ].freeze
-
-  GENERAL.each(&method(:text_toggle_attribute))
+  text_toggle_attribute :to_self
+  text_toggle_attribute :violence
+  text_toggle_attribute :from_others
+  text_toggle_attribute :escape
+  text_toggle_attribute :intolerant_behaviour
+  text_toggle_attribute :prohibited_items
+  text_toggle_attribute :non_association
 
   def target
     super.risk_information

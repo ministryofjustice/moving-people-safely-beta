@@ -1,15 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Risks, type: :form do
-  general_risks = %i[ to_self violence from_others escape
-                      intolerant_behaviour prohibited_items non_association ]
-
-  describe '::GENERAL' do
-    specify do
-      expect(described_class::GENERAL).to match_array general_risks
-    end
-  end
-
   subject { described_class.new create(:escort) }
 
   input_attributes = {
@@ -46,5 +37,12 @@ RSpec.describe Risks, type: :form do
   it_behaves_like 'a form that retrives or builds its target', :risk_information
   it_behaves_like 'a form that knows what template to render', 'risks'
   it_behaves_like 'a form that belongs to an endpoint', 'risks'
-  it_behaves_like 'a form with a text toggle attribute', general_risks
+  it_behaves_like('a form with a text toggle attribute',
+    %i[ to_self
+        violence
+        from_others
+        escape
+        intolerant_behaviour
+        prohibited_items
+        non_association ])
 end

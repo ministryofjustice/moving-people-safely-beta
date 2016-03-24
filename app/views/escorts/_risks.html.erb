@@ -1,4 +1,10 @@
-<% Risks::GENERAL.each do |risk| %>
+<% %i[ to_self
+       violence
+       from_others
+       escape
+       intolerant_behaviour
+       prohibited_items
+       non_association ].each do |risk| %>
   <%= render(
         'shared/toggle_with_details_field',
         f: f,
