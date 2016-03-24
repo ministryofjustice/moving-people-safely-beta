@@ -1,5 +1,7 @@
 module Pdf
   class HealthcarePresenter
+    include CheckboxClass
+
     def initialize(model)
       @model = model
     end
@@ -10,9 +12,7 @@ module Pdf
       :contact_telephone, to: :@model
 
     def mpv_required_class
-      if @model.mpv_required
-        CHECKED
-      end
+      checked_class_for(@model.mpv_required)
     end
   end
 end

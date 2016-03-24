@@ -34,32 +34,8 @@
       <strong><%= t('.healthcare_information.title') %></strong>
     </div>
     <div class="markers has-reference">
-      <div class="indicator">
-        <div>
-          <div class="label-inline"><%= t('.risks.allergies') %></div>
-        </div>
-        <div>
-          <div class="check-box"></div>
-          <div class="label-inline"><%= t('.risks.yes_label') %></div>
-        </div>
-        <div>
-          <div class="check-box"></div>
-          <div class="label-inline"><%= t('.risks.no_label') %></div>
-        </div>
-      </div>
-      <div class="indicator">
-        <div>
-          <div class="label-inline"><%= t('.risks.disabilities') %></div>
-        </div>
-        <div>
-          <div class="check-box"></div>
-          <div class="label-inline"><%= t('.risks.yes_label') %></div>
-        </div>
-        <div>
-          <div class="check-box"></div>
-          <div class="label-inline"><%= t('.risks.no_label') %></div>
-        </div>
-      </div>
+      <%= Pdf::CoversheetCheckbox.html_for(front_page_markers.allergies) %>
+      <%= Pdf::CoversheetCheckbox.html_for(front_page_markers.disabilities) %>
     </div>
     <div class="notes">
       <span class="health"><%= t('.healthcare_information.notes') %></span>
@@ -71,45 +47,9 @@
       <strong><%= t('.risks.title') %></strong>
     </div>
     <div class="markers has-reference">
-      <div class="indicator">
-        <div>
-          <div class="label-inline"><%= t('.risks.violence') %></div>
-        </div>
-        <div>
-          <div class="check-box"></div>
-          <div class="label-inline"><%= t('.risks.yes_label') %></div>
-        </div>
-        <div>
-          <div class="check-box"></div>
-          <div class="label-inline"><%= t('.risks.no_label') %></div>
-        </div>
-      </div>
-      <div class="indicator">
-        <div>
-          <div class="label-inline"><%= t('.risks.escape') %></div>
-        </div>
-        <div>
-          <div class="check-box"></div>
-          <div class="label-inline"><%= t('.risks.yes_label') %></div>
-        </div>
-        <div>
-          <div class="check-box"></div>
-          <div class="label-inline"><%= t('.risks.no_label') %></div>
-        </div>
-      </div>
-      <div class="indicator">
-        <div>
-          <div class="label-inline"><%= t('.risks.non_association') %></div>
-        </div>
-        <div>
-          <div class="check-box"></div>
-          <div class="label-inline"><%= t('.risks.yes_label') %></div>
-        </div>
-        <div>
-          <div class="check-box"></div>
-          <div class="label-inline"><%= t('.risks.no_label') %></div>
-        </div>
-      </div>
+      <%= Pdf::CoversheetCheckbox.html_for(front_page_markers.violence) %>
+      <%= Pdf::CoversheetCheckbox.html_for(front_page_markers.escape) %>
+      <%= Pdf::CoversheetCheckbox.html_for(front_page_markers.non_association) %>
     </div>
     <div class="notes">
       <span class="risk"><%= t('.risks.notes') %></span>

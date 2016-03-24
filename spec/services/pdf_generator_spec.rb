@@ -21,17 +21,12 @@ RSpec.describe PdfGenerator, type: :service do
 
     before(:all) do
       travel_to(Date.new(2015, 2, 3)) do
-        prisoner = build_stubbed(:prisoner)
-        move = build_stubbed(:move)
-        risks = build_stubbed(:risk_information)
-        healthcare = build_stubbed(:health_information)
-        offences = build_stubbed(:offence_information)
         escort = build_stubbed(:escort,
-          prisoner: prisoner,
-          move: move,
-          risk_information: risks,
-          health_information: healthcare,
-          offence_information: offences)
+          prisoner: build_stubbed(:prisoner),
+          move: build_stubbed(:move),
+          risk_information: build_stubbed(:risk_information),
+          health_information: build_stubbed(:health_information),
+          offence_information: build_stubbed(:offence_information))
         @html = described_class.render(escort)
         @content = ActionController::Base.helpers.strip_tags(html)
       end
@@ -66,6 +61,24 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Prison number A1234BC').
         and have_content('Nationality British').
         and have_content('Attach photo')
+    end
+
+    it 'generates the expected content for summary checkboxes' do
+      expect(content).to have_content('Healthcare information').
+        and have_content('Risks overview').
+        and have_content('ACCT open').
+        and have_content('CAT A').
+        and have_content('Allergies').
+        and have_content('Disabilities').
+        and have_content('Violence').
+        and have_content('Escort escape risk').
+        and have_content('Non-association')
+      expect(html).to have_css('#allergies-checkbox-group//.checked').
+        and have_css('#allergies-checkbox-group//.checked').
+        and have_css('#disabilities-checkbox-group//.checked').
+        and have_css('#violence-checkbox-group//.checked').
+        and have_css('#violence-checkbox-group//.checked').
+        and have_css('#non_association-checkbox-group//.checked')
     end
 
     it 'generates the expected content for the updates section' do

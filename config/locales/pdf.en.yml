@@ -21,13 +21,6 @@ en:
       risks:
         title: Risks overview
         notes: Section A2 Risk summary
-        violence: Violence
-        escape: Escort escape risk
-        allergies: Allergies
-        disabilities: Disabilities
-        non_association: Non-association
-        no_label: 'No'
-        yes_label: 'Yes'
       offence_information:
         title: Offence information
         notes: Section A4 Offences
@@ -36,6 +29,14 @@ en:
         title: Healthcare information
         acct: ACCT open
         notes: Section A3 Healthcare information
+    coversheet_checkboxes:
+      no_label: 'No'
+      yes_label: 'Yes'
+      violence: Violence
+      escape: Escort escape risk
+      non_association: Non-association
+      allergies: Allergies
+      disabilities: Disabilities
     prisoner:
       photo_message: Attach photo
       family_name: :'shared.family_name'
