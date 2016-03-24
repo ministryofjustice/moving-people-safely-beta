@@ -13,7 +13,7 @@ module Summary
 
     def formatted_date_of_travel
       if date_of_travel.present?
-        date_of_travel.strftime('%d/%m/%Y')
+        date_of_travel.to_s(:slashed_day_month_year)
       end
     end
   end

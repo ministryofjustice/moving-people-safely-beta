@@ -16,7 +16,7 @@ class Escort < ActiveRecord::Base
     prefix: true, to: :prisoner
 
   def formatted_updated_at
-    updated_at.strftime('%H:%M %d/%m/%Y')
+    updated_at.to_s(:time_with_slashed_day_month_year)
   end
 
   def prisoner
