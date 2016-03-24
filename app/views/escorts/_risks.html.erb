@@ -1,5 +1,12 @@
-<% %i[ to_self
-       violence
+<%= text_toggle_container(f, :to_self, 'risk') do %>
+  <%= form_group_container do %>
+    <%= title_text(:open_acct, 'risk') %>
+    <%= clearable_radio_buttons(f, :open_acct, 'risk') %>
+  <% end %>
+  <%= details_text_area_with_help_text(f, :to_self, 'risk') %>
+<% end %>
+
+<% %i[ violence
        from_others
        escape
        intolerant_behaviour

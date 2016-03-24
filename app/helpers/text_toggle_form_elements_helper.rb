@@ -3,7 +3,8 @@ module TextToggleFormElementsHelper
   def text_toggle_container(form, name, i18n_scope, &_blk)
     content_tag(:fieldset, class: 'js_has_optional_section') do
       join(
-        title_with_hint(name, i18n_scope),
+        title_text(name, i18n_scope),
+        hint_text { t("#{i18n_scope}.#{name}.help_text") },
         form_group_container {
           join(
             clearable_radio_buttons(form, name, i18n_scope),
@@ -22,13 +23,10 @@ module TextToggleFormElementsHelper
     )
   end
 
-  def title_with_hint(name, i18n_scope)
-    join(
-      content_tag(:legend, class: 'form-label-bold') {
-        content_tag(:span) { t("#{i18n_scope}.#{name}.title") }
-      },
-      hint_text { t("#{i18n_scope}.#{name}.help_text") }
-    )
+  def title_text(name, i18n_scope)
+    content_tag(:legend, class: 'form-label-bold') {
+      content_tag(:span) { t("#{i18n_scope}.#{name}.title") }
+    }
   end
 
   def clearable_radio_buttons(form, name, i18n_scope)

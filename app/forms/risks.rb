@@ -9,6 +9,8 @@ class Risks < Form
   text_toggle_attribute :prohibited_items
   text_toggle_attribute :non_association
 
+  attribute :open_acct, MaybeBoolean
+
   def target
     super.risk_information
   end
