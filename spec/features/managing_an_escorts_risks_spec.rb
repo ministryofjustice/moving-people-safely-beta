@@ -40,7 +40,7 @@ RSpec.feature 'managing an escorts risks', type: :feature do
 
     within_risk(risk_category) do
       expect(page).to have_content risk_text
-      choose 'No'
+      choose_first_radio 'No'
     end
 
     click_save

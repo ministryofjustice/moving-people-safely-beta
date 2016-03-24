@@ -10,13 +10,13 @@ module FeatureHelpers
 
     def fill_in_risk(field, radio_value, textarea_value)
       within_risk(field) do
-        choose radio_value
+        choose_first_radio radio_value
         find('textarea').set textarea_value
       end
     end
 
     def clear_risk(field)
-      within_risk(field) { choose 'Clear selection' }
+      within_risk(field) { choose_first_radio 'Clear selection' }
     end
 
     def build_risk_properties

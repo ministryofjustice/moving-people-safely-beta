@@ -11,6 +11,10 @@ module FeatureHelpers
       fill_in 'search_prisoner[prison_number]', with: prison_number
     end
 
+    def choose_first_radio(text)
+      choose(text, match: :first)
+    end
+
     def click_save
       click_button 'Save'
     end
