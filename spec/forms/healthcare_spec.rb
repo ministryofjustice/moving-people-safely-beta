@@ -51,16 +51,14 @@ RSpec.describe Healthcare, type: :form do
 
   subject { described_class.new(create :escort) }
 
-  def self.falsey_combinations
+  def self.falsey_permutations
     possible_attribute_values = [true, false, nil]
-    possible_attribute_values.
-      product(possible_attribute_values).
-      reject { |a, b| a && b }
+    possible_attribute_values.repeated_permutation(2).to_a - [[true, true]]
   end
 
   describe '#mpv_required' do
     context 'depends on the value of the disabilities attribute' do
-      falsey_combinations.each do |mpv_required_value, disabilities_value|
+      falsey_permutations.each do |mpv_required_value, disabilities_value|
         context "when mpv_required is a #{mpv_required_value.class}" do
           context "when disabilities is a #{disabilities_value.class}" do
             it 'returns a falsey value' do
