@@ -51,6 +51,8 @@ en:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      new:
+        welcome_message: Welcome to the Moving People Safely service.<br /><br />NOMS is working to improve the Person Escort Record (PER).<br /><br />As part of this, a project called Moving People Safely is working on a pilot to digitise the PER process. Currently, the service allows prison staff to log in to a system to initiate and fill in core information. They can then print off the document to complete the handover process and record of movement.<br /><br />Start using this service and get access to the digital PER by entering your email and password below.
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
