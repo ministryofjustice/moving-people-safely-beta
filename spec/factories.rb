@@ -76,10 +76,10 @@ FactoryGirl.define do
   end
 
   factory :user do
-    first_name 'Mark'
-    last_name 'White'
+    first_name 'Henry'
+    last_name 'Pope'
     job_role 'Reception'
-    email 'mark.white@some.prison.com'
+    email 'staff@some.prison.com'
     password 'secret123'
     password_confirmation 'secret123'
   end
