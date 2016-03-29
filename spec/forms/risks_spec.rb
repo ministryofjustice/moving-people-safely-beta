@@ -45,5 +45,30 @@ RSpec.describe Risks, type: :form do
         intolerant_behaviour
         prohibited_items
         non_association ])
-  it_behaves_like 'a form with maybe boolean attributes', %i[ open_acct ]
+
+  describe '#open_acct' do
+    context 'when the risks to self marker has been set to yes' do
+      before(:each) do
+        subject.to_self = true
+      end
+
+      it_behaves_like 'a form with maybe boolean attributes', %i[ open_acct ]
+    end
+
+    { 'no' => false,
+      'empty' => nil }.each do |risk_radio_name, radio_value|
+      context "when the risks to self is set to #{risk_radio_name}" do
+        before { subject.to_self = radio_value }
+
+        { 'yes' => true,
+          'no' => false,
+          'empty' => nil }.each do |acct_radio_name, acct_value|
+          context "and the acct is set to #{acct_radio_name}" do
+            before { subject.open_acct = acct_value }
+            its(:open_acct) { is_expected.to be_nil }
+          end
+        end
+      end
+    end
+  end
 end

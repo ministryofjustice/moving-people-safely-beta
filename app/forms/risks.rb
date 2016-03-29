@@ -11,6 +11,10 @@ class Risks < Form
 
   attribute :open_acct, MaybeBoolean
 
+  def open_acct
+    super if to_self
+  end
+
   def target
     super.risk_information
   end
