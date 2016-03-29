@@ -10,7 +10,7 @@ en:
   healthcare:
     labels:
       clear: Clear selection
-      details_help_text: If yes, give details on how the issues might be a risk during the move
+      details_help_text: If yes, give details on how the issues might be a risk during the move.
     physical_risk:
       title: Physical health
       help_text: Does the prisoner have any physical health needs?
@@ -26,7 +26,7 @@ en:
     allergies:
       title: Allergies
       help_text: Does the prisoner have any allergies?
-      details_help_text: If yes, give details of food allergies (eg nuts) or medical allergies (eg ibuprofen) or any other allergies. Also give details of food intolerances (eg wheat, gluten, dairy). Include whether the allergy is severe or mild. List any particular triggers.
+      details_help_text: If yes, give details of food allergies (eg nuts) or medical allergies (eg ibuprofen) or any other allergies. Also give details of food intolerances (eg wheat, gluten, dairy).
       details_guidance_text: Include whether the allergy is severe or mild. List any particular triggers.
     disabilities:
       title: Disabilities
