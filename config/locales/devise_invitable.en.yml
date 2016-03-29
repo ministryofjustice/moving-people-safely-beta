@@ -13,12 +13,13 @@ en:
         header: "Send invitation"
         submit_button: "Send an invitation"
       edit:
-        header: "Set your password"
+        header: "Welcome to the Moving People Safely service"
         submit_button: "Set my password"
+        set_password_instructions: NOMS is working to improve the Person Escort Record (PER).<br /><br />As part of this, a project called Moving People Safely is working on a pilot to digitise the PER process. Currently, the service allows prison staff to log in to a system to initiate and fill in core information. They can then print off the document to complete the handover process and record of movement.<br /><br />If you’re using this service for the first time, please set a strong password to give you secure access to the digital PER.<br /><br />Please retype your password.
     mailer:
       invitation_instructions:
-        subject: "Invitation instructions"
+        subject: "Moving People Safely has given you access to the updated digital PER"
         hello: "Hello %{email}"
-        someone_invited_you: "Someone has invited you to %{url}, you can accept it through the link below."
+        someone_invited_you: "As you may know, NOMS is working to improve the Person Escort Record (PER).<br />As part of this, a project called Moving People Safely is working on a pilot to digitise the PER process. Currently, the service allows prison staff to log in to a system to initiate and fill in core information. They can then print off the document to complete the handover process and record of movement.<br /><br />If you're involved in this process, this is your access to the digital PER application. It is being constantly updated. You can accept it <a href=\"%{url}\">here</a>.<br /><br />When you sign up, you'll be able to access the new PER and use it, as discussed in the training.<br /><br />Your account won't be created until you accept access and set your password.<br /><br />If you haven't agreed to use the new version of the digital PER, please ignore this email.<br /><br />Thank you for your help.<br /><br />Moving People Safely team, NOMS<br /><br />Any questions, please email <a href='mailto:moving-people-safely@digital.justice.gov.uk'>moving-people-safely@digital.justice.gov.uk</a>"
         accept: "Accept invitation"
         ignore: "If you don't want to accept the invitation, please ignore this email.<br />Your account won't be created until you access the link above and set your password."
