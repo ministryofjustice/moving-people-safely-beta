@@ -10,7 +10,7 @@ en:
   healthcare:
     labels:
       clear: Clear selection
-      details_help_text: Give details and how the issues might be a risk during the move
+      details_help_text: If yes, give details on how the issues might be a risk during the move
     physical_risk:
       title: Physical health
       help_text: Does the prisoner have any physical health needs?
@@ -26,16 +26,15 @@ en:
     allergies:
       title: Allergies
       help_text: Does the prisoner have any allergies?
-      details_help_text: :'healthcare.labels.details_help_text'
-      details_guidance_text: Give details of food allergies, eg nuts or medical allergies, eg ibuprofen or any other allergies. Also give details of food intolerances, eg wheat, gluten dairy. Include whether the allergy is severe or mild and list any particular triggers.
+      details_help_text: If yes, give details of food allergies (eg nuts) or medical allergies (eg ibuprofen) or any other allergies. Also give details of food intolerances (eg wheat, gluten, dairy). Include whether the allergy is severe or mild. List any particular triggers.
+      details_guidance_text: Include whether the allergy is severe or mild. List any particular triggers.
     disabilities:
       title: Disabilities
       help_text: Does the prisoner have any disabilities?
-      details_help_text: Give details of their disabilities, their disability needs, as well as potential risks during the move
-      details_guidance_text: Give details of any equipment necessary for moving, eg special vehicles, walking frames. Also any communication support that might be needed.
+      details_help_text: If yes, give details of their disabilities, their disability needs, as well as potential risks during the move.
+      details_guidance_text: Details might include any equipment necessary for moving (eg special vehicles, walking frames) and any communication support that might be needed.
     mpv_required: Do they need an MPV?
     medication:
       title: Medication
       help_text: Does the prisoner need medication?
-      details_help_text: Give details of the medication needed and how it is administered
-
+      details_help_text: If yes, give details of the medication needed and how it is administered. Give details of how the issues might be a risk during the move.

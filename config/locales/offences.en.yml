@@ -12,17 +12,17 @@ en:
       clear: Clear selection
     not_for_release:
       title: Not for release
-      help_text: Help text needed
-      details_help_text: Give a reason why the prisoner must not be released
+      help_text: Is this detainee ‘not for release’?
+      details_help_text: List any outstanding matters or reasons the detainee is not for release (NFR), eg serving another sentence, outstanding charges or remand, immigration (IS91), licence recall, additional days added (ADAs).
     must_return:
       title: Must return
-      help_text: Help text needed
-      details_help_text: Give a reason why the prisoner must return
+      help_text: Must this detainee return to the same prison?
+      details_help_text: List the reasons the detainee must return to the same establishment, eg medical treatment, medical hold, treatment programmes or offender behaviour.
     must_not_return:
       title: Must not return
-      help_text: Help text needed
-      details_help_text: Give a reason why the prisoner must not return
+      help_text: Must this detainee NOT return to the same prison?
+      details_help_text: List any reasons the detainee must not return to the same establishment, eg offender behaviour, non-association markers, gang-related issues.
     other_offences:
-      title: Other offences
-      help_text: Help text needed
-      details_help_text: Give details of offences and offence status (e.g. Outstanding charges, Serving sentence, On remand, On licence)
+      title: Current and other offences
+      help_text: What is this detainee’s current offence?
+      details_help_text: List the offence being dealt with today and mark it ‘current’. Does the detainee have offences other than those they’re being moved for? If so, list as many other relevant offences as possible. Give the status of the offence, eg serving sentence, outstanding charges, on remand, licence recall. Mark as NFR all offences which mean the detainee is not for release.
