@@ -2,20 +2,9 @@ RSpec.shared_examples 'a form with a text toggle attribute' do |attributes|
   let(:escort) { create(:escort) }
   subject { described_class.new(escort) }
 
-  attributes.each do |attribute|
-    {
-      'false'   => false,
-      'true'    => true,
-      'unknown' => nil
-    }.each do |radio_button_value, coerced_value|
-      describe "#{attribute}=" do
-        context "coercing #{radio_button_value}" do
-          before { subject.public_send("#{attribute}=", radio_button_value) }
-          its(attribute) { is_expected.to be coerced_value }
-        end
-      end
-    end
+  it_behaves_like 'a form with maybe boolean attributes', attributes
 
+  attributes.each do |attribute|
     let(:user_text) { 'some user entered text' }
 
     describe "##{attribute}_details=" do

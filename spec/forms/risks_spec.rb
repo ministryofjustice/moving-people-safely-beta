@@ -45,4 +45,5 @@ RSpec.describe Risks, type: :form do
         intolerant_behaviour
         prohibited_items
         non_association ])
+  it_behaves_like 'a form with maybe boolean attributes', %i[ open_acct ]
 end
