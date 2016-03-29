@@ -4,17 +4,7 @@
       &nbsp
     </div>
     <div class="markers">
-      <div class="indicator">
-        <div>
-          <div class="label-inline"><%= t('.healthcare_information.acct') %></div>
-        </div>
-        <div>
-          <div class="check-box"></div>
-          <div class="label-inline">Yes</div>
-          <div class="check-box"></div>
-          <div class="label-inline">No</div>
-        </div>
-      </div>
+      <%= Pdf::CoversheetCheckbox.html_for(front_page_markers.open_acct) %>
       <div class="indicator">
         <div>
           <div class="label-inline"><%= t('.offence_information.cat_a') %></div>

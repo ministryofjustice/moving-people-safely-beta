@@ -17,5 +17,6 @@ module Pdf
     checkbox_group :violence,         on: :risk_information
     checkbox_group :escape,           on: :risk_information
     checkbox_group :non_association,  on: :risk_information
+    checkbox_group :open_acct,        on: :risk_information
   end
 end

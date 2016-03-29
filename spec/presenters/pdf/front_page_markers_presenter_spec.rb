@@ -27,7 +27,7 @@ RSpec.describe Pdf::FrontPageMarkersPresenter, type: :presenter do
   end
 
   context 'risk information markers' do
-    %i[ violence escape non_association ].each do |checkbox|
+    %i[ open_acct violence escape non_association ].each do |checkbox|
       it 'returns a configured CoversheetCheckboxGroup instance' do
         possible_checkbox_values.each do |attribute_value|
           escort.risk_information.public_send("#{checkbox}=", attribute_value)

@@ -60,6 +60,7 @@ FactoryGirl.define do
   factory :risk_information do
     to_self true
     to_self_details 'Always ends up with scars'
+    open_acct true
     violence true
     violence_details 'Violent person'
     from_others true
