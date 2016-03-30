@@ -48,16 +48,6 @@
     }
   }
 
-  .return-information {
-    @extend .marker-with-reason;
-    .marker {
-      width: 19.5%;
-    }
-    .reason > .input {
-      width: 33.25em;
-    }
-  }
-
   .medication-handover {
     > div {
       @extend .row;

@@ -148,6 +148,10 @@ RSpec.describe PdfGenerator, type: :service do
       expect(content).to have_content('A4. Offences').
         and have_content('See A1. Cover sheet for details of current offence').
         and have_content('Other offences').
+        and have_content('Must return').
+        and have_content('Reason').
+        and have_content('Must not return').
+        and have_content('Reason').
         and have_content('Use an offence status from the following list').
         and have_content('Outstanding charge').
         and have_content('Serving sentence').
@@ -161,15 +165,7 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Fit to travel').
         and have_content('Name of healthcare professional (print)').
         and have_content('Signature').
-        and have_content('Role').
-        and have_content('Must return').
-        and have_content('Reason').
-        and have_content('The prisoner must return').
-        and have_content('Must not return').
-        and have_content('Reason').
-        and have_content('The prisoner must not return')
-      expect(html).to have_css('.must-return//.checked').
-        and have_css('.must-not-return//.checked')
+        and have_content('Role')
     end
 
     it 'generates the expected content for the handover medication section' do

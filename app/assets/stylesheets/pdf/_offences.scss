@@ -1,4 +1,14 @@
 .offences {
+  .return-information {
+    @extend .marker-with-reason;
+    .marker {
+      width: 19.5%;
+    }
+    .reason > .input {
+      width: 33.25em;
+    }
+  }
+
   ul {
     @extend .bordered-left;
     list-style: none;

@@ -91,15 +91,15 @@ en:
       license_recall: License recall
       offence: Offence
       offence_status: Offence status
+      must_return: Must return
+      must_not_return: Must not return
+      reason: :'shared.reason'
     handover_details:
       heading: B1. Handover details
       fit_to_travel: Fit to travel
       name_of_healthcare_professional: Name of healthcare professional (print)
       signature: Signature
       role: Role
-      must_return: Must return
-      must_not_return: Must not return
-      reason: :'shared.reason'
       medication_heading: :'shared.medication'
       medication_instructions: See A3. Healthcare information for medication details
       no_medication: No medication
