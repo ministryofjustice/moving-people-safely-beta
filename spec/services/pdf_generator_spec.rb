@@ -78,7 +78,8 @@ RSpec.describe PdfGenerator, type: :service do
         and have_css('#disabilities-checkbox-group//.checked').
         and have_css('#violence-checkbox-group//.checked').
         and have_css('#violence-checkbox-group//.checked').
-        and have_css('#non_association-checkbox-group//.checked')
+        and have_css('#non_association-checkbox-group//.checked').
+        and have_css('#open_acct-checkbox-group//.checked')
     end
 
     it 'generates the expected content for the updates section' do

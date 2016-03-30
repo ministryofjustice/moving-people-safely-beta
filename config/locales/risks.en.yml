@@ -3,6 +3,8 @@ en:
     risks:
       heading: Risks
   risk:
+    open_acct:
+      title: Does the prisoner have an open ACCT?
     to_self:
       title: Risks to self
       help_text: Is there a risk of suicide or self-harm?

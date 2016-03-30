@@ -1,15 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Risks, type: :form do
-  general_risks = %i[ to_self violence from_others escape
-                      intolerant_behaviour prohibited_items non_association ]
-
-  describe '::GENERAL' do
-    specify do
-      expect(described_class::GENERAL).to match_array general_risks
-    end
-  end
-
   subject { described_class.new create(:escort) }
 
   input_attributes = {
@@ -46,5 +37,38 @@ RSpec.describe Risks, type: :form do
   it_behaves_like 'a form that retrives or builds its target', :risk_information
   it_behaves_like 'a form that knows what template to render', 'risks'
   it_behaves_like 'a form that belongs to an endpoint', 'risks'
-  it_behaves_like 'a form with a text toggle attribute', general_risks
+  it_behaves_like('a form with a text toggle attribute',
+    %i[ to_self
+        violence
+        from_others
+        escape
+        intolerant_behaviour
+        prohibited_items
+        non_association ])
+
+  describe '#open_acct' do
+    context 'when the risks to self marker has been set to yes' do
+      before(:each) do
+        subject.to_self = true
+      end
+
+      it_behaves_like 'a form with maybe boolean attributes', %i[ open_acct ]
+    end
+
+    { 'no' => false,
+      'empty' => nil }.each do |risk_radio_name, radio_value|
+      context "when the risks to self is set to #{risk_radio_name}" do
+        before { subject.to_self = radio_value }
+
+        { 'yes' => true,
+          'no' => false,
+          'empty' => nil }.each do |acct_radio_name, acct_value|
+          context "and the acct is set to #{acct_radio_name}" do
+            before { subject.open_acct = acct_value }
+            its(:open_acct) { is_expected.to be_nil }
+          end
+        end
+      end
+    end
+  end
 end
