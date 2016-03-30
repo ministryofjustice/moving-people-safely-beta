@@ -14,6 +14,13 @@
 
 ### `Local Setup`
 
+#### `Javascript testing`
+
+The application relies on phantomJS for Javascript testing. If you use OS X
+and homebrew you can run the following to install it:
+
+`brew install phantomjs`
+
 #### `Testing in old IE`
 
 User research indicates that the overwhelming majority of users will access
