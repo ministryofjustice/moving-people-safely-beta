@@ -3,7 +3,9 @@ en:
     show:
       heading: Find a prisoner
       logged_in: You're now logged into the Moving People Safely service and ready to start using the digital PER.
-      description: To initiate a PER for a prisoner enter the prisoner number and click 'Search'
+      description: |
+        To initiate a PER for a prisoner enter the prisoner number and search to view any existing records.
+        If there are no records, you will be given the opportunity to start a new one.
       create_escort_button: Create new escort record
       search_label: Enter a prison number
       search_hint: Eg A1234BC
