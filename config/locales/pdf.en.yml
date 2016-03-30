@@ -72,7 +72,7 @@ en:
       allergies: Allergies
       disabilities: Disabilities
       mpv_required: Tick if MPV required
-      medication_title: :'shared.medication'
+      medication_title: Medication
       medication_instructions: 'Medication handover details in section B1: Record of handover'
       completed_by: Name of medical professional filling in this section
       phone_number: Contact phone number
@@ -100,8 +100,7 @@ en:
       name_of_healthcare_professional: Name of healthcare professional (print)
       signature: Signature
       role: Role
-      medication_heading: :'shared.medication'
-      medication_instructions: See A3. Healthcare information for medication details
+      medication_heading: Medication details
       no_medication: No medication
       medicaton_with_escort: Medication with escort
       medication_with_prisoner: Medication with prisoner

@@ -49,6 +49,10 @@
   }
 
   .medication-handover {
+    .heading {
+      @extend .styled-as-heading;
+      font-weight: $font-weight-bold;
+    }
     > div {
       @extend .row;
     }

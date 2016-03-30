@@ -169,9 +169,7 @@ RSpec.describe PdfGenerator, type: :service do
     end
 
     it 'generates the expected content for the handover medication section' do
-      expect(content).to have_content('Medication').
-        and have_content('See A3. Healthcare information').
-        and have_content('for medication details').
+      expect(content).to have_content('Medication details').
         and have_content('No medication').
         and have_content('Medication with escort').
         and have_content('Medication with prisoner')
