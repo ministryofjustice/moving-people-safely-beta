@@ -6,11 +6,7 @@
       <ul class="error-summary-list">
         <% object.errors.each do |attribute| %>
             <li>
-              <%= link_to(
-                    object.errors.full_messages_for(attribute).first,
-                    "##{object.class.name.underscore}_#{attribute}"
-                  )
-              %>
+              <%= link_to_field_with_error(object, attribute) %>
             </li>
         <% end %>
       </ul>
