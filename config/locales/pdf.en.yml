@@ -74,8 +74,8 @@ en:
       mpv_required: Tick if MPV required
       medication_title: Medication
       medication_instructions: 'Medication handover details in section B1: Record of handover'
-      completed_by: Name of medical professional filling in this section
-      phone_number: Contact phone number
+      completed_by: :'shared.medical_professional'
+      phone_number: :'shared.phone_number'
       updates: Updates
       update_instructions: This section should be completed by a medical professional
     shared:
@@ -95,6 +95,7 @@ en:
       must_not_return: Must not return
       reason: :'shared.reason'
     handover_details:
+      contact_number: :'shared.phone_number'
       heading: B1. Handover details
       fit_to_travel: Fit to travel
       name_of_healthcare_professional: Name of healthcare professional (print)
@@ -104,6 +105,9 @@ en:
       no_medication: No medication
       medicaton_with_escort: Medication with escort
       medication_with_prisoner: Medication with prisoner
+      medication_description: Medication description
+      medication_administration_info: Medication administration information
+      medical_professional: :'shared.medical_professional'
       enclosed_forms: Enclosed forms
       form: Form
       attached: Attached

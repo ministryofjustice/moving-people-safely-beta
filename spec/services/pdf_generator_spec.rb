@@ -172,7 +172,12 @@ RSpec.describe PdfGenerator, type: :service do
       expect(content).to have_content('Medication details').
         and have_content('No medication').
         and have_content('Medication with escort').
-        and have_content('Medication with prisoner')
+        and have_content('Medication with prisoner').
+        and have_content('Medication description').
+        and have_content('Medication administration information').
+        and have_content('Name of medical professional').
+        and have_content('professional filling in this section').
+        and have_content('Contact phone number')
     end
 
     it 'generates the expected content for the enclosed forms section' do

@@ -68,6 +68,17 @@
       margin-bottom: 0;
     }
   }
+
+  .medication-administration {
+    table {
+      @extend .bordered-table;
+      margin-bottom: $margin-bottom;
+      th {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
 }
 
 .clock-image {
