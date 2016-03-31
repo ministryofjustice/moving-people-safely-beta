@@ -72,8 +72,6 @@ en:
       allergies: Allergies
       disabilities: Disabilities
       mpv_required: Tick if MPV required
-      medication_title: Medication
-      medication_instructions: 'Medication handover details in section B1: Record of handover'
       completed_by: :'shared.medical_professional'
       phone_number: :'shared.phone_number'
       updates: Updates

@@ -31,18 +31,6 @@
   }
 }
 
-.medication {
-  @extend .row;
-  .instructions {
-    margin-bottom: $margin-small;
-  }
-  .input {
-    min-height: 9em;
-    padding-bottom: $padding-unit;
-    padding-right: $padding-unit;
-  }
-}
-
 .healthcare-updates {
   @extend .light-background;
   @extend .padded;

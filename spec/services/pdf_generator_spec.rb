@@ -129,10 +129,6 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Disabilities').
         and have_content('Strong illness').
         and have_content('Tick if MPV required').
-        and have_content('Medication').
-        and have_content('One pill a day').
-        and have_content('Medication handover details in').
-        and have_content('section B1: Record of handover').
         and have_content('Name of medical professional').
         and have_content('filling in this section').
         and have_content('Doctor Robert').
