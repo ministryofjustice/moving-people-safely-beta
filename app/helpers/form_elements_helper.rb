@@ -1,28 +1,23 @@
 module FormElementsHelper
-  def date_fields(form, field)
-    error_container(form, field, 'form-date') do
-      yield
-    end
+  def date_fields(form, field, &_blk)
+    form_group_container(form, field, classes: 'form-date') { yield }
   end
 
   def single_field(form, field)
-    error_container(form, field) do
-      form.label(field, class: 'form-label-bold', for: field) +
+    form_group_container(form, field) do
+      join(
+        form.label(field, class: 'form-label-bold', for: field),
         form.text_field(field, class: 'string form-control', id: field)
+      )
     end
   end
 
-  def error_container(form, field, html_class = nil)
+  def form_group_container(form, field, classes: '', id: nil, &_blk)
     content_tag(
       :div,
-      class: html_classes(form, field, html_class),
-      id: "#{form.object.name}_#{field}"
+      class: html_classes(form, field, classes),
+      id: id || "#{form.object.name}_#{field}"
     ) { yield }
-  end
-
-  def form_group_container(classes:'', &_blk)
-    styles = ['form-group', classes].join(' ')
-    content_tag(:div, class: styles) { yield }
   end
 
   def hint_text(&_blk)

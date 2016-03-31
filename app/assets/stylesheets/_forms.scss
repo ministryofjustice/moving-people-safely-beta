@@ -47,7 +47,7 @@
   }
 
   .js-enabled & {
-    .optional-section {
+    .optional-section:not(.error) {
       border-left: $grey-2 solid 4px;
       padding: 14px 0 14px 14px;
     }

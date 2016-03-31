@@ -1,5 +1,5 @@
 <%= text_toggle_container(f, :to_self, 'risk') do %>
-  <%= form_group_container do %>
+  <%= form_group_container(f, :open_acct) do %>
     <%= title_text(:open_acct, 'risk') %>
     <%= clearable_radio_buttons(f, :open_acct, 'risk') %>
   <% end %>

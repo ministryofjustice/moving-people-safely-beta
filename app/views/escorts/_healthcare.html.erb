@@ -12,7 +12,7 @@
 <% end %>
 
 <%= text_toggle_container(f, :disabilities, 'healthcare') do %>
-  <%= form_group_container do %>
+  <%= form_group_container(f, :disabilities) do %>
     <%= f.label :mpv_required, class: 'block-label inline' do %>
       <%= f.check_box :mpv_required %>
       <%= t('healthcare.mpv_required') %>
