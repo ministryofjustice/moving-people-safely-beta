@@ -10,5 +10,8 @@ module MovingPeopleSafely
     config.phase = 'beta'
     config.product_type = 'service'
     config.feedback_url = ''
+    config.action_view.field_error_proc = proc do |html_tag, _instance|
+      html_tag
+    end
   end
 end
