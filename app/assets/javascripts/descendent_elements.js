@@ -29,12 +29,13 @@
     };
 
     changeIgnoredIds = function (ids) {
-        var id, newId;
+        var id, newId, attrSelector;
         for (var i = 0; i < ids.length; i++) {
             id = ids[i];
             newId = id + '_no_events';
+            attrSelector = '[for=' + id + ']';
             $('#' + id).attr('id', newId);
-            $('[for=' + id).attr('for', newId);
+            $(attrSelector).attr('for', newId);
         }
     };
 
