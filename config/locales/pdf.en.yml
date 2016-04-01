@@ -131,11 +131,14 @@ en:
       instructions: Use a property code from the following list
       valuables: Valuables
       in_possession: In possession
+      open_at_court: Open at Court
       documentation: Documentation
       stored_property: Stored property
       cash: Cash
       valuables_code: V
       in_possession_code: IP
+      open_at_court_code: OAC
+      medication_code: M
       documentation_code: D
       stored_property_code: SP
       cash_code: C

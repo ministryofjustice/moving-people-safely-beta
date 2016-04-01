@@ -22,6 +22,10 @@
       @extend .styled-as-heading;
       font-weight: $font-weight-bold;
     }
+    li {
+      margin-top: $margin-small;
+      margin-bottom: $margin-small;
+    }
   }
 
   .handover-details {

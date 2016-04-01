@@ -202,11 +202,13 @@ RSpec.describe PdfGenerator, type: :service do
       expect(content).to have_content('B2. Record of handover').
         and have_content('Property, cash and medication details').
         and have_content('Use a property code from the following list').
-        and have_content('V - Valuables').
-        and have_content('IP - In possession').
-        and have_content('D - Documentation').
-        and have_content('SP - Stored property').
         and have_content('C - Cash').
+        and have_content('D - Documentation').
+        and have_content('IP - In possession').
+        and have_content('M - Medication').
+        and have_content('OAC - Open at Court').
+        and have_content('SP - Stored property').
+        and have_content('V - Valuables').
         and have_content('Type').
         and have_content('Seal number').
         and have_content('Handover').
