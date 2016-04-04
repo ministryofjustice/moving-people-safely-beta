@@ -160,6 +160,18 @@ en:
       contact_number: Contact number
       escort_label: Escort
       destination_label: Destination
+      sign_to_confirm: 'Sign to confirm the handover of the correct detainee and to acknowledge the receipt of all sealed property bags. Remember to check any added or re-sealed items as described above.'
+      property_handover: Property handover
+      cash_and_medication: (including cash and medication)
+      detainee_handover: Detainee handover
+      name: Name (print)
+      start_location: Start location
+      arrival_at_court: Arrival at Court
+      leaving_court: Leaving Court
+      arrival_at_prison: Arrival at Prison
+      dispatching_officer: Dispatching officer
+      escort: Escort
+      receiving_officer: Receiving officer
     checks_and_events:
       heading: B3. Record of checks and significant events
       time: Time
