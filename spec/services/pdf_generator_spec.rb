@@ -129,10 +129,6 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Disabilities').
         and have_content('Strong illness').
         and have_content('Tick if MPV required').
-        and have_content('Medication').
-        and have_content('One pill a day').
-        and have_content('Medication handover details in').
-        and have_content('section B1: Record of handover').
         and have_content('Name of medical professional').
         and have_content('filling in this section').
         and have_content('Doctor Robert').
@@ -140,7 +136,8 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('07987654').
         and have_content('Updates').
         and have_content('This section should be').
-        and have_content('completed by a medical professional')
+        and have_content('completed by a medical professional').
+        and have_content('Fill in medication details in section B1.')
       expect(html).to have_css('.mpv-required//.checked')
     end
 
@@ -148,6 +145,10 @@ RSpec.describe PdfGenerator, type: :service do
       expect(content).to have_content('A4. Offences').
         and have_content('See A1. Cover sheet for details of current offence').
         and have_content('Other offences').
+        and have_content('Must return').
+        and have_content('Reason The prisoner must return').
+        and have_content('Must not return').
+        and have_content('Reason The prisoner must not return').
         and have_content('Use an offence status from the following list').
         and have_content('Outstanding charge').
         and have_content('Serving sentence').
@@ -161,24 +162,19 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Fit to travel').
         and have_content('Name of healthcare professional (print)').
         and have_content('Signature').
-        and have_content('Role').
-        and have_content('Must return').
-        and have_content('Reason').
-        and have_content('The prisoner must return').
-        and have_content('Must not return').
-        and have_content('Reason').
-        and have_content('The prisoner must not return')
-      expect(html).to have_css('.must-return//.checked').
-        and have_css('.must-not-return//.checked')
+        and have_content('Role')
     end
 
     it 'generates the expected content for the handover medication section' do
-      expect(content).to have_content('Medication').
-        and have_content('See A3. Healthcare information').
-        and have_content('for medication details').
+      expect(content).to have_content('Medication details').
         and have_content('No medication').
         and have_content('Medication with escort').
-        and have_content('Medication with prisoner')
+        and have_content('Medication with prisoner').
+        and have_content('Medication description').
+        and have_content('Medication administration information').
+        and have_content('Name of medical professional').
+        and have_content('professional filling in this section').
+        and have_content('Contact phone number')
     end
 
     it 'generates the expected content for the enclosed forms section' do
@@ -205,15 +201,21 @@ RSpec.describe PdfGenerator, type: :service do
 
     it 'generates the expected content for the record of handover section' do
       expect(content).to have_content('B2. Record of handover').
-        and have_content('Property details').
+        and have_content('Property, cash and medication details').
         and have_content('Use a property code from the following list').
-        and have_content('V - Valuables').
-        and have_content('IP - In possession').
-        and have_content('D - Documentation').
-        and have_content('SP - Stored property').
         and have_content('C - Cash').
-        and have_content('Type').
+        and have_content('D - Documentation').
+        and have_content('IP - In possession').
+        and have_content('M - Medication').
+        and have_content('OAC - Open at Court').
+        and have_content('SP - Stored property').
+        and have_content('V - Valuables').
+        and have_content('Code').
         and have_content('Seal number').
+        and have_content('£ value (if cash)').
+        and have_content('Initial').
+        and have_content('Reseal number').
+        and have_content('Reason for opening').
         and have_content('Handover').
         and have_content('Prisoner').
         and have_content('Medication').

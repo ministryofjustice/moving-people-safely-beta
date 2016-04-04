@@ -31,18 +31,6 @@
   }
 }
 
-.medication {
-  @extend .row;
-  .instructions {
-    margin-bottom: $margin-small;
-  }
-  .input {
-    min-height: 9em;
-    padding-bottom: $padding-unit;
-    padding-right: $padding-unit;
-  }
-}
-
 .healthcare-updates {
   @extend .light-background;
   @extend .padded;
@@ -59,5 +47,15 @@
       margin-top: $margin-unit;
       min-height: 3.5em;
     }
+  }
+}
+
+.healthcare-signpost {
+  @extend .styled-as-heading;
+  @extend .bordered-left;
+  margin-top: $margin-top;
+  &:after {
+    content: "\0025B6";
+    font-size: small;
   }
 }

@@ -72,12 +72,12 @@ en:
       allergies: Allergies
       disabilities: Disabilities
       mpv_required: Tick if MPV required
-      medication_title: :'shared.medication'
-      medication_instructions: 'Medication handover details in section B1: Record of handover'
-      completed_by: Name of medical professional filling in this section
-      phone_number: Contact phone number
+      completed_by: :'shared.medical_professional'
+      phone_number: :'shared.phone_number'
       updates: Updates
       update_instructions: This section should be completed by a medical professional
+      fill_in_details: Fill in medication details in
+      details_section: section B1.
     shared:
       identifiers_label: PNC / Prison number
     offences:
@@ -91,20 +91,23 @@ en:
       license_recall: License recall
       offence: Offence
       offence_status: Offence status
+      must_return: Must return
+      must_not_return: Must not return
+      reason: :'shared.reason'
     handover_details:
+      contact_number: :'shared.phone_number'
       heading: B1. Handover details
       fit_to_travel: Fit to travel
       name_of_healthcare_professional: Name of healthcare professional (print)
       signature: Signature
       role: Role
-      must_return: Must return
-      must_not_return: Must not return
-      reason: :'shared.reason'
-      medication_heading: :'shared.medication'
-      medication_instructions: See A3. Healthcare information for medication details
+      medication_heading: Medication details
       no_medication: No medication
       medicaton_with_escort: Medication with escort
       medication_with_prisoner: Medication with prisoner
+      medication_description: Medication description
+      medication_administration_info: Medication administration information
+      medical_professional: :'shared.medical_professional'
       enclosed_forms: Enclosed forms
       form: Form
       attached: Attached
@@ -126,20 +129,27 @@ en:
       warrant: Warrant
     record_of_handover:
       heading: B2. Record of handover
-      property_details: Property details
+      property_details: Property, cash and medication details
       instructions: Use a property code from the following list
       valuables: Valuables
       in_possession: In possession
+      open_at_court: Open at Court
       documentation: Documentation
       stored_property: Stored property
       cash: Cash
       valuables_code: V
       in_possession_code: IP
+      open_at_court_code: OAC
+      medication_code: M
       documentation_code: D
       stored_property_code: SP
       cash_code: C
-      type: Type
+      code: Code
       seal_number: Seal number
+      value: value (if cash)
+      initial: Initial
+      reseal_no: Reseal number
+      reason_for_opening: Reason for opening
       handover: Handover
       prisoner: Prisoner
       medication: Medication

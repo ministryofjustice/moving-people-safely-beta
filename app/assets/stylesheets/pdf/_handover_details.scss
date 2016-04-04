@@ -48,17 +48,12 @@
     }
   }
 
-  .return-information {
-    @extend .marker-with-reason;
-    .marker {
-      width: 19.5%;
-    }
-    .reason > .input {
-      width: 33.25em;
-    }
-  }
-
   .medication-handover {
+    padding-top: $padding;
+    .heading {
+      @extend .styled-as-heading;
+      font-weight: $font-weight-bold;
+    }
     > div {
       @extend .row;
     }
@@ -74,6 +69,25 @@
       margin-bottom: 0;
     }
   }
+
+  .medication-administration {
+    table {
+      @extend .bordered-table;
+      margin-bottom: $margin-bottom;
+      th {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  .enclosed-forms {
+    padding-top: $padding;
+    .heading {
+      @extend .styled-as-heading;
+      font-weight: $font-weight-bold;
+    }
+  }
+
 }
 
 .clock-image {

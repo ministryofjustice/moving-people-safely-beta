@@ -141,7 +141,12 @@
       margin-bottom: 0;
     }
   }
+}
 
+.styled-as-heading {
+  font-weight: $font-weight-standard;
+  font-size: $heading-font-size;
+  margin-bottom: $margin-unit;
 }
 
 .bordered-table {

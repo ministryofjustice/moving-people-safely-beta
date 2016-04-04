@@ -9,7 +9,7 @@ en:
     edit_section_link_text: Edit
     family_name: Family name
     forenames: Forenames
-    medication: Medication
+    medical_professional: Name of medical professional filling in this section
     month_label: Month
     move_information_heading: Move Information
     name: Name (print)
@@ -23,3 +23,5 @@ en:
     signature: Signature
     year_label: Year
     reason_for_move: Reason for move (current offence)
+    phone_number: Contact phone number
+

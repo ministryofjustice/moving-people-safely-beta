@@ -7,13 +7,37 @@
     margin-right: $margin-large;
   }
 
-  .items {
-    @extend .row;
+  .seal-numbers {
     > div {
-      @extend .col;
+      width: 49.75%;
+      float: left;
       &:first-child {
-        margin-right: $margin-right;
+        td, th {
+          border-color: darken($dark_grey, 20%);
+        }
       }
+      &:last-child {
+        margin-left: 0.5%;
+      }
+    }
+    table {
+      @extend .bordered-table;
+      margin-bottom: $margin-bottom;
+    }
+    img {
+      position: relative;
+      top: 3px;
+    }
+  }
+
+  .property-details {
+    .heading {
+      @extend .styled-as-heading;
+      font-weight: $font-weight-bold;
+    }
+    li {
+      margin-top: $margin-small;
+      margin-bottom: $margin-small;
     }
   }
 
