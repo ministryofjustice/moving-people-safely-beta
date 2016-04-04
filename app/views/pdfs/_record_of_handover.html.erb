@@ -60,20 +60,91 @@
     </div>
   </div>
   <div class="handover">
-    <strong class="label"><%= t('.handover') %></strong>
-    <div class="handover-details">
-      <div>
-        <div></div>
-        <div><%= t('.prisoner') %></div>
-        <div></div>
-        <div><%= t('.medication') %></div>
-        <div><%= t('.property') %></div>
-      </div>
-      <%= render 'pdfs/handover_row', label: t('.starting_location'), contact_number: t('.contact_number') %>
-      <%= render 'pdfs/handover_row', label: t('.escort_label') %>
-      <%= render 'pdfs/handover_row', label: t('.destination_label') %>
-      <%= render 'pdfs/handover_row', label: t('.escort_label') %>
-      <%= render 'pdfs/handover_row', label: t('.destination_label') %>
-    </div>
+    <div class="heading"><%= t('.handover') %></div>
+    <p><%= t('.sign_to_confirm') %></p>
+    <table class="no-border-left no-border-top">
+      <tr>
+        <td colspan="3" class="no-border"></td>
+        <td colspan="2" class="no-border-top"><strong><%= t('.property_handover') %> <br> <%= t('.cash_and_medication') %></strong></td>
+        <td colspan="2" class="no-border-top" style="width:30%"><strong><%= t('.detainee_handover') %></strong></td>
+      </tr>
+      <tr>
+        <th class="no-border"></th>
+        <th><%= render('pdfs/clock_image') %></th>
+        <th></th>
+        <th><strong><%= t('.name') %></strong></th>
+        <th class="narrow"><strong><%= t('.initial') %></strong></th>
+        <th><strong><%= t('.name') %></strong></th>
+        <th class="narrow"><strong><%= t('.initial') %></strong></th>
+      </tr>
+      <tr>
+        <td rowspan="2" class="no-border-left strong-border-bottom strong-border-right"><%= t('.start_location') %></td>
+        <td></td>
+        <td><%= t('.dispatching_officer') %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="strong-border-bottom">
+        <td></td>
+        <td><%= t('.escort') %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="no-border-left no-border-top strong-border-right"><%= t('.arrival_at_court') %></td>
+        <td></td>
+        <td><%= t('.escort') %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><%= t('.receiving_officer') %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="no-border-left no-border-top strong-border-right strong-border-bottom"><%= t('.leaving_court') %></td>
+        <td></td>
+        <td><%= t('.dispatching_officer') %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="strong-border-bottom">
+        <td></td>
+        <td><%= t('.escort') %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2" class="no-border-left strong-border-right"><%= t('.arrival_at_prison') %></td>
+        <td></td>
+        <td><%= t('.escort') %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><%= t('.receiving_officer') %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
   </div>
 </div>

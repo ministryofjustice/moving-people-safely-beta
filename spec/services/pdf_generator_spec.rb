@@ -217,15 +217,23 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Reseal number').
         and have_content('Reason for opening').
         and have_content('Handover').
-        and have_content('Prisoner').
-        and have_content('Medication').
-        and have_content('Property').
-        and have_content('Starting location').
+        and have_content('Sign to confirm the handover').
+        and have_content('of the correct detainee').
+        and have_content('and to acknowledge the receipt').
+        and have_content('of all sealed property bags.').
+        and have_content('Remember to check any added or re-sealed items').
+        and have_content('as described above').
+        and have_content('Property handover').
+        and have_content('(including cash and medication)').
+        and have_content('Detainee handover').
         and have_content('Name (print)').
-        and have_content('Signature').
-        and have_content('Contact number').
+        and have_content('Start location').
+        and have_content('Arrival at Court').
+        and have_content('Leaving Court').
+        and have_content('Arrival at Prison').
+        and have_content('Dispatching officer').
         and have_content('Escort').
-        and have_content('Destination')
+        and have_content('Receiving officer')
     end
 
     it 'generates the expected content for the record of checks and events' do
