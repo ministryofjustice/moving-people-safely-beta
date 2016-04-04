@@ -1,24 +1,15 @@
-<div class="form-group">
-  <%= f.label :origin, class: 'form-label-bold' %>
-  <%= f.text_field :origin, class: 'string form-control' %>
-</div>
+<%= single_field(f, :origin) %>
 
-<div class="form-group">
-  <%= f.label :destination, class: 'form-label-bold' %>
-  <%= f.text_field :destination, class: 'string form-control' %>
-</div>
+<%= single_field(f, :destination) %>
 
 <div class="form-group">
   <%= date_fields(f, :date_of_travel) do %>
     <%= render 'shared/date_field_inputs',
-          f: f,
-          model: 'move_information',
-          date_field: 'date_of_travel',
-          hint: f.object.formatted_date_today %>
+      f: f,
+      model: 'move_information',
+      date_field: 'date_of_travel',
+      hint: f.object.formatted_date_today %>
   <% end %>
 </div>
 
-<div class="form-group">
-  <%= f.label :reason, class: 'form-label-bold' %>
-  <%= f.text_field :reason, class: 'string form-control' %>
-</div>
+<%= single_field(f, :reason) %>

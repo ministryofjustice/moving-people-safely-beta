@@ -46,10 +46,14 @@
     margin-top: 5px;
   }
 
-  .js-enabled & {
-    .optional-section {
-      border-left: $grey-2 solid 4px;
-      padding: 14px 0 14px 14px;
+  .optional-section {
+    border-left: $grey-2 solid 4px;
+    padding: 14px 0 14px 14px;
+    legend {
+      margin-bottom: 0.5em;
+    }
+    &.error {
+      border-left-color: $error-colour;
     }
   }
 }

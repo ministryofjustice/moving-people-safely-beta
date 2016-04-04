@@ -1,15 +1,4 @@
 .search-wrapper {
-  .field_with_errors {
-    display: inline-block;
-    min-width: 50%;
-    border-left: none;
-    padding-left: 0;
-    margin-right: 0;
-    .form-control {
-      width: 100%;
-    }
-  }
-
   .button {
     padding: 0.4em 0.6em 0.25em 0.6em;
     .error & {
