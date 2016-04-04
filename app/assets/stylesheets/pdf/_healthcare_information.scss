@@ -49,3 +49,13 @@
     }
   }
 }
+
+.healthcare-signpost {
+  @extend .styled-as-heading;
+  @extend .bordered-left;
+  margin-top: $margin-top;
+  &:after {
+    content: "\0025B6";
+    font-size: small;
+  }
+}

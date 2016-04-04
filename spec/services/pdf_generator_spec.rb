@@ -136,7 +136,8 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('07987654').
         and have_content('Updates').
         and have_content('This section should be').
-        and have_content('completed by a medical professional')
+        and have_content('completed by a medical professional').
+        and have_content('Fill in medication details in section B1.')
       expect(html).to have_css('.mpv-required//.checked')
     end
 

@@ -76,6 +76,8 @@ en:
       phone_number: :'shared.phone_number'
       updates: Updates
       update_instructions: This section should be completed by a medical professional
+      fill_in_details: Fill in medication details in
+      details_section: section B1.
     shared:
       identifiers_label: PNC / Prison number
     offences:
