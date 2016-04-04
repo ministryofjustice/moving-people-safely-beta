@@ -15,5 +15,4 @@ RSpec.describe Pdf::EscortPresenter, type: :presenter do
   its(:risks)      { is_expected.to be_kind_of Pdf::RisksPresenter }
   its(:healthcare) { is_expected.to be_kind_of Pdf::HealthcarePresenter }
   its(:offences)   { is_expected.to be_kind_of Pdf::OffencesPresenter }
-  its(:handover)   { is_expected.to be_kind_of Pdf::HandoverPresenter }
 end

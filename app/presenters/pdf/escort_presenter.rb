@@ -32,9 +32,5 @@ module Pdf
     def offences
       @offences ||= Pdf::OffencesPresenter.new(@escort.offence_information)
     end
-
-    def handover
-      @handover ||= Pdf::HandoverPresenter.new(@escort.offence_information)
-    end
   end
 end

@@ -146,9 +146,9 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('See A1. Cover sheet for details of current offence').
         and have_content('Other offences').
         and have_content('Must return').
-        and have_content('Reason').
+        and have_content('Reason The prisoner must return').
         and have_content('Must not return').
-        and have_content('Reason').
+        and have_content('Reason The prisoner must not return').
         and have_content('Use an offence status from the following list').
         and have_content('Outstanding charge').
         and have_content('Serving sentence').
