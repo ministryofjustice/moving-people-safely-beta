@@ -144,8 +144,12 @@ en:
       documentation_code: D
       stored_property_code: SP
       cash_code: C
-      type: Type
+      code: Code
       seal_number: Seal number
+      value: value (if cash)
+      initial: Initial
+      reseal_no: Reseal number
+      reason_for_opening: Reason for opening
       handover: Handover
       prisoner: Prisoner
       medication: Medication

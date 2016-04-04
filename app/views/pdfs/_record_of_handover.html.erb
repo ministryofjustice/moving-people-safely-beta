@@ -20,22 +20,44 @@
       <li><strong><%= t('.stored_property_code') %></strong> - <%= t('.stored_property') %></li>
       <li><strong><%= t('.valuables_code') %></strong> - <%= t('.valuables') %></li>
     </ul>
-    <% 4.times do %>
-        <div class="items">
-          <div class="input-inline-group">
-            <div><%= t('.type') %></div>
-            <div></div>
-            <div><%= t('.seal_number') %></div>
-            <div></div>
-          </div>
-          <div class="input-inline-group">
-            <div><%= t('.type') %></div>
-            <div></div>
-            <div><%= t('.seal_number') %></div>
-            <div></div>
-          </div>
-        </div>
-    <% end %>
+  </div>
+  <div class="seal-numbers">
+    <div>
+      <table>
+        <tr>
+          <th><%= t('.code') %></th>
+          <th><%= t('.seal_number') %></th>
+          <th>&#163; <%= t('.value') %></th>
+          <th><%= t('.initial') %></th>
+        </tr>
+        <% 10.times do %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th><%= t('.reseal_no') %></th>
+          <th><%= t('.reason_for_opening') %></th>
+          <th><%= render('pdfs/clock_image') %></th>
+          <th><%= t('.initial') %></th>
+        </tr>
+        <% 10.times do %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
   <div class="handover">
     <strong class="label"><%= t('.handover') %></strong>

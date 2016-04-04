@@ -210,8 +210,12 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('OAC - Open at Court').
         and have_content('SP - Stored property').
         and have_content('V - Valuables').
-        and have_content('Type').
+        and have_content('Code').
         and have_content('Seal number').
+        and have_content('£ value (if cash)').
+        and have_content('Initial').
+        and have_content('Reseal number').
+        and have_content('Reason for opening').
         and have_content('Handover').
         and have_content('Prisoner').
         and have_content('Medication').
