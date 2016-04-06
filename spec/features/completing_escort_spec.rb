@@ -68,6 +68,8 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
     expect(page).
       to have_content 'Escort record updated successfully'
+
+    remove_medication
   end
 
   scenario 'viewing the summary of an escort' do

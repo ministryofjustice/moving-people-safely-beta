@@ -109,6 +109,12 @@ FactoryGirl.define do
     contact_telephone '07987654'
   end
 
+  factory :medication do
+    description 'Aspirin'
+    administration 'Once a day'
+    carrier 'escort'
+  end
+
   factory :offences do
     not_for_release true
     not_for_release_details 'Cannot be released at the moment'

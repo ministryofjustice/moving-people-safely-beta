@@ -38,3 +38,7 @@ en:
       title: Medication
       help_text: Does the prisoner need medication?
       details_help_text: If yes, give details of the medication needed and how it is administered. Give details of how the issues might be a risk during the move.
+  medication_form:
+    carrier:
+      escort: Escort
+      prisoner: Prisoner

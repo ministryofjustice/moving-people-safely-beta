@@ -21,13 +21,21 @@
   <%= details_text_area_with_help_text(f, :disabilities, 'healthcare') %>
 <% end %>
 
-<%= render(
-      'shared/toggle_with_details_field',
-      f: f,
-      attribute: :medication,
-      i18n_scope: 'healthcare'
-    )
-%>
+<%= toggle_container(f, :medication, 'healthcare') do %>
+  <%= form_group_container(f, :medications, classes: 'optional-section') do %>
+    <% f.object.backfilled_medications.each_with_index do |m, index| %>
+      <%= f.fields_for "medications[#{index}]", m do |mf| %>
+        <div id="medication-<%= mf.index %>">
+          <%= mf.hidden_field :id %>
+          <%= mf.text_field :description %>
+          <%= mf.text_field :administration %>
+          <%= mf.select :carrier, f.object.carrier_options, include_blank: true %>
+          <%= mf.check_box :_destroy %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
 
 <%= single_field(f, :medical_professional_name) %>
 
