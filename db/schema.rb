@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 20160407094059) do
     t.datetime "updated_at",                    null: false
   end
 
+  create_table "medications", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "healthcare_id"
+    t.text     "description"
+    t.text     "administration"
+    t.string   "carrier"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "moves", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "escort_id"
     t.string   "origin"
