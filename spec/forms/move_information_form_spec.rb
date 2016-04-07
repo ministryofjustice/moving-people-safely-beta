@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe MoveInformation, type: :form do
+RSpec.describe MoveInformationForm, type: :form do
   let(:escort) { create(:escort) }
 
   subject { described_class.new(escort) }

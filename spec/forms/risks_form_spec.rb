@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Risks, type: :form do
+RSpec.describe RisksForm, type: :form do
   subject { described_class.new create(:escort) }
 
   input_attributes = {

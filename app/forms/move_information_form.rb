@@ -1,4 +1,4 @@
-class MoveInformation < Form
+class MoveInformationForm < Form
   include Form::DateHandling
 
   attribute :origin,      String

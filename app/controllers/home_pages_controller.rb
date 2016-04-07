@@ -7,6 +7,6 @@ class HomePagesController < ApplicationController
   helper_method :form
 
   def form
-    @form ||= SearchPrisoner.new(params[:search_prisoner])
+    @form ||= SearchPrisonerForm.new(params[:search_prisoner])
   end
 end

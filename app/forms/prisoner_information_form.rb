@@ -1,4 +1,4 @@
-class PrisonerInformation < Form
+class PrisonerInformationForm < Form
   include Form::DateHandling
 
   attribute :family_name,   String

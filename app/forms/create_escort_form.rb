@@ -1,4 +1,4 @@
-class CreateEscort < Form
+class CreateEscortForm < Form
   include Form::PrisonNumber
 
   validate :prison_number_uniqueness

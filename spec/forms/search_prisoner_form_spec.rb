@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SearchPrisoner, type: :form do
+RSpec.describe SearchPrisonerForm, type: :form do
   subject { described_class.new(prison_number: 'A1234BC') }
 
   it_behaves_like 'a form with prison_number'

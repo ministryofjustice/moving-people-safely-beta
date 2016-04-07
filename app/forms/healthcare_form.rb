@@ -1,4 +1,4 @@
-class Healthcare < Form
+class HealthcareForm < Form
   include Form::TextToggleAttribute
 
   text_toggle_attribute :physical_risk

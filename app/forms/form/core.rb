@@ -7,8 +7,12 @@ class Form
       include ActiveModel::Conversion
       include ActiveModel::Validations
 
+      def self.model_name
+        ActiveModel::Name.new(self, nil, name.underscore.sub(/_form\Z/, ''))
+      end
+
       def name
-        self.class.name.underscore.downcase
+        self.class.model_name.to_s.underscore.downcase
       end
       alias_method :template, :name
     end

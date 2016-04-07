@@ -1,4 +1,4 @@
-class Risks < Form
+class RisksForm < Form
   include Form::TextToggleAttribute
 
   text_toggle_attribute :to_self

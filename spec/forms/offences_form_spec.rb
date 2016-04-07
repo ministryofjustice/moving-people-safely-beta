@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Offences, type: :form do
+RSpec.describe OffencesForm, type: :form do
   input_attributes = {
     not_for_release: 'true',
     not_for_release_details: 'some text',

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Healthcare, type: :form do
+RSpec.describe HealthcareForm, type: :form do
   input_attributes = {
     physical_risk: 'true',
     physical_risk_details: 'some text',
