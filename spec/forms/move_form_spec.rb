@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe MoveForm, type: :form do
-  let(:escort) { create(:escort) }
-
-  subject { described_class.new(escort) }
+  subject { described_class.new(create :escort) }
 
   input_attributes = {
     origin: 'HMP Clive House',
@@ -11,10 +9,13 @@ RSpec.describe MoveForm, type: :form do
     date_of_travel: { day: '23', month: '2', year: '2016' },
     reason: 'Expected to attend show the thing'
   }
-  coercion_overrides = { date_of_travel: Date.civil(2016, 2, 23) }
-  it_behaves_like 'a form that syncs to a model',
-    input_attributes, coercion_overrides
 
+  coercion_overrides = { date_of_travel: Date.civil(2016, 2, 23) }
+
+  it_behaves_like 'a form that coerces attributes',
+    input_attributes, coercion_overrides
+  it_behaves_like 'a form that loads model attributes on initialize'
+  it_behaves_like 'a form that syncs to a model'
   it_behaves_like 'a form that retrives or builds its target', :move
   it_behaves_like 'a form that knows what template to render', 'move'
   it_behaves_like 'a form that belongs to an endpoint', 'move'

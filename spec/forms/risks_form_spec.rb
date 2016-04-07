@@ -32,19 +32,21 @@ RSpec.describe RisksForm, type: :form do
     non_association: true
   }
 
-  it_behaves_like 'a form that syncs to a model',
+  it_behaves_like 'a form that coerces attributes',
     input_attributes, coercion_overrides
+  it_behaves_like 'a form that loads model attributes on initialize'
+  it_behaves_like 'a form that syncs to a model'
   it_behaves_like 'a form that retrives or builds its target', :risks
   it_behaves_like 'a form that knows what template to render', 'risks'
   it_behaves_like 'a form that belongs to an endpoint', 'risks'
-  it_behaves_like('a form with a text toggle attribute',
+  it_behaves_like 'a form with a text toggle attribute',
     %i[ to_self
         violence
         from_others
         escape
         intolerant_behaviour
         prohibited_items
-        non_association ])
+        non_association ]
 
   describe '#open_acct' do
     context 'when the risks to self marker has been set to yes' do
