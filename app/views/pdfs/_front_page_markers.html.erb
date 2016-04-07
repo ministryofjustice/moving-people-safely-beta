@@ -7,7 +7,7 @@
       <%= Pdf::CoversheetCheckbox.html_for(front_page_markers.open_acct) %>
       <div class="indicator">
         <div>
-          <div class="label-inline"><%= t('.offence_information.cat_a') %></div>
+          <div class="label-inline"><%= t('.offences.cat_a') %></div>
         </div>
         <div>
           <div class="check-box"></div>
@@ -21,14 +21,14 @@
 
   <div class="front-page-markers">
     <div class="title">
-      <strong><%= t('.healthcare_information.title') %></strong>
+      <strong><%= t('.healthcare.title') %></strong>
     </div>
     <div class="markers has-reference">
       <%= Pdf::CoversheetCheckbox.html_for(front_page_markers.allergies) %>
       <%= Pdf::CoversheetCheckbox.html_for(front_page_markers.disabilities) %>
     </div>
     <div class="notes">
-      <span class="health"><%= t('.healthcare_information.notes') %></span>
+      <span class="health"><%= t('.healthcare.notes') %></span>
     </div>
   </div>
 

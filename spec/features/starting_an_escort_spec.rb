@@ -15,14 +15,14 @@ RSpec.feature 'starting an escort', type: :feature do
           'for prisoner number Z9876XY'
         click_button 'Initiate new PER'
         expect(page).to have_content 'Z9876XY'
-        expect(current_path).to eq prisoner_information_path(escort)
+        expect(current_path).to eq prisoner_path(escort)
       end
     end
 
     context 'when the prison number is exists' do
       it 'allows the user to edit an existing escort by clicking a link' do
         start_escort_form
-        fill_in_prisoner_information
+        fill_in_prisoner
         visit root_path
         fill_in_prison_number 'A1234BC'
         click_button 'Search'

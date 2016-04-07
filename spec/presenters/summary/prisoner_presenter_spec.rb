@@ -8,7 +8,7 @@ RSpec.describe Summary::PrisonerPresenter, type: :presenter do
 
   describe '#edit_section_link' do
     it 'returns a path to the prisoner information form page' do
-      expected_link_path = "/escort/#{escort.id}/prisoner-information"
+      expected_link_path = "/escort/#{escort.id}/prisoner"
       expect(subject.edit_section_path).to eq expected_link_path
     end
   end

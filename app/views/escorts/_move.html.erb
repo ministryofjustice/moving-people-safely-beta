@@ -6,7 +6,7 @@
   <%= date_fields(f, :date_of_travel) do %>
     <%= render 'shared/date_field_inputs',
       f: f,
-      model: 'move_information',
+      model: 'move',
       date_field: 'date_of_travel',
       hint: f.object.formatted_date_today %>
   <% end %>
