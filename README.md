@@ -21,6 +21,16 @@ and homebrew you can run the following to install it:
 
 `brew install phantomjs`
 
+Javascript specs can be run in the [browser](http://localhost:8888):
+
+`rake jasmine`
+
+Or in headless mode:
+
+`rake jasmine:ci`
+
+Javascript specs are run as part of the default rake task.
+
 #### `Testing in old IE`
 
 User research indicates that the overwhelming majority of users will access

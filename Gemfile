@@ -20,6 +20,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'jasmine'
+  gem 'jasmine-jquery-rails'
 end
 
 group :test do
@@ -31,6 +33,4 @@ group :test do
   gem 'rubocop-rspec'
   gem 'rubocop', require: false
   gem 'shoulda-matchers', '~> 3.1'
-  gem 'jasmine'
-  gem 'jasmine-jquery-rails'
 end
