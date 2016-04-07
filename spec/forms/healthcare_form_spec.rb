@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe HealthcareForm, type: :form do
+  subject { described_class.new(create :escort) }
+
   input_attributes = {
     physical_risk: 'true',
     physical_risk_details: 'some text',
@@ -31,25 +33,18 @@ RSpec.describe HealthcareForm, type: :form do
     medication: true
   }
 
-  it_behaves_like 'a form that syncs to a model',
+  it_behaves_like 'a form that coerces attributes',
     input_attributes, coercion_overrides
-
-  it_behaves_like 'a form that retrives or builds its target',
-    :healthcare
-
-  it_behaves_like 'a form that knows what template to render',
-    'healthcare'
-
-  it_behaves_like 'a form that belongs to an endpoint',
-    'healthcare'
-
-  toggle_fields = %i[ physical_risk mental_risk
-                      social_care_and_other allergies
-                      disabilities medication ]
+  it_behaves_like 'a form that loads model attributes on initialize'
+  it_behaves_like 'a form that syncs to a model'
+  it_behaves_like 'a form that retrives or builds its target', :healthcare
+  it_behaves_like 'a form that knows what template to render', 'healthcare'
+  it_behaves_like 'a form that belongs to an endpoint', 'healthcare'
   it_behaves_like 'a form with a text toggle attribute',
-    toggle_fields
-
-  subject { described_class.new(create :escort) }
+    %i[ physical_risk
+        mental_risk
+        social_care_and_other allergies
+        disabilities medication ]
 
   def self.falsey_permutations
     possible_attribute_values = [true, false, nil]

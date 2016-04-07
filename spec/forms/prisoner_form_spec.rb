@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe PrisonerForm, type: :form do
   let(:escort) { create(:escort) }
-
   subject { described_class.new(escort) }
 
   input_attributes = {
@@ -17,8 +16,10 @@ RSpec.describe PrisonerForm, type: :form do
 
   coercion_overrides = { date_of_birth: Date.civil(1977, 2, 10) }
 
-  it_behaves_like 'a form that syncs to a model',
+  it_behaves_like 'a form that coerces attributes',
     input_attributes, coercion_overrides
+  it_behaves_like 'a form that loads model attributes on initialize'
+  it_behaves_like 'a form that syncs to a model'
   it_behaves_like 'a form that retrives or builds its target', :prisoner
   it_behaves_like 'a form that knows what template to render', 'prisoner'
   it_behaves_like 'a form that belongs to an endpoint', 'prisoner'
