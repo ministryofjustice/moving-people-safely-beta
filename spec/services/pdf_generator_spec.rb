@@ -202,7 +202,6 @@ RSpec.describe PdfGenerator, type: :service do
     it 'generates the expected content for the record of handover section' do
       expect(content).to have_content('B2. Record of handover').
         and have_content('Property, cash and medication details').
-        and have_content('Use a property code from the following list').
         and have_content('C - Cash').
         and have_content('D - Documentation').
         and have_content('IP - In possession').
