@@ -1,4 +1,4 @@
-class Offences < Form
+class OffencesForm < Form
   include Form::TextToggleAttribute
 
   text_toggle_attribute :not_for_release
@@ -7,6 +7,6 @@ class Offences < Form
   text_toggle_attribute :other_offences
 
   def target
-    super.offence_information
+    super.offences
   end
 end

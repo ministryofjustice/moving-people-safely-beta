@@ -1,8 +1,8 @@
 class EscortsController < ApplicationController
   def create
-    create_escort_form = CreateEscort.new(prison_number_params)
+    create_escort_form = CreateEscortForm.new(prison_number_params)
     if create_escort_form.save
-      redirect_to prisoner_information_path(create_escort_form.escort)
+      redirect_to prisoner_path(create_escort_form.escort)
     else
       redirect_to root_path
     end
@@ -23,7 +23,7 @@ class EscortsController < ApplicationController
 private
 
   def form
-    @form ||= current_page.camelcase.constantize.new(escort)
+    @form ||= "#{current_page}_form".camelcase.constantize.new(escort)
   end
 
   def persist_form_data

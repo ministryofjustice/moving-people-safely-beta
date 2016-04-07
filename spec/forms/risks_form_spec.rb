@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Risks, type: :form do
+RSpec.describe RisksForm, type: :form do
   subject { described_class.new create(:escort) }
 
   input_attributes = {
@@ -34,7 +34,7 @@ RSpec.describe Risks, type: :form do
 
   it_behaves_like 'a form that syncs to a model',
     input_attributes, coercion_overrides
-  it_behaves_like 'a form that retrives or builds its target', :risk_information
+  it_behaves_like 'a form that retrives or builds its target', :risks
   it_behaves_like 'a form that knows what template to render', 'risks'
   it_behaves_like 'a form that belongs to an endpoint', 'risks'
   it_behaves_like('a form with a text toggle attribute',

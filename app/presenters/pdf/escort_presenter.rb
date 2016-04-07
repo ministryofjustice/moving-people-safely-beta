@@ -6,7 +6,7 @@ module Pdf
 
     def not_for_release
       @not_for_release ||=
-        Pdf::NotForReleasePresenter.new(@escort.offence_information)
+        Pdf::NotForReleasePresenter.new(@escort.offences)
     end
 
     def front_page_markers
@@ -22,15 +22,15 @@ module Pdf
     end
 
     def risks
-      @risks ||= Pdf::RisksPresenter.new(@escort.risk_information)
+      @risks ||= Pdf::RisksPresenter.new(@escort.risks)
     end
 
     def healthcare
-      @healthcare ||= Pdf::HealthcarePresenter.new(@escort.health_information)
+      @healthcare ||= Pdf::HealthcarePresenter.new(@escort.healthcare)
     end
 
     def offences
-      @offences ||= Pdf::OffencesPresenter.new(@escort.offence_information)
+      @offences ||= Pdf::OffencesPresenter.new(@escort.offences)
     end
   end
 end

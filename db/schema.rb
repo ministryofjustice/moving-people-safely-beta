@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324160621) do
+ActiveRecord::Schema.define(version: 20160407094059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160324160621) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "health_information", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+  create_table "healthcare", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "escort_id"
     t.boolean  "physical_risk"
     t.text     "physical_risk_details"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160324160621) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "offence_information", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+  create_table "offences", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "escort_id"
     t.boolean  "not_for_release"
     t.text     "not_for_release_details"
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 20160324160621) do
     t.string   "pnc_number"
   end
 
-  create_table "risk_information", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+  create_table "risks", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "escort_id"
     t.boolean  "to_self"
     t.text     "to_self_details"

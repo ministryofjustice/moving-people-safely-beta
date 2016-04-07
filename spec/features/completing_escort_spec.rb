@@ -7,23 +7,19 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'start a person escort record' do
     start_escort_form
-    expected_path = %r{
-      /escort/
-      #{TestHelper::UUID_REGEX}
-      /prisoner-information
-    }x
+    expected_path = %r{ /escort/#{TestHelper::UUID_REGEX}/prisoner }x
 
     expect(current_path).to match expected_path
   end
 
-  scenario 'filling in the prisoner prisoner_information page' do
+  scenario 'filling in the prisoner prisoner page' do
     start_escort_form
 
     expect(page).to have_heading 'Prisoner Information'
 
     expect(page).to have_preview_per_link
 
-    fill_in_prisoner_information
+    fill_in_prisoner
 
     expect(page).
       to have_content 'Escort record updated successfully'
@@ -31,7 +27,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'filling in the risks page' do
     start_escort_form
-    fill_in_prisoner_information
+    fill_in_prisoner
     click_link 'Risks'
 
     expect(page).to have_heading 'Risks'
@@ -44,16 +40,16 @@ RSpec.feature 'completing digital person escort record', type: :feature do
       to have_content 'Escort record updated successfully'
   end
 
-  scenario 'filling in the move information page' do
+  scenario 'filling in the move page' do
     start_escort_form
-    fill_in_prisoner_information
+    fill_in_prisoner
     click_link 'Move Information'
 
     expect(page).to have_heading 'Move Information'
 
     expect(page).to have_preview_per_link
 
-    fill_in_move_information
+    fill_in_move
 
     expect(page).
       to have_content 'Escort record updated successfully'
@@ -61,7 +57,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'filling in the healthcare page' do
     start_escort_form
-    fill_in_prisoner_information
+    fill_in_prisoner
     click_link 'Healthcare'
 
     expect(page).to have_heading 'Healthcare'
@@ -76,11 +72,11 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'viewing the summary of an escort' do
     start_escort_form
-    fill_in_prisoner_information
+    fill_in_prisoner
     click_link 'Risks'
     fill_in_risks
     click_link 'Move Information'
-    fill_in_move_information
+    fill_in_move
     click_link 'Summary'
 
     expect(page).to have_heading 'Summary'
@@ -88,7 +84,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
     expect(page).to have_preview_per_link
 
     expect(page).to have_text('Prisoner Information').
-      and have_link('Edit', href: prisoner_information_path(escort)).
+      and have_link('Edit', href: prisoner_path(escort)).
       and have_content('Family name Bigglesworth').
       and have_content('Forenames Tarquin').
       and have_content('Date of birth 13/02/1972').
@@ -100,7 +96,7 @@ RSpec.feature 'completing digital person escort record', type: :feature do
       and have_content('PNC number SOMEPNC')
 
     expect(page).to have_text('Summary').
-      and have_link('Edit', href: move_information_path(escort)).
+      and have_link('Edit', href: move_path(escort)).
       and have_content('From HMP Clive House').
       and have_content('To Petty France').
       and have_content('Date of travel 03/02/2015').

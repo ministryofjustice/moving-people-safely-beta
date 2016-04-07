@@ -63,17 +63,17 @@ RSpec.describe Escort, type: :model do
     end
   end
 
-  describe '#risk_information' do
-    context 'when risk_information exists' do
-      subject { create(:escort, :with_risk_information) }
-      its(:risk_information) { is_expected.to be_persisted }
-      its(:risk_information) { is_expected.to be_kind_of(RiskInformation) }
+  describe '#risks' do
+    context 'when risks exists' do
+      subject { create(:escort, :with_risks) }
+      its(:risks) { is_expected.to be_persisted }
+      its(:risks) { is_expected.to be_kind_of(Risks) }
     end
 
-    context 'when risk_information does not exist' do
+    context 'when risks does not exist' do
       subject { create(:escort) }
-      its(:risk_information) { is_expected.to_not be_persisted }
-      its(:risk_information) { is_expected.to be_kind_of(RiskInformation) }
+      its(:risks) { is_expected.to_not be_persisted }
+      its(:risks) { is_expected.to be_kind_of(Risks) }
     end
   end
 
@@ -95,34 +95,34 @@ RSpec.describe Escort, type: :model do
     end
   end
 
-  describe '#health_information' do
-    context 'when health_information exists' do
-      subject { create(:escort, :with_health_information) }
-      its(:health_information) { is_expected.to be_persisted }
-      its(:health_information) { is_expected.to be_kind_of(HealthInformation) }
+  describe '#healthcare' do
+    context 'when healthcare exists' do
+      subject { create(:escort, :with_healthcare) }
+      its(:healthcare) { is_expected.to be_persisted }
+      its(:healthcare) { is_expected.to be_kind_of(Healthcare) }
     end
 
-    context 'when health_information does not exist' do
+    context 'when healthcare does not exist' do
       subject { create(:escort) }
-      its(:health_information) { is_expected.to_not be_persisted }
-      its(:health_information) { is_expected.to be_kind_of(HealthInformation) }
+      its(:healthcare) { is_expected.to_not be_persisted }
+      its(:healthcare) { is_expected.to be_kind_of(Healthcare) }
     end
   end
 
-  describe '#offence_information' do
-    context 'when offence_information exists' do
-      subject { create(:escort, :with_offence_information) }
-      its(:offence_information) { is_expected.to be_persisted }
-      its(:offence_information) do
-        is_expected.to be_kind_of(OffenceInformation)
+  describe '#offences' do
+    context 'when offences exists' do
+      subject { create(:escort, :with_offences) }
+      its(:offences) { is_expected.to be_persisted }
+      its(:offences) do
+        is_expected.to be_kind_of(Offences)
       end
     end
 
-    context 'when offence_information does not exist' do
+    context 'when offences does not exist' do
       subject { create(:escort) }
-      its(:offence_information) { is_expected.to_not be_persisted }
-      its(:offence_information) do
-        is_expected.to be_kind_of(OffenceInformation)
+      its(:offences) { is_expected.to_not be_persisted }
+      its(:offences) do
+        is_expected.to be_kind_of(Offences)
       end
     end
   end

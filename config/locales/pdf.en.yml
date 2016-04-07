@@ -11,7 +11,7 @@ en:
     nfr:
       marker_label: Not for release
       reason: :'shared.reason'
-    move_information:
+    move:
       from: From
       to: To
       date: Date of travel
@@ -21,11 +21,11 @@ en:
       risks:
         title: Risks overview
         notes: Section A2 Risk summary
-      offence_information:
+      offences:
         title: Offence information
         notes: Section A4 Offences
         cat_a: CAT A
-      healthcare_information:
+      healthcare:
         title: Healthcare information
         notes: Section A3 Healthcare information
     coversheet_checkboxes:

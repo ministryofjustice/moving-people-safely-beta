@@ -1,4 +1,4 @@
-class Risks < Form
+class RisksForm < Form
   include Form::TextToggleAttribute
 
   text_toggle_attribute :to_self
@@ -16,6 +16,6 @@ class Risks < Form
   end
 
   def target
-    super.risk_information
+    super.risks
   end
 end

@@ -8,7 +8,7 @@ module Summary
     private :date_of_travel
 
     def edit_section_path
-      Rails.application.routes.url_helpers.move_information_path(@model.escort)
+      Rails.application.routes.url_helpers.move_path(@model.escort)
     end
 
     def formatted_date_of_travel

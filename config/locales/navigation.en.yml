@@ -1,10 +1,10 @@
 en:
   navigation:
     heading: Primary navigation
-    prisoner_information: Prisoner Information
+    prisoner: Prisoner Information
     summary: Summary
     risks: Risks
-    move_information: Move Information
+    move: Move Information
     healthcare: Healthcare
     offences: Offences
   quick_actions:

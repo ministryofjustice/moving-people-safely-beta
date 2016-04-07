@@ -1,7 +1,7 @@
 en:
   helpers:
     label:
-      prisoner_information:
+      prisoner:
         family_name: :'shared.family_name'
         forenames: :'shared.forenames'
         prison_number: :'shared.prison_number'
@@ -9,8 +9,8 @@ en:
         cro_number: :'shared.cro_number'
         pnc_number: :'shared.pnc_number'
   escorts:
-    prisoner_information:
-      heading: :'shared.prisoner_information_heading'
+    prisoner:
+      heading: :'shared.prisoner_heading'
       sex:
         label: Sex
         male_label: Male
@@ -18,7 +18,7 @@ en:
   activemodel:
     errors:
       models:
-        prisoner_information:
+        prisoner:
           attributes:
             date_of_birth:
               invalid: is invalid

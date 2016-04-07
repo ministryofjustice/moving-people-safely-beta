@@ -3,7 +3,7 @@ en:
     summary:
       heading: Summary
       prisoner:
-        heading: :'shared.prisoner_information_heading'
+        heading: :'shared.prisoner_heading'
         edit_section: :'shared.edit_section_link_text'
         family_name: :'shared.family_name'
         forenames: :'shared.forenames'
@@ -15,7 +15,7 @@ en:
         cro_number: :'shared.cro_number'
         pnc_number: :'shared.pnc_number'
       move:
-        heading: :'shared.move_information_heading'
+        heading: :'shared.move_heading'
         edit_section: :'shared.edit_section_link_text'
         origin: :'shared.origin'
         destination: :'shared.destination'

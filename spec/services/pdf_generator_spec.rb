@@ -24,9 +24,9 @@ RSpec.describe PdfGenerator, type: :service do
         escort = build_stubbed(:escort,
           prisoner: build_stubbed(:prisoner),
           move: build_stubbed(:move),
-          risk_information: build_stubbed(:risk_information),
-          health_information: build_stubbed(:health_information),
-          offence_information: build_stubbed(:offence_information))
+          risks: build_stubbed(:risks),
+          healthcare: build_stubbed(:healthcare),
+          offences: build_stubbed(:offences))
         @html = described_class.render(escort)
         @content = ActionController::Base.helpers.strip_tags(html)
       end

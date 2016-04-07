@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe MoveInformation, type: :form do
+RSpec.describe MoveForm, type: :form do
   let(:escort) { create(:escort) }
 
   subject { described_class.new(escort) }
@@ -16,13 +16,8 @@ RSpec.describe MoveInformation, type: :form do
     input_attributes, coercion_overrides
 
   it_behaves_like 'a form that retrives or builds its target', :move
-
-  it_behaves_like 'a form that knows what template to render',
-    'move_information'
-
-  it_behaves_like 'a form that belongs to an endpoint',
-    'move-information'
-
+  it_behaves_like 'a form that knows what template to render', 'move'
+  it_behaves_like 'a form that belongs to an endpoint', 'move'
   it_behaves_like 'a form with dates', %i[ date_of_travel ]
 
   describe '#formatted_date_today' do

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Pdf::HealthcarePresenter, type: :presenter do
   let(:escort) { create(:escort) }
-  let(:model) { escort.health_information }
+  let(:model) { escort.healthcare }
 
   subject { described_class.new(model) }
 
@@ -13,7 +13,7 @@ RSpec.describe Pdf::HealthcarePresenter, type: :presenter do
 
   describe '#mpv_required_class' do
     context 'when mpv_required is true' do
-      let(:model) { build_stubbed(:health_information) }
+      let(:model) { build_stubbed(:healthcare) }
       its(:mpv_required_class) { is_expected.to eq 'checked' }
     end
 

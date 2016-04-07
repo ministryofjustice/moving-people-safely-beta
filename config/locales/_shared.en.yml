@@ -11,13 +11,13 @@ en:
     forenames: Forenames
     medical_professional: Name of medical professional filling in this section
     month_label: Month
-    move_information_heading: Move Information
+    move_heading: Move Information
     name: Name (print)
     nationality: Nationality
     origin: From
     pnc_number: PNC number
     prison_number: Prison number
-    prisoner_information_heading: Prisoner Information
+    prisoner_heading: Prisoner Information
     reason: Reason
     sex: Sex
     signature: Signature

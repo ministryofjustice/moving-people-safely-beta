@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Healthcare, type: :form do
+RSpec.describe HealthcareForm, type: :form do
   input_attributes = {
     physical_risk: 'true',
     physical_risk_details: 'some text',
@@ -35,7 +35,7 @@ RSpec.describe Healthcare, type: :form do
     input_attributes, coercion_overrides
 
   it_behaves_like 'a form that retrives or builds its target',
-    :health_information
+    :healthcare
 
   it_behaves_like 'a form that knows what template to render',
     'healthcare'

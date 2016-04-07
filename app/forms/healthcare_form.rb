@@ -1,4 +1,4 @@
-class Healthcare < Form
+class HealthcareForm < Form
   include Form::TextToggleAttribute
 
   text_toggle_attribute :physical_risk
@@ -17,6 +17,6 @@ class Healthcare < Form
   end
 
   def target
-    super.health_information
+    super.healthcare
   end
 end

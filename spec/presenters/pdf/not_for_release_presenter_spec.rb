@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Pdf::NotForReleasePresenter, type: :presenter do
   let(:escort) { create(:escort) }
-  let(:model) { escort.offence_information }
+  let(:model) { escort.offences }
 
   subject { described_class.new(model) }
 
@@ -11,7 +11,7 @@ RSpec.describe Pdf::NotForReleasePresenter, type: :presenter do
 
   describe '#not_for_release_class' do
     context 'when not_for_release is true' do
-      let(:model) { build_stubbed(:offence_information) }
+      let(:model) { build_stubbed(:offences) }
       its(:not_for_release_class) { is_expected.to eq 'checked' }
     end
 
