@@ -26,7 +26,7 @@ RSpec.describe OffencesForm, type: :form do
     input_attributes, coercion_overrides
 
   it_behaves_like 'a form that retrives or builds its target',
-    :offence_information
+    :offences
 
   it_behaves_like 'a form that knows what template to render',
     'offences'

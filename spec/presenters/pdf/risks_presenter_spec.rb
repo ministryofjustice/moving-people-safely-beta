@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Pdf::RisksPresenter, type: :presenter do
   let(:escort) { create(:escort) }
-  let(:model) { escort.risk_information }
+  let(:model) { escort.risks }
 
   subject { described_class.new(model) }
 

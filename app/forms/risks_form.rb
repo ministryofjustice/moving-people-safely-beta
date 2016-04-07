@@ -16,6 +16,6 @@ class RisksForm < Form
   end
 
   def target
-    super.risk_information
+    super.risks
   end
 end

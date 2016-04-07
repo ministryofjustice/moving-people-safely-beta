@@ -10,9 +10,9 @@ FactoryGirl.define do
       end
     end
 
-    trait :with_risk_information do
+    trait :with_risks do
       after :create do |escort|
-        create :risk_information, escort: escort
+        create :risks, escort: escort
       end
     end
 
@@ -22,15 +22,15 @@ FactoryGirl.define do
       end
     end
 
-    trait :with_health_information do
+    trait :with_healthcare do
       after :create do |escort|
-        create :health_information, escort: escort
+        create :healthcare, escort: escort
       end
     end
 
-    trait :with_offence_information do
+    trait :with_offences do
       after :create do |escort|
-        create :offence_information, escort: escort
+        create :offences, escort: escort
       end
     end
   end
@@ -57,7 +57,7 @@ FactoryGirl.define do
     end
   end
 
-  factory :risk_information do
+  factory :risks do
     to_self true
     to_self_details 'Always ends up with scars'
     open_acct true
@@ -91,7 +91,7 @@ FactoryGirl.define do
     reason 'Expected to attend show the thing'
   end
 
-  factory :health_information do
+  factory :healthcare do
     physical_risk true
     physical_risk_details 'Problems moving a leg'
     mental_risk true
@@ -109,7 +109,7 @@ FactoryGirl.define do
     contact_telephone '07987654'
   end
 
-  factory :offence_information do
+  factory :offences do
     not_for_release true
     not_for_release_details 'Cannot be released at the moment'
     must_return true

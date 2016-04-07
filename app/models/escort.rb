@@ -1,10 +1,10 @@
 class Escort < ActiveRecord::Base
   has_paper_trail
   has_one :prisoner
-  has_one :risk_information
+  has_one :risks
   has_one :move
-  has_one :health_information
-  has_one :offence_information
+  has_one :healthcare
+  has_one :offences
 
   def self.find_by_prison_number(prison_number)
     joins(:prisoner).
@@ -23,19 +23,19 @@ class Escort < ActiveRecord::Base
     super || build_prisoner
   end
 
-  def risk_information
-    super || build_risk_information
+  def risks
+    super || build_risks
   end
 
   def move
     super || build_move(Move.default_origin_option)
   end
 
-  def health_information
-    super || build_health_information
+  def healthcare
+    super || build_healthcare
   end
 
-  def offence_information
-    super || build_offence_information
+  def offences
+    super || build_offences
   end
 end

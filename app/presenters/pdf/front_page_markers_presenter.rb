@@ -12,11 +12,11 @@ module Pdf
       end
     end
 
-    checkbox_group :allergies,        on: :health_information
-    checkbox_group :disabilities,     on: :health_information
-    checkbox_group :violence,         on: :risk_information
-    checkbox_group :escape,           on: :risk_information
-    checkbox_group :non_association,  on: :risk_information
-    checkbox_group :open_acct,        on: :risk_information
+    checkbox_group :allergies,        on: :healthcare
+    checkbox_group :disabilities,     on: :healthcare
+    checkbox_group :violence,         on: :risks
+    checkbox_group :escape,           on: :risks
+    checkbox_group :non_association,  on: :risks
+    checkbox_group :open_acct,        on: :risks
   end
 end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Pdf::OffencesPresenter, type: :presenter do
   let(:escort) { create(:escort) }
-  let(:model) { escort.offence_information }
+  let(:model) { escort.offences }
 
   subject { described_class.new(model) }
 
@@ -11,7 +11,7 @@ RSpec.describe Pdf::OffencesPresenter, type: :presenter do
 
   describe '#must_return_class' do
     context 'when must_return is true' do
-      let(:model) { build_stubbed(:offence_information) }
+      let(:model) { build_stubbed(:offences) }
       its(:must_return_class) { is_expected.to eq 'checked' }
     end
 
@@ -22,7 +22,7 @@ RSpec.describe Pdf::OffencesPresenter, type: :presenter do
 
   describe '#must_not_return_class' do
     context 'when must_not_return is true' do
-      let(:model) { build_stubbed(:offence_information) }
+      let(:model) { build_stubbed(:offences) }
       its(:must_not_return_class) { is_expected.to eq 'checked' }
     end
 

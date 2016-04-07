@@ -7,6 +7,6 @@ class OffencesForm < Form
   text_toggle_attribute :other_offences
 
   def target
-    super.offence_information
+    super.offences
   end
 end

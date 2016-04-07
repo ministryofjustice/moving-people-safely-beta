@@ -17,6 +17,6 @@ class HealthcareForm < Form
   end
 
   def target
-    super.health_information
+    super.healthcare
   end
 end
