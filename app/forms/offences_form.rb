@@ -5,8 +5,4 @@ class OffencesForm < Form
   text_toggle_attribute :must_return
   text_toggle_attribute :must_not_return
   text_toggle_attribute :other_offences
-
-  def target
-    super.offences
-  end
 end

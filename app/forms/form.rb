@@ -28,7 +28,7 @@ class Form
   end
 
   def target
-    model
+    model.public_send(name)
   end
 
 private
