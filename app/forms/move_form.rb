@@ -11,8 +11,4 @@ class MoveForm < Form
   def formatted_date_today
     Date.today.to_s(:day_month_year)
   end
-
-  def target
-    super.move
-  end
 end

@@ -14,8 +14,4 @@ class RisksForm < Form
   def open_acct
     super if to_self
   end
-
-  def target
-    super.risks
-  end
 end

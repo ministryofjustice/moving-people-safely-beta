@@ -15,8 +15,4 @@ class HealthcareForm < Form
   def mpv_required
     super && disabilities
   end
-
-  def target
-    super.healthcare
-  end
 end
