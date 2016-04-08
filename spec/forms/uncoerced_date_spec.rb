@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-RSpec.describe UncoercedDate, type: :presenter do
+RSpec.describe UncoercedDate, type: :form do
   methods = %i[ day month year ]
 
   context 'when provided a nil value' do

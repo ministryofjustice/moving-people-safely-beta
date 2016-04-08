@@ -2,8 +2,10 @@
 # fashion to Date objects so that invalid dates
 # can be displayed back to the user.
 
-class UncoercedDate < OpenStruct
-  %i[ day month year ].each do |method_name|
-    define_method(method_name) { super() }
-  end
+class UncoercedDate
+  include Virtus.value_object
+
+  attribute :day, String
+  attribute :month, String
+  attribute :year, String
 end
