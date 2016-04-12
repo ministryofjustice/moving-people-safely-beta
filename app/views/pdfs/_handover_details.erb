@@ -38,7 +38,7 @@
   </div>
   <div class="markers">
     <div>
-      <div class="check-box"></div>
+      <div class="check-box <%= healthcare.no_medication_class %>"></div>
       <div class="label-inline"><%= t('.no_medication') %></div>
     </div>
   </div>
@@ -54,12 +54,18 @@
         <th class="narrow"><%= t('.escort') %></th>
         <th class="narrow"><%= t('.prisoner') %></th>
       </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td class="narrow"><div class="check-box"></div></td>
-        <td class="narrow"><div class="check-box"></div></td>
-      </tr>
+      <% for medication in healthcare.backfilled_medications %>
+        <tr>
+          <td><%= medication.description %></td>
+          <td><%= medication.administration %></td>
+          <td class="narrow">
+            <div id="<%= medication.id %>-<%= medication.carrier %>" class="check-box <%= healthcare.carrier_class('escort', medication.carrier) %>"></div>
+          </td>
+          <td class="narrow">
+            <div id="<%= medication.id %>-<%= medication.carrier %>" class="check-box <%= healthcare.carrier_class('prisoner', medication.carrier) %>"></div>
+          </td>
+        </tr>
+      <% end %>
     </table>
     <table>
       <tr>
@@ -67,8 +73,8 @@
         <th><%= t('.contact_number') %></th>
       </tr>
       <tr>
-        <td></td>
-        <td></td>
+        <td><%= healthcare.medical_professional_name %></td>
+        <td><%= healthcare.contact_telephone %></td>
       </tr>
     </table>
   </div>
