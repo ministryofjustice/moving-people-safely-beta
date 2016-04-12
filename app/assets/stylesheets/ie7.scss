@@ -34,7 +34,7 @@ th, td {
 }
 
 .error-summary {
-  padding-bottom: 1.5em;
+  padding-bottom: 1em;
   ul {
     margin: 0;
   }
@@ -64,5 +64,19 @@ legend {
 #prisoner-information {
   .forenames {
     width: 60%;
+  }
+}
+
+.multiples-container {
+  select {
+    width: 15%;
+  }
+  .item-heading {
+    width: 28%;
+    display: inline;
+    margin-right: 6%;
+  }
+  .carried-by {
+    width: 20%;
   }
 }

@@ -23,17 +23,25 @@
 
 <%= toggle_container(f, :medication, 'healthcare') do %>
   <%= form_group_container(f, :medications, classes: 'optional-section') do %>
-    <% f.object.backfilled_medications.each_with_index do |m, index| %>
-      <%= f.fields_for "medications[#{index}]", m do |mf| %>
-        <div id="medication-<%= mf.index %>">
-          <%= mf.hidden_field :id %>
-          <%= mf.text_field :description %>
-          <%= mf.text_field :administration %>
-          <%= mf.select :carrier, f.object.carrier_options, include_blank: true %>
-          <%= mf.check_box :_destroy %>
-        </div>
+    <div class="multiples-container">
+      <div class="item-heading"><%= t('healthcare.medication.description') %></div>
+      <div class="item-heading"><%= t('healthcare.medication.administration') %></div>
+      <div class="item-heading carried-by"><%= t('healthcare.medication.carried_by') %></div>
+      <% f.object.backfilled_medications.each_with_index do |m, index| %>
+        <%= f.fields_for "medications[#{index}]", m do |mf| %>
+          <div id="medication-<%= mf.index %>" class="item <%= 'shown' if m.persisted? %>">
+            <%= mf.hidden_field :id %>
+            <%= mf.text_field :description %>
+            <%= mf.text_field :administration %>
+            <%= mf.select :carrier, f.object.carrier_options, include_blank: true %>
+            <%= mf.check_box :_destroy %>
+            <%= mf.label :_destroy, class: 'remove-link' do %>
+              <%= t('healthcare.medication.remove') %>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
 <% end %>
 
