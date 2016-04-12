@@ -1,5 +1,7 @@
 .handover-details {
 
+  position: relative;
+
   .fit-to-travel {
     @extend .light-background;
     @extend .padded;
@@ -71,20 +73,29 @@
     margin-top: $margin-top;
   }
 
+  .no-medication {
+    position: absolute;
+  }
+
   .medication-administration {
-    margin-top: (-$margin-small);
+    margin-top: $margin-large;
     table {
       @extend .bordered-table;
       margin-bottom: $margin-bottom;
       .hidden-borders {
         border-top-color: transparent;
         border-left-color: transparent;
+        border-right-color: transparent;
       }
       th {
         font-weight: $font-weight-bold;
       }
       .carried-by {
         font-weight: $font-weight-standard;
+        text-align: center;
+        font-size: 0.9em;
+        border-top-color: transparent;
+        border-right-color: transparent;
       }
       .narrow {
         width: 10%;
