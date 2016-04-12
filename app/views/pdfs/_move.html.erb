@@ -1,26 +1,27 @@
 <div class="move-information">
   <div class="from">
-    <strong class="label"><%= t('.from') %></strong>
-    <div class="input"><%= move.origin %></div>
+    <span class="label"><%= t('.from') %></span>
+    <div class="cover-sheet-emphasis"><%= move.origin %></div>
   </div>
   <div class="to">
-    <strong class="label"><%= t('.to') %></strong>
-    <div class="input"><%= move.destination %></div>
-  </div>
-  <div class="date-of-travel">
-      <strong class="label"><%= t('.date') %></strong>
-      <div class="input"><%= move.date_of_travel_day %></div>
-      <div class="input"><%= move.date_of_travel_month %></div>
-      <div class="input"><%= move.date_of_travel_year %></div>
+    <span class="label"><%= t('.to') %></span>
+    <div class="cover-sheet-emphasis"><%= move.destination %></div>
   </div>
   <div class="destination-update">
-    <strong class="label"><%= t('.destination_update') %></strong>
+    <span class="label"><%= t('.destination_update') %></span>
     <div class="input"></div>
   </div>
 </div>
 <div class="move-information">
+  <div class="date-of-travel">
+    <span class="label"><%= t('.date') %></span>
+    <div><%= move.date_of_travel_day %> <%= move.date_of_travel_month %> <%= move.date_of_travel_year %></div>
+  </div>
   <div class="reason-for-move">
-    <strong class="label"><%= t('.reason_for_move') %></strong>
-    <div class="input"><%= move.reason %></div>
+    <span class="label"><%= t('.reason_for_move') %></span>
+    <div><%= move.reason %></div>
+  </div>
+  <div class="case-number">
+    <span class="label"><%= t('.case_number') %></span>
   </div>
 </div>
