@@ -48,8 +48,19 @@
     }
   }
 
+  .markers > div {
+    @extend .col;
+    @extend .light-background;
+    padding: $padding-small;
+    padding-left: $padding-unit;
+    margin-right: $margin-right;
+    margin-bottom: $margin-unit;
+  }
+  .label-inline, .check-box {
+    margin-bottom: 0;
+  }
+
   .medication-handover {
-    padding-top: $padding;
     .heading {
       @extend .styled-as-heading;
       font-weight: $font-weight-bold;
@@ -58,24 +69,30 @@
       @extend .row;
     }
     margin-top: $margin-top;
-    .markers > div {
-      @extend .col;
-      @extend .light-background;
-      padding: $padding-small;
-      padding-left: $padding-unit;
-      margin-right: $margin-right;
-    }
-    .label-inline, .check-box {
-      margin-bottom: 0;
-    }
   }
 
   .medication-administration {
+    margin-top: (-$margin-small);
     table {
       @extend .bordered-table;
       margin-bottom: $margin-bottom;
+      .hidden-borders {
+        border-top-color: transparent;
+        border-left-color: transparent;
+      }
       th {
         font-weight: $font-weight-bold;
+      }
+      .carried-by {
+        font-weight: $font-weight-standard;
+      }
+      .narrow {
+        width: 10%;
+        text-align: center;
+      }
+      .check-box {
+        margin-left: 32%;
+        margin-bottom: $margin-small;
       }
     }
   }

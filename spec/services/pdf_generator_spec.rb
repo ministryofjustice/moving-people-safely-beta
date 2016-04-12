@@ -230,23 +230,14 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Role')
     end
 
-    it 'generates the expected content for the handover medication section' do
-      medication_handover_section = page.find('.medication-handover')
-
-      expect(medication_handover_section).
-        to have_content('Medication details').
-        and have_content('No medication').
-        and have_content('Medication with escort').
-        and have_content('Medication with prisoner')
-    end
-
     it 'generates the expected content for the medication administration' do
       medication_administration_section =
         page.find('.medication-administration')
 
       expect(medication_administration_section).
         to have_content('Medication description').
-        and have_content('Medication administration information').
+        and have_content('Administration information').
+        and have_content('Medication travels with').
         and have_content('Name of medical professional').
         and have_content('professional filling in this section').
         and have_content('Contact phone number')
