@@ -1,0 +1,46 @@
+.multiples-container {
+
+  .item {
+    margin-bottom: 1em;
+    position: relative;
+  }
+
+  .item-heading {
+    display: inline-block;
+    font-size: 90%;
+    width: 31%;
+    margin-right: 0.5em;
+    font-weight: bold;
+  }
+
+  input {
+    @extend .form-control;
+    width: 31%;
+    margin-right: 0.5em;
+    border-width: 1px;
+    border-color: $grey-2;
+  }
+
+  input[type="checkbox"] {
+    @extend .hidden-but-accessible;
+  }
+
+  select {
+    @extend .form-control;
+    border-color: $grey-2;
+    border-width: 1px;
+    max-width: 15%;
+  }
+
+  .remove-link {
+    @extend .styled-as-link;
+    margin-left: 1em;
+  }
+
+  .add-another {
+    @extend .styled-as-link;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+}

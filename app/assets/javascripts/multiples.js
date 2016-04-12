@@ -24,7 +24,7 @@
   showItem = function ($el) {
     $el.addClass('shown');
     $el.attr('aria-hidden', false);
-    $el.find('[value="_destroy"]')
+    $el.find('[id$="_destroy"]')
       .prop('checked', false)
       .removeAttr('checked');
     $el.show();
@@ -32,11 +32,12 @@
 
   setUpEvents = function ($el) {
     $el.on('change', function (e) {
+      e.preventDefault();
       var $item, $input;
       $item = $(e.currentTarget);
       $input = $(e.target);
 
-      if ($input.attr('value') == "_destroy") {
+      if ($input.attr('id').indexOf("_destroy") != -1) {
         hideItem($item);
       }
     })
@@ -56,8 +57,8 @@
 
   insertShowButton = function ($el, settings) {
     var $button = $('<button>', {
-      text: settings.addAnotherText,
-      class: settings.addAnotherClass
+      'text' : settings.addAnotherText,
+      'class' : settings.addAnotherClass
     });
     $el.append($button);
   };
@@ -85,9 +86,9 @@
     return this.each(function () {
       var $this = $(this);
       init($this, settings);
+      showFirstHiddenItem($this);
       $this.on('click', '.add-another', function (e) {
-        var $container = $(e.delegateTarget),
-          $button = $(e.target);
+        var $container = $(e.delegateTarget);
         e.preventDefault();
         showFirstHiddenItem($container);
         manageAddLink($container);
@@ -99,7 +100,7 @@
   };
 
   $.fn.multiples.defaults = {
-    addAnotherText: 'Add another',
+    addAnotherText: 'Add',
     addAnotherClass: 'add-another',
     itemClass: 'item',
     shownClass: 'shown'
@@ -108,4 +109,4 @@
 })(jQuery);
 
 
-$('.multiples-container').multiples();
+$('.multiples-container').multiples({addAnotherText: 'Add another medication'});
