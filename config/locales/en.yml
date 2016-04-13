@@ -38,3 +38,10 @@ en:
         escape_details: Escort escape risk details
         intolerant_behaviour_details: Intolerant behaviour towards others details
         non_association_details: Non-association details
+    errors:
+      models:
+        healthcare:
+          attributes:
+            medications:
+              no_description: must contain a description
+              empty: must be specified

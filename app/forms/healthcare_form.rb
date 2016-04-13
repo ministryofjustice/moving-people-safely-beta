@@ -13,6 +13,9 @@ class HealthcareForm < Form
   attribute :medication, MaybeBoolean
   attribute :medications, Array[MedicationForm]
 
+  validates :medications, empty_medications: true
+  validates :medications, invalid_medications: true
+
   def medications
     super || []
   end

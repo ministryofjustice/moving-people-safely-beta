@@ -192,4 +192,34 @@ RSpec.describe HealthcareForm, type: :form do
       end
     end
   end
+
+  describe '#valid' do
+    context 'when medication is true' do
+      context 'with no medications' do
+        before do
+          subject.medication = true
+          subject.medications = []
+          subject.valid?
+        end
+
+        it 'has an error' do
+          expect(subject.errors.full_messages).
+            to eq ['Medications must be specified']
+        end
+      end
+
+      context 'with invalid medications' do
+        before do
+          subject.medication = true
+          subject.medications = [MedicationForm.new(carrier: 'prisoner')]
+          subject.valid?
+        end
+
+        it 'has an error' do
+          expect(subject.errors.full_messages).
+            to eq ['Medications must contain a description']
+        end
+      end
+    end
+  end
 end
