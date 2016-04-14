@@ -15,9 +15,7 @@ RSpec.describe PdfGenerator, type: :service do
   end
 
   describe '.render' do
-    # FIXME: these render specs need to be made more maintainable
-
-    attr_reader :content, :html
+    attr_reader :page
 
     before(:all) do
       travel_to(Date.new(2015, 2, 3)) do
@@ -27,33 +25,56 @@ RSpec.describe PdfGenerator, type: :service do
           risks: build_stubbed(:risks),
           healthcare: build_stubbed(:healthcare),
           offences: build_stubbed(:offences))
-        @html = described_class.render(escort)
-        @content = ActionController::Base.helpers.strip_tags(html)
+        html = described_class.render(escort)
+        @page = Capybara::Node::Simple.new(html)
       end
     end
 
     it 'generates the expected content for the header' do
-      expect(content).to have_content('Person Escort Record')
+      header_section = page.find('.first-page')
+
+      expect(header_section).
+        to have_content('Person Escort Record').
+        and have_content('A1. Cover sheet').
+        and have_content('Vehicle registration').
+        and have_content('Vehicle cell no')
     end
 
     it 'generates the expected content for NFR section' do
-      expect(content).to have_content('Not for release').
+      not_for_release_section = page.find('.not-for-release')
+
+      expect(not_for_release_section).
+        to have_content('Not for release').
         and have_content('Reason').
-        and have_content('Cannot be released at the moment')
-      expect(html).to have_css('.not-for-release//.checked')
+        and have_content('Cannot be released at the moment').
+        and have_css('.marker//.checked')
     end
 
-    it 'generates the expected content for move information section' do
-      expect(content).to have_content('From HMP Clive House').
-        and have_content('To Petty France').
-        and have_content('Date of travel 3 2 2015').
-        and have_content('Destination update').
-        and have_content('Reason for move (current offence) ' \
-          'Expected to attend show the thing')
+    context 'move information' do
+      it 'generates the expected content for move information section' do
+        move_section = page.find_all('.move-information').first
+
+        expect(move_section).
+          to have_content('From HMP Clive House').
+          and have_content('To Petty France').
+          and have_content('Date of travel 3 2 2015').
+          and have_content('Destination update')
+      end
+
+      it 'generates the expected content for reason for move' do
+        move_section = page.find_all('.move-information').last
+
+        expect(move_section).
+          to have_content('Reason for move (current offence)').
+          and have_content('Expected to attend show the thing')
+      end
     end
 
     it 'generates the expected content for personal information section' do
-      expect(content).to have_content('Family name Bigglesworth').
+      prisoner_section = page.find('.prisoner-information')
+
+      expect(prisoner_section).
+        to have_content('Family name Bigglesworth').
         and have_content('Forenames Tarquin').
         and have_content('Date of birth 13 2 1972').
         and have_content('Age 42').
@@ -63,39 +84,58 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Attach photo')
     end
 
-    it 'generates the expected content for summary checkboxes' do
-      expect(content).to have_content('Healthcare information').
-        and have_content('Risks overview').
-        and have_content('ACCT open').
-        and have_content('CAT A').
-        and have_content('Allergies').
-        and have_content('Disabilities').
-        and have_content('Violence').
-        and have_content('Escort escape risk').
-        and have_content('Non-association')
-      expect(html).to have_css('#allergies-checkbox-group//.checked').
-        and have_css('#allergies-checkbox-group//.checked').
-        and have_css('#disabilities-checkbox-group//.checked').
-        and have_css('#violence-checkbox-group//.checked').
-        and have_css('#violence-checkbox-group//.checked').
-        and have_css('#non_association-checkbox-group//.checked').
-        and have_css('#open_acct-checkbox-group//.checked')
-    end
+    context 'summary checkboxes' do
+      it 'generates the expected content for Open ACCT and CAT A' do
+        open_acct_section = page.find_all('.front-page-markers')[0]
 
-    it 'generates the expected content for the updates section' do
-      expect(content).to have_content('Include relevant updates').
-        and have_content('and heightened risks from section B3')
+        expect(open_acct_section).
+          to have_content('ACCT open').
+          and have_content('CAT A').
+          and have_css('#open_acct-checkbox-group//.checked')
+      end
+
+      it 'generates the expected content for healthcare' do
+        healthcare_section = page.find_all('.front-page-markers')[1]
+
+        expect(healthcare_section).
+          to have_content('Healthcare information').
+          and have_content('Allergies').
+          and have_content('Disabilities').
+          and have_content('Section A3 Healthcare information').
+          and have_css('#allergies-checkbox-group//.checked').
+          and have_css('#disabilities-checkbox-group//.checked')
+      end
+
+      it 'generates the expected content for risks' do
+        risks_section = page.find_all('.front-page-markers')[2]
+
+        expect(risks_section).
+          to have_content('Risks overview').
+          and have_content('Violence').
+          and have_content('Escort escape risk').
+          and have_content('Non-association').
+          and have_content('Section A2 Risk summary').
+          and have_css('#violence-checkbox-group//.checked').
+          and have_css('#escape-checkbox-group//.checked').
+          and have_css('#non_association-checkbox-group//.checked')
+      end
     end
 
     it 'generates the expected content for the risk updates section' do
-      expect(content).to have_content('Risk updates').
+      updates_section = page.find_all('.updates').first
+
+      expect(updates_section).
+        to have_content('Risk updates').
         and have_content('Include relevant updates').
         and have_content('and heightened risks from section B3').
         and have_content('Tick if SASH has been opened')
     end
 
     it 'generates the expected content for the risk summary section' do
-      expect(content).to have_content('A2. Risk summary').
+      risk_summary_section = page.find('.risk-summary')
+
+      expect(risk_summary_section).
+        to have_content('A2. Risk summary').
         and have_content('PNC / Prison number').
         and have_content('Risks to self').
         and have_content('Always ends up with scars').
@@ -116,33 +156,53 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Signature')
     end
 
-    it 'generates the expected content for the healthcare section' do
-      expect(content).to have_content('A3. Healthcare information').
-        and have_content('Physical health risks').
-        and have_content('Problems moving a leg').
-        and have_content('Mental health risks').
-        and have_content('Schizophrenic').
-        and have_content('Social care needs and other healthcare needs').
-        and have_content('Needs social care').
-        and have_content('Allergies').
-        and have_content('Peanuts').
-        and have_content('Disabilities').
-        and have_content('Strong illness').
-        and have_content('Tick if MPV required').
-        and have_content('Name of medical professional').
-        and have_content('filling in this section').
-        and have_content('Doctor Robert').
-        and have_content('Contact phone number').
-        and have_content('07987654').
-        and have_content('Updates').
-        and have_content('This section should be').
-        and have_content('completed by a medical professional').
-        and have_content('Fill in medication details in section B1.')
-      expect(html).to have_css('.mpv-required//.checked')
+    context 'healthcare section' do
+      it 'generates the expected content for the healthcare needs' do
+        healthcare_needs_section = page.find('.healthcare_needs')
+
+        expect(healthcare_needs_section).
+          to have_content('A3. Healthcare information').
+          and have_content('Physical health risks').
+          and have_content('Problems moving a leg').
+          and have_content('Mental health risks').
+          and have_content('Schizophrenic').
+          and have_content('Social care needs and other healthcare needs').
+          and have_content('Needs social care').
+          and have_content('Allergies').
+          and have_content('Peanuts').
+          and have_content('Disabilities').
+          and have_content('Strong illness').
+          and have_content('Tick if MPV required').
+          and have_css('.mpv-required//.checked')
+      end
+
+      it 'generates the expected content for the healthcare updates' do
+        healthcare_updates_section = page.find('.healthcare-updates')
+
+        expect(healthcare_updates_section).
+          to have_content('Name of medical professional').
+          and have_content('filling in this section').
+          and have_content('Doctor Robert').
+          and have_content('Contact phone number').
+          and have_content('07987654').
+          and have_content('Updates').
+          and have_content('This section should be').
+          and have_content('completed by a medical professional')
+      end
+
+      it 'generates the expected content for the healthcare signpost' do
+        healthcare_signpost_section = page.find('.healthcare-signpost')
+
+        expect(healthcare_signpost_section).
+          to have_content('Fill in medication details in section B1.')
+      end
     end
 
     it 'generates the expected content for the offences section' do
-      expect(content).to have_content('A4. Offences').
+      offences_section = page.find('.offences')
+
+      expect(offences_section).
+        to have_content('A4. Offences').
         and have_content('See A1. Cover sheet for details of current offence').
         and have_content('Other offences').
         and have_content('Must return').
@@ -154,11 +214,16 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Serving sentence').
         and have_content('On remand').
         and have_content('License recall').
-        and have_content('Verbal abuse')
+        and have_content('Verbal abuse').
+        and have_css('.must-return//.checked').
+        and have_css('.must-not-return//.checked')
     end
 
     it 'generates the expected content for the handover details section' do
-      expect(content).to have_content('B1. Handover details').
+      handover_details_section = page.find('.handover-details')
+
+      expect(handover_details_section).
+        to have_content('B1. Handover details').
         and have_content('Fit to travel').
         and have_content('Name of healthcare professional (print)').
         and have_content('Signature').
@@ -166,11 +231,21 @@ RSpec.describe PdfGenerator, type: :service do
     end
 
     it 'generates the expected content for the handover medication section' do
-      expect(content).to have_content('Medication details').
+      medication_handover_section = page.find('.medication-handover')
+
+      expect(medication_handover_section).
+        to have_content('Medication details').
         and have_content('No medication').
         and have_content('Medication with escort').
-        and have_content('Medication with prisoner').
-        and have_content('Medication description').
+        and have_content('Medication with prisoner')
+    end
+
+    it 'generates the expected content for the medication administration' do
+      medication_administration_section =
+        page.find('.medication-administration')
+
+      expect(medication_administration_section).
+        to have_content('Medication description').
         and have_content('Medication administration information').
         and have_content('Name of medical professional').
         and have_content('professional filling in this section').
@@ -178,7 +253,10 @@ RSpec.describe PdfGenerator, type: :service do
     end
 
     it 'generates the expected content for the enclosed forms section' do
-      expect(content).to have_content('Enclosed forms').
+      enclosed_forms_section = page.find('.enclosed-forms')
+
+      expect(enclosed_forms_section).
+        to have_content('Enclosed forms').
         and have_content('Form').
         and have_content('Attached').
         and have_content('Quantity').
@@ -200,7 +278,10 @@ RSpec.describe PdfGenerator, type: :service do
     end
 
     it 'generates the expected content for the record of handover section' do
-      expect(content).to have_content('B2. Record of handover').
+      record_of_handover_section = page.find('.record-of-handover')
+
+      expect(record_of_handover_section).
+        to have_content('B2. Record of handover').
         and have_content('Property, cash and medication details').
         and have_content('C - Cash').
         and have_content('D - Documentation').
@@ -236,7 +317,10 @@ RSpec.describe PdfGenerator, type: :service do
     end
 
     it 'generates the expected content for the record of checks and events' do
-      expect(content).to have_content('B3. Record of check').
+      checks_and_events_section = page.find_all('.checks-and-events').first
+
+      expect(checks_and_events_section).
+        to have_content('B3. Record of check').
         and have_content('and significant events').
         and have_content('Checks and significant events').
         and have_content('Time').
@@ -246,20 +330,42 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Prisoner identified').
         and have_content('Searched (state level)').
         and have_content('Escort fully briefed (including risks)').
-        and have_content('Searched by Contractor (state level)').
-        and have_content('Tick and sign if this is the').
+        and have_content('Searched by Contractor (state level)')
+    end
+
+    it 'generates the expected content for the continuation markers' do
+      continuation_markers_section =
+        page.find_all('.continuation-markers').first
+
+      expect(continuation_markers_section).
+        to have_content('Tick and sign if this is the').
         and have_content('last page of the record').
-        and have_content('Tick if the record continues on a separate sheet').
-        and have_content('Signature').
-        and have_content('This is sheet').
-        and have_content('Tick this column if the event highlights a current').
+        and have_content('Tick if the record continues on a separate sheet')
+    end
+
+    it 'generates the expected content for the signature and sheet' do
+      signature_and_sheet_section = page.find_all('.signature-and-sheet').first
+
+      expect(signature_and_sheet_section).
+        to have_content('Signature').
+        and have_content('This is sheet')
+    end
+
+    it 'generates the expected content for the checks and events second page' do
+      checks_and_events_section = page.find_all('.checks-and-events')[1]
+
+      expect(checks_and_events_section).
+        to have_content('Tick this column if the event highlights a current').
         and have_content('risk, and update cover sheet with the information').
         and have_content('When noting any significant events give details').
         and have_content('of behaviour, context and any triggers')
     end
 
     it 'generates expected content for release at court and property' do
-      expect(content).to have_content('B4. Release at court').
+      release_at_court_section = page.find('.release-at-court')
+
+      expect(release_at_court_section).
+        to have_content('B4. Release at court').
         and have_content('and receipt of property').
         and have_content('Release at court').
         and have_content('I certify that all relevant checks have been made').
