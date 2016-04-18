@@ -34,9 +34,11 @@
             <%= mf.text_field :description %>
             <%= mf.text_field :administration %>
             <%= mf.select :carrier, f.object.carrier_options, include_blank: true %>
-            <%= mf.check_box :_destroy %>
-            <%= mf.label :_destroy, class: 'remove-link' do %>
-              <%= t('healthcare.medication.remove') %>
+            <% if index > 0 %>
+              <%= mf.check_box :_destroy %>
+              <%= mf.label :_destroy, class: 'remove-link' do %>
+                  <%= t('healthcare.medication.remove') %>
+              <% end %>
             <% end %>
           </div>
         <% end %>
