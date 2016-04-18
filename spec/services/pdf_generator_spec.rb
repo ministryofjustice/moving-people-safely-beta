@@ -283,6 +283,8 @@ RSpec.describe PdfGenerator, type: :service do
       expect(record_of_handover_section).
         to have_content('B2. Record of handover').
         and have_content('Property, cash and medication details').
+        and have_content('No property on OUTWARD journey').
+        and have_content('No property on RETURN journey').
         and have_content('C - Cash').
         and have_content('D - Documentation').
         and have_content('IP - In possession').

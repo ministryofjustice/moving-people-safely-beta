@@ -10,6 +10,16 @@
   </div>
   <div class="property-details">
     <div class="heading"><%= t('.property_details') %></div>
+    <div class="property-checkboxes">
+      <div>
+        <div class="check-box"></div>
+        <div class="label-inline"><%= t('.property_outward_journey') %></div>
+      </div>
+      <div>
+        <div class="check-box"></div>
+        <div class="label-inline"><%= t('.property_return_journey') %></div>
+      </div>
+    </div>
     <ul>
       <li><strong><%= t('.cash_code') %></strong> - <%= t('.cash') %></li>
       <li><strong><%= t('.documentation_code') %></strong> - <%= t('.documentation') %></li>
@@ -64,7 +74,8 @@
     <table class="no-border-left no-border-top">
       <tr>
         <td colspan="3" class="no-border"></td>
-        <td colspan="2" class="no-border-top"><strong><%= t('.property_handover') %> <br> <%= t('.cash_and_medication') %></strong></td>
+        <td colspan="2" class="no-border-top">
+          <strong><%= t('.property_handover') %> <br> <%= t('.cash_and_medication') %></strong></td>
         <td colspan="2" class="no-border-top" style="width:30%"><strong><%= t('.detainee_handover') %></strong></td>
       </tr>
       <tr>

@@ -131,6 +131,8 @@ en:
     record_of_handover:
       heading: B2. Record of handover
       property_details: Property, cash and medication details
+      property_outward_journey: No property on OUTWARD journey
+      property_return_journey: No property on RETURN journey
       instructions: Use a property code from the following list
       valuables: Valuables
       in_possession: In possession

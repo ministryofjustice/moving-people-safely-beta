@@ -69,6 +69,12 @@
       @extend .row;
     }
     margin-top: $margin-top;
+    .markers > div {
+      @extend .emphasis-checkbox;
+    }
+    .label-inline, .check-box {
+      margin-bottom: 0;
+    }
   }
 
   .medication-administration {
