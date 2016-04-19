@@ -23,7 +23,9 @@ RSpec.describe PdfGenerator, type: :service do
           prisoner: build_stubbed(:prisoner),
           move: build_stubbed(:move),
           risks: build_stubbed(:risks),
-          healthcare: build_stubbed(:healthcare),
+          healthcare: build_stubbed(:healthcare,
+            medications: [build_stubbed(:medication,
+              id: 'af27a240-c856-410b-9ce8-53195cd85c39')]),
           offences: build_stubbed(:offences))
         html = described_class.render(escort)
         @page = Capybara::Node::Simple.new(html)
@@ -230,26 +232,24 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Role')
     end
 
-    it 'generates the expected content for the handover medication section' do
-      medication_handover_section = page.find('.medication-handover')
-
-      expect(medication_handover_section).
-        to have_content('Medication details').
-        and have_content('No medication').
-        and have_content('Medication with escort').
-        and have_content('Medication with prisoner')
-    end
-
     it 'generates the expected content for the medication administration' do
+      medication_id = 'af27a240-c856-410b-9ce8-53195cd85c39'
       medication_administration_section =
         page.find('.medication-administration')
 
       expect(medication_administration_section).
         to have_content('Medication description').
-        and have_content('Medication administration information').
+        and have_content('Administration information').
+        and have_content('Medication travels with').
         and have_content('Name of medical professional').
+        and have_content('Aspirin').
+        and have_content('Once a day').
+        and have_css("##{medication_id}-escort.checked").
+        and have_no_css("##{medication_id}-prisoner.checked").
         and have_content('professional filling in this section').
-        and have_content('Contact phone number')
+        and have_content('Doctor Robert').
+        and have_content('Contact phone number').
+        and have_content('07987654')
     end
 
     it 'generates the expected content for the enclosed forms section' do

@@ -35,39 +35,37 @@
     <div class="heading">
       <%= t('.medication_heading') %>
     </div>
-    <div class="markers">
-      <div>
-        <div class="check-box"></div>
-        <div class="label-inline"><%= t('.no_medication') %></div>
-      </div>
-      <div>
-        <div class="check-box"></div>
-        <div class="label-inline"><%= t('.medicaton_with_escort') %></div>
-      </div>
-      <div>
-        <div class="check-box"></div>
-        <div class="label-inline"><%= t('.medication_with_prisoner') %></div>
-      </div>
+  </div>
+  <div class="markers">
+    <div>
+      <div class="check-box <%= healthcare.no_medication_class %>"></div>
+      <div class="label-inline"><%= t('.no_medication') %></div>
     </div>
   </div>
   <div class="medication-administration">
     <table>
       <tr>
+        <th colspan="2" class="hidden-borders"></th>
+        <th colspan="2" class="carried-by"><%= t('.medication_carried_by') %></th>
+      </tr>
+      <tr>
         <th><%= t('.medication_description') %></th>
         <th><%= t('.medication_administration_info') %></th>
+        <th class="narrow"><%= t('.escort') %></th>
+        <th class="narrow"><%= t('.prisoner') %></th>
       </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
+      <% for medication in healthcare.backfilled_medications %>
+        <tr>
+          <td><%= medication.description %></td>
+          <td><%= medication.administration %></td>
+          <td class="narrow">
+            <div id="<%= medication.id %>-<%= medication.carrier %>" class="check-box <%= healthcare.carrier_class('escort', medication.carrier) %>"></div>
+          </td>
+          <td class="narrow">
+            <div id="<%= medication.id %>-<%= medication.carrier %>" class="check-box <%= healthcare.carrier_class('prisoner', medication.carrier) %>"></div>
+          </td>
+        </tr>
+      <% end %>
     </table>
     <table>
       <tr>
@@ -75,8 +73,8 @@
         <th><%= t('.contact_number') %></th>
       </tr>
       <tr>
-        <td></td>
-        <td></td>
+        <td><%= healthcare.medical_professional_name %></td>
+        <td><%= healthcare.contact_telephone %></td>
       </tr>
     </table>
   </div>

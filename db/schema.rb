@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407094059) do
+ActiveRecord::Schema.define(version: 20160412134925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,11 +36,19 @@ ActiveRecord::Schema.define(version: 20160407094059) do
     t.boolean  "mpv_required"
     t.text     "disabilities_details"
     t.boolean  "medication"
-    t.text     "medication_details"
     t.string   "medical_professional_name"
     t.string   "contact_telephone"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+  end
+
+  create_table "medications", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "healthcare_id"
+    t.text     "description"
+    t.text     "administration"
+    t.string   "carrier"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "moves", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|

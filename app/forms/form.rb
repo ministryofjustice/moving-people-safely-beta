@@ -16,7 +16,9 @@ class Form
 
   def save
     if valid?
-      persist
+      ActiveRecord::Base.transaction do
+        persist
+      end
       true
     else
       false
@@ -39,5 +41,9 @@ private
 
   def load_model_data
     attributes.each_key { |key| public_send("#{key}=", target.send(key)) }
+  end
+
+  def reload
+    load_model_data
   end
 end

@@ -35,6 +35,14 @@ en:
       details_guidance_text: Details might include any equipment necessary for moving (eg special vehicles, walking frames) and any communication support that might be needed.
     mpv_required: Do they need an MPV?
     medication:
-      title: Medication
-      help_text: Does the prisoner need medication?
+      administration: Medication administration
+      carried_by: Carried by
+      description: Medication description
       details_help_text: If yes, give details of the medication needed and how it is administered. Give details of how the issues might be a risk during the move.
+      help_text: Does the prisoner need medication?
+      remove: Remove
+      title: Medication
+  medication_form:
+    carrier:
+      escort: Escort
+      prisoner: Prisoner

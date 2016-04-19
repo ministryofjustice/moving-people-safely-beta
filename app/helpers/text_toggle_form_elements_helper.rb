@@ -1,6 +1,6 @@
 module TextToggleFormElementsHelper
   # rubocop:disable MethodLength
-  def text_toggle_container(form, name, i18n_scope, &_blk)
+  def toggle_container(form, name, i18n_scope, &_blk)
     content_tag(
       :fieldset,
       class: 'js_has_optional_section',
@@ -12,13 +12,19 @@ module TextToggleFormElementsHelper
         form_group_container(form, name, id: '') {
           join(
             clearable_radio_buttons(form, name, i18n_scope),
-            form_group_container(
-              form, :"#{name}_details", classes: 'optional-section') { yield }
+            content_tag(:div) { yield }
           )
         }
       )
     end
   end # rubocop:enable MethodLength
+
+  def text_toggle_container(form, name, i18n_scope, &_blk)
+    toggle_container(form, name, i18n_scope) do
+      form_group_container(
+        form, :"#{name}_details", classes: 'optional-section') { yield }
+    end
+  end
 
   def details_text_area_with_help_text(form, name, i18n_scope)
     join(

@@ -104,9 +104,14 @@ FactoryGirl.define do
     mpv_required true
     disabilities_details 'Strong illness'
     medication true
-    medication_details 'One pill a day'
     medical_professional_name 'Doctor Robert'
     contact_telephone '07987654'
+  end
+
+  factory :medication do
+    description 'Aspirin'
+    administration 'Once a day'
+    carrier 'escort'
   end
 
   factory :offences do

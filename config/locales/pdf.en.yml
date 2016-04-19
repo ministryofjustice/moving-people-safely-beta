@@ -101,12 +101,13 @@ en:
       name_of_healthcare_professional: Name of healthcare professional (print)
       signature: Signature
       role: Role
-      medication_heading: Medication details
       no_medication: No medication
-      medicaton_with_escort: Medication with escort
-      medication_with_prisoner: Medication with prisoner
+      medication_heading: Medication details
       medication_description: Medication description
-      medication_administration_info: Medication administration information
+      medication_carried_by: Medication travels with
+      medication_administration_info: Administration information
+      escort: Escort
+      prisoner: Prisoner
       medical_professional: :'shared.medical_professional'
       enclosed_forms: Enclosed forms
       form: Form
