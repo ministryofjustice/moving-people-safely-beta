@@ -35,9 +35,22 @@
       @extend .styled-as-heading;
       font-weight: $font-weight-bold;
     }
+    ul {
+      margin-bottom: $margin-unit;
+      margin-top: 0;
+    }
     li {
-      margin-top: $margin-small;
-      margin-bottom: $margin-small;
+      margin-top: $margin-extra-small;
+      margin-bottom: $margin-extra-small;
+    }
+  }
+
+  .property-checkboxes {
+    @extend .row;
+    padding-bottom: 0;
+    margin-bottom: $margin-unit;
+    > div {
+      @extend .emphasis-checkbox;
     }
   }
 

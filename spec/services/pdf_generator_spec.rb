@@ -283,6 +283,8 @@ RSpec.describe PdfGenerator, type: :service do
       expect(record_of_handover_section).
         to have_content('B2. Record of handover').
         and have_content('Property, cash and medication details').
+        and have_content('No property on OUTWARD journey').
+        and have_content('No property on RETURN journey').
         and have_content('C - Cash').
         and have_content('D - Documentation').
         and have_content('IP - In possession').
@@ -322,7 +324,7 @@ RSpec.describe PdfGenerator, type: :service do
       expect(checks_and_events_section).
         to have_content('B3. Record of check').
         and have_content('and significant events').
-        and have_content('Checks and significant events').
+        and have_content('Escort checks and significant events').
         and have_content('Time').
         and have_content('Details').
         and have_content('Name (print)').
@@ -338,17 +340,7 @@ RSpec.describe PdfGenerator, type: :service do
         page.find_all('.continuation-markers').first
 
       expect(continuation_markers_section).
-        to have_content('Tick and sign if this is the').
-        and have_content('last page of the record').
-        and have_content('Tick if the record continues on a separate sheet')
-    end
-
-    it 'generates the expected content for the signature and sheet' do
-      signature_and_sheet_section = page.find_all('.signature-and-sheet').first
-
-      expect(signature_and_sheet_section).
-        to have_content('Signature').
-        and have_content('This is sheet')
+        to have_content('Tick if the record continues on a separate sheet')
     end
 
     it 'generates the expected content for the checks and events second page' do

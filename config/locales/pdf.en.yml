@@ -131,6 +131,8 @@ en:
     record_of_handover:
       heading: B2. Record of handover
       property_details: Property, cash and medication details
+      property_outward_journey: No property on OUTWARD journey
+      property_return_journey: No property on RETURN journey
       instructions: Use a property code from the following list
       valuables: Valuables
       in_possession: In possession
@@ -178,13 +180,15 @@ en:
       time: Time
       details: Details
       initials: Initials
-      tick_and_last: Tick and sign if this is the last page of the record
       tick_and_complete: Tick if the record continues on a separate sheet
-      this_is_sheet: This is sheet
-      of: of
+      highlight_current_risk: Tick this column if the event highlights a current risk, and update cover sheet with the information
+      noting_details: When noting any significant events give details of behaviour, context and any triggers
+      escort_checks_and_significant_events: Escort checks and significant events
     checks_and_events_initial:
       heading: :'pdfs.checks_and_events.heading'
-      checks_and_significant_events: Checks and significant events
+      checks_and_significant_events: :'pdfs.checks_and_events.escort_checks_and_significant_events'
+      highlight_current_risk: :'pdfs.checks_and_events.highlight_current_risk'
+      noting_details: :'pdfs.checks_and_events.noting_details'
       time: :'pdfs.checks_and_events.time'
       name: :'shared.name'
       details: :'pdfs.checks_and_events.details'
@@ -200,9 +204,9 @@ en:
       signature: :'shared.signature'
     checks_and_events_continuation:
       heading: :'pdfs.checks_and_events.heading'
-      escort_checks_and_significant_events: Escort checks and significant events
-      highlight_current_risk: Tick this column if the event highlights a current risk, and update cover sheet with the information
-      noting_details: When noting any significant events give details of behaviour, context and any triggers
+      checks_and_significant_events: :'pdfs.checks_and_events.escort_checks_and_significant_events'
+      highlight_current_risk: :'pdfs.checks_and_events.highlight_current_risk'
+      noting_details: :'pdfs.checks_and_events.noting_details'
       time: :'pdfs.checks_and_events.time'
       name: :'shared.name'
       details: :'pdfs.checks_and_events.details'
