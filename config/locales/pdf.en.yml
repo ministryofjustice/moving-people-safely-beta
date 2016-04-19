@@ -180,10 +180,7 @@ en:
       time: Time
       details: Details
       initials: Initials
-      tick_and_last: Tick and sign if this is the last page of the record
       tick_and_complete: Tick if the record continues on a separate sheet
-      this_is_sheet: This is sheet
-      of: of
     checks_and_events_initial:
       heading: :'pdfs.checks_and_events.heading'
       checks_and_significant_events: Checks and significant events

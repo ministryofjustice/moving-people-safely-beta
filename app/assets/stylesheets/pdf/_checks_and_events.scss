@@ -41,26 +41,6 @@
   }
 }
 
-.signature-and-sheet {
-  @extend .row;
-  > div {
-    @extend .col;
-    @extend .padded;
-    &:first-child {
-      width: 60%;
-      .input-inline {
-        width: 18em;
-      }
-    }
-    &:last-child {
-      .check-box {
-        padding: $padding;
-        margin-top: -$padding-unit;
-      }
-    }
-  }
-}
-
 .event-instructions {
   @extend .row;
   margin-top: $margin-top;
