@@ -29,7 +29,7 @@ class HealthcareForm < Form
   end
 
   def backfilled_medications
-    target.backfilled_medications(MedicationForm)
+    target.backfilled_medications(medications)
   end
 
   def carrier_options
