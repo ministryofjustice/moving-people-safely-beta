@@ -16,13 +16,13 @@ RSpec.describe Healthcare, type: :model do
     let(:klass) { MedicationForm }
 
     context 'when there are no persisted medication models' do
-      it 'returns a fixed size array of empty objects of the passed class' do
+      it 'returns a fixed size array of empty medications' do
         subject.medications.destroy_all
 
-        expect(subject.backfilled_medications(MedicationForm)).
+        expect(subject.backfilled_medications).
           to satisfy do |meds|
             meds.size == array_size &&
-              meds.all? { |m| m.is_a?(klass) } &&
+              meds.all? { |m| m.is_a?(Medication) } &&
               meds.none?(&:persisted?)
           end
       end
@@ -39,6 +39,20 @@ RSpec.describe Healthcare, type: :model do
             meds.size == array_size &&
               meds.count(&:persisted?) == 2 &&
               meds.all? { |m| m.is_a?(Medication) }
+          end
+      end
+    end
+
+    context 'when medication forms are passed in' do
+      it 'returns an array of medication forms padded with empty medications' do
+        medication_forms = Array.new(2) { MedicationForm.new }
+
+        expect(subject.backfilled_medications(medication_forms)).
+          to satisfy do |meds|
+            meds.size == array_size &&
+              meds.count(&:persisted?) == 0 &&
+              meds.count { |m| m.is_a?(MedicationForm) } == 2 &&
+              meds.count { |m| m.is_a?(Medication) } == 4
           end
       end
     end
