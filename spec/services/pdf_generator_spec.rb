@@ -324,7 +324,7 @@ RSpec.describe PdfGenerator, type: :service do
       expect(checks_and_events_section).
         to have_content('B3. Record of check').
         and have_content('and significant events').
-        and have_content('Checks and significant events').
+        and have_content('Escort checks and significant events').
         and have_content('Time').
         and have_content('Details').
         and have_content('Name (print)').
