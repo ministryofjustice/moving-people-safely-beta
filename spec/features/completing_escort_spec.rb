@@ -14,7 +14,6 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'leaving the current PER in order to start another' do
     start_escort_form
-    fill_in_prisoner
     click_button 'Save'
 
     click_link 'Find a prisoner'
@@ -37,7 +36,6 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'filling in the risks page' do
     start_escort_form
-    fill_in_prisoner
     click_link 'Risks'
 
     expect(page).to have_heading 'Risks'
@@ -53,7 +51,6 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'filling in the move page' do
     start_escort_form
-    fill_in_prisoner
     click_link 'Move Information'
 
     expect(page).to have_heading 'Move Information'
@@ -69,7 +66,6 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
   scenario 'filling in the healthcare page' do
     start_escort_form
-    fill_in_prisoner
     click_link 'Healthcare'
 
     expect(page).to have_heading 'Healthcare'
@@ -81,8 +77,20 @@ RSpec.feature 'completing digital person escort record', type: :feature do
 
     expect(page).
       to have_content 'Escort record updated successfully'
+  end
 
-    remove_medication
+  scenario 'filling in the offences page' do
+    start_escort_form
+    click_link 'Offences'
+
+    expect(page).to have_heading 'Offences'
+
+    expect(page).to have_preview_per_link
+
+    fill_in_offences
+
+    expect(page).
+      to have_content 'Escort record updated successfully'
   end
 
   scenario 'viewing the summary of an escort' do

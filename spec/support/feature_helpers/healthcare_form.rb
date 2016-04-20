@@ -56,12 +56,6 @@ module FeatureHelpers
     def remove_medication
       check 'healthcare[medications[1]][_destroy]'
       click_save
-      medication_0 =
-        find_field('healthcare[medications[0]][description]').value
-      medication_1 =
-        find_field('healthcare[medications[1]][description]').value
-      expect(medication_0).to eq 'Aspirin'
-      expect(medication_1).to eq nil
     end
   end
 end

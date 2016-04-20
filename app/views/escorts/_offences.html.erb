@@ -1,5 +1,6 @@
-<% %i[ not_for_release must_return must_not_return
-       other_offences ].each do |attribute| %>
+<% %i[ not_for_release
+       must_return
+       must_not_return ].each do |attribute| %>
   <%= render(
         'shared/toggle_with_details_field',
         f: f,
@@ -8,3 +9,41 @@
       )
   %>
 <% end %>
+
+<fieldset>
+  <%= title_text :offences, 'offences' %>
+  <%= f.label('offences', t('offences.offences.help_text')) %>
+  <%= form_group_container(f, :offences) do %>
+    <div class="multiples-container">
+      <div class="item-heading">
+        <%= t('offences.offences.offence_type') %>
+      </div>
+      <div class="item-heading">
+        <%= t('offences.offences.offence_status') %>
+      </div>
+      <div class="item-heading">
+        <%= t('offences.offences.not_for_release') %>
+      </div>
+      <div class="item-heading">
+        <%= t('offences.offences.current_offence') %>
+      </div>
+      <% f.object.backfilled_offence_details.each_with_index do |offence_details_form, index| %>
+        <%= f.fields_for "offence_details[#{index}]", offence_details_form do |of| %>
+          <div id="offence-<%= of.index %>" class="item <%= 'shown' if offence_details_form.persisted? %>">
+            <%= of.hidden_field :id %>
+            <%= of.text_field :offence_type %>
+            <%= of.select :offence_status, f.object.status_options, include_blank: true %>
+            <%= of.check_box :not_for_release %>
+            <%= of.check_box :current_offence %>
+            <% if index > 0 %>
+              <%= of.check_box :_destroy %>
+              <%= of.label :_destroy, class: 'remove-link' do %>
+                  <%= t('offences.offences.remove') %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</fieldset>

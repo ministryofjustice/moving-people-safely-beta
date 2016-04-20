@@ -5,7 +5,19 @@ module FeatureHelpers
       options.each do |key, (radio_value, textarea_value)|
         fill_in_offences_field(key, radio_value, textarea_value)
       end
-      check 'Does the prisoner require an MPV?'
+      fill_in 'offences[offence_details[0]][offence_type]',
+        with: 'Burglary'
+      select 'Outstanding charge',
+        from: 'offences[offence_details[0]][offence_status]'
+      check 'offences[offence_details[0]][not_for_release]'
+      check 'offences[offence_details[0]][current_offence]'
+      fill_in 'offences[offence_details[1]][offence_type]',
+        with: 'Burglary'
+      select 'Outstanding charge',
+        from: 'offences[offence_details[1]][offence_status]'
+      check 'offences[offence_details[1]][not_for_release]'
+      check 'offences[offence_details[1]][current_offence]'
+
       click_save
     end
 
@@ -21,8 +33,7 @@ module FeatureHelpers
     end
 
     def build_offences_properties
-      ['Not for release', 'Must return',
-       'Must not return', 'Other offences'].each_with_index.
+      ['Not for release', 'Must return', 'Must not return'].each_with_index.
         each_with_object({}) do |(r, i), o|
         o[r] = (i.odd? ? ['Yes', 'Some user input'] : ['No', nil])
       end
@@ -33,6 +44,11 @@ module FeatureHelpers
         find(:xpath, '../..')) do
           yield
         end
+    end
+
+    def remove_offence_details
+      check 'offences[offence_details[1]][_destroy]'
+      click_save
     end
   end
 end

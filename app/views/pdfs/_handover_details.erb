@@ -59,10 +59,14 @@
           <td><%= medication.description %></td>
           <td><%= medication.administration %></td>
           <td class="narrow">
-            <div id="<%= medication.id %>-<%= medication.carrier %>" class="check-box <%= healthcare.carrier_class('escort', medication.carrier) %>"></div>
+            <div id="<%= medication.id %>-<%= medication.carrier %>"
+                 class="check-box <%= healthcare.carrier_class('escort', medication.carrier) %>">
+            </div>
           </td>
           <td class="narrow">
-            <div id="<%= medication.id %>-<%= medication.carrier %>" class="check-box <%= healthcare.carrier_class('prisoner', medication.carrier) %>"></div>
+            <div id="<%= medication.id %>-<%= medication.carrier %>"
+                 class="check-box <%= healthcare.carrier_class('prisoner', medication.carrier) %>">
+            </div>
           </td>
         </tr>
       <% end %>

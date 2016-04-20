@@ -51,4 +51,19 @@ RSpec.feature 'managing an escorts offences', type: :feature do
       expect(page).not_to have_content offences_field_text
     end
   end
+
+  scenario 'removing a nested offence details' do
+    start_escort_form
+    click_link link_name
+    fill_in_offences
+    remove_offence_details
+
+    offence_details_0 =
+      find_field('offences[offence_details[0]][offence_type]').value
+    offence_details_1 =
+      find_field('offences[offence_details[1]][offence_type]').value
+
+    expect(offence_details_0).to eq 'Burglary'
+    expect(offence_details_1).to eq nil
+  end
 end
