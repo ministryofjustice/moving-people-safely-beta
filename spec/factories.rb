@@ -124,4 +124,11 @@ FactoryGirl.define do
     other_offences true
     other_offences_details 'Verbal abuse'
   end
+
+  factory :offence_details do
+    offence_type 'Bulgary'
+    offence_status 'outstanding_charge'
+    not_for_release true
+    current_offence true
+  end
 end

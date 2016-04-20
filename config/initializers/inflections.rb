@@ -16,5 +16,5 @@
 # end
 
 ActiveSupport::Inflector.inflections do |inflect|
-  inflect.uncountable %w[ healthcare risks offences ]
+  inflect.uncountable %w[ healthcare risks offences offence_details ]
 end

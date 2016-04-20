@@ -85,6 +85,23 @@ RSpec.feature 'completing digital person escort record', type: :feature do
     remove_medication
   end
 
+  scenario 'filling in the offences page' do
+    start_escort_form
+    fill_in_prisoner
+    click_link 'Offences'
+
+    expect(page).to have_heading 'Offences'
+
+    expect(page).to have_preview_per_link
+
+    fill_in_offences
+
+    expect(page).
+      to have_content 'Escort record updated successfully'
+
+    remove_offence_details
+  end
+
   scenario 'viewing the summary of an escort' do
     start_escort_form
     fill_in_prisoner
