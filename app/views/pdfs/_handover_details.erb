@@ -54,7 +54,7 @@
         <th class="narrow"><%= t('.escort') %></th>
         <th class="narrow"><%= t('.prisoner') %></th>
       </tr>
-      <% for medication in healthcare.backfilled_medications %>
+      <% healthcare.backfilled_medications.each do |medication| %>
         <tr>
           <td><%= medication.description %></td>
           <td><%= medication.administration %></td>

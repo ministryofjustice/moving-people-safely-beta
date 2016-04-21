@@ -35,13 +35,28 @@
       </div>
     </div>
   </div>
-  <strong><%= t('.other_offences') %></strong>
-  <p><%= t('.other_offence_instructions') %></p>
-  <ul>
-    <li><%= t('.outstanding_charge') %></li>
-    <li><%= t('.serving_sentence') %></li>
-    <li><%= t('.on_remand') %></li>
-    <li><%= t('.license_recall') %></li>
-  </ul>
-  <div class="offences-output"><%= offences.other_offences_details %></div>
+  <strong><%= t('.current_offences') %></strong>
+  <p><%= t('.current_offence_instructions') %></p>
+  <div class="current-offences">
+    <table>
+      <tr>
+        <th><%= t('.offence_type') %></th>
+        <th><%= t('.offence_status') %></th>
+        <th class="narrow"><%= t('.not_for_release') %></th>
+        <th class="narrow"><%= t('.current_offence') %></th>
+      </tr>
+      <% offences.offence_details.each do |offence_details| %>
+        <tr>
+          <td><%= offence_details.offence_type %></td>
+          <td><%= offences.offence_status(offence_details) %></td>
+          <td class="narrow">
+            <div id="<%= offence_details.id %>-not-for-release" class="check-box <%= offences.not_for_release_class(offence_details) %>"></div>
+          </td>
+          <td class="narrow">
+            <div id="<%= offence_details.id %>-current-offence" class="check-box <%= offences.current_offence_class(offence_details) %>"></div>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>

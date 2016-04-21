@@ -141,8 +141,6 @@ FactoryGirl.define do
     must_return_details 'The prisoner must return'
     must_not_return true
     must_not_return_details 'The prisoner must not return'
-    other_offences true
-    other_offences_details 'Verbal abuse'
   end
 
   factory :offence_details do
