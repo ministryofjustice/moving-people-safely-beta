@@ -26,7 +26,9 @@ RSpec.describe PdfGenerator, type: :service do
           healthcare: build_stubbed(:healthcare,
             medications: [build_stubbed(:medication,
               id: 'af27a240-c856-410b-9ce8-53195cd85c39')]),
-          offences: build_stubbed(:offences))
+          offences: build_stubbed(:offences,
+            offence_details: [build_stubbed(:offence_details,
+              id: 'd4a45254-5907-4c89-8210-a6265ac7fc10')]))
         html = described_class.render(escort)
         @page = Capybara::Node::Simple.new(html)
       end
@@ -201,24 +203,28 @@ RSpec.describe PdfGenerator, type: :service do
     end
 
     it 'generates the expected content for the offences section' do
+      offence_details_id = 'd4a45254-5907-4c89-8210-a6265ac7fc10'
       offences_section = page.find('.offences')
 
       expect(offences_section).
         to have_content('A4. Offences').
         and have_content('See A1. Cover sheet for details of current offence').
-        and have_content('Other offences').
         and have_content('Must return').
+        and have_css('.must-return//.checked').
         and have_content('Reason The prisoner must return').
         and have_content('Must not return').
+        and have_css('.must-not-return//.checked').
         and have_content('Reason The prisoner must not return').
-        and have_content('Use an offence status from the following list').
+        and have_content('Current and historical offences').
+        and have_content('Specify offences').
+        and have_content('Offence type').
+        and have_content('Status').
+        and have_content('Not for release').
+        and have_content('Current offence').
+        and have_content('Bulgary').
         and have_content('Outstanding charge').
-        and have_content('Serving sentence').
-        and have_content('On remand').
-        and have_content('License recall').
-        and have_content('Verbal abuse').
-        and have_css('.must-return//.checked').
-        and have_css('.must-not-return//.checked')
+        and have_css("##{offence_details_id}-not-for-release.checked").
+        and have_css("##{offence_details_id}-current-offence.checked")
     end
 
     it 'generates the expected content for the handover details section' do

@@ -83,17 +83,20 @@ en:
     offences:
       heading: A4. Offences
       instructions: See A1. Cover sheet for details of current offence
-      other_offences: Other offences
-      other_offence_instructions: Use an offence status from the following list
-      outstanding_charge: Outstanding charge
-      serving_sentence: Serving sentence
-      on_remand: On remand
-      license_recall: License recall
-      offence: Offence
-      offence_status: Offence status
+      current_offence: Current offence
+      current_offences: Current and historical offences
+      current_offence_instructions: Specify offences
+      not_for_release: Not for release
+      offence_status: Status
+      offence_type: Offence type
       must_return: Must return
       must_not_return: Must not return
       reason: :'shared.reason'
+      status:
+        outstanding_charge: Outstanding charge
+        serving_sentence: Serving sentence
+        on_remand: On remand
+        licence_recall: License recall
     handover_details:
       contact_number: :'shared.phone_number'
       heading: B1. Handover details
