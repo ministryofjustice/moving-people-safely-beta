@@ -1,6 +1,4 @@
 .prisoner-information {
-  @extend .padded;
-  @extend .light-background;
   margin-top: $margin-top;
 
   > div {
@@ -10,12 +8,18 @@
   .information {
     @extend .col;
     width: 73%;
+    border-bottom: 1px solid $dark_grey;
+    margin-right: $margin-unit;
   }
 
   .names {
     @extend .row;
     > div {
-      @extend .col;
+      @extend .light-background;
+      @extend .cover-sheet-emphasis;
+      padding: $padding-small;
+      display: inline-block;
+      text-transform: uppercase;
     }
     .family-name {
       width: 52%;
@@ -41,28 +45,32 @@
 
   .age {
     margin-right: 0.3em;
-    width: 10%;
+    width: 15%;
     @extend .input-margin;
     @extend .col;
-    .input {
-      width: $input-min-width;
+    > div {
+      font-weight: $font-weight-standard;
     }
   }
 
   .sex {
     margin-right: 0.5em;
-    width: 10%;
+    width: 16%;
     @extend .input-margin;
     @extend .col;
-    .input {
-      width: $input-min-width;
+    > div {
+      font-weight: $font-weight-standard;
     }
   }
 
   .nationality {
-    width: 42.6%;
+    width: 31.6%;
     @extend .input-margin;
     @extend .col;
+    > div {
+      @extend .cover-sheet-emphasis;
+      text-transform: uppercase;
+    }
   }
 
   .identification-numbers {
