@@ -10,9 +10,9 @@
   </head>
   <body>
     <%= render('pdfs/header') %>
-    <%= render('pdfs/prisoner', prisoner: escort.prisoner) %>
-    <%= render('pdfs/move', move: escort.move) %>
     <%= render('pdfs/not_for_release', not_for_release: escort.not_for_release) %>
+    <%= render('pdfs/move', move: escort.move) %>
+    <%= render('pdfs/prisoner', prisoner: escort.prisoner) %>
     <%= render('pdfs/front_page_markers', front_page_markers: escort.front_page_markers) %>
     <%= render('pdfs/updates') %>
     <%= render('pdfs/risk_summary', risks: escort.risks) %>
