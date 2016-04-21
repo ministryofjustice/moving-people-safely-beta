@@ -23,10 +23,16 @@
             <%= of.hidden_field :id %>
             <%= of.text_field :offence_type %>
             <%= of.select :offence_status, f.object.status_options, include_blank: true %>
-            <%= of.check_box :not_for_release %>
-            <%= of.check_box :current_offence %>
+            <%= of.label :not_for_release, class: 'block-label-multiple' do %>
+              <%= of.check_box :not_for_release %>
+                <%= t('offences.offences.not_for_release') %>
+            <% end %>
+            <%= of.label :current_offence, class: 'block-label-multiple' do %>
+              <%= of.check_box :current_offence %>
+                <%= t('offences.offences.current_offence') %>
+            <% end %>
             <% if index > 0 %>
-              <%= of.check_box :_destroy %>
+              <%= of.check_box :_destroy, class: 'destroy' %>
               <%= of.label :_destroy, class: 'remove-link' do %>
                   <%= t('offences.offences.remove') %>
               <% end %>
