@@ -1,0 +1,32 @@
+.offences {
+  .offence-field-label {
+    display: block;
+    font-weight: bold;
+    @extend .only-visible-at-smaller;
+  }
+  .offence-checkbox-label {
+    @extend .only-visible-at-smaller;
+  }
+  .offences-block-label {
+    @extend .block-label;
+    position: relative;
+    top: 13px;
+    @media screen and (min-width: $break-large) {
+      padding: 0;
+      background-color: transparent;
+      border-color: transparent;
+      .input-wrapper {
+        background-color: $grey-2;
+        padding: 0.2em 0.5em;
+      }
+      input {
+        margin: 0;
+        position: relative;
+        width: auto;
+        height: auto;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}

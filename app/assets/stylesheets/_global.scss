@@ -1,6 +1,6 @@
 @import 'design-patterns/alpha-beta';
 @import 'grid_layout';
-@import 'mps_mixins';
+@import 'mixins';
 
 .phase-banner {
   @include phase-banner($state: beta);

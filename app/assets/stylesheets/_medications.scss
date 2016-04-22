@@ -1,0 +1,8 @@
+.medications {
+  .medication-field-label {
+    @extend .only-visible-at-smaller;
+    font-weight: bold;
+    display: block;
+    margin-top: 0.5em;
+  }
+}

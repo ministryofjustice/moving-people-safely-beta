@@ -1,45 +1,67 @@
 <% %i[ not_for_release must_return must_not_return ].each do |attribute| %>
-  <%= render(
-        'shared/toggle_with_details_field',
-        f: f,
-        attribute: attribute,
-        i18n_scope: 'offences'
-      )
-  %>
+    <%= render(
+            'shared/toggle_with_details_field',
+            f: f,
+            attribute: attribute,
+            i18n_scope: 'offences'
+        )
+    %>
 <% end %>
 
-<fieldset>
+<fieldset class="offences">
   <%= title_text :offences, 'offences' %>
-  <%= f.label('offences', t('offences.offences.help_text')) %>
+  <%= f.label('offences', t('offences.offences.help_text'), class: 'form-hint') %>
   <%= form_group_container(f, :offences) do %>
-    <div class="multiples-container">
-      <div class="item-heading"><%= t('offences.offences.offence_type') %></div>
-      <div class="item-heading"><%= t('offences.offences.offence_status') %></div>
-      <div class="item-heading"><%= t('offences.offences.not_for_release') %></div>
-      <div class="item-heading"><%= t('offences.offences.current_offence') %></div>
-      <% f.object.backfilled_offence_details.each_with_index do |offence_details_form, index| %>
-        <%= f.fields_for "offence_details[#{index}]", offence_details_form do |of| %>
-          <div id="offence-<%= of.index %>" class="item <%= 'shown' if offence_details_form.persisted? %>">
-            <%= of.hidden_field :id %>
-            <%= of.text_field :offence_type %>
-            <%= of.select :offence_status, f.object.status_options, include_blank: true %>
-            <%= of.label :not_for_release, class: 'block-label-multiple' do %>
-              <%= of.check_box :not_for_release %>
-                <%= t('offences.offences.not_for_release') %>
-            <% end %>
-            <%= of.label :current_offence, class: 'block-label-multiple' do %>
-              <%= of.check_box :current_offence %>
-                <%= t('offences.offences.current_offence') %>
-            <% end %>
-            <% if index > 0 %>
-              <%= of.check_box :_destroy, class: 'destroy' %>
-              <%= of.label :_destroy, class: 'remove-link' do %>
-                  <%= t('offences.offences.remove') %>
-              <% end %>
-            <% end %>
+      <div class="multiples-container offences-container">
+        <div class="inner-row only-visible-at-larger">
+          <div class="item-heading inner-col-one-third"><%= t('offences.offences.offence_type') %></div>
+          <div class="item-heading inner-col-one-third"><%= t('offences.offences.offence_status') %></div>
+          <div class="item-heading inner-col-one-third">
+            <div class="inner-col-one-third"><%= t('offences.offences.not_for_release') %></div>
+            <div class="inner-col-one-third"><%= t('offences.offences.current_offence') %></div>
           </div>
+        </div>
+        <% f.object.backfilled_offence_details.each_with_index do |offence_details_form, index| %>
+            <%= f.fields_for "offence_details[#{index}]", offence_details_form do |of| %>
+                <div id="offence-<%= index %>" class="item <%= 'shown' if offence_details_form.persisted? %> inner-row">
+                  <div class="inner-col-one-third">
+                    <%= of.hidden_field :id %>
+                    <%= of.label :offence_type, class: 'offence-field-label' %>
+                    <%= of.text_field :offence_type %>
+                  </div>
+                  <div class="inner-col-one-third">
+                    <%= of.label :offence_status, class: 'offence-field-label' %>
+                    <%= of.select :offence_status, f.object.status_options, include_blank: true %>
+                  </div>
+                  <div class="inner-col-one-third">
+                    <div class="inner-col-one-third">
+                      <%= of.label :not_for_release, class: 'offences-block-label' do %>
+                          <div class="input-wrapper">
+                            <%= of.check_box :not_for_release %>
+                          </div>
+                          <div class="offence-checkbox-label"><%= t('offences.offences.not_for_release') %></div>
+                      <% end %>
+                    </div>
+                    <div class="inner-col-one-third">
+                      <%= of.label :current_offence, class: 'offences-block-label' do %>
+                          <div class="input-wrapper">
+                            <%= of.check_box :current_offence %>
+                          </div>
+                          <span class="offence-checkbox-label"><%= t('offences.offences.current_offence') %></span>
+                      <% end %>
+                    </div>
+                    <div class="inner-col-one-third">
+                      <% if index > 0 %>
+                          <%= of.check_box :_destroy, class: 'destroy' %>
+                          <%= of.label :_destroy, class: 'remove-link' do %>
+                              <%= t('offences.offences.remove') %>
+                          <% end %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+            <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
   <% end %>
 </fieldset>

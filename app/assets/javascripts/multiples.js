@@ -32,7 +32,6 @@
 
   setUpEvents = function ($el) {
     $el.on('change', function (e) {
-      e.preventDefault();
       var $item, $input;
       $item = $(e.currentTarget);
       $input = $(e.target);
@@ -110,4 +109,5 @@
 })(jQuery);
 
 
-$('.multiples-container').multiples({addAnotherText: 'Add another medication'});
+$('.medications-container').multiples({addAnotherText: 'Add another medication'});
+$('.offences-container').multiples({addAnotherText: 'Add another offence'});
