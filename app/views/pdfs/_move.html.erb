@@ -15,13 +15,14 @@
 <div class="move-information">
   <div class="date-of-travel">
     <span class="label"><%= t('.date') %></span>
-    <div><%= move.date_of_travel_day %> <%= move.date_of_travel_month %> <%= move.date_of_travel_year %></div>
+    <div class="cover-sheet-emphasis"><%= move.date_of_travel_day %> <%= move.date_of_travel_month %> <%= move.date_of_travel_year %></div>
   </div>
   <div class="reason-for-move">
     <span class="label"><%= t('.reason_for_move') %></span>
-    <div><%= move.reason %></div>
+    <div class="cover-sheet-emphasis"><%= move.reason %></div>
   </div>
   <div class="case-number">
     <span class="label"><%= t('.case_number') %></span>
+    <div class="cover-sheet-emphasis"></div>
   </div>
 </div>

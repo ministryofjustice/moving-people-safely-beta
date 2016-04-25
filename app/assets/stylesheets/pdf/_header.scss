@@ -1,6 +1,7 @@
 header {
   h1 {
-    @extend .styled-as-heading;
+    font-size: 100%;
+    font-weight: $font-weight-standard;
   }
   .heading {
     width: 30%;

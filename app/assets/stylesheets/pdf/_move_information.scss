@@ -6,17 +6,15 @@
     display: inline-block;
   }
 
-  .to, .destination-update {
-    width: 31%;
+  .destination-update {
+    width: 34.5%;
+  }
+
+  .to {
+    width: 40%;
   }
 
   .from, .date-of-travel, .reason-for-move, .case-number {
     width: 23%;
-  }
-
-  .destination-update {
-    .input {
-      width: 22.5em;
-    }
   }
 }

@@ -2,8 +2,14 @@
   <div>
     <div class="information">
       <div class="names">
-        <span class="label"><%= t('.names') %></span>
-        <div><%= prisoner.names %></div>
+        <div class="family-name">
+          <span class="label"><%= t('.family_name') %></span>
+          <div class="extra-emphasis"><%= prisoner.family_name %></div>
+        </div>
+        <div class="forenames">
+          <span class="label"><%= t('.forenames') %></span>
+          <div class="extra-emphasis"><%= prisoner.forenames %></div>
+        </div>
       </div>
       <div class="identification-numbers">
         <div class="prison-number">
@@ -39,5 +45,11 @@
       </div>
     </div>
     <div class="image-placeholder"><%= t('.photo_message') %></div>
+  </div>
+  <div>
+    <div class="aliases">
+      <div class="label"><%= t('.aliases') %></div>
+      <div class="cover-sheet-emphasis"></div>
+    </div>
   </div>
 </article>

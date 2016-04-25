@@ -76,13 +76,14 @@ RSpec.describe PdfGenerator, type: :service do
       prisoner_section = page.find('.prisoner-information')
 
       expect(prisoner_section).
-        to have_content('Bigglesworth \ Tarquin').
+        to have_content('Bigglesworth').
+        and have_content('Tarquin').
         and have_content('Date of birth 13 2 1972').
         and have_content('Age 42').
         and have_content('Sex M').
         and have_content('Prison number A1234BC').
         and have_content('Nationality British').
-        and have_content('Attach photo')
+        and have_content('Attach photo here')
     end
 
     context 'summary checkboxes' do
