@@ -42,19 +42,5 @@ RSpec.describe Offences, type: :model do
           end
       end
     end
-
-    context 'when offence details forms are passed in' do
-      it 'returns an array of form objects padded with empty model objects' do
-        offence_details_forms = Array.new(2) { OffenceDetailsForm.new }
-
-        expect(subject.backfilled_offence_details(offence_details_forms)).
-          to satisfy do |offence_details|
-            offence_details.size == array_size &&
-              offence_details.count(&:persisted?) == 0 &&
-              offence_details.count { |m| m.is_a?(OffenceDetailsForm) } == 2 &&
-              offence_details.count { |m| m.is_a?(OffenceDetails) } == 4
-          end
-      end
-    end
   end
 end

@@ -42,19 +42,5 @@ RSpec.describe Healthcare, type: :model do
           end
       end
     end
-
-    context 'when medication forms are passed in' do
-      it 'returns an array of medication forms padded with empty medications' do
-        medication_forms = Array.new(2) { MedicationForm.new }
-
-        expect(subject.backfilled_medications(medication_forms)).
-          to satisfy do |meds|
-            meds.size == array_size &&
-              meds.count(&:persisted?) == 0 &&
-              meds.count { |m| m.is_a?(MedicationForm) } == 2 &&
-              meds.count { |m| m.is_a?(Medication) } == 4
-          end
-      end
-    end
   end
 end
