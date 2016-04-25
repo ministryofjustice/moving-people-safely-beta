@@ -5,19 +5,8 @@ class OffencesForm < Form
   text_toggle_attribute :must_return
   text_toggle_attribute :must_not_return
 
-  attribute :offence_details, Array[OffenceDetailsForm]
-
-  def offence_details
-    super || []
-  end
-
-  def offence_details=(input)
-    super(prepare_incoming_offence_details(input))
-  end
-
-  def backfilled_offence_details
-    target.backfilled_offence_details(offence_details)
-  end
+  attribute :offence_details, Array[OffenceDetailsForm],
+    coercer: Form::MultiplesCoercer
 
   def status_options
     OffenceDetailsForm::STATUS_TYPES.map do |c|
@@ -27,12 +16,13 @@ class OffencesForm < Form
 
 private
 
-  def prepare_incoming_offence_details(input)
-    input.is_a?(Hash) ? input.values : input.map(&:attributes)
+  def load_model_data
+    super
+    self.offence_details = target.backfilled_offence_details
   end
 
   def prepared_attributes_for_model
-    attributes.tap do |a|
+    attributes.dup.tap do |a|
       a[:offence_details_attributes] =
         a.delete(:offence_details).reject(&:empty?).map(&:attributes)
     end

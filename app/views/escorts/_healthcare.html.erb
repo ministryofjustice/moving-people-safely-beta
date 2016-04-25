@@ -33,7 +33,7 @@
       <div class="item-heading carried-by">
         <%= t('healthcare.medication.carried_by') %>
       </div>
-      <% f.object.backfilled_medications.each_with_index do |m, index| %>
+      <% f.object.medications.each_with_index do |m, index| %>
         <%= f.fields_for "medications[#{index}]", m do |mf| %>
           <div id="medication-<%= mf.index %>" class="item <%= 'shown' if m.persisted? %>">
             <%= mf.hidden_field :id %>

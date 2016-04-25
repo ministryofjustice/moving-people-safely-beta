@@ -27,7 +27,7 @@
       <div class="item-heading">
         <%= t('offences.offences.current_offence') %>
       </div>
-      <% f.object.backfilled_offence_details.each_with_index do |offence_details_form, index| %>
+      <% f.object.offence_details.each_with_index do |offence_details_form, index| %>
         <%= f.fields_for "offence_details[#{index}]", offence_details_form do |of| %>
           <div id="offence-<%= of.index %>" class="item <%= 'shown' if offence_details_form.persisted? %>">
             <%= of.hidden_field :id %>
