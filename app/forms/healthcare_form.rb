@@ -34,15 +34,9 @@ private
     self.medications = target.backfilled_medications
   end
 
-  def prepared_attributes_for_model
-    attributes.dup.tap do |a|
-      a[:medications_attributes] =
-        a.delete(:medications).reject(&:empty?).map(&:attributes)
-    end
-  end
-
   def persist
-    target.update_attributes(prepared_attributes_for_model)
+    transformed_attributes = TransformAttributes.new(attributes).call
+    target.update_attributes(transformed_attributes)
     target.medications.destroy_all unless medication
     reload
   end

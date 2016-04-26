@@ -21,15 +21,9 @@ private
     self.offence_details = target.backfilled_offence_details
   end
 
-  def prepared_attributes_for_model
-    attributes.dup.tap do |a|
-      a[:offence_details_attributes] =
-        a.delete(:offence_details).reject(&:empty?).map(&:attributes)
-    end
-  end
-
   def persist
-    target.update_attributes(prepared_attributes_for_model)
+    transformed_attributes = TransformAttributes.new(attributes).call
+    target.update_attributes(transformed_attributes)
     reload
   end
 end
