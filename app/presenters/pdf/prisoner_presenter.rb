@@ -4,7 +4,7 @@ module Pdf
       @model = model
     end
 
-    delegate :family_name, :forenames, :prison_number, :nationality,
+    delegate :prison_number, :family_name, :forenames, :nationality,
       :capitalized_sex, :date_of_birth, :age, :cro_number, :pnc_number,
       to: :@model
 

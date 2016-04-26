@@ -1,34 +1,42 @@
 .prisoner-information {
-  @extend .padded;
-  @extend .light-background;
   margin-top: $margin-top;
 
   > div {
     @extend .row;
+    min-height: 3em;
+
+    &:last-child {
+      border-bottom: 1px solid $light_grey;
+    }
   }
 
   .information {
     @extend .col;
     width: 73%;
+    margin-right: $margin-unit;
   }
 
   .names {
     @extend .row;
+    margin-bottom: 1.5em;
     > div {
-      @extend .col;
+      display: inline-block;
     }
     .family-name {
-      width: 52%;
-      @extend .input-margin;
+      width: 32%;
     }
     .forenames {
-      width: 43%;
+      width: 30%;
+    }
+    .extra-emphasis {
+      @extend .cover-sheet-emphasis;
+      font-size: $heading-font-size * 1.2;
     }
   }
 
   .image-placeholder {
     @extend .col;
-    border: $border-black;
+    border: $border-grey;
     background-color: $white;
     width: 11.5em;
     padding: 5.97em 1em;
@@ -41,32 +49,30 @@
 
   .age {
     margin-right: 0.3em;
-    width: 10%;
+    width: 15%;
     @extend .input-margin;
     @extend .col;
-    .input {
-      width: $input-min-width;
-    }
   }
 
   .sex {
     margin-right: 0.5em;
-    width: 10%;
+    width: 11%;
     @extend .input-margin;
     @extend .col;
-    .input {
-      width: $input-min-width;
-    }
   }
 
   .nationality {
-    width: 42.6%;
+    width: 31.6%;
     @extend .input-margin;
     @extend .col;
+    > div {
+      @extend .cover-sheet-emphasis;
+    }
   }
 
   .identification-numbers {
     @extend .row;
+    margin-bottom: 1.5em;
     > div {
       @extend .input-margin;
       @extend .col;
@@ -75,11 +81,16 @@
       width: 30%;
     }
     .pnc-number {
-      width: 30%
+      width: 25%
     }
     .cro-number {
       width: 32%;
     }
   }
 
+  .aliases {
+    @extend .row;
+    padding-bottom: $padding-unit;
+    min-height: 3em;
+  }
 }

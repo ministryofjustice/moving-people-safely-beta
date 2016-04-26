@@ -3,49 +3,57 @@
     <div class="information">
       <div class="names">
         <div class="family-name">
-          <strong class="label"><%= t('.family_name') %></strong>
-          <div class="input"><%= prisoner.family_name %></div>
+          <span class="label"><%= t('.family_name') %></span>
+          <div class="extra-emphasis"><%= prisoner.family_name %></div>
         </div>
         <div class="forenames">
-          <strong class="label"><%= t('.forenames') %></strong>
-          <div class="input"><%= prisoner.forenames %></div>
-        </div>
-      </div>
-      <div class="secondary">
-        <div class="dates">
-          <strong class="label"><%= t('.dob') %></strong>
-          <div class="input"><%= prisoner.date_of_birth_day %></div>
-          <div class="input"><%= prisoner.date_of_birth_month %></div>
-          <div class="input"><%= prisoner.date_of_birth_year %></div>
-        </div>
-        <div class="age">
-          <strong class="label"><%= t('.age') %></strong>
-          <div class="input"><%= prisoner.age %></div>
-        </div>
-        <div class="sex">
-          <strong class="label"><%= t('.sex') %></strong>
-          <div class="input"><%= prisoner.capitalized_sex %></div>
-        </div>
-        <div class="nationality">
-          <strong class="label"><%= t('.nationality') %></strong>
-          <div class="input"><%= prisoner.nationality %></div>
+          <span class="label"><%= t('.forenames') %></span>
+          <div class="extra-emphasis"><%= prisoner.forenames %></div>
         </div>
       </div>
       <div class="identification-numbers">
         <div class="prison-number">
-          <strong class="label"><%= t('.prison_number') %></strong>
-          <div class="input"><%= prisoner.prison_number %></div>
+          <span class="label"><%= t('.prison_number') %></span>
+          <div class="cover-sheet-emphasis"><%= prisoner.prison_number %></div>
         </div>
         <div class="pnc-number">
-          <strong class="label"><%= t('.pnc_number') %></strong>
-          <div class="input"><%= prisoner.pnc_number %></div>
+          <span class="label"><%= t('.pnc_number') %></span>
+          <div class="cover-sheet-emphasis"><%= prisoner.pnc_number %></div>
         </div>
         <div class="cro-number">
-          <strong class="label"><%= t('.cro_number') %></strong>
-          <div class="input"><%= prisoner.cro_number %></div>
+          <span class="label"><%= t('.cro_number') %></span>
+          <div class="cover-sheet-emphasis"><%= prisoner.cro_number %></div>
+        </div>
+      </div>
+      <div class="secondary">
+        <div class="dates">
+          <span class="label"><%= t('.dob') %></span>
+          <div class="cover-sheet-emphasis">
+            <%= prisoner.date_of_birth_day %>
+            <%= prisoner.date_of_birth_month %>
+            <%= prisoner.date_of_birth_year %>
+          </div>
+        </div>
+        <div class="age">
+          <span class="label"><%= t('.age') %></span>
+          <div class="cover-sheet-emphasis"><%= prisoner.age %></div>
+        </div>
+        <div class="sex">
+          <span class="label"><%= t('.sex') %></span>
+          <div class="cover-sheet-emphasis"><%= prisoner.capitalized_sex %></div>
+        </div>
+        <div class="nationality">
+          <span class="label"><%= t('.nationality') %></span>
+          <div><%= prisoner.nationality %></div>
         </div>
       </div>
     </div>
     <div class="image-placeholder"><%= t('.photo_message') %></div>
+  </div>
+  <div>
+    <div class="aliases">
+      <div class="label"><%= t('.aliases') %></div>
+      <div class="cover-sheet-emphasis"></div>
+    </div>
   </div>
 </article>
