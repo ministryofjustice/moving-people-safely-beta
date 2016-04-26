@@ -36,3 +36,13 @@
 <%= single_field(f, :cro_number) %>
 
 <%= single_field(f, :pnc_number) %>
+
+<%= toggle_container(f, :has_aliases, 'prisoner') do %>
+  <%= form_group_container(f, :aliases, classes: 'optional-section aliases') do %>
+    <% f.object.aliases.each_with_index do |a, index| %>
+        <div id="alias-<%= index %>" class="item <%= 'shown' if a.present? %>">
+          <%= text_field_tag "prisoner[aliases][]", a %>
+        </div>
+    <% end %>
+  <% end %>
+<% end %>

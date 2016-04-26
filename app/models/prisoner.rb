@@ -23,4 +23,11 @@ class Prisoner < ActiveRecord::Base
       AgeCalculator.age(date_of_birth)
     end
   end
+
+  MAX_ALIASES = 10
+  EMPTY_STRING = ''
+
+  def backfilled_aliases
+    BackfillCollection.call(aliases) { EMPTY_STRING }.take(MAX_ALIASES)
+  end
 end

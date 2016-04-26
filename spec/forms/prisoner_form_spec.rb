@@ -18,12 +18,19 @@ RSpec.describe PrisonerForm, type: :form do
 
   it_behaves_like 'a form that coerces attributes',
     input_attributes, coercion_overrides
-  it_behaves_like 'a form that loads model attributes on initialize'
   it_behaves_like 'a form that syncs to a model'
   it_behaves_like 'a form that retrives or builds its target', :prisoner
   it_behaves_like 'a form that knows what template to render', 'prisoner'
   it_behaves_like 'a form that belongs to an endpoint', 'prisoner'
   it_behaves_like 'a form with dates', %i[ date_of_birth ]
+
+  describe '#initialize' do
+    it 'loads a models attributes' do
+      form_attrs = subject.attributes.with_indifferent_access.except(:aliases)
+      model_attrs = subject.target.attributes.with_indifferent_access
+      expect(model_attrs).to include form_attrs
+    end
+  end
 
   it { is_expected.to validate_inclusion_of(:sex).in_array(%w[ male female ]) }
 

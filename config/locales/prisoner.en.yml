@@ -1,4 +1,10 @@
 en:
+  prisoner:
+    has_aliases:
+      title: Aliases
+      help_text: Add stuff about aliases here mate
+    labels:
+      clear: Clear selection
   helpers:
     label:
       prisoner:
