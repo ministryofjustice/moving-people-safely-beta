@@ -173,10 +173,6 @@ en:
       cash_and_medication: (including cash and medication)
       detainee_handover: Detainee handover
       name: Name (print)
-      start_location: Start location
-      arrival_at_court: Arrival at Court
-      leaving_court: Leaving Court
-      arrival_at_prison: Arrival at Prison
       dispatching_officer: Dispatching officer
       escort: Escort
       receiving_officer: Receiving officer

@@ -19,7 +19,7 @@
     <%= render('pdfs/healthcare_needs', healthcare: escort.healthcare) %>
     <%= render('pdfs/offences', offences: escort.offences) %>
     <%= render('pdfs/handover_details', healthcare: escort.healthcare) %>
-    <%= render('pdfs/record_of_handover') %>
+    <%= render('pdfs/record_of_handover', move: escort.move) %>
     <%= render('pdfs/checks_and_events_initial') %>
     <%= render('pdfs/checks_and_events_continuation') %>
     <%= render('pdfs/checks_and_events_continuation') %>

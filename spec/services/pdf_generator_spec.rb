@@ -315,10 +315,8 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('(including cash and medication)').
         and have_content('Detainee handover').
         and have_content('Name (print)').
-        and have_content('Start location').
-        and have_content('Arrival at Court').
-        and have_content('Leaving Court').
-        and have_content('Arrival at Prison').
+        and have_content('HMP Clive House').
+        and have_content('Petty France').
         and have_content('Dispatching officer').
         and have_content('Escort').
         and have_content('Receiving officer')
