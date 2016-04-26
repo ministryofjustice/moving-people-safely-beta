@@ -2,29 +2,19 @@
   @extend .row;
   > div {
     @extend .col;
-    padding-left: $padding;
+    margin-right: $margin-unit;
     display: inline-block;
   }
 
-  .date-of-travel {
-    @extend .dates;
-    width: 20%;
-  }
-
-  .from, .to {
-    .input {
-      width: 11.2em;
-    }
-  }
-
   .destination-update {
-    .input {
-      width: 13em;
-    }
+    width: 34.5%;
   }
-  .reason-for-move {
-    .input {
-      width: 50em;
-    }
+
+  .to {
+    width: 40%;
+  }
+
+  .from, .date-of-travel, .reason-for-move, .case-number {
+    width: 23%;
   }
 }

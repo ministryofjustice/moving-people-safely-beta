@@ -16,7 +16,8 @@ en:
       to: To
       date: Date of travel
       destination_update: Destination update
-      reason_for_move: Reason for move (current offence)
+      reason_for_move: Reason for move
+      case_number: Case number
     front_page_markers:
       risks:
         title: Risks overview
@@ -38,9 +39,9 @@ en:
       allergies: Allergies
       disabilities: Disabilities
     prisoner:
-      photo_message: Attach photo
-      family_name: :'shared.family_name'
-      forenames: :'shared.forenames'
+      photo_message: Attach photo here
+      family_name: Family name
+      forenames: Forenames
       dob: :'shared.date_of_birth'
       age: :'shared.age'
       sex: :'shared.sex'
@@ -48,6 +49,7 @@ en:
       nationality: :'shared.nationality'
       cro_number: :'shared.cro_number'
       pnc_number: :'shared.pnc_number'
+      aliases: Aliases
     updates:
       title: Risk updates
       instructions: Include relevant updates and heightened risks from section B3

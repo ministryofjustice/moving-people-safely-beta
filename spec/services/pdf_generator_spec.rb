@@ -59,7 +59,6 @@ RSpec.describe PdfGenerator, type: :service do
         expect(move_section).
           to have_content('From HMP Clive House').
           and have_content('To Petty France').
-          and have_content('Date of travel 3 2 2015').
           and have_content('Destination update')
       end
 
@@ -67,7 +66,8 @@ RSpec.describe PdfGenerator, type: :service do
         move_section = page.find_all('.move-information').last
 
         expect(move_section).
-          to have_content('Reason for move (current offence)').
+          to have_content('Date of travel 3 2 2015').
+          and have_content('Reason for move').
           and have_content('Expected to attend show the thing')
       end
     end
@@ -83,7 +83,7 @@ RSpec.describe PdfGenerator, type: :service do
         and have_content('Sex M').
         and have_content('Prison number A1234BC').
         and have_content('Nationality British').
-        and have_content('Attach photo')
+        and have_content('Attach photo here')
     end
 
     context 'summary checkboxes' do
