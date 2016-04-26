@@ -32,7 +32,6 @@
 
   setUpEvents = function ($el) {
     $el.on('change', function (e) {
-      e.preventDefault();
       var $item, $input;
       $item = $(e.currentTarget);
       $input = $(e.target);
@@ -58,7 +57,8 @@
   insertShowButton = function ($el, settings) {
     var $button = $('<button>', {
       'text' : settings.addAnotherText,
-      'class' : settings.addAnotherClass
+      'class' : settings.addAnotherClass,
+      'type' : 'button'
     });
     $el.append($button);
   };
@@ -109,4 +109,5 @@
 })(jQuery);
 
 
-$('.multiples-container').multiples({addAnotherText: 'Add another medication'});
+$('.medications-container').multiples({addAnotherText: 'Add another medication'});
+$('.offences-container').multiples({addAnotherText: 'Add another offence'});

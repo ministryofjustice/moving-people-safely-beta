@@ -8,33 +8,34 @@
   .item-heading {
     display: inline-block;
     font-size: 90%;
-    width: 31%;
-    margin-right: 0.5em;
     font-weight: bold;
   }
 
-  input {
+  input[type="text"] {
     @extend .form-control;
-    width: 31%;
     margin-right: 0.5em;
+    margin-top: 0.4em;
     border-width: 1px;
     border-color: $grey-2;
-  }
-
-  input[type="checkbox"] {
-    @extend .hidden-but-accessible;
+    width: 100%;
   }
 
   select {
     @extend .form-control;
-    border-color: $grey-2;
-    border-width: 1px;
-    max-width: 15%;
+    border: 1px solid $grey-2;
+    width: 100%;
+  }
+
+  .destroy {
+    @extend .hidden-but-accessible;
+  }
+
+  .destroy:focus + label {
+    outline: 3px solid orange;
   }
 
   .remove-link {
     @extend .styled-as-link;
-    margin-left: 1em;
   }
 
   .add-another {
