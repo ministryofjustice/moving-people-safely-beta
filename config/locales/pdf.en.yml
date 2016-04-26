@@ -16,7 +16,8 @@ en:
       to: To
       date: Date of travel
       destination_update: Destination update
-      reason_for_move: Reason for move (current offence)
+      reason_for_move: Reason for move
+      case_number: Case number
     front_page_markers:
       risks:
         title: Risks overview
@@ -39,8 +40,7 @@ en:
       disabilities: Disabilities
     prisoner:
       photo_message: Attach photo
-      family_name: :'shared.family_name'
-      forenames: :'shared.forenames'
+      names: Names
       dob: :'shared.date_of_birth'
       age: :'shared.age'
       sex: :'shared.sex'
