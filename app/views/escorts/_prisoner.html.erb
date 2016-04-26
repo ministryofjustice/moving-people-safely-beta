@@ -40,9 +40,13 @@
 <%= toggle_container(f, :has_aliases, 'prisoner') do %>
   <%= form_group_container(f, :aliases, classes: 'optional-section aliases') do %>
     <% f.object.aliases.each_with_index do |a, index| %>
-        <div id="alias-<%= index %>" class="item <%= 'shown' if a.present? %>">
-          <%= text_field_tag "prisoner[aliases][]", a %>
+      <div class="form-group <%= 'shown' if a.present? %>">
+        <label for="prisoner_aliases_<%= index %>" class="form-label-bold"><%= t('.alias') %></label>
+        <div>
+          <%= text_field_tag "prisoner[aliases][#{index}]", a, class: 'form-control' %>
         </div>
+      </div>
     <% end %>
   <% end %>
 <% end %>
+

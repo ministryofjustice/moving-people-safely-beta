@@ -1,0 +1,20 @@
+.aliases {
+  .remove-alias {
+    margin-left: 0.5em;
+    border: none;
+    background-color: transparent;
+    @extend .styled-as-link;
+  }
+  .add-another-alias {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    @extend .styled-as-link;
+  }
+
+  .add-another-alias:disabled {
+    text-decoration: none;
+    color: $grey-2;
+  }
+
+}
