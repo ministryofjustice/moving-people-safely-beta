@@ -110,4 +110,5 @@
 })(jQuery);
 
 
-$('.multiples-container').multiples({addAnotherText: 'Add another medication'});
+$('.medications-container').multiples({addAnotherText: 'Add another medication'});
+$('.offences-container').multiples({addAnotherText: 'Add another offence'});

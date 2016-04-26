@@ -23,8 +23,31 @@
       }
     }
   }
+
   .offences-output {
     @extend .input;
     min-height: $input-tall-height;
+  }
+
+  .current-offences {
+    table {
+      @extend .bordered-table;
+      tr, td {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      th {
+        font-weight: $font-weight-bold;
+      }
+    }
+    .narrow {
+      width: 10%;
+      text-align: center;
+    }
+    .check-box {
+      position: relative;
+      top: 0.4em;
+      left: 1.3em;
+    }
   }
 }

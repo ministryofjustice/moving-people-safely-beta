@@ -14,7 +14,11 @@
     width: 40%;
   }
 
-  .from, .date-of-travel, .reason-for-move, .case-number {
+  .reason-for-move {
+    width: 40%;
+  }
+
+  .from, .date-of-travel, .case-number {
     width: 23%;
   }
 }

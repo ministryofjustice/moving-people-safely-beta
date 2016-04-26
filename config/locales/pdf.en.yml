@@ -109,7 +109,7 @@ en:
       no_medication: No medication
       medication_heading: Medication details
       medication_description: Medication description
-      medication_carried_by: Medication travels with
+      medication_carrier: Medication travels with
       medication_administration_info: Administration information
       escort: Escort
       prisoner: Prisoner

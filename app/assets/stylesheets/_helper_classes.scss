@@ -5,14 +5,44 @@
 }
 
 .hidden-but-accessible {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  top: 0;
-  left: 0;
+  @include visually-hidden();
+}
+
+.inner-row {
+
+  .inner-col-one-third {
+    @media screen and (min-width: $break-large) {
+      width: 30%;
+      margin-right: 1%;
+      display: inline-block;
+    }
+  }
+
+  .inner-col-two-thirds {
+    @media screen and (min-width: $break-large) {
+      width: 60%;
+      margin-right: 1%;
+      display: inline-block;
+    }
+  }
+
+  .inner-col-half {
+    @media screen and (min-width: $break-large) {
+      width: 48%;
+      margin-right: 1%;
+      display: inline-block;
+    }
+  }
+}
+
+.only-visible-at-smaller {
+  @media screen and (min-width: $break-large) {
+    @include visually-hidden();
+  }
+}
+
+.only-visible-at-larger {
+  @media screen and (max-width: $break-large) {
+    @include visually-hidden();
+  }
 }
