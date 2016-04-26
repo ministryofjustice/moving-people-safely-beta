@@ -54,15 +54,19 @@
         <th class="narrow"><%= t('.escort') %></th>
         <th class="narrow"><%= t('.prisoner') %></th>
       </tr>
-      <% for medication in healthcare.backfilled_medications %>
+      <% healthcare.backfilled_medications.each do |medication| %>
         <tr>
           <td><%= medication.description %></td>
           <td><%= medication.administration %></td>
           <td class="narrow">
-            <div id="<%= medication.id %>-<%= medication.carrier %>" class="check-box <%= healthcare.carrier_class('escort', medication.carrier) %>"></div>
+            <div id="<%= medication.id %>-<%= medication.carrier %>"
+                 class="check-box <%= healthcare.carrier_class('escort', medication.carrier) %>">
+            </div>
           </td>
           <td class="narrow">
-            <div id="<%= medication.id %>-<%= medication.carrier %>" class="check-box <%= healthcare.carrier_class('prisoner', medication.carrier) %>"></div>
+            <div id="<%= medication.id %>-<%= medication.carrier %>"
+                 class="check-box <%= healthcare.carrier_class('prisoner', medication.carrier) %>">
+            </div>
           </td>
         </tr>
       <% end %>

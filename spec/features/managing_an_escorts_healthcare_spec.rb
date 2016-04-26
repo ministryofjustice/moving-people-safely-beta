@@ -51,4 +51,19 @@ RSpec.feature 'managing an escorts healthcare', type: :feature do
       expect(page).not_to have_content healthcare_field_text
     end
   end
+
+  scenario 'removing a nested medication' do
+    start_escort_form
+    click_link link_name
+    fill_in_healthcare
+    remove_medication
+
+    medication_0 =
+      find_field('healthcare[medications[0]][description]').value
+    medication_1 =
+      find_field('healthcare[medications[1]][description]').value
+
+    expect(medication_0).to eq 'Aspirin'
+    expect(medication_1).to eq nil
+  end
 end

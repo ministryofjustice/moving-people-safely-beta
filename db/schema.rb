@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412134925) do
+ActiveRecord::Schema.define(version: 20160421112008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(version: 20160412134925) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "offence_details", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "offences_id"
+    t.string   "offence_type"
+    t.string   "offence_status"
+    t.boolean  "not_for_release"
+    t.boolean  "current_offence"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "offences", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "escort_id"
     t.boolean  "not_for_release"
@@ -69,8 +79,6 @@ ActiveRecord::Schema.define(version: 20160412134925) do
     t.text     "must_return_details"
     t.boolean  "must_not_return"
     t.text     "must_not_return_details"
-    t.boolean  "other_offences"
-    t.text     "other_offences_details"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

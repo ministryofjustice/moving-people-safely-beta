@@ -4,24 +4,9 @@ RSpec.describe HealthcareForm, type: :form do
   subject { described_class.new(create :escort) }
 
   medications_attributes = {
-    '0' => {
-      description: 'Aspirin',
-      administration: 'Once a day',
-      carrier: 'prisoner',
-      _destroy: nil
-    },
-    '1' => {
-      description: '',
-      administration: '',
-      carrier: '',
-      _destroy: nil
-    },
-    '2' => {
-      description: '',
-      administration: '',
-      carrier: '',
-      _destroy: true
-    }
+    '0' => FactoryGirl.build(:medication_attributes),
+    '1' => FactoryGirl.build(:medication_attributes, :empty),
+    '2' => FactoryGirl.build(:medication_attributes, :mark_for_destroy)
   }
 
   input_attributes = {
@@ -81,13 +66,7 @@ RSpec.describe HealthcareForm, type: :form do
   describe '#initialize' do
     it 'loads a models attributes into the form' do
       model_attrs = subject.target.attributes.with_indifferent_access
-
-      # Medication attributes is used on the form due to the fields_for
-      # helper but is not a property of the target so we need to remove it.
-      form_attrs =
-        subject.attributes.
-        with_indifferent_access.
-        except(:medications)
+      form_attrs = subject.attributes.except(:medications)
 
       expect(model_attrs).to include form_attrs
     end
@@ -97,25 +76,16 @@ RSpec.describe HealthcareForm, type: :form do
     before { subject.assign_attributes(input_attributes) }
 
     it 'passes the forms data to the underlying model' do
-      filled_medications = [
-        {
-          id: nil,
-          description: 'Aspirin',
-          administration: 'Once a day',
-          carrier: 'prisoner',
-          _destroy: nil
-        }
+      filled_medications_attributes = [
+        FactoryGirl.build(:medication_attributes),
+        FactoryGirl.build(:medication_attributes, :mark_for_destroy)
       ]
-      attributes_with_hashed_medications = coercion_overrides.merge(
-        medications_attributes: filled_medications)
+      attrs = subject.attributes.merge(
+        medications_attributes: filled_medications_attributes
+      )
+      attrs.delete(:medications)
 
-      expect(subject.target).to receive(:update_attributes).
-        with(
-          hash_including(
-            input_attributes.
-              except(:medications).
-              merge(attributes_with_hashed_medications))
-        )
+      expect(subject.target).to receive(:update_attributes).with(attrs)
 
       subject.save
     end

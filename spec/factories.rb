@@ -114,6 +114,26 @@ FactoryGirl.define do
     carrier 'escort'
   end
 
+  factory :medication_attributes, class: Hash do
+    id nil
+    description 'Aspirin'
+    administration 'Once a day'
+    carrier 'escort'
+    _destroy nil
+
+    trait :empty do
+      description ''
+      administration ''
+      carrier ''
+    end
+
+    trait :mark_for_destroy do
+      _destroy true
+    end
+
+    initialize_with { attributes }
+  end
+
   factory :offences do
     not_for_release true
     not_for_release_details 'Cannot be released at the moment'
@@ -121,7 +141,34 @@ FactoryGirl.define do
     must_return_details 'The prisoner must return'
     must_not_return true
     must_not_return_details 'The prisoner must not return'
-    other_offences true
-    other_offences_details 'Verbal abuse'
+  end
+
+  factory :offence_details do
+    offence_type 'Burglary'
+    offence_status 'outstanding_charge'
+    not_for_release true
+    current_offence true
+  end
+
+  factory :offence_details_attributes, class: Hash do
+    id nil
+    offence_type 'Burglary'
+    offence_status 'outstanding_charge'
+    not_for_release true
+    current_offence true
+    _destroy nil
+
+    trait :empty do
+      offence_type ''
+      offence_status ''
+      not_for_release nil
+      current_offence nil
+    end
+
+    trait :mark_for_destroy do
+      _destroy true
+    end
+
+    initialize_with { attributes }
   end
 end

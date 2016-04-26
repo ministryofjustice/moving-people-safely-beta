@@ -24,10 +24,16 @@
 <%= toggle_container(f, :medication, 'healthcare') do %>
   <%= form_group_container(f, :medications, classes: 'optional-section') do %>
     <div class="multiples-container">
-      <div class="item-heading"><%= t('healthcare.medication.description') %></div>
-      <div class="item-heading"><%= t('healthcare.medication.administration') %></div>
-      <div class="item-heading carried-by"><%= t('healthcare.medication.carried_by') %></div>
-      <% f.object.backfilled_medications.each_with_index do |m, index| %>
+      <div class="item-heading">
+        <%= t('healthcare.medication.description') %>
+      </div>
+      <div class="item-heading">
+        <%= t('healthcare.medication.administration') %>
+      </div>
+      <div class="item-heading carried-by">
+        <%= t('healthcare.medication.carried_by') %>
+      </div>
+      <% f.object.medications.each_with_index do |m, index| %>
         <%= f.fields_for "medications[#{index}]", m do |mf| %>
           <div id="medication-<%= mf.index %>" class="item <%= 'shown' if m.persisted? %>">
             <%= mf.hidden_field :id %>

@@ -22,7 +22,17 @@ en:
       title: Must not return
       help_text: Must this detainee NOT return to the same prison?
       details_help_text: List any reasons the detainee must not return to the same establishment, eg offender behaviour, non-association markers, gang-related issues.
-    other_offences:
+    offences:
       title: Current and other offences
-      help_text: What is this detainee’s current offence?
-      details_help_text: List the offence being dealt with today and mark it ‘current’. Does the detainee have offences other than those they’re being moved for? If so, list as many other relevant offences as possible. Give the status of the offence, eg serving sentence, outstanding charges, on remand, licence recall. Mark as NFR all offences which mean the detainee is not for release.
+      help_text: If any "Not for release" markers are selected the "Not for release" box on the cover sheet will be ticked
+      remove: Remove
+      offence_type: Type
+      offence_status: Status
+      not_for_release: Not for release
+      current_offence: Current offence
+  offence_details_form:
+    status:
+      outstanding_charge: Outstanding charge
+      serving_sentence: Serving sentence
+      on_remand: On remand
+      licence_recall: Licence recall

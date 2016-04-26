@@ -11,25 +11,14 @@ class HealthcareForm < Form
   attribute :medical_professional_name, String
   attribute :contact_telephone, String
   attribute :medication, MaybeBoolean
-  attribute :medications, Array[MedicationForm]
+  attribute :medications, Array[MedicationForm],
+    coercer: Form::MultiplesCoercer
 
   validates :medications, empty_medications: true
   validates :medications, invalid_medications: true
 
-  def medications
-    super || []
-  end
-
-  def medications=(input)
-    super(prepare_incoming_medications(input))
-  end
-
   def mpv_required
     super && disabilities
-  end
-
-  def backfilled_medications
-    target.backfilled_medications(medications)
   end
 
   def carrier_options
@@ -40,19 +29,14 @@ class HealthcareForm < Form
 
 private
 
-  def prepare_incoming_medications(input)
-    input.is_a?(Hash) ? input.values : input.map(&:attributes)
-  end
-
-  def prepared_attributes_for_model
-    attributes.tap do |a|
-      a[:medications_attributes] =
-        a.delete(:medications).reject(&:empty?).map(&:attributes)
-    end
+  def load_model_data
+    super
+    self.medications = target.backfilled_medications
   end
 
   def persist
-    target.update_attributes(prepared_attributes_for_model)
+    transformed_attributes = TransformAttributes.new(attributes).call
+    target.update_attributes(transformed_attributes)
     target.medications.destroy_all unless medication
     reload
   end

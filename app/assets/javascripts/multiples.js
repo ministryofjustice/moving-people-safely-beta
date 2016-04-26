@@ -58,7 +58,8 @@
   insertShowButton = function ($el, settings) {
     var $button = $('<button>', {
       'text' : settings.addAnotherText,
-      'class' : settings.addAnotherClass
+      'class' : settings.addAnotherClass,
+      'type' : 'button'
     });
     $el.append($button);
   };
