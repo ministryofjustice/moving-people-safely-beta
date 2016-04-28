@@ -1,9 +1,9 @@
-<%= text_toggle_container(f, :to_self, 'risk') do %>
+<%= text_toggle_container(f, :to_self, 'escorts.risks') do %>
   <%= form_group_container(f, :open_acct) do %>
-    <%= title_text(:open_acct, 'risk') %>
-    <%= clearable_radio_buttons(f, :open_acct, 'risk') %>
+    <%= title_text(:open_acct, 'escorts.risks') %>
+    <%= clearable_radio_buttons(f, :open_acct, 'escorts.risks') %>
   <% end %>
-  <%= details_text_area_with_help_text(f, :to_self, 'risk') %>
+  <%= details_text_area_with_help_text(f, :to_self, 'escorts.risks') %>
 <% end %>
 
 <% %i[ violence
@@ -16,6 +16,6 @@
         'shared/toggle_with_details_field',
         f: f,
         attribute: risk,
-        i18n_scope: 'risk'
+        i18n_scope: 'escorts.risks'
       ) %>
 <% end %>

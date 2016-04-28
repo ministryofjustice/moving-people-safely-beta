@@ -7,42 +7,49 @@ en:
   escorts:
     healthcare:
       heading: Healthcare
-  healthcare:
-    labels:
-      clear: Clear selection
-      details_help_text: If yes, give details on how the issues might be a risk during the move.
-    physical_risk:
-      title: Physical health
-      help_text: Does the prisoner have any physical health needs?
-      details_help_text: :'healthcare.labels.details_help_text'
-    mental_risk:
-      title: Mental health
-      help_text: Does the prisoner have any mental health needs?
-      details_help_text: :'healthcare.labels.details_help_text'
-    social_care_and_other:
-      title: Social care
-      help_text: Does the prisoner have social care or any other medical needs?
-      details_help_text: :'healthcare.labels.details_help_text'
-    allergies:
-      title: Allergies
-      help_text: Does the prisoner have any allergies?
-      details_help_text: If yes, give details of food allergies (eg nuts) or medical allergies (eg ibuprofen) or any other allergies. Also give details of food intolerances (eg wheat, gluten, dairy).
-      details_guidance_text: Include whether the allergy is severe or mild. List any particular triggers.
-    disabilities:
-      title: Disabilities
-      help_text: Does the prisoner have any disabilities?
-      details_help_text: If yes, give details of their disabilities, their disability needs, as well as potential risks during the move.
-      details_guidance_text: Details might include any equipment necessary for moving (eg special vehicles, walking frames) and any communication support that might be needed.
-    mpv_required: Do they need an MPV?
-    medication:
-      administration: Medication administration
-      carrier: Carried by
-      description: Medication description
-      details_help_text: If yes, give details of the medication needed and how it is administered. Give details of how the issues might be a risk during the move.
-      help_text: Does the prisoner need medication?
-      remove: Remove
-      title: Medication
-  medication_form:
-    carrier:
-      escort: Escort
-      prisoner: Prisoner
+      labels:
+        clear: Clear selection
+        details_help_text: If yes, give details on how the issues might be a risk during the move.
+      physical_risk:
+        title: Physical health
+        help_text: Does the prisoner have any physical health needs?
+        details_help_text: :'escorts.healthcare.labels.details_help_text'
+      mental_risk:
+        title: Mental health
+        help_text: Does the prisoner have any mental health needs?
+        details_help_text: :'escorts.healthcare.labels.details_help_text'
+      social_care_and_other:
+        title: Social care
+        help_text: Does the prisoner have social care or any other medical needs?
+        details_help_text: :'escorts.healthcare.labels.details_help_text'
+      allergies:
+        title: Allergies
+        help_text: Does the prisoner have any allergies?
+        details_help_text: If yes, give details of food allergies (eg nuts) or medical allergies (eg ibuprofen) or any other allergies. Also give details of food intolerances (eg wheat, gluten, dairy).
+        details_guidance_text: Include whether the allergy is severe or mild. List any particular triggers.
+      disabilities:
+        title: Disabilities
+        help_text: Does the prisoner have any disabilities?
+        details_help_text: If yes, give details of their disabilities, their disability needs, as well as potential risks during the move.
+        details_guidance_text: Details might include any equipment necessary for moving (eg special vehicles, walking frames) and any communication support that might be needed.
+      mpv_required: Do they need an MPV?
+      medication:
+        administration: Medication administration
+        carrier: Carried by
+        description: Medication description
+        details_help_text: If yes, give details of the medication needed and how it is administered. Give details of how the issues might be a risk during the move.
+        help_text: Does the prisoner need medication?
+        remove: Remove
+        title: Medication
+      medication_form:
+        carrier:
+          escort: Escort
+          prisoner: Prisoner
+  activemodel:
+    errors:
+      models:
+        healthcare:
+          attributes:
+            medications:
+              no_description: must contain a description
+              empty: must be specified

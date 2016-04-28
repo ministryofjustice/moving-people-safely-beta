@@ -6,38 +6,38 @@
         'shared/toggle_with_details_field',
         f: f,
         attribute: attribute,
-        i18n_scope: 'healthcare'
+        i18n_scope: 'escorts.healthcare'
       )
   %>
 <% end %>
 
-<%= text_toggle_container(f, :disabilities, 'healthcare') do %>
+<%= text_toggle_container(f, :disabilities, 'escorts.healthcare') do %>
     <%= form_group_container(f, :disabilities) do %>
         <%= f.label :mpv_required, class: 'block-label inline' do %>
             <%= f.check_box :mpv_required %>
-            <%= t('healthcare.mpv_required') %>
+            <%= t('.mpv_required') %>
         <% end %>
     <% end %>
-    <%= details_text_area_with_help_text(f, :disabilities, 'healthcare') %>
+    <%= details_text_area_with_help_text(f, :disabilities, 'escorts.healthcare') %>
 <% end %>
 
-<%= toggle_container(f, :medication, 'healthcare') do %>
+<%= toggle_container(f, :medication, 'escorts.healthcare') do %>
     <%= form_group_container(f, :medications, classes: 'optional-section') do %>
         <div class="multiples-container medications-container">
           <div class="inner-row only-visible-at-larger">
             <div class="inner-col-one-third">
               <div class="item-heading">
-                <%= t('healthcare.medication.description') %>
+                <%= t('.medication.description') %>
               </div>
             </div>
             <div class="inner-col-one-third">
               <div class="item-heading">
-                <%= t('healthcare.medication.administration') %>
+                <%= t('.medication.administration') %>
               </div>
             </div>
             <div class="inner-col-one-third">
               <div class="item-heading carrier">
-                <%= t('healthcare.medication.carrier') %>
+                <%= t('.medication.carrier') %>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@
                             <div class="inner-col-one-third">
                               <%= mf.check_box :_destroy, class: 'destroy' %>
                               <%= mf.label :_destroy, class: 'remove-link' do %>
-                                  <%= t('healthcare.medication.remove') %>
+                                  <%= t('.medication.remove') %>
                               <% end %>
                             </div>
                         <% end %>

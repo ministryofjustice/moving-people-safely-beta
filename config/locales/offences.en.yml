@@ -7,32 +7,31 @@ en:
   escorts:
     offences:
       heading: Offences
-  offences:
-    labels:
-      clear: Clear selection
-    not_for_release:
-      title: Not for release
-      help_text: Is this detainee ‘not for release’?
-      details_help_text: List any outstanding matters or reasons the detainee is not for release (NFR), eg serving another sentence, outstanding charges or remand, immigration (IS91), licence recall, additional days added (ADAs).
-    must_return:
-      title: Must return
-      help_text: Must this detainee return to the same prison?
-      details_help_text: List the reasons the detainee must return to the same establishment, eg medical treatment, medical hold, treatment programmes or offender behaviour.
-    must_not_return:
-      title: Must not return
-      help_text: Must this detainee NOT return to the same prison?
-      details_help_text: List any reasons the detainee must not return to the same establishment, eg offender behaviour, non-association markers, gang-related issues.
-    offences:
-      title: Current and other offences
-      help_text: If any "Not for release" markers are selected the "Not for release" box on the cover sheet will be ticked
-      remove: Remove
-      offence_type: Type
-      offence_status: Status
-      not_for_release: Not for release
-      current_offence: Current offence
-  offence_details_form:
-    status:
-      outstanding_charge: Outstanding charge
-      serving_sentence: Serving sentence
-      on_remand: On remand
-      licence_recall: Licence recall
+      labels:
+        clear: Clear selection
+      not_for_release:
+        title: Not for release
+        help_text: Is this detainee ‘not for release’?
+        details_help_text: List any outstanding matters or reasons the detainee is not for release (NFR), eg serving another sentence, outstanding charges or remand, immigration (IS91), licence recall, additional days added (ADAs).
+      must_return:
+        title: Must return
+        help_text: Must this detainee return to the same prison?
+        details_help_text: List the reasons the detainee must return to the same establishment, eg medical treatment, medical hold, treatment programmes or offender behaviour.
+      must_not_return:
+        title: Must not return
+        help_text: Must this detainee NOT return to the same prison?
+        details_help_text: List any reasons the detainee must not return to the same establishment, eg offender behaviour, non-association markers, gang-related issues.
+      offence_details:
+        title: Current and other offences
+        help_text: If any "Not for release" markers are selected the "Not for release" box on the cover sheet will be ticked
+        remove: Remove
+        offence_type: Type
+        offence_status: Status
+        not_for_release: Not for release
+        current_offence: Current offence
+      offence_details_form:
+        status:
+          outstanding_charge: Outstanding charge
+          serving_sentence: Serving sentence
+          on_remand: On remand
+          licence_recall: Licence recall
