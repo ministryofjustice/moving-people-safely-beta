@@ -3,7 +3,7 @@
 
   > div {
     @extend .row;
-    min-height: 3em;
+    min-height: 2.7em;
 
     &:last-child {
       border-bottom: 1px solid $light_grey;
@@ -91,6 +91,6 @@
   .aliases {
     @extend .row;
     padding-bottom: $padding-unit;
-    min-height: 3em;
+    min-height: 2.7em;
   }
 }

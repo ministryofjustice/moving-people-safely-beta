@@ -1,6 +1,7 @@
 @import "shared_ie/global";
 @import "shared_ie/grid";
 @import "shared_ie/forms";
+@import "mixins";
 
 .search-wrapper {
   .button {
@@ -10,6 +11,10 @@
       padding-bottom: 4px;
     }
   }
+}
+
+label, button {
+  cursor: pointer;
 }
 
 th, td {
@@ -38,6 +43,10 @@ th, td {
   ul {
     margin: 0;
   }
+}
+
+.quick-actions li {
+  margin-bottom: 1em;
 }
 
 legend {
@@ -71,12 +80,98 @@ legend {
   select {
     width: 15%;
   }
-  .item-heading {
-    width: 28%;
+}
+
+.inner-row {
+  .inner-col-one-third {
+    width: 30%;
+    margin-right: 1%;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+
+  }
+
+  .inner-col-two-thirds {
+    width: 60%;
+    margin-right: 1%;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+
+  .inner-col-half {
+    width: 48%;
+    margin-right: 1%;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+}
+
+.offences {
+
+  select {
     display: inline;
-    margin-right: 6%;
+    width: auto;
+    float: left;
+    margin-top: 0.5em;
   }
-  .carried-by {
-    width: 20%;
+
+  input[type="text"] {
+    display: inline;
+    width: auto;
+    float: left;
+    margin-right: 2.5em;
   }
+
+  .offences-block-label {
+    padding: 0;
+    position: relative;
+    top: -1.5em;
+    border: none !important;
+    input[type="checkbox"] {
+      top: 0;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .offence-field-label {
+    @include visually-hidden();
+  }
+
+  .offence-checkbox-label {
+    @include visually-hidden();
+  }
+
+  .remove-link {
+    position: relative;
+    top: -0.8em;
+    left: 0.5em;
+  }
+}
+
+.medications {
+  select {
+    display: inline;
+    width: auto;
+    float: left;
+    margin-top: 0.5em;
+  }
+
+  input[type="text"] {
+    width: 80%;
+  }
+
+  .remove-link {
+    position: relative;
+    top: -0.5em;
+    left: 0.5em;
+  }
+
+  .medication-field-label {
+    @include visually-hidden();
+  }
+
 }
