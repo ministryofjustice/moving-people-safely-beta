@@ -13,5 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require descendent_elements.js
-//= require multiples.js
-//= require aliases.js
+//= require revealables.js

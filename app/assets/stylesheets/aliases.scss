@@ -1,20 +1,14 @@
-.aliases {
-  .remove-alias {
-    margin-left: 0.5em;
-    border: none;
-    background-color: transparent;
-    @extend .styled-as-link;
-  }
-  .add-another-alias {
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    @extend .styled-as-link;
-  }
+.aliases-container {
 
-  .add-another-alias:disabled {
-    text-decoration: none;
-    color: $grey-2;
-  }
+  @media screen and (min-width: $break-large) {
+    input[type=text] {
+      float: left;
+      width: 50%;
+    }
 
+    .remove-link {
+      display: inline-block;
+      margin-top: 1em;
+    }
+  }
 }

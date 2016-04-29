@@ -18,7 +18,7 @@ label, button {
 }
 
 th, td {
-  padding-right: 1em!important;
+  padding-right: 1em !important;
 }
 
 .button_to {
@@ -109,7 +109,7 @@ legend {
   }
 }
 
-.offences {
+.offences-container {
 
   select {
     display: inline;
@@ -149,6 +149,10 @@ legend {
     position: relative;
     top: -0.8em;
     left: 0.5em;
+  }
+
+  .add-another {
+    margin-bottom: 1em;
   }
 }
 
