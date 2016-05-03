@@ -5,29 +5,29 @@
         'shared/toggle_with_details_field',
         f: f,
         attribute: attribute,
-        i18n_scope: 'offences'
+        i18n_scope: 'escorts.offences'
       )
   %>
 <% end %>
 
 <fieldset class="offences">
-  <%= title_text :offences, 'offences' %>
-  <%= f.label('offences', t('offences.offences.help_text')) %>
+  <%= title_text :offence_details, 'escorts.offences' %>
+  <%= f.label('offences', t('.offence_details.help_text')) %>
   <%= form_group_container(f, :offences) do %>
       <div class="multiples-container offences-container">
         <div class="inner-row only-visible-at-larger">
           <div class="item-heading inner-col-one-third">
-            <%= t('offences.offences.offence_type') %>
+            <%= t('.offence_details.offence_type') %>
           </div>
           <div class="item-heading inner-col-one-third">
-            <%= t('offences.offences.offence_status') %>
+            <%= t('.offence_details.offence_status') %>
           </div>
           <div class="item-heading inner-col-one-third">
             <div class="inner-col-one-third">
-              <%= t('offences.offences.not_for_release') %>
+              <%= t('.offence_details.not_for_release') %>
             </div>
             <div class="inner-col-one-third">
-              <%= t('offences.offences.current_offence') %>
+              <%= t('.offence_details.current_offence') %>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
                           <%= of.check_box :not_for_release %>
                         </div>
                         <div class="offence-checkbox-label">
-                          <%= t('offences.offences.not_for_release') %>
+                          <%= t('.offence_details.not_for_release') %>
                         </div>
                     <% end %>
                   </div>
@@ -60,7 +60,7 @@
                             <%= of.check_box :current_offence %>
                           </div>
                           <div class="offence-checkbox-label">
-                          <%= t('offences.offences.current_offence') %>
+                          <%= t('.offence_details.current_offence') %>
                           </div>
                       <% end %>
                     </div>
@@ -68,7 +68,7 @@
                       <% if index > 0 %>
                           <%= of.check_box :_destroy, class: 'destroy' %>
                           <%= of.label :_destroy, class: 'remove-link' do %>
-                              <%= t('offences.offences.remove') %>
+                              <%= t('.offence_details.remove') %>
                           <% end %>
                       <% end %>
                     </div>

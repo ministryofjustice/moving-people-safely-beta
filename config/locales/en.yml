@@ -29,19 +29,3 @@ en:
       day_label: :'shared.day_label'
       month_label: :'shared.month_label'
       year_label: :'shared.year_label'
-  activemodel:
-    attributes:
-      risks:
-        to_self_details: Risks to self details
-        violence_details: Violence and risk to others details
-        from_others_details: Risk from others details
-        escape_details: Escort escape risk details
-        intolerant_behaviour_details: Intolerant behaviour towards others details
-        non_association_details: Non-association details
-    errors:
-      models:
-        healthcare:
-          attributes:
-            medications:
-              no_description: must contain a description
-              empty: must be specified
