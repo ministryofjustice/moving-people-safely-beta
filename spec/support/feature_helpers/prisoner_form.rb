@@ -24,7 +24,19 @@ module FeatureHelpers
       fill_in 'CRO number', with: options.fetch(:cro_number)
       fill_in 'PNC number', with: options.fetch(:pnc_number)
 
+      within_prisoner_field('Does the detainee have any significant aliases') do
+        choose 'Yes'
+        fill_in 'prisoner[aliases][0]', with: 'Jack the Ripper'
+      end
+
       click_save
+    end
+
+    def within_prisoner_field(field, &_blk)
+      within(find('span', text: field).
+        find(:xpath, '../..')) do
+          yield
+        end
     end
   end
 end

@@ -28,7 +28,9 @@
   }
 
   .destroy {
-    @extend .hidden-but-accessible;
+    .js-enabled & {
+      @extend .hidden-but-accessible;
+    }
   }
 
   .destroy:focus + label {

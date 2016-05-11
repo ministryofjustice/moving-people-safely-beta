@@ -1,0 +1,14 @@
+.aliases-container {
+
+  @media screen and (min-width: $break-large) {
+    input[type=text] {
+      float: left;
+      width: 50%;
+    }
+
+    .remove-link {
+      display: inline-block;
+      margin-top: 1em;
+    }
+  }
+}
