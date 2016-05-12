@@ -1,0 +1,17 @@
+<%= form_for model, url: search_path do |f| %>
+  <%= error_wrapper(f, styles: 'form-group', styles_on_error: 'error') do %>
+    <%= label_tag('prison-number') do %>
+      <span class="form-label-bold">
+        <%= t('.search_label') %>
+      </span>
+      <span class="form-hint">
+        <%= t('.search_hint') %>
+      </span>
+      <%= show_errors %>
+      <div class="search-wrapper">
+        <%= f.text_field :prison_number, class: 'string form-control' %>
+        <%= f.submit t('.search_button'), class: 'button' %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

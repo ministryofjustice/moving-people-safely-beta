@@ -1,0 +1,16 @@
+<h2><%= t('.results_heading') %></h2>
+<table class="result">
+  <caption class="visuallyhidden"><%= t('.results_heading') %></caption>
+  <tr>
+    <th scope="col"><%= t('.prison_number') %></th>
+    <th scope="col"><%= t('.prisoner_name') %></th>
+    <th scope="col"><%= t('.date_of_birth') %></th>
+    <th scope="col"><%= t('.last_edited') %></th>
+  </tr>
+  <tr>
+    <td><%= link_to_escort %></td>
+    <td><%= prisoner_full_name %></td>
+    <td><%= prisoner_formatted_date_of_birth %></td>
+    <td><%= formatted_updated_at %></td>
+  </tr>
+</table>
