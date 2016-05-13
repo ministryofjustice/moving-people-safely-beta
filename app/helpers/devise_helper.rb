@@ -5,7 +5,7 @@ module DeviseHelper
         count: resource.errors.count,
         resource: resource.class.name.underscore)
 
-      render('/shared/flashes/save_errors', object: resource)
+      cell(:messages, resource)
     end
   end
 
