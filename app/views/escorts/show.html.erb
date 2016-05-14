@@ -3,16 +3,6 @@
     <%= cell(:menu, escort) %>
   </div>
   <div class="column-three-quarters">
-    <header>
-      <h1><%= t("escorts.#{form.name}.heading") %></h1>
-    </header>
-
-    <%= form_for form, url: form.url, method: :put do |f| %>
-      <%= cell(:messages, f.object) %>
-      <%= render form.template, f: f %>
-      <div class="form-group">
-        <%= f.submit t('.save'), class: 'button' %>
-      </div>
-    <% end %>
+    <%= cell(:escort_form, form) %>
   </div>
 </div>

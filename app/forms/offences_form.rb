@@ -10,7 +10,7 @@ class OffencesForm < Form
 
   def status_options
     OffenceDetailsForm::STATUS_TYPES.map do |c|
-      [I18n.t("escorts.offences.offence_details_form.status.#{c}"), c]
+      [I18n.t("escort_form.offences.offence_details_form.status.#{c}"), c]
     end
   end
 

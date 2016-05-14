@@ -1,0 +1,11 @@
+<header>
+  <h1><%= t("escort_form.#{model.name}.heading") %></h1>
+</header>
+
+<%= form_for model, url: model.url, method: :put do |f| %>
+  <%= cell(:messages, f.object) %>
+  <%= render view: model.template, locals: { f: f } %>
+  <div class="form-group">
+    <%= f.submit 'Save', class: 'button' %>
+  </div>
+<% end %>

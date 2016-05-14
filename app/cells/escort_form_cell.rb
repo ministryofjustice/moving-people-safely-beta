@@ -1,4 +1,40 @@
-module TextToggleFormElementsHelper
+# rubocop:disable ClassLength
+class EscortFormCell < FormCell
+  def date_fields(form, field, &_blk)
+    form_group_container(form, field, classes: 'form-date') { yield }
+  end
+
+  def single_field(form, field)
+    form_group_container(form, field) do
+      join(
+        form.label(field, class: 'form-label-bold', for: field),
+        form.text_field(field, class: 'string form-control', id: field)
+      )
+    end
+  end
+
+  def form_group_container(form, field, classes: '', id: nil, &_blk)
+    content_tag(
+      :div,
+      class: html_classes(form, field, classes),
+      id: id || "#{form.object.name}_#{field}"
+    ) { yield }
+  end
+
+  def hint_text(&_blk)
+    content_tag(:p, class: 'form-hint') { yield }
+  end
+
+  def join(*strings)
+    strings.flatten.inject(ActiveSupport::SafeBuffer.new, &:<<)
+  end
+
+  def html_classes(form, field, html_class)
+    html_classes = ['form-group', html_class]
+    html_classes << 'error' if form.object.errors.include?(field)
+    html_classes.join(' ')
+  end
+
   # rubocop:disable MethodLength
   def toggle_container(form, name, i18n_scope, &_blk)
     content_tag(
@@ -91,4 +127,33 @@ module TextToggleFormElementsHelper
     i18n_path = "#{i18n_scope}.#{name}.details_guidance_text"
     hint_text { t(i18n_path) } if I18n.exists?(i18n_path, I18n.locale)
   end
-end
+
+  def radio_label(form, value)
+    form.label :sex, value: value, class: 'block-label' do
+      join(
+        t(".prisoner.sex.#{value}_label"),
+        form.radio_button(:sex, value)
+      )
+    end
+  end
+
+  def checkbox_label(form, field)
+    form.label field, class: 'block-label inline' do
+      join(
+        form.check_box(field),
+        t(".healthcare.#{field}")
+      )
+    end
+  end
+
+  def offence_checkbox_label(fields, field)
+    fields.label field, class: 'offences-block-label' do
+      join(
+        content_tag(:div, class: 'input-wrapper') { fields.check_box(field) },
+        content_tag(:div, class: 'offence-checkbox-label') {
+          t(".offences.offence_details.#{field}")
+        }
+      )
+    end
+  end
+end # rubocop:enable ClassLength

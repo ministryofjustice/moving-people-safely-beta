@@ -1,4 +1,6 @@
 class FormCell < BaseCell
+  include ActionView::Helpers::FormOptionsHelper
+
   def dom_class(record, prefix = nil)
     ActionView::RecordIdentifier.dom_class(record, prefix)
   end

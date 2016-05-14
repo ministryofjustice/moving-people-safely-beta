@@ -5,7 +5,7 @@ en:
         origin: :'shared.origin'
         destination: :'shared.destination'
         reason: Reason for move (current offence)
-  escorts:
+  escort_form:
     move:
       heading: :'shared.move_heading'
       default_origin: HMP Bedford

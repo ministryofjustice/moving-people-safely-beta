@@ -4,11 +4,12 @@
 
 <div class="form-group">
   <%= date_fields(f, :date_of_travel) do %>
-    <%= render 'shared/date_field_inputs',
-      f: f,
-      model: 'move',
-      date_field: 'date_of_travel',
-      hint: f.object.formatted_date_today %>
+    <%= render view: :date_field_inputs, locals: {
+          f: f,
+          model: 'move',
+          date_field: 'date_of_travel',
+          hint: f.object.formatted_date_today
+        } %>
   <% end %>
 </div>
 

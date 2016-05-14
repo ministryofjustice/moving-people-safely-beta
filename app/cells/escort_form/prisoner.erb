@@ -8,26 +8,21 @@
 <%= single_field(f, :forenames) %>
 
 <%= date_fields(f, :date_of_birth) do %>
-  <%= render 'shared/date_field_inputs',
-    f: f,
-    model: 'prisoner',
-    date_field: 'date_of_birth',
-    hint: nil %>
+  <%= render view: :date_field_inputs, locals: {
+        f: f,
+        model: 'prisoner',
+        date_field: 'date_of_birth',
+        hint: nil
+      } %>
 <% end %>
 
 <div class="form-group">
   <fieldset class="inline">
     <legend class="form-label-bold">
-      <%= t('.sex.label') %>
+      <%= t('.prisoner.sex.label') %>
     </legend>
-    <%= f.label :sex, value: 'male', class: 'block-label' do %>
-      <%= t('.sex.male_label') %>
-      <%= f.radio_button :sex, 'male' %>
-    <% end %>
-    <%= f.label :sex, value: 'female', class: 'block-label' do %>
-      <%= t('.sex.female_label') %>
-      <%= f.radio_button :sex, 'female' %>
-    <% end %>
+    <%= radio_label(f, 'male')  %>
+    <%= radio_label(f, 'female')  %>
   </fieldset>
 </div>
 
@@ -41,7 +36,7 @@
   <%= form_group_container(f, :aliases, classes: 'optional-section aliases-container multiples-container') do %>
     <% f.object.aliases.each_with_index do |a, index| %>
       <div class="form-group item<%= ' shown' if a.present? %>">
-        <label for="prisoner_aliases_<%= index %>" class="form-label-bold"><%= t('.alias') %></label>
+        <label for="prisoner_aliases_<%= index %>" class="form-label-bold"><%= t('.prisoner.alias') %></label>
         <div>
           <%= text_field_tag "prisoner[aliases][#{index}]", a, class: 'form-control' %>
         </div>
@@ -49,4 +44,3 @@
     <% end %>
   <% end %>
 <% end %>
-

@@ -14,7 +14,7 @@ en:
         nationality: :'shared.nationality'
         cro_number: :'shared.cro_number'
         pnc_number: :'shared.pnc_number'
-  escorts:
+  escort_form:
     prisoner:
       alias: Alias
       heading: :'shared.prisoner_heading'

@@ -2,25 +2,28 @@
   <legend class="form-label-bold"><%= t("shared.#{date_field}_inputs.label") %></legend>
   <p class="form-hint datefield-hint"><%= t("shared.#{date_field}_inputs.hint", today: hint) %></p>
 
-  <%= render 'shared/date_field_input',
+  <%= render view: :date_field_input, locals: {
         f: f,
         model: model,
         date_field: date_field,
         field: 'day',
-        size: 2 %>
+        size: 2
+      } %>
 
-  <%= render 'shared/date_field_input',
+  <%= render view: :date_field_input, locals: {
         f: f,
         model: model,
         date_field: date_field,
         field: 'month',
-        size: 2 %>
+        size: 2
+      } %>
 
-  <%= render 'shared/date_field_input',
+  <%= render view: :date_field_input, locals: {
         f: f,
         model: model,
         date_field: date_field,
         field: 'year',
-        size: 4 %>
+        size: 4
+      } %>
 
 </fieldset>
