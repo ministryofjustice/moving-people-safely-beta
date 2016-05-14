@@ -1,4 +1,12 @@
-module NavigationHelper
+class MenuCell < BaseCell
+  def link_to_quick_actions_preview
+    link_to t('quick_actions.preview'), pdf_path(model)
+  end
+
+  def link_to_quick_actions_find_prisoner
+    link_to t('quick_actions.find_prisoner'), root_path
+  end
+
   def navigation_item(text, path)
     content_tag(:li, link_or_text(text, path), class: apply_current_class(path))
   end
