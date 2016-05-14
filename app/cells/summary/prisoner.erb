@@ -1,0 +1,48 @@
+<div class="summary-heading">
+  <h2><%= t('.prisoner.heading') %></h2>
+  <%= link_to t('.prisoner.edit_section'), edit_prisoner_section_path %>
+</div>
+<div class="summary-content" id="prisoner-information">
+  <div>
+    <div class="family-name">
+      <strong class="label"><%= t('.prisoner.family_name') %></strong>
+      <div class="output"><%= family_name %></div>
+    </div>
+    <div class="forenames">
+      <strong class="label"><%= t('.prisoner.forenames') %></strong>
+      <div class="output"><%= forenames %></div>
+    </div>
+  </div>
+  <div>
+    <div class="dob">
+      <strong class="label"><%= t('.prisoner.date_of_birth') %></strong>
+      <div class="output"><%= formatted_date_of_birth %></div>
+    </div>
+    <div class="age">
+      <strong class="label"><%= t('.prisoner.age') %></strong>
+      <div class="output"><%= age %></div>
+    </div>
+    <div class="sex">
+      <strong class="label"><%= t('.prisoner.sex') %></strong>
+      <div class="output"><%= capitalized_sex %></div>
+    </div>
+    <div class="nationality">
+      <strong class="label"><%= t('.prisoner.nationality') %></strong>
+      <div class="output"><%= nationality %></div>
+    </div>
+  </div>
+  <div>
+    <div class="prison-number">
+      <strong class="label"><%= t('.prisoner.prison_number') %></strong>
+      <div class="output"><%= prison_number %></div>
+    </div>
+    <div class="cro-number">
+      <strong class="label"><%= t('.prisoner.cro_number') %></strong>
+      <div class="output"><%= cro_number %></div>
+    </div>
+    <div class="pnc-number">
+      <strong class="label"><%= t('.prisoner.pnc_number') %></strong>
+      <div class="output"><%= pnc_number %></div>
+    </div>
+  </div>
+</div>

@@ -3,10 +3,6 @@
     <%= cell(:menu, escort) %>
   </div>
   <div class="column-three-quarters">
-    <header>
-      <h1><%= t(".heading") %></h1>
-    </header>
-    <%= render('escorts/summary/prisoner', prisoner: @summary.prisoner) %>
-    <%= render('escorts/summary/move', move: @summary.move) %>
+    <%= cell(:summary, escort) %>
   </div>
 </div>
