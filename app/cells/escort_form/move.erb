@@ -1,0 +1,16 @@
+<%= single_field(f, :origin) %>
+
+<%= single_field(f, :destination) %>
+
+<div class="form-group">
+  <%= form_group_container(:date_of_travel, classes: 'form-date') do %>
+    <%= render view: :date_field_inputs, locals: {
+          f: f,
+          model: 'move',
+          date_field: 'date_of_travel',
+          hint: model.formatted_date_today
+        } %>
+  <% end %>
+</div>
+
+<%= single_field(f, :reason) %>

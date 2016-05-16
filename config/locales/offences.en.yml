@@ -4,7 +4,7 @@ en:
       offences:
         others: Name of the medical professional filling in this section
         contact_telephone: Contact phone number
-  escorts:
+  escort_form:
     offences:
       heading: Offences
       labels:

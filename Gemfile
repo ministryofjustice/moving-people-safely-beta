@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'cells-rails'
+gem 'cells-erb'
 gem 'devise'
 gem 'devise_invitable'
 gem 'govuk_frontend_toolkit'
@@ -30,6 +32,7 @@ group :test do
   gem 'launchy'
   gem 'rspec-its'
   gem 'rspec-rails', '~> 3.4'
+  gem 'rspec-cells'
   gem 'rubocop-rspec'
   gem 'rubocop', require: false
   gem 'shoulda-matchers', '~> 3.1'

@@ -23,7 +23,7 @@ class HealthcareForm < Form
 
   def carrier_options
     MedicationForm::CARRIER_TYPES.map do |c|
-      [I18n.t("escorts.healthcare.medication_form.carrier.#{c}"), c]
+      [I18n.t("escort_form.healthcare.medication_form.carrier.#{c}"), c]
     end
   end
 

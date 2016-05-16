@@ -1,0 +1,64 @@
+<% %i[ not_for_release
+       must_return
+       must_not_return ].each do |attribute| %>
+  <%= render view: :toggle_with_details_field, locals: {
+        f: f,
+        attribute: attribute
+      } %>
+<% end %>
+
+<fieldset class="offences">
+  <%= title_text(:offence_details) %>
+  <%= f.label('offences', t('.offences.offence_details.help_text')) %>
+  <%= form_group_container(:offences) do %>
+    <div class="multiples-container offences-container">
+      <div class="inner-row only-visible-at-larger">
+        <div class="item-heading inner-col-one-third">
+          <%= t('.offences.offence_details.offence_type') %>
+        </div>
+        <div class="item-heading inner-col-one-third">
+          <%= t('.offences.offence_details.offence_status') %>
+        </div>
+        <div class="item-heading inner-col-one-third">
+          <div class="inner-col-one-third">
+            <%= t('.offences.offence_details.not_for_release') %>
+          </div>
+          <div class="inner-col-one-third">
+            <%= t('.offences.offence_details.current_offence') %>
+          </div>
+        </div>
+      </div>
+      <% model.offence_details.each_with_index do |offence_details_form, index| %>
+        <%= f.fields_for "offence_details[#{index}]", offence_details_form do |of| %>
+          <div id="offence-<%= of.index %>" class="item inner-row <%= 'shown' if offence_details_form.persisted? %>">
+            <div class="inner-col-one-third">
+              <%= of.hidden_field :id %>
+              <%= of.label :offence_type, class: 'offence-field-label' %>
+              <%= of.text_field :offence_type %>
+            </div>
+            <div class="inner-col-one-third">
+              <%= of.label :offence_status, class: 'offence-field-label' %>
+              <%= of.select :offence_status, model.status_options, include_blank: true %>
+            </div>
+            <div class="inner-col-one-third">
+              <div class="inner-col-one-third">
+                <%= offence_checkbox_label(of, :not_for_release) %>
+              </div>
+              <div class="inner-col-one-third">
+                <%= offence_checkbox_label(of, :current_offence) %>
+              </div>
+              <div class="inner-col-one-third">
+                <% if index > 0 %>
+                  <%= of.check_box :_destroy, class: 'destroy' %>
+                  <%= of.label :_destroy, class: 'remove-link' do %>
+                    <%= t('.offences.offence_details.remove') %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</fieldset>

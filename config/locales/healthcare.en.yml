@@ -4,7 +4,7 @@ en:
       healthcare:
         medical_professional_name: Name of the medical professional filling in this section
         contact_telephone: Contact phone number
-  escorts:
+  escort_form:
     healthcare:
       heading: Healthcare
       labels:
@@ -13,15 +13,15 @@ en:
       physical_risk:
         title: Physical health
         help_text: Does the prisoner have any physical health needs?
-        details_help_text: :'escorts.healthcare.labels.details_help_text'
+        details_help_text: :'escort_form.healthcare.labels.details_help_text'
       mental_risk:
         title: Mental health
         help_text: Does the prisoner have any mental health needs?
-        details_help_text: :'escorts.healthcare.labels.details_help_text'
+        details_help_text: :'escort_form.healthcare.labels.details_help_text'
       social_care_and_other:
         title: Social care
         help_text: Does the prisoner have social care or any other medical needs?
-        details_help_text: :'escorts.healthcare.labels.details_help_text'
+        details_help_text: :'escort_form.healthcare.labels.details_help_text'
       allergies:
         title: Allergies
         help_text: Does the prisoner have any allergies?

@@ -1,36 +1,5 @@
 <div class="grid-row">
   <div class="column-three-quarters">
-    <header>
-      <h1><%= t('.heading') %></h1>
-      <p><%= t('.logged_in') %></p>
-      <p><%= t('.description') %></p>
-    </header>
-    <%= form_for form, url: search_path do |f| %>
-      <%= error_wrapper(f, styles: 'form-group', styles_on_error: 'error') do %>
-        <%= label_tag('prison-number') do %>
-            <span class="form-label-bold">
-                <%= t('.search_label') %>
-            </span>
-            <span class="form-hint">
-                <%= t('.search_hint') %>
-            </span>
-            <%- if f.object.errors.any? %>
-              <span class="error-message">
-                  <%= t('.search_error') %>
-              </span>
-            <% end %>
-        <% end %>
-        <div class="search-wrapper">
-          <%= f.text_field :prison_number, class: 'string form-control' %>
-          <%= f.submit t('.search_button'), class: 'button' %>
-        </div>
-      <% end %>
-    <% end %>
-    <%- if form.results? %>
-      <%= render('home_pages/search/result', escort: form.escort) %>
-    <% end %>
-    <%- if form.no_results? %>
-      <%= render('home_pages/search/no_result', escort: form.escort) %>
-    <% end %>
+    <%= cell(:search, form) %>
   </div>
 </div>

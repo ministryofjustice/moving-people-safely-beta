@@ -1,10 +1,4 @@
 en:
-  prisoner:
-    has_aliases:
-      title: Does the detainee have any significant aliases?
-      help_text: List any other names by which the detainee is known
-    labels:
-      clear: Clear selection
   helpers:
     label:
       prisoner:
@@ -14,8 +8,13 @@ en:
         nationality: :'shared.nationality'
         cro_number: :'shared.cro_number'
         pnc_number: :'shared.pnc_number'
-  escorts:
+  escort_form:
     prisoner:
+      has_aliases:
+        title: Does the detainee have any significant aliases?
+        help_text: List any other names by which the detainee is known
+      labels:
+        clear: Clear selection
       alias: Alias
       heading: :'shared.prisoner_heading'
       sex:

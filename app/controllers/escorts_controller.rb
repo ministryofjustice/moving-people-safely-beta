@@ -14,10 +14,6 @@ class EscortsController < ApplicationController
     render :show
   end
 
-  def summary
-    @summary = Summary::EscortPresenter.new(escort)
-  end
-
   helper_method :form
 
 private
