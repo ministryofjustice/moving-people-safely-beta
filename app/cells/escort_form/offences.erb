@@ -3,15 +3,14 @@
        must_not_return ].each do |attribute| %>
   <%= render view: :toggle_with_details_field, locals: {
         f: f,
-        attribute: attribute,
-        i18n_scope: '.offences'
+        attribute: attribute
       } %>
 <% end %>
 
 <fieldset class="offences">
-  <%= title_text :offence_details, '.offences' %>
+  <%= title_text(:offence_details) %>
   <%= f.label('offences', t('.offences.offence_details.help_text')) %>
-  <%= form_group_container(f, :offences) do %>
+  <%= form_group_container(:offences) do %>
     <div class="multiples-container offences-container">
       <div class="inner-row only-visible-at-larger">
         <div class="item-heading inner-col-one-third">

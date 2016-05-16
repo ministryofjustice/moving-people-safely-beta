@@ -4,20 +4,19 @@
        allergies ].each do |attribute| %>
   <%= render view: :toggle_with_details_field, locals: {
         f: f,
-        attribute: attribute,
-        i18n_scope: '.healthcare'
+        attribute: attribute
       } %>
 <% end %>
 
-<%= text_toggle_container(f, :disabilities, '.healthcare') do %>
-  <%= form_group_container(f, :disabilities) do %>
+<%= text_toggle_container(f, :disabilities) do %>
+  <%= form_group_container(:disabilities) do %>
     <%= checkbox_label(f, :mpv_required) %>
   <% end %>
-  <%= details_text_area_with_help_text(f, :disabilities, '.healthcare') %>
+  <%= details_text_area_with_help_text(f, :disabilities) %>
 <% end %>
 
-<%= toggle_container(f, :medication, '.healthcare') do %>
-  <%= form_group_container(f, :medications, classes: 'optional-section') do %>
+<%= toggle_container(f, :medication) do %>
+  <%= form_group_container(:medications, classes: 'optional-section') do %>
     <div class="multiples-container medications-container">
       <div class="inner-row only-visible-at-larger">
         <div class="inner-col-one-third">

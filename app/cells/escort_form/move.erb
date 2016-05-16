@@ -3,7 +3,7 @@
 <%= single_field(f, :destination) %>
 
 <div class="form-group">
-  <%= date_fields(f, :date_of_travel) do %>
+  <%= form_group_container(:date_of_travel, classes: 'form-date') do %>
     <%= render view: :date_field_inputs, locals: {
           f: f,
           model: 'move',

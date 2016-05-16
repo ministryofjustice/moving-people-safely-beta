@@ -7,7 +7,7 @@
 
 <%= single_field(f, :forenames) %>
 
-<%= date_fields(f, :date_of_birth) do %>
+<%= form_group_container(:date_of_birth, classes: 'form-date') do %>
   <%= render view: :date_field_inputs, locals: {
         f: f,
         model: 'prisoner',
@@ -21,8 +21,8 @@
     <legend class="form-label-bold">
       <%= t('.prisoner.sex.label') %>
     </legend>
-    <%= radio_label(f, 'male')  %>
-    <%= radio_label(f, 'female')  %>
+    <%= radio_label(f, :sex, 'male')  %>
+    <%= radio_label(f, :sex, 'female')  %>
   </fieldset>
 </div>
 
@@ -32,8 +32,8 @@
 
 <%= single_field(f, :pnc_number) %>
 
-<%= toggle_container(f, :has_aliases, 'prisoner') do %>
-  <%= form_group_container(f, :aliases, classes: 'optional-section aliases-container multiples-container') do %>
+<%= toggle_container(f, :has_aliases) do %>
+  <%= form_group_container(:aliases, classes: 'optional-section aliases-container multiples-container') do %>
     <% f.object.aliases.each_with_index do |a, index| %>
       <div class="form-group item<%= ' shown' if a.present? %>">
         <label for="prisoner_aliases_<%= index %>" class="form-label-bold"><%= t('.prisoner.alias') %></label>

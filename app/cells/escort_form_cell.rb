@@ -1,11 +1,7 @@
 # rubocop:disable ClassLength
 class EscortFormCell < FormCell
-  def date_fields(form, field, &_blk)
-    form_group_container(form, field, classes: 'form-date') { yield }
-  end
-
   def single_field(form, field)
-    form_group_container(form, field) do
+    form_group_container(field) do
       join(
         form.label(field, class: 'form-label-bold', for: field),
         form.text_field(field, class: 'string form-control', id: field)
@@ -13,11 +9,11 @@ class EscortFormCell < FormCell
     end
   end
 
-  def form_group_container(form, field, classes: '', id: nil, &_blk)
+  def form_group_container(field, classes: '', id: nil, &_blk)
     content_tag(
       :div,
-      class: html_classes(form, field, classes),
-      id: id || "#{form.object.name}_#{field}"
+      class: html_classes(field, classes),
+      id: id || "#{model.name}_#{field}"
     ) { yield }
   end
 
@@ -29,25 +25,25 @@ class EscortFormCell < FormCell
     strings.flatten.inject(ActiveSupport::SafeBuffer.new, &:<<)
   end
 
-  def html_classes(form, field, html_class)
+  def html_classes(field, html_class)
     html_classes = ['form-group', html_class]
-    html_classes << 'error' if form.object.errors.include?(field)
+    html_classes << 'error' if model.errors.include?(field)
     html_classes.join(' ')
   end
 
   # rubocop:disable MethodLength
-  def toggle_container(form, name, i18n_scope, &_blk)
+  def toggle_container(form, name, &_blk)
     content_tag(
       :fieldset,
       class: 'js_has_optional_section',
-      id: "#{form.object.name}_#{name}"
+      id: "#{model.name}_#{name}"
     ) do
       join(
-        title_text(name, i18n_scope),
-        hint_text { t("#{i18n_scope}.#{name}.help_text") },
-        form_group_container(form, name, id: '') {
+        title_text(name),
+        hint_text { t(".#{model.name}.#{name}.help_text") },
+        form_group_container(name, id: '') {
           join(
-            clearable_radio_buttons(form, name, i18n_scope),
+            clearable_radio_buttons(form, name),
             content_tag(:div) { yield }
           )
         }
@@ -55,31 +51,31 @@ class EscortFormCell < FormCell
     end
   end # rubocop:enable MethodLength
 
-  def text_toggle_container(form, name, i18n_scope, &_blk)
-    toggle_container(form, name, i18n_scope) do
+  def text_toggle_container(form, name, &_blk)
+    toggle_container(form, name) do
       form_group_container(
-        form, :"#{name}_details", classes: 'optional-section') { yield }
+        :"#{name}_details", classes: 'optional-section') { yield }
     end
   end
 
-  def details_text_area_with_help_text(form, name, i18n_scope)
+  def details_text_area_with_help_text(form, name)
     join(
-      details_help_text(form, name, i18n_scope),
-      details_guidance_text(name, i18n_scope),
+      details_help_text(form, name),
+      details_guidance_text(name),
       details_text_area(form, name)
     )
   end
 
-  def title_text(name, i18n_scope)
+  def title_text(name)
     content_tag(:legend, class: 'form-label-bold') {
-      content_tag(:span) { t("#{i18n_scope}.#{name}.title") }
+      content_tag(:span) { t(".#{model.name}.#{name}.title") }
     }
   end
 
-  def clearable_radio_buttons(form, name, i18n_scope)
+  def clearable_radio_buttons(form, name)
     join(
       yes_no_radio_buttons(form, name),
-      clear_selection_radio_button(form, name, i18n_scope)
+      clear_selection_radio_button(form, name)
     )
   end
 
@@ -94,12 +90,12 @@ class EscortFormCell < FormCell
     end
   end
 
-  def clear_selection_radio_button(form, name, i18n_scope)
+  def clear_selection_radio_button(form, name)
     join(
       form.radio_button(name, 'unknown', class: 'visuallyhidden'),
       form.label(
         "#{name}_unknown",
-        t("#{i18n_scope}.labels.clear"),
+        t(".#{model.name}.labels.clear"),
         class: 'unknown_value'
       )
     )
@@ -110,29 +106,29 @@ class EscortFormCell < FormCell
       "#{name}_details",
       autocomplete: 'off',
       class: 'form-control',
-      id: "#{form.object.name}_#{name}_details"
+      id: "#{model.name}_#{name}_details"
     )
   end
 
-  def details_help_text(form, name, i18n_scope)
+  def details_help_text(form, name)
     form.label(
       "#{name}_details",
-      t("#{i18n_scope}.#{name}.details_help_text")
+      t(".#{model.name}.#{name}.details_help_text")
     )
   end
 
-  def details_guidance_text(name, i18n_scope)
+  def details_guidance_text(name)
     # Guidance text does not necessarily apply to every textarea &
     # can be blank theefore we check its existence
-    i18n_path = "#{i18n_scope}.#{name}.details_guidance_text"
+    i18n_path = ".#{model.name}.#{name}.details_guidance_text"
     hint_text { t(i18n_path) } if I18n.exists?(i18n_path, I18n.locale)
   end
 
-  def radio_label(form, value)
-    form.label :sex, value: value, class: 'block-label' do
+  def radio_label(form, field, value)
+    form.label field, value: value, class: 'block-label' do
       join(
-        t(".prisoner.sex.#{value}_label"),
-        form.radio_button(:sex, value)
+        t(".#{model.name}.#{field}.#{value}_label"),
+        form.radio_button(field, value)
       )
     end
   end
@@ -141,7 +137,7 @@ class EscortFormCell < FormCell
     form.label field, class: 'block-label inline' do
       join(
         form.check_box(field),
-        t(".healthcare.#{field}")
+        t(".#{model.name}.#{field}")
       )
     end
   end

@@ -1,9 +1,9 @@
-<%= text_toggle_container(f, :to_self, '.risks') do %>
-  <%= form_group_container(f, :open_acct) do %>
-    <%= title_text(:open_acct, '.risks') %>
-    <%= clearable_radio_buttons(f, :open_acct, '.risks') %>
+<%= text_toggle_container(f, :to_self) do %>
+  <%= form_group_container(:open_acct) do %>
+    <%= title_text(:open_acct) %>
+    <%= clearable_radio_buttons(f, :open_acct) %>
   <% end %>
-  <%= details_text_area_with_help_text(f, :to_self, '.risks') %>
+  <%= details_text_area_with_help_text(f, :to_self) %>
 <% end %>
 
 <% %i[ violence
@@ -14,7 +14,6 @@
        non_association ].each do |risk| %>
   <%= render view: :toggle_with_details_field, locals: {
         f: f,
-        attribute: risk,
-        i18n_scope: '.risks'
+        attribute: risk
       } %>
 <% end %>
