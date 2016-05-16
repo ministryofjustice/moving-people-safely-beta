@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <% f.object.offence_details.each_with_index do |offence_details_form, index| %>
+      <% model.offence_details.each_with_index do |offence_details_form, index| %>
         <%= f.fields_for "offence_details[#{index}]", offence_details_form do |of| %>
           <div id="offence-<%= of.index %>" class="item inner-row <%= 'shown' if offence_details_form.persisted? %>">
             <div class="inner-col-one-third">
@@ -38,7 +38,7 @@
             </div>
             <div class="inner-col-one-third">
               <%= of.label :offence_status, class: 'offence-field-label' %>
-              <%= of.select :offence_status, f.object.status_options, include_blank: true %>
+              <%= of.select :offence_status, model.status_options, include_blank: true %>
             </div>
             <div class="inner-col-one-third">
               <div class="inner-col-one-third">

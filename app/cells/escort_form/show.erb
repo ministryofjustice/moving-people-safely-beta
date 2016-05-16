@@ -3,7 +3,7 @@
 </header>
 
 <%= form_for model, url: model.url, method: :put do |f| %>
-  <%= cell(:messages, f.object) %>
+  <%= cell(:messages, model) %>
   <%= render view: model.template, locals: { f: f } %>
   <div class="form-group">
     <%= f.submit 'Save', class: 'button' %>

@@ -1,6 +1,6 @@
 <div class="form-group">
   <span id="prison-number" class="form-label-bold" id="prison-number"><%= t('shared.prison_number') %></span>
-  <span aria-labelledby="prison-number"><%= f.object.prison_number %></span>
+  <span aria-labelledby="prison-number"><%= model.prison_number %></span>
 </div>
 
 <%= single_field(f, :family_name) %>
@@ -34,7 +34,7 @@
 
 <%= toggle_container(f, :has_aliases) do %>
   <%= form_group_container(:aliases, classes: 'optional-section aliases-container multiples-container') do %>
-    <% f.object.aliases.each_with_index do |a, index| %>
+    <% model.aliases.each_with_index do |a, index| %>
       <div class="form-group item<%= ' shown' if a.present? %>">
         <label for="prisoner_aliases_<%= index %>" class="form-label-bold"><%= t('.prisoner.alias') %></label>
         <div>
