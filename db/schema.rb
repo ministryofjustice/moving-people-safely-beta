@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426134128) do
+ActiveRecord::Schema.define(version: 20160518135632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,12 +91,11 @@ ActiveRecord::Schema.define(version: 20160426134128) do
     t.string   "sex"
     t.string   "prison_number"
     t.string   "nationality"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "cro_number"
     t.string   "pnc_number"
-    t.boolean  "has_aliases"
-    t.string   "aliases",       default: [],              array: true
+    t.text     "aliases",       default: "{}"
   end
 
   create_table "risks", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|

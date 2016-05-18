@@ -7,8 +7,7 @@ class PrisonerForm < Form
   attribute :nationality,   String
   attribute :cro_number,    String
   attribute :pnc_number,    String
-  attribute :has_aliases,   Form::MaybeBoolean
-  attribute :aliases,       Array[String], coercer: MultipleStringsCoercer
+  attribute :aliases,       String
 
   date :date_of_birth
 
@@ -16,17 +15,4 @@ class PrisonerForm < Form
   validates :sex, inclusion: %w[ male female ], allow_nil: true
 
   delegate :prison_number, to: :target
-
-private
-
-  def load_model_data
-    super
-    self.aliases = target.backfilled_aliases
-  end
-
-  def persist
-    transformed_attributes = TransformAttributes.new(attributes).call
-    target.update_attributes(transformed_attributes)
-    reload
-  end
 end

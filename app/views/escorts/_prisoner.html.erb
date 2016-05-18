@@ -37,16 +37,4 @@
 
 <%= single_field(f, :pnc_number) %>
 
-<%= toggle_container(f, :has_aliases, 'prisoner') do %>
-  <%= form_group_container(f, :aliases, classes: 'optional-section aliases-container multiples-container') do %>
-    <% f.object.aliases.each_with_index do |a, index| %>
-      <div class="form-group item<%= ' shown' if a.present? %>">
-        <label for="prisoner_aliases_<%= index %>" class="form-label-bold"><%= t('.alias') %></label>
-        <div>
-          <%= text_field_tag "prisoner[aliases][#{index}]", a, class: 'form-control' %>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-<% end %>
-
+<%= single_field(f, :aliases) %>
