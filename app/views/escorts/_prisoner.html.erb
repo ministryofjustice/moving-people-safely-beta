@@ -1,4 +1,10 @@
 <div class="form-group">
+  <% if f.object.base_64_image.present? %>
+    <img src="data:image/png;base64,<%= f.object.base_64_image %>" style="border:solid;"></img>
+  <% end %>
+</div>
+
+<div class="form-group">
   <span id="prison-number" class="form-label-bold" id="prison-number"><%= t('shared.prison_number') %></span>
   <span aria-labelledby="prison-number"><%= f.object.prison_number %></span>
 </div>

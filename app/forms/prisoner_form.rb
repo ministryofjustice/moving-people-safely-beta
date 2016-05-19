@@ -14,5 +14,5 @@ class PrisonerForm < Form
   validates :date_of_birth, prisoner_age: true
   validates :sex, inclusion: %w[ male female ], allow_nil: true
 
-  delegate :prison_number, to: :target
+  delegate :prison_number, :base_64_image, to: :target
 end
