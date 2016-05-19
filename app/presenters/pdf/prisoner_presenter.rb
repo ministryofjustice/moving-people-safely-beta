@@ -6,7 +6,7 @@ module Pdf
 
     delegate :prison_number, :family_name, :forenames, :nationality,
       :capitalized_sex, :date_of_birth, :age, :cro_number, :pnc_number,
-      to: :@model
+      :base_64_image, to: :@model
 
     delegate :day, :month, :year,
       to: :date_of_birth, prefix: true, allow_nil: true

@@ -48,7 +48,13 @@
         </div>
       </div>
     </div>
-    <div class="image-placeholder"><%= t('.photo_message') %></div>
+    <% if prisoner.base_64_image.present? %>
+      <img height='150px' src="data:image/png;base64,<%= prisoner.base_64_image %>" style="border:solid;"></img>
+    <% else %>
+      <div class="image-placeholder">
+        <%= t('.photo_message') %>
+      </div>
+    <% end %>
   </div>
   <div>
     <div class="aliases">
