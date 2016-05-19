@@ -12,9 +12,9 @@ class CreateEscortForm < Form
 private
 
   def persist
-    @escort = Escort.create(
-      prisoner: Prisoner.new(prison_number: prison_number)
-    )
+    nomis_data = CreatePrisonerFromNomis.new(prison_number).call
+    prisoner_params = {prison_number: prison_number}.merge(nomis_data)
+    @escort = Escort.create(prisoner: Prisoner.new(prisoner_params))
   end
 
   def prison_number_uniqueness
